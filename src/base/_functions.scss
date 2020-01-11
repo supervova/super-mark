@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// MAPS HELPERS
+// -----------------------------------------------------------------------------
+
+// Map deep get
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
+// @example
+//   $variable-or-property: deep-get($parent-map, nested-map, key);
+@function deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+// HEADLINE LINE HEIGHT SELECTION
+// @param {Number} $headline-size - Unitless font-size of headline. E.g. 45.
+// @param {Number} $ratio [1.25] - Line height ratio
+
+@function line-height($headline-size, $ratio: 1.25, $factor: 8) {
+
+  $rough-value: $headline-size * $ratio;
+
+  @if $rough-value % $factor == 0 {
+    @return $ratio;
+  } @else {
+    @return ((round($rough-value / $factor) * $factor) / $headline-size);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MATH
+// -----------------------------------------------------------------------------
+
+// ROUND A DECIMAL TO SPECIFIED DIGITS
+
+// @param  {Number} $number A number to round
+// @param  {Number} [0] Digits to output
+// @param  {String} [round] (round|ceil|floor) How to round a number
+// @return {Number} A rounded number
+// @example
+//     decimal-round(0.333)    => 0
+//     decimal-round(0.333, 1) => 0.3
+//     decimal-round(0.333, 2) => 0.33
+//     decimal-round(0.666)    => 1
+//     decimal-round(0.666, 1) => 0.7
+//     decimal-round(0.666, 2) => 0.67
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+

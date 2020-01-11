@@ -1,0 +1,131 @@
+.main-subheader {
+  background: $color-background-primary;
+  border-bottom: 1px solid $color-ink-border;
+
+  // Initially it's hidden on phones. But it swapped with the main header
+  // on scroll.
+  padding: 0 160px 0 72px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: transform .4s;
+  transform: translateY(-56px);
+  height: 56px;
+  z-index: $zindex-fixed + 1;
+
+  @include media-breakpoint-up(md) {
+    // On tablets it becomes a small yellow label sticked to top of viewport.
+    background: $color-primary;
+    border-bottom: 0;
+    display: block;
+    text-align: center;
+    padding: 0;
+    position: absolute;
+    right: auto;
+    left: 168px;
+    transform: translateY(0);
+    width: 107px;
+    height: 48px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    left: 240px;
+    width: 160px;
+  }
+}
+
+
+// TOGGLE HEADERS
+
+.main-subheader.is-mobile {
+  transform: translateY(0);
+
+  @include media-breakpoint-up(sm) {
+    // Buttons and padding-right increase in landscape orientation.
+    padding-right: 168px;
+  }
+}
+
+// Animation: main header appear on scroll down
+// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
+@keyframes subheader {
+  0%   { display: none; opacity: 0; }
+  1%   { display: block; opacity: 0; transform: translateY(-56px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+// stylelint-enable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
+
+
+// BUTTON BACK
+
+.btn-back {
+  @extend .d-md-none;
+  background: $transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2212%22%20height%3D%2221%22%20viewBox%3D%220%200%2012%2021%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M.257%2011L0%2010.747l.707-.697%208.482-8.354L9.896%201l1.414%201.392-.707.697L2.57%2011l8.033%207.911.707.697L9.896%2021l-.707-.696L.707%2011.95%200%2011.253.257%2011z%22%2F%3E%3Cpath%20fill%3D%22%23ABAEB2%22%20d%3D%22M.257%2010L0%209.747l.707-.697L9.189.696%209.896%200l1.414%201.392-.707.697L2.57%2010l8.033%207.911.707.697L9.896%2020l-.707-.696L.707%2010.95%200%2010.253.257%2010z%22%2F%3E%3C%2Fsvg%3E') 16px 50% no-repeat;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color $duration-xs $easing;
+  user-select: none;
+  width: 48px;
+  height: 56px;
+
+  &:hover {
+    background-color: rgb(221, 224, 228);
+  }
+}
+
+
+// HEADLINES IN SUBHEADER
+
+// Section name in header.
+.eyebrow {
+  color: $color-ink-muted;
+  display: block;
+  text-shadow: 0 1px 0 #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 1.6rem 0 0;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    color: $color-ink-light-normal;
+    font-size: 100%;
+    line-height: 48px;
+    text-shadow: none;
+    padding: 0;
+    display: block;
+    height: 48px;
+  }
+}
+
+.eyebrow.is-link {
+  &:hover,
+  &:visited {
+    color: $color-ink-normal;
+  }
+
+  @include media-breakpoint-up(md) {
+    color: $color-ink-light-normal;
+    font-size: 100%;
+    line-height: 48px;
+    text-shadow: none;
+    padding: 0;
+    display: block;
+    height: 48px;
+
+    &:hover,
+    &:visited {
+      background: $color-primary-light;
+      color: $color-ink-light-normal;
+      text-decoration: none;
+    }
+  }
+}
+
+// Section name in header on section index page.
+.eyebrow-index {
+  @extend %headline-inverted;
+  @extend  %headline-lg;
+}

@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// WRAPPER FOR THE WHOLE LAYOUT
+// -----------------------------------------------------------------------------
+
+.wrapper {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    max-width: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 768px;
+  }
+
+  // Desktop layout
+  // navbar:    160
+  // gap:        80
+  // article:   640
+  //
+  // total:     880
+
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    // place for the left navbar
+    padding: 0 0 0 240px;
+    max-width: 880px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BOOTSTRAP CONTAINERS
+// -----------------------------------------------------------------------------
+
+.container {
+  padding: 0;
+  position: relative;
+
+  @include media-breakpoint-up(md) { width: 100%; }
+  @include media-breakpoint-up(lg) { width: map-get($container-max-widths, 'lg'); }
+}
+
+// -----------------------------------------------------------------------------
+// GRID
+// -----------------------------------------------------------------------------
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.has-wide-gutters {
+  margin-right: calc(-1 * var(--size-2));
+  margin-left: calc(-1 * var(--size-2));
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: var(--size-2);
+    padding-left: var(--size-2);
+  }
+}
+
+.row.has-gutters-sm {
+  margin-right: -($spacer-sm / 2);
+  margin-left: -($spacer-sm / 2);
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: ($spacer-sm / 2);
+    padding-left: ($spacer-sm / 2);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HELPERS
+// -----------------------------------------------------------------------------
+
+// Reduce gaps between inputs in line set
+.snuggled-left { padding-left: 0; }
+
+.snuggled-right { padding-right: 0; }

@@ -1,0 +1,77 @@
+// stylelint-disable declaration-colon-space-after
+
+// Custom settings and tools
+@import 'base/functions';
+@import 'base/variables';
+
+// Bootstrap. Importing an entire framework and removing unnecessary styles with
+// UnCSS requires less effort than importing parts of the BS.
+
+@import './node_modules/bootstrap/scss/bootstrap';
+
+// TODO: Try replace full Bootstrap with BS grid
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+@import './node_modules/bootstrap/scss/grid';
+@import './node_modules/bootstrap/scss/utilities/display';
+// @import './node_modules/bootstrap/scss/utilities/spacing';
+
+// Base
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/body/body';
+@import 'base/content/type';
+@import 'base/content/lists';
+@import 'base/content/code';
+@import 'base/content/media';
+@import 'base/content/vertical-rhythm';
+@import 'base/links/links';
+@import 'base/media/img';
+@import 'base/icons/icons';
+@import 'base/icons/custom';
+@import 'base/buttons/buttons';
+@import 'base/forms/controls';
+@import 'base/layout';
+
+// Components
+@import 'components/alerts/alerts';
+@import 'components/logo/logo';
+@import 'components/context-menus/context-menus';
+@import 'components/dropdowns/dropdowns';
+@import 'components/navbar/navbar';
+@import 'components/social-tools/social-tools';
+@import 'components/popover/subscription';
+@import 'components/cards/cards';
+@import 'components/charts/charts';
+@import 'components/section/section';
+@import 'components/slider/slider';
+@import 'components/tabs/tabs-pills';
+@import 'components/tooltips/tooltips';
+
+// Structures
+@import 'components/collapses/collapses';
+@import 'components/footer/footer';
+@import 'components/forms/form-search/form-search';
+@import 'components/header/header';
+@import 'components/main/articles';
+@import 'components/main/headers/headers';
+@import 'components/main/main-in-modals';
+@import 'components/main/meta';
+@import 'components/main/subheaders/subheaders';
+@import 'components/main/teasers/teasers';
+@import 'components/modals/modals';
+
+// Pages
+@import 'pages/page/form-contact/form-contact';
+@import 'pages/page/page';
+@import 'pages/search/search';
+@import 'pages/blog/blog';
+
+// Utilities
+@import 'base/utilities';
+@import 'components/utilities/utilities';
+
+// Print
+// https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
+@import 'base/print';

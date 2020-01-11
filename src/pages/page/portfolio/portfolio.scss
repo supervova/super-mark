@@ -1,0 +1,615 @@
+// stylelint-disable order/order
+
+// Bootstrap and plugins styles
+@import './src/base/functions';
+@import './src/base/variables';
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+
+
+$tooltip-background:                    $color-background-secondary;
+$tooltip-width:                         $panel-width-xs;
+
+body {
+  background: $color-background-primary;
+}
+
+.wrapper {
+  // background: $color-background-primary;
+  max-width: none;
+
+  @include media-breakpoint-up(md) {
+    padding-top: ($spacer * 2);
+    padding-left: 12rem;
+    padding-bottom: 6.6rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 16.8rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MAIN CONTAINER
+// -----------------------------------------------------------------------------
+/* #region */
+
+.main.is-project {
+  background: $transparent;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 auto;
+    padding: 0 2.4rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 115.2rem;
+  }
+}
+
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// HEADER
+// -----------------------------------------------------------------------------
+/* #region */
+
+.main-header.is-project {
+  background-color: $color-primary;
+  text-align: center;
+  margin-bottom: $spacer;
+  padding-right: 1.6rem;
+  padding-bottom: 3rem;
+  padding-left: 1.6rem;
+
+  @include media-breakpoint-up(md) {
+    // 60rem is a radius
+    background-image: //
+      // radial-gradient(
+      //   60rem at center,
+      //   #fff,
+      //   rgba(255, 255, 255, .5) 25%,
+      //   rgba(255, 255, 255, 0) 100%),
+      url('#{$site-assets}/img/pages/page/portfolio/awards.svg');
+    background-position: //
+      // left -72.5rem top -57.5rem,
+      right center;
+    background-repeat: no-repeat;
+    // background-size:
+    //   1200px 1200px,
+    //   auto auto;
+    border-radius: $border-radius-lg;
+    margin: 0 auto $spacer;
+    padding-top: 6.8rem;
+    padding-right: 3.2rem;
+    padding-bottom: 4.2rem;
+    padding-left: 3.2rem;
+    height: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 5.7rem;
+
+    .main-header__title,
+    .main-header__overview,
+    .main-header__nav,
+    .main-header__caption {
+      margin: 0 auto;
+      max-width: 66.6667%;
+    }
+  }
+}
+
+// Title
+
+.main-header.is-project .main-header__title {
+
+  color: $color-ink-light-normal;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 2.6rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $display-2-font-size;
+    line-height: $display-2-line-height;
+    margin-bottom: 2.1rem;
+  }
+}
+
+// .main-header > h1 {
+//   font-size: 2.4rem;
+//   font-weight: 500;
+//   line-height: 1;
+//   padding: 4.3rem 16px 2.7rem;
+
+//   @include media-breakpoint-up(md) {
+//     color: #fff;
+//     font-size: 3.2rem;
+//     font-weight: 300;
+//     line-height: 1;
+//     margin-top: 0;
+//     padding: 0;
+//   }
+// }
+
+// Overview
+.main-header.is-project .main-header__overview {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.main-header.is-project .main-header__overview,
+.main-header.is-project .main-header__link,
+.main-header.is-project .main-header__link:visited,
+.main-header.is-project .main-header__overview a,
+.main-header.is-project .main-header__overview a:hover,
+.main-header.is-project .main-header__overview a:visited {
+  color: $color-ink-on-highlight-normal;
+}
+
+
+
+.main-header.is-project .main-header__link,
+.main-header.is-project .main-header__overview a {
+  text-decoration: underline;
+}
+
+// Pager
+.main-header__pager {
+  // Set pager-counter to 0
+  counter-reset: pager-counter;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 2.7rem 0 .3rem;
+
+  > li {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 .4rem $spacer-sm;
+  }
+}
+
+.main-header__pager-link {
+  background-color: $color-primary-pale;
+  border: 4px solid $color-ink-on-highlight-muted;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-z1;
+  color: $color-ink-light-normal;
+  display: block;
+  font-family: $headings-font-family;
+  font-size: $headline-md-font-size;
+  font-weight: 300;
+  line-height: $headline-md-line-height;
+  text-decoration: none;
+  padding: .5rem $spacer-sm .4rem;
+  transition:
+    background-color $duration $easing,
+    box-shadow $duration $easing;
+  min-width: 6.4rem;
+
+  &:hover,
+  &.is-active {
+    background-color: $color-primary-dark;
+    box-shadow: $box-shadow-z2;
+  }
+
+  &.is-active {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:visited {
+    color: $color-ink-light-normal;
+    text-decoration: none;
+  }
+
+  &::before {
+    // Increment pager-counter by 1
+    counter-increment: pager-counter;
+    content: counter(pager-counter);
+  }
+}
+
+
+// Caption (h2)
+
+.main-header.is-project .main-header__caption {
+  color: $color-ink-on-highlight-normal;
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: $line-height-base;
+  letter-spacing: 0;
+  padding: 0;
+}
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// MAIN CONTENT
+// -----------------------------------------------------------------------------
+/* #region */
+.main.is-project > .border {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: -($spacer / 2);
+  margin-bottom: 4.6rem;
+  margin-left: -($spacer / 2);
+
+  @supports ((display: -ms-grid) or (display: grid)) {
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-gap: $spacer-sm;
+      grid-template-columns: repeat(12, 1fr);
+      margin-right: 0;
+      margin-bottom: 5.4rem;
+      margin-left: 0;
+    }
+  }
+}
+
+.project-gallery__item {
+  border-radius: $border-radius-sm;
+  margin: 0 ($spacer-sm / 2) $spacer-sm;
+  position: relative;
+  overflow: hidden;
+  min-height: 1px;
+
+  &::before {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12);
+    border-radius: $border-radius-sm;
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .project-gallery__item > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-gallery__item.has-centered-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-gallery__item.has-centered-items,
+  .project-gallery__item.has-free-items {
+    > img {
+      object-fit: unset;
+      width: auto;
+      max-width: none;
+      height: unset;
+    }
+  }
+
+  .project-gallery.is-gambling {
+    grid-template-rows: repeat(18, 18.4rem);
+  }
+}
+
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// NAVBAR
+// -----------------------------------------------------------------------------
+/* #region */
+
+.navbar.is-projects {
+  background-color: $color-background-secondary;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 0;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
+  visibility: visible;
+  width: auto;
+
+  @supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+    background-color: rgba(#f2f6fa, .7);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: $color-background-primary;
+    flex-direction: column;
+    padding: 1.3rem 0 0;
+    position: fixed;
+    top: 0;
+    right: auto;
+    width: 12rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 16.8rem;
+  }
+}
+
+.navbar.is-projects .navbar__header {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.navbar.is-projects .navbar__logo-link {
+  text-align: center;
+}
+
+.navbar__header .logo-mark,
+.navbar__header .logo-type {
+  display: block;
+  position: static;
+}
+
+.is-projects .logo-type {
+  @include media-breakpoint-up(md) {
+    margin: .8rem auto 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: .5rem;
+  }
+}
+
+
+// Projects List
+.navbar.is-projects .navbar__projects {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: ($spacer-sm * 2);
+  overflow-x: auto;
+
+  > li {
+    flex-basis: 0;
+    white-space: nowrap;
+    margin-right: $spacer-sm;
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    // Extended top padding and slight upward shift to avoid hidden overflow
+    // issue for the first tooltip
+    padding: 4.8rem 1rem ($spacer-sm * 2);
+    transform: translate3d(0, -3.1rem, 0);
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+
+    > li {
+      white-space: normal;
+      margin-right: 0;
+      margin-bottom: $spacer-sm;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    // Extended top padding and slight upward shift to avoid hidden overflow
+    // issue for the first tooltip
+    padding: 4.8rem ($spacer-sm * 3) ($spacer-sm * 5);
+    transform: translate3d(0, -.4rem, 0);
+  }
+}
+
+// Project Links on Phones
+.navbar__project {
+  background: $color-primary-pale;
+  border: 5px solid #fff;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow-z1;
+  color: $color-ink-on-highlight-normal;
+  display: block;
+  position: relative;
+  padding: ($spacer-sm * 2);
+
+  &:hover,
+  &:visited {
+    color: $color-ink-on-highlight-normal;
+    text-decoration: none;
+  }
+
+  // Projects Links on Tablets and Desktops
+  @include media-breakpoint-up(md) {
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+    transition:
+      background-image $duration $easing,
+      transform $duration $easing;
+    width: 100%;
+    height: 8rem;
+
+    &:hover {
+      box-shadow: $box-shadow-z2;
+      transform: translateY(-.1rem);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 9.6rem;
+  }
+}
+
+// Use span as a shim
+.navbar__project span {
+  @include media-breakpoint-up(md) {
+    background: hsla(0, 0%, 100%, .5);
+    color: $transparent;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity $duration $easing;
+  }
+}
+
+.navbar__project:hover span {
+  @include media-breakpoint-up(md) {
+    opacity: 0;
+  }
+}
+
+// .navbar__project {
+//   @include media-breakpoint-up(md) {
+//     background-blend-mode: color, normal, normal;
+
+//     &:hover {
+//       background-blend-mode: normal;
+//     }
+//   }
+// }
+
+// Project Links Thumbnails
+@include media-breakpoint-up(md) {
+  .navbar__project.is-cloud-delivery {
+    background-image: url('#{$site-assets}/img/projects/cloud-delivery/thumbnail.png');
+    // background-image:
+    //   linear-gradient($color-background-primary, $color-background-primary),
+    //   linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5)),
+    //   url('#{$site-assets}/img/projects/cloud-delivery/thumbnail.png');
+
+    // &:hover {
+    //   background-image: url('#{$site-assets}/img/projects/cloud-delivery/thumbnail.png');
+    // }
+  }
+
+  .navbar__project.is-2019 {
+    background-image: url('#{$site-assets}/img/projects/2019/thumbnail.png');
+  }
+
+  .navbar__project.is-forex-club {
+    background-image: url('#{$site-assets}/img/projects/forex-club/thumbnail.png');
+  }
+
+  .navbar__project.is-gambling {
+    background-image: url('#{$site-assets}/img/projects/gambling/thumbnail.png');
+  }
+
+  .navbar__project.is-oldie {
+    background-image: url('#{$site-assets}/img/projects/oldie/thumbnail.png');
+  }
+
+  .navbar__project.is-polylog {
+    background-image: url('#{$site-assets}/img/projects/polylog/thumbnail.png');
+  }
+
+  .navbar__project.is-sms-novel {
+    background-image: url('#{$site-assets}/img/projects/sms-novel/thumbnail.png');
+  }
+}
+
+// Active Project Links
+.is-2019  .navbar__project.is-2019,
+.is-cloud-delivery  .navbar__project.is-cloud-delivery,
+.is-forex-club  .navbar__project.is-forex-club,
+.is-gambling  .navbar__project.is-gambling,
+.is-oldie  .navbar__project.is-oldie,
+.is-polylog .navbar__project.is-polylog,
+.is-sms-novel  .navbar__project.is-sms-novel {
+  background-color: $color-primary;
+  box-shadow: $box-shadow-z2;
+  cursor: default;
+  pointer-events: none;
+  transform: translateY(-.1rem);
+
+  @include media-breakpoint-up(md) {
+    span {
+      display: none;
+    }
+  }
+}
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// TOOLTIPS
+// -----------------------------------------------------------------------------
+/* #region */
+
+.navbar__project.has-tooltip::before,
+.navbar__project.has-tooltip::after {
+  // Hide on phones;
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.navbar__project.has-tooltip {
+
+  // Tooltip's body
+  &::after {
+    content: attr(data-tooltip);
+
+    @include media-breakpoint-up(md) {
+      width: 104px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 152px;
+    }
+  }
+}
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// TOOLTIPS
+// -----------------------------------------------------------------------------
+/* #region */
+
+.p-portfolio .footer {
+  background-color: $transparent;
+  border-top: 0;
+  text-align: center;
+  //padding: 2.3rem 16px 4.2rem;
+
+  @include media-breakpoint-up(md) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+

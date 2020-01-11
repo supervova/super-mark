@@ -1,0 +1,183 @@
+// -----------------------------------------------------------------------------
+// FORM GROUP: LABEL + INPUT + VALIDATION MESSAGES
+// -----------------------------------------------------------------------------
+
+.form-group {
+  position: relative;
+  margin-bottom: $spacer-sm;
+}
+
+
+// -----------------------------------------------------------------------------
+// LABELS
+// -----------------------------------------------------------------------------
+
+label {
+  display: block;
+}
+
+.of-checkboxes {
+  padding-bottom: 1.3rem;
+}
+
+// Labels as icons
+
+.form-group .icon {
+  position: absolute;
+  top: 1.6rem;
+  left: 16px;
+  z-index: 1;
+
+  @include media-breakpoint-up(md) {
+    left: -32px;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// TEXTUAL FORM CONTROLS. [TYPE="TEXT"], [TYPE="EMAIL"] ETC
+// -----------------------------------------------------------------------------
+
+.form-control {
+  appearance: none;
+  border-radius: $border-radius-sm;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, .52);
+  margin-bottom: $spacer-sm;
+  padding: 1.1rem 16px 1.1rem 40px;
+  height: auto;
+
+  .has-feedback & { padding-right: 40px; }
+
+  // MD/LG: Hide placeholders
+  @include media-breakpoint-up(md) {
+    padding-left: 16px;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// CHECKBOX
+// -----------------------------------------------------------------------------
+
+.form-check-label {
+  color: $color-ink-muted;
+  padding-top: 1.2rem;
+  position: relative;
+}
+
+.form-check-input {
+  position: relative;
+  margin-left: 0;
+}
+
+.form-check-label.aligned-w-text-input {
+  padding-left: 15px;
+}
+
+// stylelint-disable selector-no-qualifying-type
+input[type='checkbox'] {
+  margin-right: 4px;
+  position: relative;
+}
+
+
+// -----------------------------------------------------------------------------
+// CAPTCHA
+// -----------------------------------------------------------------------------
+
+// // img
+// .form-captcha {
+//   height: 100%;
+//   max-width: 100%;
+// }
+
+
+// -----------------------------------------------------------------------------
+// FEEDBACK
+// -----------------------------------------------------------------------------
+
+.form__feedback {
+  opacity: 1;
+  transition: opacity $duration;
+
+  &:empty {
+    opacity: 0;
+  }
+}
+
+
+// Feedback tip caret
+// $dropdown-arrow-width:            8px;
+
+// .form-control-feedback {
+//   background: $color-background-secondary;
+//   border: 1px solid $color-ink-border;
+//   border-radius: $border-radius;
+//   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .06), inset 0 1px 0 0 #fff;
+//   display: none;
+//   margin-bottom: -8px;
+//   padding: 1.7rem 24px;
+//   position: absolute;
+//   right: 0;
+//   bottom: 100%;
+//   width: 288px;
+//   z-index: 4;
+
+//   // Caret
+//   &::before,
+//   &::after {
+//     border-color: $transparent;
+//     border-style: solid;
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//   }
+
+//   &::before { // Caret border
+//     border-width: $dropdown-arrow-width $dropdown-arrow-width 0;
+//     border-top-color: $dropdown-border-color;
+//     bottom: -$dropdown-arrow-width;
+//     left: 24px;
+//   }
+
+//   &::after { // Caret body
+//     border-width: ($dropdown-arrow-width - 1) ($dropdown-arrow-width - 1) 0;
+//     border-top-color: $dropdown-bg;
+//     bottom: -($dropdown-arrow-width - 1);
+//     left: 25px;
+//   }
+
+//   // Add class via jQuery to show tip
+
+//   &.show {
+//     display: block;
+//   }
+
+//   @include media-breakpoint-up(sm) {
+//     width: 300px;
+//   }
+// }
+
+// // Error
+
+// .form-error {
+//   background-image: url('data:image/svg+xml;charset=UTF-8, %3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23FF400D%22%20d%3D%22M15.996%2011.317L11.311%2016H4.685L0%2011.317V4.694L4.685.011h6.626l4.685%204.683z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M11%2011.01h-.707L8%208.718%205.707%2011.01H5v-.706l2.293-2.293L5%205.72v-.707h.707L8%207.305l2.293-2.292H11v.706L8.707%208.011%2011%2010.304z%22%2F%3E%3C%2Fsvg%3E');
+//   background-repeat: no-repeat;
+//   background-position: right 8px top 16px;
+//   border-color: $color-danger;
+//   padding-right: 36px;
+// }
+
+// .form-error-message {
+//   color: $color-danger;
+// }
+
+// .has-danger .form-control-feedback {
+//   // @extend .form-error-message;
+// }
+
+// .has-danger .form-control-danger {
+//   @extend .form-error;
+// }

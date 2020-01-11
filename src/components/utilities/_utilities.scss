@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// OVERLAY
+// -----------------------------------------------------------------------------
+
+.modal-backdrop.in {
+  opacity: .64;
+  transition: opacity $duration $easing-disappearance;
+}
+
+.fade {
+  transition: opacity $duration-lg $easing-appearance;
+}
+

@@ -1,0 +1,49 @@
+---
+layout: compress
+# Compress layout has been known to mangle markup and break JavaScript…
+# especially if inline // comments are present. Be careful
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ru' }}" prefix="og: http://ogp.me/ns#">
+  {% include head.html %}
+
+  <body {% if page.layout == 'project' or page.classes %}class="{% if page.layout == 'project' %}p-portfolio {% endif %}{% if page.classes %}{{ page.classes }}{% endif %}"{% endif %}>
+    {% if jekyll.environment == 'production' and site.gtm %}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% endif %}
+
+    {% include alerts.html %}
+
+    <div class="wrapper">
+      {% unless page.layout == 'project' %}
+        {% include header.html %}
+      {% endunless %}
+
+      {{ content }}
+
+      {% unless page.home %}
+        {% include footer.html %}
+      {% endunless %}
+
+      {% if page.layout != 'project' %}
+        {% include navbar.html %}
+      {% else %}
+        {% include navbar-projects.html %}
+      {% endif  %}
+    </div>
+
+    {% unless page.layout == 'project' %}
+      {% comment %} SPOTLIGHT SEARCH AND MODALS {% endcomment %}
+
+      {% comment %} <div class="modal is-search " id="modal-search" tabindex="-1" role="dialog" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" aria-hidden="true"> {% endcomment %}
+      <div class="modal is-search" id="modal-search" tabindex="-1" role="dialog" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" aria-hidden="true">
+        {% include form/search-google.html %}
+      </div>
+    {% endunless %}
+
+    {% include modal.html %}
+
+    {% include scripts.html %}
+  </body>
+</html>

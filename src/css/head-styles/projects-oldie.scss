@@ -1,0 +1,230 @@
+// Bootstrap and plugins styles
+@import './src/base/variables';
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+
+@include media-breakpoint-up(lg) {
+  .project-gallery.is-oldie {
+    grid-template-rows: repeat(22, 18.4rem);
+  }
+}
+
+.project-gallery__item.is-nickysheen {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+}
+
+.project-gallery__item.is-epc {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 7;
+  }
+}
+
+.project-gallery__item.is-best-media {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 7;
+    grid-row-end: 9;
+  }
+}
+
+.project-gallery__item.is-colt {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 7;
+    grid-row-end: 9;
+  }
+}
+
+.project-gallery__item.is-polylog-old {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 9;
+    grid-row-end: 11;
+  }
+}
+
+.project-gallery__item.is-corporate-travel {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 9;
+    grid-row-end: 11;
+  }
+}
+
+.project-gallery__item.is-businessman {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    background: #fff;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 11;
+    grid-row-end: 13;
+  }
+}
+
+.project-gallery__item.is-caveman {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    background: #fff;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 13;
+    grid-row-end: 15;
+  }
+}
+
+.project-gallery__item.is-vega {
+  background: #fff;
+
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 4;
+    grid-column-end: 13;
+    grid-row-start: 11;
+    grid-row-end: 15;
+  }
+}
+
+.project-gallery__item.is-lukoil {
+  background: #fff;
+
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 15;
+    grid-row-end: 17;
+  }
+}
+
+.project-gallery__item.is-lukoil {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 15;
+    grid-row-end: 17;
+  }
+}
+
+.project-gallery__item.is-dvk {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 15;
+    grid-row-end: 16;
+  }
+}
+
+.project-gallery__item.is-hartley-shtokkert {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 16;
+    grid-row-end: 17;
+  }
+}
+
+.project-gallery__item.is-interinet {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 17;
+    grid-row-end: 19;
+  }
+}
+
+.project-gallery__item.is-sitecraft {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    background: #fff;
+    display: flex;
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 17;
+    grid-row-end: 19;
+  }
+}
+
+.project-gallery__item.is-maximum {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 19;
+    grid-row-end: 21;
+  }
+}
+
+.project-gallery__item.is-region-20 {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 19;
+    grid-row-end: 21;
+  }
+}
+
+.project-gallery__item.is-train {
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 21;
+    grid-row-end: 22;
+  }
+}
+
+.project-gallery__item.is-dragonfly {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 21;
+    grid-row-end: 22;
+  }
+}
+
+.project-gallery__item.is-icons {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+
+  img {
+    margin: 1.6rem .8rem;
+    object-fit: unset;
+    width: auto;
+    max-width: none;
+    height: unset;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 22;
+    grid-row-end: 23;
+    padding: 0;
+
+    img {
+      margin: 0 2%;
+    }
+  }
+}

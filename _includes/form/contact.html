@@ -1,0 +1,43 @@
+<form class="form is-contact" id="form-contact" action="https://formspree.io/xvozadqg" method="POST">
+  <div class="form-group">
+    <label for="form-name" aria-label="{{ site.data.i18n.labels.formName[page.lang] }}" title="{{ site.data.i18n.labels.formName[page.lang] }}">
+      <svg class="icon icon-label-name" role="presentation">
+        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-label-name"></use>
+      </svg>
+    </label>
+    <input class="form-control" id="form-name" name="name" type="text" maxlength="128" required placeholder="{{ site.data.i18n.labels.formName[page.lang] }}*">
+  </div>
+
+  <div class="form-group">
+    <label for="form-email" aria-label="Email" title="Email">
+      <svg class="icon icon-label-email" role="presentation">
+        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-label-email"></use>
+      </svg>
+    </label>
+    <input class="form-control" id="form-email" name="email" type="email" maxlength="128" required placeholder="Email*">
+  </div>
+
+  <div class="form-group">
+    <label for="form-project-details" aria-label="{{ site.data.i18n.labels.formMessage[page.lang] }}" title="{{ site.data.i18n.labels.formMessage[page.lang] }}">
+      <svg class="icon icon-label-details" role="presentation">
+        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-label-details"></use>
+      </svg>
+    </label>
+    <textarea class="form-control" id="form-project-details" name="message" cols="40" rows="8" required placeholder="{{ site.data.i18n.labels.formMessage[page.lang] }}*"></textarea>
+  </div>
+
+  <fieldset class="form-submit">
+    {% if page.lang == 'ru' %}
+      {% comment %} <label class="form-check-label form-opt-in">
+        <input type="checkbox" name="subscribe" checked="checked">
+        Подписаться на&nbsp;мой&nbsp;блог о&nbsp;веб-дизайне и&nbsp;маркетинге.
+      </label> {% endcomment %}
+    {% endif %}
+    <p class="form-disclaimer">
+      {{ site.data.i18n.messages.formPrivacy[page.lang] }}
+    </p>
+    <div class="g-recaptcha" data-sitekey="6LdpRc4UAAAAAA9PsJ2Fnrjt1iV4kLa8agJx-pCV"></div>
+    <div class="form__feedback" id="form-contact-status"></div>
+    <button class="btn btn-primary btn-lg" id="form-contact-button">{{ site.data.i18n.labels.formSubmit[page.lang] }}</button>
+  </fieldset>
+</form>

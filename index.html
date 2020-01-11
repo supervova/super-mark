@@ -1,0 +1,297 @@
+---
+lang: ru
+title: 'SuperMark: веб-дизайн, разработка, digital-маркетинг — один человек работет за троих'
+description: 'Для того, чтобы сделать и поддерживать сайт, запустить и оптимизировать рекламные кампании, получать клиентов из поисковой выдачи и соцмедиа, достаточно нанять одного специалиста-универсала.'
+permalink: /
+hreflang-en: /en
+home: true
+layout: default
+styles-addons: ['/css/front.css']
+classes: 'p-home is-highlight has-main-header'
+date: 2020-01-05
+---
+
+<main class="intro carousel slide" id="intro" data-ride="carousel">
+  <article class="carousel-inner" itemscope itemtype="http://schema.org/Article">
+
+    {% comment %} COVER {% endcomment %}
+    <header class="intro-section is-highlight carousel-item active">
+      <span class="sr-only" itemprop="author">Владимир Никишин</span>
+      <span class="sr-only" itemprop="publisher">Владимир Никишин</span>
+      <span class="sr-only" itemprop="datePublished">{{ page.date | date: '%Y-%m-%d' }}</span>
+
+      <picture class="picture-main">
+        <source srcset="{{ site.assets }}/img/pages/front/home-cinemagraph-md.gif" media="(min-width: 768px)">
+        <img class="img-main" src="{{ site.assets }}/img/pages/front/home-cinemagraph.gif" itemprop="image" alt="Сильные веб-мастера и маркетологи">
+      </picture>
+
+      <h1 class="intro-section-title" itemprop="headline">
+        <strong>Веб-мастер</strong> на&nbsp;все руки
+      </h1>
+      <p itemprop="description">
+        Вам невыгодна <span title="Особенно если они у вас криворукие долбоёбы">постоянная команда маркетологов, дизайнеров и&nbsp;программистов?</span> Но&nbsp;нужны продвижение, поддержка сайта, landing-страницы? Причём на&nbsp;уровне, а&nbsp;не&nbsp;из&nbsp;сельпо. <span title="Цена, конечно, ни три копейки, но и не как чугунный мост">И&nbsp;за&nbsp;разумные деньги…</span> Замените отдел <strong>одним</strong> удалённым универсалом на&nbsp;подряде&nbsp;&mdash; <span title="Быстрее, дешевле и то, что доктор прописал">будет вам счастье.</span>
+      </p>
+
+      {% comment %} CTA Button {% endcomment %}
+      {% include cta.html %}
+
+      {% comment %} CTA Secondary {% endcomment %}
+      <a class="link-next" href="#intro" data-slide-to="1">Плюсы и минус</a>
+    </header>
+
+    {% comment %} BENEFITS AND MINUS {% endcomment %}
+    <section class="intro-section is-benefits carousel-item" itemprop="articleSection">
+      <header class="main-header is-benefits">
+        <figure>
+          <img src="{{ site.assets }}/img/pages/page/benefits/img-benefits-of-supermark-development.png" srcset="{{ site.assets }}/img/pages/page/benefits/img-benefits-of-supermark-development.png 1x, {{ site.assets }}/img/pages/page/benefits/img-benefits-of-supermark-development@2x.png 2x" alt="Удаленный веб-мастер: плюсы и минус">
+        </figure>
+        <h2>Плюсы и минус</h2>
+      </header>
+
+      <div class="intro-section-body">
+        <div class="intro-section-copy">
+          <p><strong>Работа с&nbsp;удалёнными веб-мастерами и&nbsp;маркетологами исключительно выгодна.</strong> Нам не&nbsp;оплачивают отпуска, рабочие места, медицинские страховки. Никакого <abbr title="Если подрядчик — индивидуальный предприниматель, а не физическое лицо">НДФЛ</abbr>. Контроль простой: сервисы для&nbsp;управления проектами, регулярные созвоны и&nbsp;демонстрации результатов. Минус один&nbsp;— мы&nbsp;редко…</p>
+        </div>
+        <ul class="intro-section-sidebar list-pros-cons">
+          <li class="item-pro">Системность.</li>
+          <li class="item-pro">Изобретательность.</li>
+          <li class="item-pro">Таланты и&nbsp;опыт во&nbsp;всех областях индустрии.</li>
+          <li class="item-con">Рядом не сидим.</li>
+        </ul>
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <nav class="intro-section-footer">
+        <a class="link-modal" href="/ru/benefits" data-target="#modal" data-toggle="modal" data-src="external">
+          Больше букв
+        </a>
+        <a class="link-next" href="#intro" data-slide-to="2">
+          Услуги и примеры
+        </a>
+
+        {% comment %} CTA Button {% endcomment %}
+        {% include cta.html %}
+      </nav>
+    </section>
+
+    {% comment %} SERVICES {% endcomment %}
+    <section class="intro-section is-services carousel-item" itemprop="articleSection">
+      <header class="main-header is-services">
+        <figure>
+          <img src="{{ site.assets }}/img/pages/page/services/img-services-design-marketing.png" srcset="{{ site.assets }}/img/pages/page/services/img-services-design-marketing.png 1x, {{ site.assets }}/img/pages/page/services/img-services-design-marketing@2x.png 2x" alt="Человек-оркестр. Full stack веб-мастер">
+        </figure>
+        <h2>Услуги и примеры</h2>
+      </header>
+
+      <div class="intro-section-body">
+        <div class="intro-section-copy">
+          <p><strong>Самое необходимое в&nbsp;диджитал-маркетинге</strong> может взять на&nbsp;себя всего один человек. Дизайн, программирование, управление&nbsp;РК, контент-маркетинг, аналитика. HTML, CSS и&nbsp;JavaScript. WordPress, Drupal и&nbsp;<abbr title="Static Site Generators — генераторы статических сайтов: Jekyll, Hugo и т. п.">SSG</abbr>. Баннеры и&nbsp;лендинги. Google Ads и&nbsp;Яндекс.Директ. SEO, SMM и&nbsp;email-маркетинг. Всё&nbsp;— за&nbsp;умеренное вознаграждение.</p>
+        </div>
+        <div class="intro-section-sidebar">
+          <a class="slideshow" href="/ru/projects/2019-paradiso" title="Примеры проектов">
+            <h3 class="slideshow-item is-title"><b>Примеры</b><br>проектов</h3>
+            <img class="slideshow-item is-2nd" src="{{ site.assets }}/img/pages/front/services-fxc.png" srcset="{{ site.assets }}/img/pages/front/services-fxc.png 1x, {{ site.assets }}/img/pages/front/services-fxc@2x.png 2x" alt="Проекты: дизайн, разработка, маркетинг">
+            <img class="slideshow-item is-3d" src="{{ site.assets }}/img/pages/front/services-polylog.png" srcset="{{ site.assets }}/img/pages/front/services-polylog.png 1x, {{ site.assets }}/img/pages/front/services-polylog@2x.png 2x" alt="Контент-маркетинг + SMM">
+            <img class="slideshow-item is-4th" src="{{ site.assets }}/img/pages/front/services-colt.png" srcset="{{ site.assets }}/img/pages/front/services-colt.png 1x, {{ site.assets }}/img/pages/front/services-colt@2x.png 2x" alt="UX/UI, продвижение">
+          </a>
+        </div>
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <nav class="intro-section-footer">
+        <a class="link-modal" href="/ru/services" data-target="#modal" data-toggle="modal" data-src="external">
+          Больше букв
+        </a>
+        <a class="link-next" href="#intro" data-slide-to="3">
+          Цены
+        </a>
+
+        {% comment %} CTA Button {% endcomment %}
+        {% include cta.html %}
+      </nav>
+
+    </section>
+
+    {% comment %} PRICES {% endcomment %}
+    <section class="intro-section is-prices carousel-item" itemprop="articleSection">
+      <div class="intro-section-body">
+
+        <h2 class="intro-section-title">Цены</h2>
+
+        {% comment %} Hourly {% endcomment %}
+        <div class="plan is-hourly-wage">
+          <h3 class="plan-title">«Мастер на&nbsp;час»</h3>
+          <div class="plan-body">
+            <div class="plan-price">
+              <span class="plan-amount">1,49</span>
+              <span class="plan-rubles">
+                тыс.<br>
+                руб./час
+              </span>
+            </div>
+            <p class="plan-value">
+              Разовые работы: баннеры, статьи etc. Минимум&nbsp;— 8&nbsp;часов.
+            </p>
+            <a class="plan-footer" href="/ru/contact" data-target="#modal" data-toggle="modal" data-src="external">
+              Берите сразу много!
+            </a>
+          </div>
+        </div>
+
+        {% comment %} 100 hours {% endcomment %}
+        <div class="plan is-100-hours">
+          <h3 class="plan-title">«Пакет „100 часов“»</h3>
+          <div class="plan-body">
+            <div class="plan-price">
+              <span class="plan-amount">99</span>
+              <span class="plan-rubles">
+                тыс.<br>
+                руб.
+              </span>
+            </div>
+            <p class="plan-value">
+              За&nbsp;100 ч. работы&nbsp;— до&nbsp;6&nbsp;лендингов,<br/>
+              до&nbsp;25&nbsp;статей и&nbsp;т.&nbsp;д.
+            </p>
+            <a class="plan-footer" href="/ru/contact" data-target="#modal" data-toggle="modal" data-src="external">
+              Ну, окей :)
+            </a>
+          </div>
+        </div>
+
+        {% comment %} Full Time {% endcomment %}
+        <div class="plan is-full-time">
+          <h3 class="plan-title">«Постоянка»</h3>
+          <div class="plan-body">
+            <div class="plan-price">
+              <span class="plan-amount">149</span>
+              <span class="plan-rubles">
+                тыс.<br>
+                руб./мес.
+              </span>
+            </div>
+            <p class="plan-value">
+              Работаю 21&nbsp;день в&nbsp;месяц<br>
+              по&nbsp;8&nbsp;часов
+            </p>
+            <a class="plan-footer" href="/ru/contact" data-target="#modal" data-toggle="modal" data-src="external">
+              То, что нужно
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <nav class="intro-section-footer">
+        <a class="link-modal" href="https://trello.com/b/DpTixwxG" rel="noopener noreferrer" target="_blank">
+          Затраты раб. времени&nbsp;— в&nbsp;action-плане
+        </a>
+        <a class="link-next" href="#intro" data-slide-to="4">
+          Обо мне
+        </a>
+
+        {% comment %} CTA Button {% endcomment %}
+        {% include cta.html %}
+      </nav>
+    </section>
+
+    {% comment %} ABOUT {% endcomment %}
+    <section class="intro-section is-about carousel-item" itemprop="articleSection">
+      <header class="main-header is-about">
+        <figure>
+          <img src="{{ site.assets }}/img/pages/page/about/img-about-marketing-agency.png" srcset="{{ site.assets }}/img/pages/page/about/img-about-marketing-agency.png 1x, {{ site.assets }}/img/pages/page/about/img-about-marketing-agency@2x.png 2x" alt="Владимир Никишин и компания">
+        </figure>
+        <h2>
+          О&nbsp;«СуперМарке»
+        </h2>
+      </header>
+
+      <div class="intro-section-body">
+        <div class="intro-section-copy">
+          <p><strong>SuperMark&nbsp;— это торговая марка Владимира Никишина. </strong>Журналист по&nbsp;образованию. Начинал в&nbsp;редколлегиях крупнейших газет Владивостока.<br/>
+          20&nbsp;лет в&nbsp;диджитал-индустрии. За&nbsp;эти годы стал универсалом: и&nbsp;швец, и&nbsp;жнец, и&nbsp;на&nbsp;дуде маркетолог. Многорукий Шива. Сеньор широкого профиля по&nbsp;цене миддла. <span class="nobr">По-моему,</span> отлично. </p>
+        </div>
+
+        {% comment %} Stat {% endcomment %}
+        <div class="intro-section-sidebar">
+          <div class="card card-stat compact">
+            <h3 class="card-header">1<small>+ n</small></h3>
+            <div class="card-block">На крупные проекты собирается команда</div>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <nav class="intro-section-footer">
+        <a class="link-modal" href="/ru/about" data-target="#modal" data-toggle="modal" data-src="external">
+          Больше букв
+        </a>
+        <a class="link-next" href="#intro" data-slide-to="5" >
+          Блог
+        </a>
+
+        {% comment %} CTA Button {% endcomment %}
+        {% include cta.html %}
+      </nav>
+    </section>
+
+    {% comment %} BLOG {% endcomment %}
+    <section class="intro-section is-blog carousel-item" itemprop="articleSection">
+      <header class="main-header is-blog">
+        <figure>
+          <img src="{{ site.assets }}/img/pages/blog/index/img-blog-about-design-marketing-development.png" srcset="{{ site.assets }}/img/pages/blog/index/img-blog-about-design-marketing-development.png 1x, {{ site.assets }}/img/pages/blog/index/img-blog-about-design-marketing-development@2x.png 2x" alt="Блог про дизайн, разработку и маркетинг">
+        </figure>
+        <h2>Блог</h2>
+      </header>
+
+      <div class="intro-section-body">
+        <aside class="intro-section-sidebar">
+          <p class="text-muted">
+            {% comment %} Рабочие конспекты: дизайн, разработка и&nbsp;маркетинг. Без жвачки, соплей и&nbsp;ликбеза для&nbsp;новичков {% endcomment %}
+            Рабочие конспекты и&nbsp;перепечатки из&nbsp;личного фейсбука&nbsp;— как пример авторского стиля
+          </p>
+        </aside>
+        <div class="intro-section-copy is-archive-wrapper">
+          <ul>
+            {% for post in site.posts limit:5 %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title}}</a>
+                <span class="post-date">{{ post.date | date: '%d.%m.%Y' }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <nav class="intro-section-footer">
+        <a class="link-modal" href="/ru/blog" data-target="#modal" data-toggle="modal" data-src="external">
+          Больше букв
+        </a>
+        {% include subscription.html %}
+
+        {% comment %} CTA Button {% endcomment %}
+        {% include cta.html %}
+      </nav>
+    </section>
+  </article>
+
+  {% comment %} LIKE & SHARE {% endcomment %}
+  <aside class="social-tools dropdown hidden">
+    {% include social-tools/dropdown.html %}
+  </aside>
+
+  {% comment %} PAGER {% endcomment %}
+  <nav class="carousel-pager">
+    <a class="carousel-control prev" href="#intro" data-slide="prev" aria-label="Назад" title="Назад"></a>
+    <div class="carousel-counter"></div>
+    <div class="carousel-pager-hint">
+      <svg class="icon-swipe" role="presentation">
+        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-swipe"></use>
+      </svg>
+      Можно листать
+    </div>
+    <a class="carousel-control next" href="#intro" data-slide="next" aria-label="Вперёд" title="Вперёд"></a>
+  </nav>
+</main>

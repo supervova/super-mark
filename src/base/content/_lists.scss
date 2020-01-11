@@ -1,0 +1,145 @@
+// eslint-disable order/order
+
+// LIST CAPTIONS
+
+.list-caption,
+.main-body .list-caption {
+  // Snap to list
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  + ol,
+  + ul {
+    padding-top: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// ORDERED LISTS
+// -----------------------------------------------------------------------------
+
+.main-body ol:not([class]) {
+  counter-reset: item;
+  list-style-position: inside;
+
+  > li {
+    display: block;
+
+    &::before {
+      color: $color-primary;
+      content: counter(item) '. ';
+      counter-increment: item;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    list-style-position: outside;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// UNORDERED LISTS
+// -----------------------------------------------------------------------------
+
+.main-body ul:not([class]) {
+  list-style-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%226%22%20height%3D%2216%22%20viewBox%3D%220%200%206%2016%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2211%22%20r%3D%222%22%20fill%3D%22%238D9093%22%2F%3E%3C%2Fsvg%3E');
+  padding-left: 1.3rem;
+}
+
+// -----------------------------------------------------------------------------
+// NESTED LISTS
+// -----------------------------------------------------------------------------
+
+.main-body li {
+  > ol,
+  > ul {
+    padding-bottom: 0;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// SPECIALS
+// -----------------------------------------------------------------------------
+
+// PROS AND CONS
+.list-pros-cons {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 24px;
+
+    &::before {
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      position: absolute;
+      top: .5rem;
+      left: 0;
+      width: 15px;
+      height: 15px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-left: 0;
+
+      &::before {
+        left: -24px;
+      }
+    }
+  }
+}
+
+.item-pro::before {
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%2300BF80%22%20cx%3D%227.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M7%207H3v1h4v4h1V8h4V7H8V3H7z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.item-con::before {
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23FF8080%22%20cx%3D%227.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M3%207h9v1H3z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+// -----------------------------------------------------------------------------
+// ARCHIVE
+// -----------------------------------------------------------------------------
+
+.list-archive,
+.is-articles-list,
+.is-archive-wrapper > ul {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    @include text-truncate();
+  }
+}
+
+.list-archive {
+  margin-bottom: 3.2rem;
+}
+
+.list__date,
+.list-archive-date,
+.post-date {
+  color: $color-ink-muted;
+}
+
+.list-archive-date {
+  margin-right: $spacer-sm;
+}
+
+.is-articles-list li,
+.is-archive-wrapper > ul > li {
+  position: relative;
+  padding-left: 9.6rem;
+}
+
+.list__date,
+.is-archive-wrapper > ul .post-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+

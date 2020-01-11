@@ -1,0 +1,119 @@
+// Bootstrap variables
+
+// Primary
+// $dropdown-bg:                           $color-background-secondary;
+// $dropdown-border-color:                 $color-ink-border;
+// $dropdown-border-width:                 1px;
+
+// Secondary
+// $dropdown-divider-bg:                   $gray-light;
+// $dropdown-link-color:                   $gray-dark;
+// $dropdown-link-hover-color:             darken($gray-dark, 6%);
+// $dropdown-link-hover-bg:                $gray-lighter;
+// $dropdown-link-active-color:            darken($gray-dark, 12%);
+// $dropdown-link-active-bg:               darken($gray-lighter, 12%);
+// $dropdown-link-disabled-color:          $gray;
+// $dropdown-header-color:                 $gray;
+
+$dropdown-arrow-width:                      8px; // Half of triangle base
+$dropdown-menu-padding-top:                 24px;
+$dropdown-menu-padding-side:                16px;
+$dropdown-menu-padding-bottom:              24px;
+
+
+// -----------------------------------------------------------------------------
+// Menu body
+// -----------------------------------------------------------------------------
+
+.dropdown-menu {
+  box-shadow: $box-shadow, inset 0 1px 0 0 rgba(255, 255, 255, .8);
+  padding: 0; // reset bootstrap 5px 0 padding
+}
+
+
+// -----------------------------------------------------------------------------
+// Caret
+// -----------------------------------------------------------------------------
+
+.dropdown-menu {
+  &::before,
+  &::after {
+    border-color: $transparent;
+    border-style: solid;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+
+// ON TOP
+
+.dropdown-menu.on-top {
+
+  top: auto;
+  bottom: 100%;
+
+  &::before { // Caret border
+    border-width: $dropdown-arrow-width $dropdown-arrow-width 0;
+    border-top-color: $dropdown-border-color;
+    bottom: -$dropdown-arrow-width;
+    left: 24px;
+  }
+
+  &::after { // Caret body
+    border-width: ($dropdown-arrow-width - 1) ($dropdown-arrow-width - 1) 0;
+    border-top-color: $dropdown-bg;
+    bottom: -($dropdown-arrow-width - 1);
+    left: 25px;
+  }
+}
+
+
+// ON BOTTOM
+
+.dropdown-menu.on-bottom::before {
+  border-width: 0 $dropdown-arrow-width $dropdown-arrow-width;
+  border-bottom-color: $dropdown-border-color;
+}
+
+
+// ON RIGHT
+
+.dropdown-menu.on-right {
+
+  &::before { // Caret border
+    border-width: $dropdown-arrow-width $dropdown-arrow-width $dropdown-arrow-width 0;
+    border-right-color: $dropdown-border-color;
+    top: 44px;
+    left: -$dropdown-arrow-width;
+  }
+
+  &::after { // Caret body
+    border-width: ($dropdown-arrow-width - 1) ($dropdown-arrow-width - 1) ($dropdown-arrow-width - 1) 0;
+    border-right-color: $dropdown-bg;
+    top: 45px;
+    left: -($dropdown-arrow-width - 1);
+  }
+}
+
+
+// ON LEFT
+
+.dropdown-menu.on-left {
+  &::before { // Caret border
+    border-width: $dropdown-arrow-width 0 $dropdown-arrow-width $dropdown-arrow-width;
+    border-left-color: $dropdown-border-color;
+    top: 44px;
+    right: -$dropdown-arrow-width;
+  }
+
+  &::after { // Caret body
+    border-width: ($dropdown-arrow-width - 1) 0 ($dropdown-arrow-width - 1) ($dropdown-arrow-width - 1);
+    border-left-color: $dropdown-bg;
+    top: 45px;
+    right: -($dropdown-arrow-width - 1);
+  }
+}

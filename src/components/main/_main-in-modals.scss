@@ -1,0 +1,326 @@
+// stylelint-disable order/order
+
+// MAIN CONTENT IN MODAL WINDOW
+
+// -----------------------------------------------------------------------------
+// CONTAINER
+// -----------------------------------------------------------------------------
+
+.modal-content .main {
+  padding-top: 0;
+  min-height: 100vh;
+}
+
+// -----------------------------------------------------------------------------
+// SUBHEADER
+// -----------------------------------------------------------------------------
+
+// subheader becomes a title bar
+// 1) Add space for close button.
+// 2) Reset headline styling .eyebrow etc.
+// 3) Enlarge header bar height on tablets.
+
+.modal-content .main-subheader {
+  background-color: $color-primary;
+  background-image: $color-primary-gradient;
+  border-bottom: 0;
+  box-shadow: inset 0 -1px 0 0 rgba(217, 153, 0, .4);
+  color: $color-ink-light-normal;
+  display: block;
+  text-align: left;
+  padding: 15px 48px 17px 16px; // 1
+  position: static;
+  transform: translateY(0);
+  width: 100%;
+  height: 56px;
+
+  @include media-breakpoint-up(md) {
+    padding: 18px 72px 0 32px; // 1
+  }
+
+  h2 { // 2
+    font-size: 2rem;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .08);
+    padding: .1rem 0 0;
+
+    @include media-breakpoint-up(md) {
+      line-height: 1;
+      padding: 0;
+    }
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    background: $transparent;
+    color: $color-ink-light-normal;
+    cursor: default;
+    height: auto;
+    pointer-events: none;
+  }
+}
+
+// Hide back button
+
+.modal-content .btn-back {
+  display: none;
+}
+
+
+// -----------------------------------------------------------------------------
+// MAIN HEADERS
+// -----------------------------------------------------------------------------
+
+.modal-content .main-header {
+
+  @include media-breakpoint-up(md) {
+    border-radius: 0;
+    margin: 0 -64px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 0;
+    margin: 0;
+    padding-left: 64px;
+  }
+}
+
+.modal-content .main-header > figure {
+  border-radius: 0;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+// Hide img to display it duotone background copy
+// stylelint-disable selector-max-compound-selectors
+.modal-content .main-header > figure > img {
+  display: none;
+}
+
+
+// MAIN HEADER HEADLINE
+
+.modal-content .main-header > h1,
+.modal-content .main-header > h2 {
+  color: $color-ink-light-normal;
+  padding: 0;
+  position: absolute;
+  top: 7.5rem;
+  left: 16px;
+  max-width: 288px;
+
+  @include media-breakpoint-up(md) {
+    position: static;
+    max-width: none;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// BUTTON CLOSE
+// -----------------------------------------------------------------------------
+
+// 1) Bootstrap .close and button.close are need to many resettings. So it's
+// complete new style
+// 2) Show
+// 3) Moved it, as the paddings have shifted.
+
+.modal-close { // 1
+  appearance: none;
+  background: $transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  z-index: 4;
+
+  .modal-content & { // 2
+    display: block;
+  }
+
+  @include media-breakpoint-up(md) {
+    right: 32px;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// HEADLINES IN .MAIN-HEADER AND BODY
+// -----------------------------------------------------------------------------
+
+// Add side padding to .main-header on desktops as side paddings are
+// removed from .main
+
+.modal-content .main-header {
+  @include media-breakpoint-up(lg) {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+}
+
+
+// 1) Basic Headline and
+// 2) Headline w/ pseudo eyebrow
+
+.modal-content .main-title,
+.modal-content .has-eyebrow {
+  margin-top: 0;
+  padding-top: 1.9rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 3.4rem;
+  }
+}
+
+// Pseudo eyebrow
+.modal-content .has-eyebrow {
+  &::before {
+    display: none;
+  }
+}
+
+
+// 3) Headline Under Top Images
+
+// Paddings are the same as in stand-alone version but they were rewritten
+// in above rules.
+
+// .main-body > .is-top + h1 {
+//   padding-top: .3rem;
+
+//   @include media-breakpoint-up(md) {
+//     padding-top: 1.8rem;
+//   }
+// }
+
+// 4) Headline w/ Pseudo Eyebrow Under Top Images
+
+// .modal-content img + .has-eyebrow,
+// .modal-content figure + .has-eyebrow {
+//   padding-top: .3rem;
+
+//   @include media-breakpoint-up(md) {
+//     padding-top: 1.8rem;
+//   }
+// }
+
+
+// -----------------------------------------------------------------------------
+// MAIN BODY
+// -----------------------------------------------------------------------------
+
+.modal-content .main-body {
+  @include media-breakpoint-up(lg) {
+    padding: 2.5rem 64px $spacer;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// MAIN IMAGE
+// -----------------------------------------------------------------------------
+
+// .modal-content .main-media-top {
+//   height: auto;
+
+//   img {
+//     height: auto;
+//   }
+// }
+
+// .modal-content .main-media-top,
+// .modal-content .main-body > img {
+
+//   position: relative;
+//   right: -16px;
+//   left: -16px;
+
+//   width: auto;
+//   max-width: 100%;
+//   width: calc(100% + 2 * 16px);
+//   max-width: 100vw;
+
+//   @include media-breakpoint-up(md) {
+//     right: -64px;
+//     left: -64px;
+//     width: calc(100% + 2 * 64px);
+//   };
+// }
+
+
+// -----------------------------------------------------------------------------
+// MAIN META
+// -----------------------------------------------------------------------------
+
+.modal-content .main-meta {
+  @include media-breakpoint-up(lg) {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+}
+
+// SOCIAL TOOLS TRANSFORMER
+
+// 1) Show social buttons (dropdown content) in footer in modav window.
+// 2) Remove background, borders, shadow.
+// 3) Show as inline-block…
+// 4) …In static position.
+// 5) Hide headline and image.
+// 6) Hide Share button.
+
+.modal-content .social-tools.is-transformer {
+
+  display: block; // 1
+  margin-bottom: .4rem;
+  padding-top: .4rem;
+  opacity: 1;
+  position: static;
+  transform: translateY(0);
+  width: auto;
+
+  > .dropdown-menu {
+
+    background: $transparent; // 2
+    border: 0; // 2
+    border-radius: 0;
+    box-shadow: none; // 2
+    display: inline-block; // 3
+    float: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    position: static; // 4
+    width: auto;
+    min-width: 0;
+
+    > .social-tools-group {
+      display: inline-block;
+      padding: 0;
+    }
+
+    &::after,
+    &::before,
+    .card-media-top,
+    .social-tools-title {
+      display: none; // 5
+    }
+    // stylelint-enable selector-max-compound-selectors
+  }
+
+  .btn-share {
+    display: none; // 6
+  }
+
+  .facebook-like {
+    display: none;
+  }
+
+  .twitter {
+    margin-right: 4px;
+  }
+}

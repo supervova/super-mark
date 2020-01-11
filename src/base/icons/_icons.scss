@@ -1,0 +1,55 @@
+// stylelint-disable length-zero-no-unit, rule-empty-line-before
+
+.icon,
+.icon-inline {
+  width: 16px;
+  height: 16px;
+  // Set non-default sizes 24x24, 32x32, 48x48, 64 in component styles.
+  // I.e. .social-tools a
+}
+
+.icon,
+.icon-close {
+  display: block;
+}
+
+.icon-inline,
+.icon.is-inline {
+  display: inline-block;
+  transform: translateY(-.1rem);
+}
+
+.icon-close {
+  width: 24px;
+  height: 24px;
+}
+
+
+// .icon-close { background-position: (0px - 4) (0px - 4);}
+// .icon-comment { background-position: (-24px - 4) (-80px - 4);}
+// .icon-flag-ru { background-position: (-96px - 4) (-104px - 4);}
+// .icon-flag-us { background-position: (-72px - 4) (-104px - 4);}
+// .icon-label-attachment { background-position: (0px - 4) (-104px - 4);}
+// .icon-label-company { background-position: (0px - 4) (-56px - 4);}
+// .icon-label-details { background-position: (-112px - 4) (0px - 4);}
+// .icon-label-email { background-position: (-24px - 4) (-56px - 4);}
+// .icon-label-first-name { background-position: (-48px - 4) (-56px - 4);}
+// .icon-label-html { background-position: (-88px - 4) (0px - 4);}
+// .icon-label-last-name { background-position: (-88px - 4) (-24px - 4);}
+// .icon-label-more { background-position: (-88px - 4) (-48px - 4);}
+// .icon-label-phone { background-position: (0px - 4) (-80px - 4);}
+// .icon-label-quantity { background-position: (-64px - 4) (0px - 4);}
+// .icon-like { background-position: (-48px - 4) (-80px - 4);}
+// .icon-rss { background-position: (-72px - 4) (-80px - 4);}
+// .icon-share { background-position: (-64px - 4) (-25px - 4);}
+// .icon-skype { background-position: (-112px - 4) (-24px - 4);}
+// .icon-social-facebook { background-position: (-112px - 4) (-48px - 4);}
+// .icon-social-facebook-original { background-position: (-112px - 4) (-72px - 4);}
+// .icon-social-google { background-position: (-32px - 4) (-32px - 4);}
+// .icon-social-linkedin { background-position: (-24px - 4) (-104px - 4);}
+// .icon-social-pocket { background-position: (-48px - 4) (-104px - 4);}
+// .icon-social-twitter { background-position: (0px - 4) (-32px - 4);}
+// .icon-social-vk { background-position: (-32px - 4) (0px - 4);}
+// .icon-social-whatsapp { background-position: (-136px - 4) (0px - 4);}
+// .icon-tag { background-position: (-136px - 4) (-24px - 4);}
+

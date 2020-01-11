@@ -1,0 +1,71 @@
+$slides:    5 !default;
+$on-screen: 1.6s !default;
+
+@mixin slider-slides($slides: $slides, $on-screen: $on-screen) {
+  .has-#{$slides}-slides > .slider__item {
+    animation-name: slider-autoplay-0#{$slides};
+    animation-duration: ($slides * $on-screen);
+    animation-iteration-count: infinite;
+  }
+
+  @if $slides == 2 {
+    @keyframes slider-autoplay-02 {
+        0% { opacity: 0; }
+       20% { opacity: 1; }
+       50% { opacity: 1; }
+       70% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+  } @else if $slides == 3 {
+    @keyframes slider-autoplay-03 {
+        0% { opacity: 0; }
+      10% { opacity: 1; }
+      33% { opacity: 1; }
+      43% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+  } @else if $slides == 4 {
+    @keyframes slider-autoplay-04 {
+        0% { opacity: 0; }
+        8% { opacity: 1; }
+       25% { opacity: 1; }
+       33% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+  } @else if $slides == 5 {
+    @keyframes slider-autoplay-05 {
+      0% { opacity: 0; }
+      7% { opacity: 1; }
+      20% { opacity: 1; }
+      27% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  }
+}
+
+@mixin slider-delays($slides: $slides, $on-screen: $on-screen) {
+  .slider__item.is-2nd {
+    animation-delay: $on-screen;
+  }
+
+  @if $slides > 2 {
+    .slider__item.is-3rd {
+      animation-delay: ($on-screen * 2);
+    }
+  }
+
+  @if $slides > 3 {
+    .slider__item.is-4th {
+      animation-delay: ($on-screen * 3);
+    }
+  }
+
+  @if $slides > 4 {
+    .slider__item.is-5th {
+      animation-delay: ($on-screen * 4);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<nav class="navbar is-projects">
+  <div class="navbar__header">
+
+    {% comment %} Logo {% endcomment %}
+    <a class="navbar__logo-link" href="{% if page.lang == 'ru' %}/{% else %}/en{% endif %}">
+
+      {% comment %} Logomark {% endcomment %}
+      <picture class="logo-mark">
+        <source srcset="{{ site.assets }}/img/components/logo/supermark-logo-mark-xs.svg" media="(max-width: 767px)">
+        <img class="svg" src="{{ site.assets }}/img/components/logo/supermark-logo-mark.svg" alt="{{ site.data.i18n.labels.logo[page.lang] }}">
+      </picture>
+
+      {% comment %} Logotype {% endcomment %}
+      <picture class="logo-type">
+        <source srcset="{{ site.assets }}/img/components/logo/supermark-logo-type.svg" media="(min-width: 992px)">
+        <img class="svg" src="{{ site.assets }}/img/components/logo/supermark-logo-type-sm.svg" alt="{{ site.data.i18n.labels.logo[page.lang] }}">
+      </picture>
+    </a>
+  </div>
+
+  <ul class="navbar__projects">
+    <li>
+      <a class="navbar__project is-2019 has-tooltip is-top" href="/{{ page.lang }}/projects/2019-paradiso" data-tooltip="{{ site.data.projects.projects-2019.title[page.lang] }}">
+        <span>{{ site.data.projects.projects-2019.title[page.lang] }}</span>
+      </a>
+    </li>
+
+    <li>
+      <a class="navbar__project is-polylog has-tooltip is-top" href="/{{ page.lang }}/projects/polylog" data-tooltip="{{ site.data.projects.polylog.title[page.lang] }}">
+        <span>{{ site.data.projects.polylog.title[page.lang] }}</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar__project is-forex-club has-tooltip is-top" href="/{{ page.lang }}/projects/forex-club" data-tooltip="Forex Club">
+        <span>Forex Club</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar__project is-cloud-delivery has-tooltip is-top" href="/{{ page.lang }}/projects/cloud-delivery" data-tooltip="Cloud Delivery">
+        <span>Cloud Delivery</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar__project is-sms-novel has-tooltip is-top" href="/{{ page.lang }}/projects/sms-novel" data-tooltip="{{ site.data.projects.sms-novel.title[page.lang] }}">
+        <span>{{ site.data.projects.sms-novel.title[page.lang] }}</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar__project is-gambling has-tooltip is-top" href="/{{ page.lang }}/projects/gambling" data-tooltip="{{ site.data.projects.gambling.title[page.lang] }}">
+        <span>{{ site.data.projects.gambling.title[page.lang] }}</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar__project is-oldie has-tooltip is-top" href="/{{ page.lang }}/projects/oldie" data-tooltip="Oldie but a goldie">
+        <span>Oldie but a goldie</span>
+      </a>
+    </li>
+  </ul>
+</nav>

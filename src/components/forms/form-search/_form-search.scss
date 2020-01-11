@@ -1,0 +1,87 @@
+.form.is-search {
+  position: relative;
+}
+
+// Input
+.form__search-input {
+  background: $color-background-secondary;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 0;
+
+  &::placeholder {
+    color: var(--color-ink-hint);
+  }
+
+  // Dev style
+  // &:focus {
+  //   background-color: #fcc;
+  // }
+}
+
+// Button
+.btn-search {
+  background: $transparent;
+  border: 0;
+  border-radius: 0;
+  opacity: .64;
+  position: absolute;
+  transition: opacity .2s;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.icon-search {
+  fill: $color-ink-icon;
+  transition: .4s fill;
+  width: 16px;
+  height: 16px;
+}
+
+// -----------------------------------------------------------------------------
+// RESULTS
+// -----------------------------------------------------------------------------
+
+
+.main.is-search .form.is-search {
+  padding-top: calc(1.1rem + var(--size-line));
+
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+    margin-top: 1.1rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: calc(1.1rem + var(--size-line) * 3);
+  }
+}
+
+.main.is-search .form__search-input {
+  padding-left: var(--size-2);
+  padding-right: 4rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: $headline-md-font-size;
+    font-weight: 300;
+    line-height: $headline-md-line-height;
+    padding-left: var(--size-line);
+    padding-right: 4rem;
+    height: 56px;
+  }
+}
+
+.main.is-search .btn-search {
+  top: 3.6rem;
+  right: 0;
+  width: 4.6rem;
+  height: 4.6rem;
+
+  @include media-breakpoint-up(md) {
+    top: 0;
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+}

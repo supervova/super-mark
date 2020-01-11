@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="127" viewBox="0 0 113 127">
+  <defs>
+    <linearGradient id="prices-elastigirl-a" x1=".054%" x2="100.751%" y1="101%" y2="32.251%">
+      <stop offset="0%"/>
+      <stop offset="51%" stop-color="#262633"/>
+      <stop offset="100%"/>
+    </linearGradient>
+    <linearGradient id="prices-elastigirl-b" x1="50.082%" x2="51.986%" y1="54.158%" y2="92.129%">
+      <stop offset="18%" stop-color="#574343"/>
+      <stop offset="55%" stop-color="#8E7979"/>
+      <stop offset="100%" stop-color="#574343"/>
+    </linearGradient>
+    <linearGradient id="prices-elastigirl-c" x1="0%" y1="50.099%" y2="50.099%">
+      <stop offset="0%" stop-color="#CC998C"/>
+      <stop offset="51%" stop-color="#FFD9CC"/>
+      <stop offset="100%" stop-color="#CC998C"/>
+    </linearGradient>
+    <radialGradient id="prices-elastigirl-d" cx="46.287%" cy="14.002%" r="268.592%" fx="46.287%" fy="14.002%" gradientTransform="matrix(.6666 -.1776 .1203 .9841 .137 .084)">
+      <stop offset="0%" stop-color="#806D66"/>
+      <stop offset="100%" stop-color="#FFD9CC" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="prices-elastigirl-e" x1="0%" y1="49.826%" y2="49.826%">
+      <stop offset="0%"/>
+      <stop offset="51%" stop-color="#262633"/>
+      <stop offset="100%"/>
+    </linearGradient>
+    <radialGradient id="prices-elastigirl-f" cx="50.001%" r="50.532%" fx="50.001%" fy="50%" gradientTransform="matrix(1 0 0 .97885 0 .01)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-g" cx="50.16%" r="119.169%" fx="50.16%" fy="50%" gradientTransform="matrix(1 0 0 .31113 0 .344)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-h" r="74.25%" fx="50%" fy="50%" gradientTransform="matrix(.54054 0 0 1 .23 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-i" cx="50.183%" r="147.619%" fx="50.183%" fy="50%" gradientTransform="matrix(1 0 0 .24683 0 .377)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-j" r="91.781%" fx="50%" fy="50%" gradientTransform="matrix(1 0 0 .41714 0 .291)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-k" cx="50.006%" cy="49.982%" r="97.779%" fx="50.006%" fy="49.982%" gradientTransform="matrix(.38788 0 0 1 .306 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-l" cx="40.088%" cy="39.97%" r="83.707%" fx="40.088%" fy="39.97%" gradientTransform="matrix(.74245 0 0 1 .103 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-m" cx="41.266%" cy="32.919%" r="78.502%" fx="41.266%" fy="32.919%" gradientTransform="matrix(.80298 0 0 1 .081 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-n" r="53.25%" fx="50%" fy="50%" gradientTransform="matrix(1 0 0 .88889 0 .056)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-o" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-p" cy="50.604%" r="112.566%" fx="50%" fy="50.604%" gradientTransform="matrix(.33123 0 0 1 .334 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-q" cx="49.879%" cy="50.061%" r="157.966%" fx="49.879%" fy="50.061%" gradientTransform="matrix(.22978 0 0 1 .384 0)">
+      <stop offset="0%" stop-color="#FFD9CC"/>
+      <stop offset="87%" stop-color="#CC998C"/>
+      <stop offset="100%" stop-color="#D1A296"/>
+    </radialGradient>
+    <linearGradient id="prices-elastigirl-r" x1="50.006%" x2="50.006%" y1="100.02%" y2="-.013%">
+      <stop offset="0%" stop-color="#262633"/>
+      <stop offset="100%"/>
+    </linearGradient>
+    <radialGradient id="prices-elastigirl-s" cx="40.088%" cy="39.97%" r="83.707%" fx="40.088%" fy="39.97%" gradientTransform="matrix(.74245 0 0 1 .103 0)">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#8C7373"/>
+    </radialGradient>
+    <radialGradient id="prices-elastigirl-t" cx="41.266%" cy="32.919%" r="78.502%" fx="41.266%" fy="32.919%" gradientTransform="matrix(.80298 0 0 1 .081 0)">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#8C7373"/>
+    </radialGradient>
+    <linearGradient id="prices-elastigirl-u" x1="50%" x2="50%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#BF8066"/>
+      <stop offset="9%" stop-color="#A26D57"/>
+      <stop offset="25%" stop-color="#714C3C"/>
+      <stop offset="41%" stop-color="#483127"/>
+      <stop offset="57%" stop-color="#291B16"/>
+      <stop offset="73%" stop-color="#120C0A"/>
+      <stop offset="87%" stop-color="#050302"/>
+      <stop offset="100%"/>
+    </linearGradient>
+    <linearGradient id="prices-elastigirl-v" x1="50%" x2="50%" y1="100.889%" y2=".889%">
+      <stop offset="0%" stop-color="#BF8066"/>
+      <stop offset="9%" stop-color="#A26D57"/>
+      <stop offset="25%" stop-color="#714C3C"/>
+      <stop offset="41%" stop-color="#483127"/>
+      <stop offset="57%" stop-color="#291B16"/>
+      <stop offset="73%" stop-color="#120C0A"/>
+      <stop offset="87%" stop-color="#050302"/>
+      <stop offset="100%"/>
+    </linearGradient>
+    <radialGradient id="prices-elastigirl-w" cx="34.418%" cy="29.808%" r="95.604%" fx="34.418%" fy="29.808%" gradientTransform="matrix(.66846 0 0 1 .114 0)">
+      <stop offset="0%" stop-color="#8E7979"/>
+      <stop offset="89%" stop-color="#735959"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#F20000" d="M93.4,123.87 C93.3711376,122.571331 93.2373689,121.277118 93,120 C92.3385765,116.399059 90.8983205,112.98613 88.78,110 C87.78,107.5 86.53,104.71 85.59,102.56 C88.22,103.62 93.27,106.02 94,108.96 C94.73,111.9 93.93,119.5 93.4,123.87 Z"/>
+    <path fill="#FF2626" d="M53,115 L45,115 L16,124 C14.4172653,123.334713 12.7168654,122.994633 11,123 C6.94,123 3.21,125 0.81,126.71 L0.41,123.9 C0.16,122.15 3,118 7.41,116.83 C14.83,114.89 36,106 36,106 L43.49,102.26 C43.8309211,102.090305 44.1898427,101.959483 44.56,101.87 L48.79,100.87 C50.79,104.35 53.67,110.34 53,115 Z"/>
+    <path fill="url(#prices-elastigirl-a)" d="M19.5,127 L19.26,126 C18.3034798,125.161435 17.215651,124.485765 16.04,124 C14.4572653,123.334713 12.7568654,122.994633 11.04,123 C6.98,123 3.25,125 0.85,126.71 L0.85,127 L19.5,127 Z"/>
+    <path fill="#BF0000" d="M53,115 C52.6889603,117.480263 51.5468965,119.782015 49.76,121.53 L49,120 C49,120 52,116 19,125 L19.26,126 C18.3034798,125.161435 17.215651,124.485765 16.04,124 L45.04,115 L53,115 Z"/>
+    <path fill="#D80000" d="M53,115 C52.6889603,117.480263 51.5468965,119.782015 49.76,121.53 L52.5,127 L93,127 C93,127 93.18,125.74 93.4,123.88 C93.3716762,122.577986 93.2379052,121.280408 93,120 C92.3385765,116.399059 90.8983205,112.98613 88.78,110 C89.23,111.06 89.65,112.07 90,113 C92,118 92,120 87,121 C82,122 80,122 72,123 C64,124 61,121 58,117 C55.81,114.08 51.47,105.27 49.31,100.75 L48.79,100.87 C50.79,104.35 53.67,110.34 53,115 Z"/>
+    <path fill="#FF2626" d="M87,121 C82,122 80,122 72,123 C64,124 61,121 58,117 C55.81,114.08 51.47,105.27 49.31,100.75 L61,97 L73,97 C73,97 74.87,101.73 83.1,102 C83.7213483,102.011379 84.3364502,102.126288 84.92,102.34 L85.59,102.61 C86.93,105.68 88.82,110.05 90,113.01 C92,118 92,120 87,121 Z"/>
+    <path fill="url(#prices-elastigirl-b)" d="M106,42 C99.87,34.61 104,27.28 98,23 C93.11,19.52 87.56,23.37 84,19 C82.91,17.66 81.39,16.12 81.16,14.66 C81.1389089,15.1099289 81.0854372,15.5577542 81,16 C79.48,23.82 69.12,24.51 53,31 C28.23,41 24.34,43.84 23,46 C20.07,50.71 20.45,58.84 20.4,64.88 C22.2350519,68.8052718 24.6448549,72.4351429 27.55,75.65 C25.08,74.65 23.69,74.11 23.5,74.5 C22.9,75.77 35.01,86.5 51.7,89.08 C55.8811302,89.8952036 60.1546047,90.1307494 64.4,89.78 C65.3386342,91.1139194 66.5700625,92.2153637 68,93 C73.58,95.91 81.07,91.8 88,88 C89.74,87.05 109.41,75.82 112,53 C112.1,52.09 112.28,50.23 112.31,47.79 C109.92,47 108.43,44.93 106,42 Z"/>
+    <path fill="url(#prices-elastigirl-c)" d="M76,85 C75.6080983,88.5562793 74.884959,92.068192 73.84,95.49 L73.5,95.49 C69.0345014,95.5990066 64.5986996,94.7357313 60.5,92.96 L60.5,86.5 L76,85 Z"/>
+    <path fill="url(#prices-elastigirl-d)" d="M76,85 C75.6080983,88.5562793 74.884959,92.068192 73.84,95.49 L73.5,95.49 C69.0345014,95.5990066 64.5986996,94.7357313 60.5,92.96 L60.5,86.5 L76,85 Z"/>
+    <path fill="url(#prices-elastigirl-e)" d="M73.84,95.49 C73.72,95.84 73.16,97.69 73,98 C71,102 60.5,101.5 60.5,96.5 L60.5,93 C64.5986996,94.7757313 69.0345014,95.6390066 73.5,95.53 L73.84,95.49 Z"/>
+    <path fill="#CC998C" d="M96,57 C98.44,50.62 101.33,50 102,50 C104,50 106.15,53.6 106,57 C105.82,61.06 103,65 95,65 C95.63,62.8 94.59,60.68 96,57 Z"/>
+    <path fill="url(#prices-elastigirl-f)" d="M100,54 C100.00007,66.8963167 92.7038365,78.6825687 81.1605574,84.4330201 C69.6172783,90.1834716 55.8142253,88.9081343 45.52,81.14 C41.52,78.08 36.87,74.22 34.72,69.58 C32.4954563,64.7041903 31.8926235,59.2436468 33,54 C36.68,35.59 47.22,19 66,19 C74.8688915,19.0621333 83.3461052,22.6617994 89.55,29 C93.38,32.83 95.35,37.56 97.13,42.78 C98.34,46.3 100,50.09 100,54 Z"/>
+    <polygon fill="url(#prices-elastigirl-g)" points="60.68 54.26 59.3 64.06 62 61 62.43 54"/>
+    <path fill="url(#prices-elastigirl-h)" d="M61.26,60.82 L59.46,63.22 C59.2781894,63.4624141 59.2489446,63.7867437 59.3844582,64.0577709 C59.5199719,64.3287981 59.7969824,64.5 60.1,64.5 L65.9,64.5 C66.2030176,64.5 66.4800281,64.3287981 66.6155418,64.0577709 C66.7510554,63.7867437 66.7218106,63.4624141 66.54,63.22 L64.74,60.82 C64.5878977,60.6197798 64.3514375,60.5015497 64.1,60.5 L61.9,60.5 C61.6485625,60.5015497 61.4121023,60.6197798 61.26,60.82 Z"/>
+    <polygon fill="url(#prices-elastigirl-i)" points="66 54 66.73 64.06 64 60 64 53"/>
+    <polygon fill="url(#prices-elastigirl-j)" points="61.58 60.5 62.5 53.5 64.5 53.5 64.5 60.5"/>
+    <path fill="url(#prices-elastigirl-k)" d="M62,42 C70.3,42.36 72.24,35.75 81,36 C86.14,36.15 92.82,38.64 94,43 C95.53,48.63 87.78,56.9 80,58 C73.12,59 71.26,53.63 63,54 C54.74,54.37 53.46,59.65 47,59 C39.34,58.23 33.4,49.78 35,44 C36.28,39.37 44,38 47,38 C54.26,38 55.16,41.7 62,42 Z"/>
+    <path fill="url(#prices-elastigirl-l)" d="M70,50 C70.18,52.93 74.38,55.36 78,55 C81.85,54.62 86,53 85,48 C84.22,44.08 80.67,43.33 78,44 C74,45 69.81,46.88 70,50 Z"/>
+    <path fill="url(#prices-elastigirl-m)" d="M43,49 C41.9,51.6 43.76,54.76 46,56 C49.8,58.09 55.66,55.18 56,52 C56.29,49.3 52.64,46.17 49,46 C47.15,45.92 44,46.54 43,49 Z"/>
+    <ellipse cx="51" cy="51.5" fill="url(#prices-elastigirl-n)" rx="4" ry="4.5"/>
+    <circle cx="77.5" cy="50.5" r="4.5" fill="url(#prices-elastigirl-o)"/>
+    <circle cx="77.25" cy="50.5" r="2.5" fill="url(#prices-elastigirl-o)"/>
+    <circle cx="51.5" cy="51.5" r="2.5" fill="url(#prices-elastigirl-o)"/>
+    <circle cx="48.5" cy="48.5" r="1.5" fill="url(#prices-elastigirl-o)"/>
+    <circle cx="74.5" cy="47.5" r="1.5" fill="url(#prices-elastigirl-o)"/>
+    <path fill="url(#prices-elastigirl-p)" d="M74.52,67 C72.5631908,70.7261686 68.9235537,73.2744567 64.752788,73.8385031 C60.5820224,74.4025495 56.3962555,72.9125541 53.52,69.84 C60.2686747,73.4456781 68.5592951,72.3907999 74.19,67.21 C74.3042706,67.1469485 74.4144858,67.0768115 74.52,67 Z"/>
+    <path fill="url(#prices-elastigirl-q)" d="M74.18,67.24 C68.5492951,72.4207999 60.2586747,73.4756781 53.51,69.87 C53.51,69.87 53.51,69.87 53.51,69.87 C60.4576,72.055315 68.0127642,71.1022469 74.2,67.26 L74.18,67.24 Z"/>
+    <path fill="#000" d="M97.13,42.73 C95.35,37.51 93.38,32.73 89.55,28.95 C83.5796841,22.8754801 75.5114605,19.3154435 67,19 C58.56,21.77 48.12,26.85 42.67,31 C41.3826973,32.6825111 40.2259893,34.4610332 39.21,36.32 C41.32,39.58 68.21,35.95 77.63,23.99 C81.68,25.93 89.16,30.2 91.23,35.99 C92.2731279,39.100188 94.4419005,41.707709 97.31,43.3 C97.26,43.11 97.19,42.92 97.13,42.73 Z" opacity=".12"/>
+    <polygon fill="#E3C1B6" points="60.68 54.26 59.3 64.06 62 61 62.43 54"/>
+    <path fill="#CC998C" d="M61.26,60.82 L59.46,63.22 C59.2781894,63.4624141 59.2489446,63.7867437 59.3844582,64.0577709 C59.5199719,64.3287981 59.7969824,64.5 60.1,64.5 L65.9,64.5 C66.2030176,64.5 66.4800281,64.3287981 66.6155418,64.0577709 C66.7510554,63.7867437 66.7218106,63.4624141 66.54,63.22 L64.74,60.82 C64.5878977,60.6197798 64.3514375,60.5015497 64.1,60.5 L61.9,60.5 C61.6485625,60.5015497 61.4121023,60.6197798 61.26,60.82 Z"/>
+    <polygon fill="#BFA399" points="66 54 66.73 64.06 64 60 64 53"/>
+    <polygon fill="#FFD9CC" points="61.58 60.5 62.5 53.5 64.5 53.5 64.5 60.5"/>
+    <path fill="url(#prices-elastigirl-r)" d="M62,42 C70.3,42.36 72.24,35.75 81,36 C86.14,36.15 92.82,38.64 94,43 C95.53,48.63 87.78,56.9 80,58 C73.12,59 71.26,53.63 63,54 C54.74,54.37 53.46,59.65 47,59 C39.34,58.23 33.4,49.78 35,44 C36.28,39.37 44,38 47,38 C54.26,38 55.16,41.7 62,42 Z"/>
+    <path fill="url(#prices-elastigirl-s)" d="M70,50 C70.18,52.93 74.38,55.36 78,55 C81.85,54.62 86,53 85,48 C84.22,44.08 80.67,43.33 78,44 C74,45 69.81,46.88 70,50 Z"/>
+    <path fill="url(#prices-elastigirl-t)" d="M43,49 C41.9,51.6 43.76,54.76 46,56 C49.8,58.09 55.66,55.18 56,52 C56.29,49.3 52.64,46.17 49,46 C47.15,45.92 44,46.54 43,49 Z"/>
+    <ellipse cx="51" cy="51.5" fill="url(#prices-elastigirl-u)" rx="4" ry="4.5"/>
+    <circle cx="77.5" cy="50.5" r="4.5" fill="url(#prices-elastigirl-v)"/>
+    <circle cx="77.25" cy="50.5" r="2.5" fill="#000"/>
+    <circle cx="51.5" cy="51.5" r="2.5" fill="#000"/>
+    <circle cx="48.5" cy="48.5" r="1.5" fill="#FFF"/>
+    <circle cx="74.5" cy="47.5" r="1.5" fill="#FFF"/>
+    <path fill="#8C7373" d="M74.52,67 C72.5631908,70.7261686 68.9235537,73.2744567 64.752788,73.8385031 C60.5820224,74.4025495 56.3962555,72.9125541 53.52,69.84 C60.2686747,73.4456781 68.5592951,72.3907999 74.19,67.21 C74.3042706,67.1469485 74.4144858,67.0768115 74.52,67 Z"/>
+    <path fill="#5C5C5C" d="M74.18,67.24 C68.5492951,72.4207999 60.2586747,73.4756781 53.51,69.87 C53.51,69.87 53.51,69.87 53.51,69.87 C60.4576,72.055315 68.0127642,71.1022469 74.2,67.26 L74.18,67.24 Z"/>
+    <path fill="url(#prices-elastigirl-w)" d="M25,48 C26.34,45.84 28.23,44 53,34 C69.12,27.51 79.48,23.82 81,16 C81.0854372,15.5577542 81.1389089,15.1099289 81.16,14.66 C81.3768507,16.244449 82.0119702,17.7425025 83,19 C86.56,23.37 92.11,20.52 97,24 C103,28.28 98.87,35.61 105,43 C106.889546,45.3065808 109.440861,46.978373 112.31,47.79 C112.4,39.92 110.9,26 100,18 C98.72,17.07 90.22,10.86 81.8,12.8 L81.5,12.5 C78.65,9.73 69.1,0.44 55.5,0.5 C36.6,0.58 19.56,18.66 16.5,38.5 C15.1667759,47.4855238 16.5238086,56.6646324 20.4,64.88 C20.3960449,58.9431908 21.9845709,53.1139912 25,48 Z"/>
+    <path fill="#564343" d="M75,12 C74.82,11.45 62.87,14.37 51,19 C44.4631936,21.5501372 38.1141464,24.5575806 32,28 C44.74,23.83 55.23,20 63,17 C70.31,14.2 75.12,12.35 75,12 Z"/>
+    <path fill="#D99900" d="M73,105 C67.08,104.7 60.71,110.08 61,114 C61.36,118.79 71.52,122 80,121 C84,120.52 91.93,120 89.93,115 C88.24,110.77 82,105.46 73,105 Z"/>
+    <path fill="#262633" d="M74.77,107.73 C70.87,108.05 64.59,110.53 64.56,113.23 C64.51,116.82 73.75,121.75 80.56,119.71 C83,118.98 86.66,116.38 86.69,113.88 C86.69,110.98 81.84,107.14 77.15,106.75 C76.36,106.68 75.55,107.67 74.77,107.73 Z"/>
+    <ellipse cx="73.46" cy="107.09" fill="#F2B200" rx="4.54" ry="3.01"/>
+    <ellipse cx="73.55" cy="107.25" fill="#FFF" rx="2.45" ry="1.5"/>
+    <polygon fill="#F2B200" points="86.08 120.51 78.92 110.1 72.5 112.75 76.75 121.92"/>
+    <path fill="#997369" d="M100.38,55.88 C99.59,54.97 100.86,52.78 102.19,52.62 C103.52,52.46 105.08,54.62 104.88,56.56 C104.58,59.31 100.67,61.27 100.19,60.25 C99.63,59.06 102.3,58.19 102.31,57.06 C102.380118,56.6032817 102.089061,56.1688683 101.64,56.06 C101.16,55.93 100.58,56.12 100.38,55.88 Z"/>
+  </g>
+</svg>

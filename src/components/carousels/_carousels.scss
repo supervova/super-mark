@@ -1,0 +1,227 @@
+// stylelint-disable order/order
+
+.carousel-overflow {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+// -----------------------------------------------------------------------------
+// SLIDE
+// -----------------------------------------------------------------------------
+
+.carousel-inner {
+  @include media-breakpoint-up(md) {
+    // Height of main picture + 48px top and bottom padding
+    height: 591px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-bottom: ($spacer * 2);
+  }
+}
+
+// Slide container
+
+.carousel-item {
+  background: $color-background-primary;
+  margin: 0;
+  padding: 0 16px 5.5rem;
+
+  // 100% height minus header height
+  min-height: calc(100vh - 56px);
+
+  @include media-breakpoint-up(md) {
+    padding: 4.8rem 64px 12.6rem;
+    min-height: 624px;
+    height: round(872 / 1024 * 100) * 1vh;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 63px 24px 126px 40px;
+    min-height: 591px;
+    height: auto;
+  }
+}
+
+// Choreography with translateX
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  transition: transform $duration-xl $easing;
+  will-change: transform;
+}
+
+
+// -----------------------------------------------------------------------------
+// PREV-NEXT
+// -----------------------------------------------------------------------------
+
+.carousel-pager {
+  // Grey text and top border is for grey slides
+  border-top: 1px solid rgb(201, 204, 208);
+  color: rgb(171, 174, 178);
+  padding: 17px 0 14px;
+  opacity: 1;
+  position: absolute;
+  bottom: 8px;
+  transition: color .4s, opacity .2s;
+  width: 100%;
+  height: 48px;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+
+    // Show only on portrait layouts
+    @media (min-device-height: 1024px) {
+      display: block;
+      border-top: 0;
+
+      // Center 'You can swipe' on tablets
+      text-align: center;
+      padding-top: 16px;
+      top: 662px;
+      bottom: auto;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  // On color background
+  .is-highlight & {
+    border-top-color: rgb(200, 157, 20);
+    color: $color-ink-light-muted;
+
+    @include media-breakpoint-up(md) {
+      border-top: 0;
+    }
+  }
+
+  // Hide it on carousel transition to avoid flick on phones
+  &.hidden {
+    opacity: 0;
+
+    @include media-breakpoint-up(md) {
+      opacity: 1;
+    }
+  }
+}
+
+// Prev and Next
+
+.carousel-control {
+  background-repeat: no-repeat;
+  font-size: 100%;
+  line-height: 1.5;
+  opacity: 1;
+  outline: 0;
+  text-align: left;
+  text-shadow: none;
+  width: auto;
+
+  @include media-breakpoint-up(md) {
+    width: 48px;
+    height: 48px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .04);
+      border-radius: 3px;
+    }
+  }
+}
+
+// Previous
+.carousel-pager .prev {
+  // Hide Prev on phones
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2227%22%20viewBox%3D%220%200%2013%2027%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.893%2013.408l9.467-11.36.64-.768L11.464%200l-.64.768-9.942%2011.93-.699.582.107.128-.107.128.699.582%209.941%2011.93.64.769L13%2025.537l-.64-.769-9.467-11.36z%22%20fill%3D%22%23C9CCD0%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+    background-position: 50% 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 47px;
+
+    .is-highlight & {
+      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2227%22%20viewBox%3D%220%200%2013%2027%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.893%2013.408l9.467-11.36.64-.768L11.464%200l-.64.768-9.942%2011.93-.699.582.107.128-.107.128.699.582%209.941%2011.93.64.769L13%2025.537l-.64-.769-9.467-11.36z%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20fill-opacity%3D%22.64%22%2F%3E%3C%2Fsvg%3E');
+    }
+  }
+}
+
+// Next
+.carousel-pager .next {
+  @include chevron-right();
+  color: rgb(171, 174, 178);
+  position: absolute;
+  top: 17px;
+  right: 16px;
+  bottom: auto;
+  left: auto;
+
+  .is-highlight & {
+    @include chevron-right-white();
+  }
+
+  @include media-breakpoint-up(md) {
+    @include image-replacement;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2227%22%20viewBox%3D%220%200%2013%2027%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.107%2013.408L.64%202.048%200%201.28%201.536%200l.64.768%209.942%2011.93.699.582-.107.128.107.128-.699.582-9.941%2011.93-.64.769L0%2025.537l.64-.769%209.467-11.36z%22%20fill%3D%22%23C9CCD0%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+    background-position: 50% 50%;
+    display: block;
+    top: 0;
+    right: 47px;
+
+    // Next on highlight (tablet)
+    .is-highlight & {
+      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2227%22%20viewBox%3D%220%200%2013%2027%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.107%2013.408L.64%202.048%200%201.28%201.536%200l.64.768%209.942%2011.93.699.582-.107.128.107.128-.699.582-9.941%2011.93-.64.769L0%2025.537l.64-.769%209.467-11.36z%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20fill-opacity%3D%22.64%22%2F%3E%3C%2Fsvg%3E');
+      background-position: 50% 50%;
+    }
+  }
+}
+
+// You can swipe
+.carousel-pager-hint {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 40px;
+  }
+}
+
+// You can swipe icon
+.icon-swipe {
+  fill: rgb(181, 184, 188);
+  margin-top: -19px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: fill .4s;
+  width: 32px;
+  height: 32px;
+
+  .is-highlight & {
+    fill: $color-ink-light-icon;
+  }
+}
+
+// Page counter
+.carousel-counter {
+  @extend .d-inline-block, .d-md-none;
+  padding-right: 8px;
+  padding-left: 16px;
+}
+
+
+
+// -----------------------------------------------------------------------------
+// LAZY LOAD
+// -----------------------------------------------------------------------------
+
+.lazy-load {
+  background: url('#{$site-assets}/img/base/media/spinner.gif') center center no-repeat;
+}

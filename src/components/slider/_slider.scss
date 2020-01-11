@@ -1,0 +1,40 @@
+// MARKUP
+// ul.slider(aria-label='what is it?')
+//   li.slider__item
+//     // Slide Content
+//   li.slider__item.is-2nd
+//     // Parent and children may be other elements. E. g. divs, figure/imgs etc
+//     // Other Slides
+
+@import "mixins";
+
+$slides:    5;
+$on-screen: 2s;
+
+@include slider-slides();
+@include slider-slides(2);
+@include slider-delays();
+
+.slider {
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider__item {
+  list-style: none;
+  padding-left: 0;
+  opacity: 1;
+  position: relative;
+  transition: opacity $duration $easing;
+}
+
+.slider__item ~ .slider__item {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}

@@ -1,0 +1,87 @@
+$chevvy-top-position: 1.6rem;
+
+
+// -----------------------------------------------------------------------------
+// BODY AND HEADING COMMON STYLES
+// -----------------------------------------------------------------------------
+
+.collapse-toggler,
+.main-collapse {
+  background-color: $color-background-secondary;
+  margin-right: -16px;
+  margin-left: -16px;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// COLLAPSIBLE SECTION HEADER
+// -----------------------------------------------------------------------------
+
+.collapse-toggler {
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: bolder;
+
+  // 'HR' margin
+  margin-top: 1px;
+
+  // 32px is a padding for chevvy
+  padding: 2.5rem ($spacer-sm * 4) 2.5rem ($spacer-sm * 3);
+  position: relative;
+  transition: color .2s;
+
+  // The first item under the picture. Remove margin and increase top padding
+  &.is-first {
+    border-radius: $border-radius-sm $border-radius-sm 0 0;
+    margin-top: .6rem;
+    padding-top: 2.6rem;
+  }
+
+  .collapse-toggler[aria-expanded='true'] .icon-chevron {
+    transform: rotate(90deg);
+  }
+}
+
+.collapse-toggler .icon-chevron {
+  position: absolute;
+  top: 2.8rem;
+  right: ($spacer-sm * 1.5);
+  transform: rotate(180deg);
+  transition: transform $duration-sm $easing;
+}
+
+.collapse-toggler[aria-expanded='true'] .icon-chevron {
+  transform: rotate(90deg);
+}
+
+// -----------------------------------------------------------------------------
+// COLLAPSIBLE SECTION BODY
+// -----------------------------------------------------------------------------
+
+.main-collapse {
+  padding: 0 ($spacer-sm * 3) 1.8rem;
+
+  > :first-child {
+    padding-top: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// READ MORE IN BLOG FEED
+// -----------------------------------------------------------------------------
+
+.collapse-full-story-toggler {
+  border: 0;
+  cursor: pointer;
+  display: inline;
+  white-space: nowrap;
+  padding: 0;
+}
+

@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// ABOUT
+// ---------------------------------------------------------------------------
+
+.media.personal {
+  padding-top: 4.2rem;
+}
+
+.media.personal h2 {
+  padding: 0;
+}
+
+
+// -----------------------------------------------------------------------------
+// SERVICES
+// ---------------------------------------------------------------------------
+
+.tab-content.is-services {
+  min-height: 48rem;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 26.4rem;
+  }
+}
+
+.tab-content.is-services.is-shortened {
+  min-height: 40.8rem;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 26.4rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 19.2rem;
+  }
+}

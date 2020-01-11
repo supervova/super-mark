@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<article class="main is-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <span class="sr-only" itemprop="author">Владимир Никишин</span>
+  <span class="sr-only" itemprop="publisher">Владимир Никишин</span>
+
+  {% comment %} SUBHEADER {% endcomment %}
+  <div class="main-subheader">
+    {% comment %} Если первой страницы раздела нет, ссылку во .eyebrow не вставлять;
+    ссылка .btn-back — на первую {% endcomment %}
+    <a class="btn-back" href="/ru/blog" aria-label="На первую страницу" title="На первую страницу"></a>
+    <a class="eyebrow is-link" href="/ru/blog">Блог</a>
+    <button class="modal-close" data-dismiss="modal" aria-label="Закрыть" title="Закрыть">
+      <svg class="icon-close" role="presentation">
+        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  {% if page.image %}
+    <figure class="main-media media">
+      <img src="{{ site.assets }}/{{ page.image }}" itemprop="image" alt="{{ page.title }}">
+    </figure>
+  {% endif %}
+
+  <h1 class="main-title has-eyebrow" data-section="Блог" itemprop="headline">
+    {{ page.title }}
+  </h1>
+
+  {% if page.description %}
+    <p class="main-lead" itemprop="description">
+      {{ page.description }}
+    </p>
+  {% endif %}
+
+  {% comment %} BODY {% endcomment %}
+  <div class="main-body" itemprop="articleBody">
+    {% comment %}
+      p Lorem ipsum
+      h2.collapse-toggler.is-first(data-toggle='collapse', data-target='#main-section-challenge', aria-expanded='false', aria-controls='main-section-challenge')
+        | Subhead (collapse-toggler)
+        svg.icon.icon-chevron(role='presentation')
+          use(xlink:href='{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron')
+      #main-section-challenge.main-collapse.collapse
+        p Lorem ipsum
+        p.last Lorem ipsum
+      h2.collapse-toggler.is-last(data-toggle='collapse', data-target='#main-section-solution', aria-expanded='false', aria-controls='main-section-solution')
+        | Subhead (collapse-toggler)
+        svg.icon.icon-chevron(role='presentation')
+          use(xlink:href='{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron')
+      #main-section-solution.main-collapse.collapse
+        p Lorem ipsum
+    {% endcomment %}
+
+    {{ content }}
+
+    {% comment %} META {% endcomment %}
+    <footer class="main-meta meta">
+
+      {% include date.html %}
+
+      {% comment %} Tags {% endcomment %}
+      {% if page.categories[0] %}
+      <div class="meta-tags">
+        {% assign categories = page.categories %}
+        {% for category in categories %}
+          <a class="meta-tag tag" href="{{ site.url }}/ru/blog/categories#{{ category | slugify | uri_escape }}" rel="tag">{{category}}</a>{%- unless forloop.last -%}, {%- endunless -%}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% comment %} BLOG SUBSCRITION {% endcomment %}
+      {% include subscription.html %}
+
+      {% comment %} LIKE & SHARE: maybe transformer? {% endcomment %}
+      <div class="social-tools is-main dropdown">
+        {% include social-tools/dropdown.html %}
+      </div>
+
+    </footer>
+
+  </div>{% comment %} / main-body {% endcomment %}
+
+  {% comment %} COMMENTS {% endcomment %}
+  {% include disqus.html %}
+
+</article>

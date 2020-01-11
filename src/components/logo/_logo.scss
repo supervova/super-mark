@@ -1,0 +1,188 @@
+// -----------------------------------------------------------------------------
+// LOGO AND TAGLINE CONTAINER
+// -----------------------------------------------------------------------------
+
+.header-logo {
+  position: absolute;
+  top: 0;
+
+  // Next to toggler
+  left: 72px;
+  width: 144px;
+  height: 56px;
+
+  @include media-breakpoint-up(md) {
+    top: 38px;
+    left: 0;
+    width: 380px;
+    height: 106px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 62px;
+    width: 160px;
+    height: 187px;
+  }
+}
+
+.logo-link {
+  left: 0;
+
+  // Set absolute position for link height and width
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .is-highlight & {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LOGOMARK
+// -----------------------------------------------------------------------------
+
+.logo-mark {
+  position: absolute;
+  top: 13px;
+  left: 0;
+
+  // On tablets
+  @include media-breakpoint-up(md) {
+    top: 0;
+  }
+
+  // On desktops
+  @include media-breakpoint-up(lg) {
+    position: static;
+    margin: 0 auto;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LOGOTYPE (SVG)
+// -----------------------------------------------------------------------------
+
+// DIV - Container for SVG
+
+.logo-type {
+  // Set alt text to normal size
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1.5;
+  position: absolute;
+  top: 1.5rem;
+  left: 3.2rem;
+  width: 116px;
+  height: 25px;
+
+  @include media-breakpoint-up(md) {
+    top: 4rem;
+    left: 113px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: static;
+    margin: .4rem auto .3rem;
+  }
+}
+
+// SVG
+// WARNING! First style for individual <path> will affect all instances of that
+// path. But we can't redefine style of externally referenced because <path> it
+// crosses a shadow DOM boundary
+// https://css-tricks.com/svg-use-with-external-reference-take-2/
+// https://css-tricks.com/svg-sprites-use-better-icon-fonts/
+// ? So we must abandon SVG <use> with external reference and go WET
+
+.logo-type svg {
+  width: 116px;
+  height: 25px;
+}
+
+.logo-type-super {
+  fill: $logo-super-color;
+  // transition: all $duration-lg $easing-appearance;
+
+  @include media-breakpoint-up(md) {
+    fill: $logo-super-color-md;
+    transition: fill $duration $easing $delay;
+
+    .is-highlight & {
+      fill: $logo-super-home-color;
+    }
+
+    // Reset for navbar
+    .navbar-header & {
+      fill: $logo-super-color;
+    }
+  }
+}
+
+.logo-type .logo-type-mark {
+  fill: $logo-mark-color;
+  // transition: all $duration-lg $easing-appearance;
+
+  @include media-breakpoint-up(md) {
+    fill: $logo-mark-color-md;
+    transition: fill $duration $easing $delay;
+
+    // Reset for navbar
+    .is-highlight &,
+    .navbar-header & {
+      fill: $logo-mark-color;
+    }
+  }
+}
+
+.logo-type-shadow {
+  fill: rgba(0, 0, 0, .24);
+  // transition: all $duration-lg $easing-appearance;
+
+  @include media-breakpoint-up(md) {
+    fill: #fff;
+    transition: fill $duration $easing $delay;
+
+    .is-highlight & {
+      fill: #c18e00;
+    }
+
+    // Reset for navbar
+    .navbar-header & {
+      fill: rgba(0, 0, 0, .24);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+
+// TAGLINE
+
+.logo-tagline {
+  @extend .d-none, .d-md-block;
+
+  color: $logo-tagline-color;
+  transition: color $duration-sm $easing $delay;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 6.4rem;
+    left: 113px;
+    width: 270px;
+
+    .is-highlight & {
+      color: $logo-tagline-home-color;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: 2.3rem;
+    position: static;
+    width: 100%;
+  }
+}

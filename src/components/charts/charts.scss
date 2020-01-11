@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// CHART BARS: TABLE
+// -----------------------------------------------------------------------------
+
+.chart-bars {
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+
+  tr {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: table-row;
+    }
+  }
+
+  th {
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: $spacer-sm;
+
+    @include media-breakpoint-up(md) {
+      display: table-cell;
+    }
+  }
+
+  td {
+    display: inline-block;
+    font-weight: bolder;
+
+    @include media-breakpoint-up(md) {
+      display: table-cell;
+    }
+  }
+}
+
+.chart-bars.two-cols th {
+  width: 75%;
+
+
+  @include media-breakpoint-up(md) {
+    width: 40%;
+  }
+}
+
+.chart-bars.two-cols td {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: $spacer-sm;
+  padding-left: $spacer-sm;
+}
+
+.chart-bars.two-cols .is-secondary {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: table-cell;
+  }
+}
+
+.chart-bars.two-cols tr td:nth-child(2) {
+  padding-right: ($spacer-sm * 2);
+}
+
+.chart-bars-track {
+  background: $color-background-secondary;
+  border-radius: $border-radius-sm;
+}
+
+.chart-bars-caption {
+  background-image: $color-secondary-gradient;
+  border-radius: $border-radius-sm;
+  color: $color-ink-light-normal;
+  font-size: $font-size-sm;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .12);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: ($spacer-sm-px * 2);
+  padding-right: ($spacer-sm-px * 2);
+  padding-left: ($spacer-sm-px * 2);
+  overflow: hidden;
+  height: ($spacer-sm-px * 5);
+}
+

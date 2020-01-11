@@ -1,0 +1,28 @@
+.teaser:not(:last-child) {
+  border-bottom: 1px solid $color-ink-border;
+  margin-bottom: 2.9rem;
+  padding-bottom: 3.7rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 2.8rem;
+  }
+}
+
+.teaser__title {
+  font-size: 2.4rem;
+  padding: 0 0 1.1rem;
+}
+
+.teaser__media {
+  @extend %border;
+}
+
+.teaser__summary {
+  color: $color-ink-normal;
+  margin-bottom: .8rem;
+}
+
+.teaser__wrapper-link:hover {
+  text-decoration: none;
+}
+

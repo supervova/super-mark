@@ -1,0 +1,752 @@
+// stylelint-disable order/order
+
+// ../../front.scss
+// /base/mixins.scss
+
+// Custom settings and tools
+@import '../../base/functions';
+@import '../../base/variables';
+@import '../../base/mixins';
+
+// Bootstrap
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+@import './node_modules/bootstrap/scss/carousel';
+@import './node_modules/bootstrap/scss/utilities/display';
+
+@import '../../components/carousels/carousels';
+@import '../../components/carousels/slideshows';
+
+// -----------------------------------------------------------------------------
+// LAYOUT TWEAK
+// -----------------------------------------------------------------------------
+// #region
+
+// Desktop layout
+//
+// left padding:           24 // Need
+// navbar:                160
+// gap:                    40
+//
+// left article padding:   40 // Need to expand header to left
+// article:               640
+// right article padding:  24 // Need for readability on carousel transitions
+//
+// total:                 928
+
+// grid-breakpoints:lg == 992px
+
+.p-home .wrapper {
+  @include media-breakpoint-up(lg) {
+    // Slightly raise the layout to the visual center.
+    transform: translate3d(0, -29px, 0);
+
+    // left padding + navbar + gap
+    // width of .carousel-item (680px) and left padding (24px)
+    padding: 0 0 0 224px;
+    max-width: 928px;
+  }
+}
+
+.p-home .header-logo {
+  @include media-breakpoint-up(lg) {
+    top: 53px;
+    left: 24px;
+  }
+}
+
+.p-home .navbar {
+  @include media-breakpoint-up(lg) {
+    top: 258px;
+    left: 24px;
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// SLIDES/SECTIONS COMMON STYLES
+// -----------------------------------------------------------------------------
+// #region
+
+// SLIDE TRANSITION
+
+.p-home .carousel-item:not(.is-prices) {
+  .main-header,
+  .intro-section-body,
+  .intro-section-footer {
+    opacity: 0;
+    transition: opacity $duration $easing;
+  }
+
+  &.active {
+    .main-header,
+    .intro-section-body,
+    .intro-section-footer {
+      opacity: 1;
+    }
+  }
+}
+
+.p-home .carousel-item:not(.is-prices) .intro-section-body {
+  transition-delay: $duration-xs;
+}
+
+.p-home .carousel-item .intro-section-footer {
+  transition-delay: $duration-sm;
+}
+
+
+// SLIDE BODY
+
+.intro-section-body {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5.4rem;
+  }
+}
+
+.intro-section-copy {
+  @include media-breakpoint-up(md) {
+    flex: 0 0 percentage(384/640);
+    max-width: percentage(384/640);
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-basis: percentage(400/640);
+    max-width: percentage(400/640);
+  }
+}
+
+.intro-section-copy p {
+  padding-top: 0;
+  margin-bottom: 24px;
+}
+
+// SLIDE SIDEBAR
+
+.intro-section-sidebar {
+  color: $color-ink-muted;
+  margin-bottom: 2.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    margin-left: percentage(64/640);
+    flex: 0 0 percentage(192/640);
+    max-width: percentage(192/640);
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: percentage(80/640);
+    flex-basis: percentage(160/640);
+    max-width: percentage(160/640);
+  }
+}
+
+// SLIDE FOOTER
+
+.intro-section-footer {
+  text-align: center;
+  margin-top: -.1rem;
+  padding-bottom: 5.5rem;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+.intro-section-footer .link-modal {
+  margin-right: ($spacer-sm * 2);
+}
+
+.intro-section-footer .link-next {
+  @extend .d-none, .d-md-inline-block;
+}
+
+.intro-section-footer .dropup.is-subscription {
+  display: inline-block;
+  transform: translateY(-.2rem);
+}
+// #endregion
+
+
+// -----------------------------------------------------------------------------
+// CTA IN BODY
+// -----------------------------------------------------------------------------
+// #region
+
+.carousel-item .btn-primary {
+
+  // Extend by .d-md-none isn't impossible cause it's upper than btn-cta w/
+  // display:block, so responsive behavior has determined by mixin.
+  @include media-breakpoint-up(md) {
+    display: none !important;
+  }
+}
+
+// The first slide
+.is-highlight .btn-primary {
+  // Gap between buttons and next block (pager) change on hover since the button
+  // size increases.
+  margin-bottom: 4.3rem;
+
+  &:hover,
+  &:focus {
+    margin-bottom: 4.1rem;
+  }
+}
+
+// Other slides
+.intro-section-footer .btn-primary {
+  margin: 36px 0 12px;
+
+  &:hover,
+  &:focus {
+    margin: 34px 0 10px;
+  }
+}
+
+
+// SECONDARY CTA
+
+.intro-section.is-highlight .link-next {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    @include chevron-right-white();
+    background-position: 100% calc(50% + .4rem);
+    display: inline-block;
+    padding-top: .6rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    bottom: 6.6rem;
+    left: 4rem;
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// SOCIAL TOOLS
+// -----------------------------------------------------------------------------
+// #region
+
+// Add shadow in order evaluate buttons to skip sliding footer from below
+.p-home .social-tools .facebook-like,
+.btn-share {
+  @include media-breakpoint-up(md) {
+    box-shadow: $box-shadow-z2;
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 1) COVER / HOME
+// -----------------------------------------------------------------------------
+// #region
+
+// Yellow Body
+.p-home {
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%222560%22%20height%3D%221058%22%20viewBox%3D%220%200%202560%201058%22%2F%3E%0A');
+  background-position: 50% calc(50% + 99px);
+  background-repeat: no-repeat;
+  transition: background-color $duration-lg $easing-appearance, background-image $duration-lg $easing-appearance;
+  will-change: background-color, background-image;
+
+  // Yellow background
+  &.is-highlight {
+    @include media-breakpoint-up(md) {
+      background-color: $color-primary;
+    }
+
+    @include media-breakpoint-up(lg) {
+      background-image: url('#{$site-assets}/img/base/body/bg-front-md.svg');
+    }
+  }
+
+  // Vertical centering for frontpage carousel
+  @include media-breakpoint-up(lg) {
+    @media (min-height: 600px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0;
+      height: 100vh;
+    }
+  }
+
+  @media (min-height: 1059px) {
+    background-position: 50% 0;
+  }
+}
+
+// Yellow Slide
+.intro-section.is-highlight {
+  background: $color-primary;
+  color: $color-ink-on-highlight-normal;
+
+  @include media-breakpoint-up(md) {
+    // Add space for above text on the top and for picture on the right
+    padding: 162px 320px 0 64px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: $transparent;
+    padding: 10.7rem 344px 0 40px;
+  }
+}
+
+.intro-section.is-highlight > h1 {
+  color: $color-ink-light-normal;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0;
+  padding-top: 4.3rem;
+  padding-right: 0;
+  padding-bottom: .9rem;
+  padding-left: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 2.6rem;
+    padding-bottom: 2rem;
+
+    strong {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 1.6rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.intro-section.is-highlight > p {
+  color: $color-ink-on-highlight-normal;
+  font-size: 100%;
+  font-weight: normal;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 80px;
+  }
+}
+
+
+// MAIN PICTURE
+
+.is-highlight {
+  // <picture> - img container
+  .picture-main {
+    background-image: linear-gradient(rgb(111, 114, 118), rgb(171, 174, 178));
+    display: block;
+    // full width
+    margin: 0 -16px;
+    position: relative;
+    overflow: hidden;
+    height: 192px;
+
+    // transform to right column
+    @include media-breakpoint-up(md) {
+      background: $transparent none;
+      clip: rect(auto, 353px, 513px, 161px);
+      margin: 0;
+      position: absolute;
+      top: 62px;
+      right: 41px;
+      height: 573px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      clip: rect(auto, auto, auto, auto);
+      top: 24px;
+      right: 24px;
+    }
+  } // end of img container
+
+  // img / cinemagraph
+  .img-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: none;
+
+    // in this case img container has been set in static position
+    @include media-breakpoint-up(md) {
+      position: static;
+
+      // Sharpen image rounded corners which were made in Photoshop
+      // to fix image blurred edge, which appear in Mac OS Safari when applying
+      // border-radius to .home .img-main
+      // stylelint-disable media-feature-name-no-vendor-prefix
+      @media print,
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 1.25dppx),
+        (min-resolution: 120dpi) {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+  } // end of img / cinemagraph
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 2) BENEFITS
+// -----------------------------------------------------------------------------
+// #region
+.main-header.is-benefits {
+  @include media-breakpoint-up(md) {
+    background-image: url('#{$site-assets}/img/pages/page/benefits/bg-benefits-of-supermark-development.svg');
+  }
+}
+
+.is-benefits .list-pros-cons {
+  list-style: none;
+  padding-left: 0;
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 3) SERVICES
+// -----------------------------------------------------------------------------
+// #region
+
+.main-header.is-services {
+  @include media-breakpoint-up(md) {
+    background-image: url('#{$site-assets}/img/pages/page/services/bg-services-design-marketing.svg');
+  }
+}
+
+.is-services .intro-section-sidebar {
+  text-align: center;
+}
+
+
+// IMAC
+
+.is-services .slideshow {
+  background: url('#{$site-assets}/img/pages/front/services-mac.png') no-repeat;
+  background-size: 192px 160px;
+  margin: 0 auto;
+  width: 192px;
+  height: 160px;
+
+  @include media-breakpoint-up(lg) {
+    background-size: 160px 133px;
+    width: 160px;
+    height: 133px;
+  }
+
+  @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+    background-image: url('#{$site-assets}/img/pages/front/services-mac@2x.png');
+  }
+}
+
+
+// SCREENSHOTS POSITIONING
+
+.is-services .slideshow-item {
+  top: 8px;
+  left: 8px;
+  width: 176px;
+  height: 99px;
+
+  @include media-breakpoint-up(lg) {
+    top: 7px;
+    left: 7px;
+    width: 146px;
+    height: 82px;
+  }
+}
+
+// CAPTION
+
+.is-services .slideshow-item.is-title {
+  animation: slideshowCaption 24s linear infinite;
+  color: $color-ink-light-normal;
+  font-weight: normal;
+  text-align: center;
+  text-transform: none;
+  padding-top: 3.4rem;
+  width: 177px;
+  z-index: 1;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 1.9rem;
+    width: 146px;
+  }
+}
+
+// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, selector-list-comma-newline-after, declaration-block-semicolon-newline-after
+@keyframes slideshowCaption {
+  0%          { opacity: 0; }
+  4%          { opacity: 1; text-shadow: 0 0 1px rgba(255, 255, 255, 0); }
+  4.1%, 4.2%  { text-shadow: 0 0 12px rgba(255, 255, 255, .9); }
+  4.3%, 4.5%  { text-shadow: none; }
+  4.6%, 4.7%  { text-shadow: 0 0 16px rgba(255, 255, 255, .8); }
+  4.8%, 5%    { text-shadow: none; }
+  5.1%, 5.2%  { text-shadow: 0 0 12px rgba(255, 255, 255, .9); }
+  9%          { text-shadow: 0 0 12px rgba(255, 255, 255, 0); }
+  10%         { text-shadow: none; }
+  21%         { opacity: 1; }
+  25%         { opacity: 0; }
+  100%        { opacity: 0; }
+}
+// stylelint-enable block-opening-brace-space-before, declaration-block-single-line-max-declarations, selector-list-comma-newline-after, declaration-block-semicolon-newline-after
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 4) PRICES
+// -----------------------------------------------------------------------------
+// #region
+
+.intro-section.is-prices {
+  @include media-breakpoint-up(md) {
+    padding-top: .9rem;
+  }
+}
+
+.is-prices .intro-section-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter-sm / -2);
+  margin-left: ($grid-gutter-sm / -2);
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 3.9rem;
+    padding-bottom: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 5.4rem;
+  }
+}
+
+.is-prices .intro-section-title {
+  font-size: $headline-md-font-size;
+  line-height: $headline-md-line-height;
+  position: absolute;
+  top: 6.4rem;
+  left: 8px;
+
+  @include media-breakpoint-up(md) {
+    font-size: $headline-lg-font-size;
+    font-weight: 300;
+    line-height: $headline-lg-line-height;
+    top: 13.1rem;
+    left: 16px;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 14.6rem;
+  }
+}
+
+.plan {
+  $cols: 3;
+  $deduction: ($grid-gutter-sm * ($cols -  1) / $cols);
+  $approximate-col-width: percentage(1 / $cols);
+
+  position: relative;
+  padding-right: ($grid-gutter-sm / 2);
+  padding-left: ($grid-gutter-sm / 2);
+  width: 100%;
+  min-height: 1px;
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 percentage(1/3);
+    max-width: 0 0 percentage(1/3);
+    margin-bottom: 0;
+  }
+}
+
+.plan-title {
+  background: $color-primary;
+  border-radius: $border-radius $border-radius 0 0;
+  color: $color-ink-on-highlight-muted;
+  font-weight: normal;
+  line-height: 4.8rem;
+  text-align: center;
+  text-transform: none;
+  position: relative;
+  height: 4.8rem;
+
+  &::before {
+    background-repeat: no-repeat;
+    border-radius: $border-radius $border-radius 0 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 14.4rem;
+  }
+}
+
+.plan-body {
+  background: $color-background-secondary;
+  border-radius: 0 0 $border-radius $border-radius;
+  box-shadow: $box-shadow-z1;
+  text-align: center;
+  padding-top: 1.1rem;
+  padding-right: 16px;
+  padding-bottom: 4.2rem;
+  padding-left: 16px;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 0;
+    min-height: 21.6rem;
+  }
+}
+
+.plan-price {
+  padding-bottom: .7rem;
+}
+
+.plan-amount {
+  font-family: $headings-font-family;
+  font-weight: 500;
+  font-size: $display-2-font-size;
+  letter-spacing: -.03em;
+
+  &.is-small {
+    display: inline-block;
+    font-size: $headline-lg-font-size;
+    padding-top: var(--size-1);
+  }
+}
+
+.plan-rubles {
+  display: inline-block;
+  line-height: 1.8rem;
+  text-align: left;
+  vertical-align: text-bottom;
+}
+
+.plan-value {
+  color: $color-ink-muted;
+  margin-bottom: ($spacer-sm * 2);
+}
+
+// Hourly wage
+.is-hourly-wage .plan-title {
+  margin-top: 13rem;
+
+  &::before {
+    background-image: url('#{$site-assets}/img/pages/front/prices-violet.svg');
+    background-position: right 24px bottom;
+    top: -14.4rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 14.4rem;
+  }
+}
+
+// 100 hours and full time
+.is-100-hours .plan-title,
+.is-full-time .plan-title {
+  padding-top: 14.4rem;
+  height: 19.2rem;
+
+  &::before {
+    border-bottom: 1px solid darken($color-primary, 5%);
+  }
+}
+
+.is-100-hours .plan-title {
+  &::before {
+    background-image: url('#{$site-assets}/img/pages/front/prices-elastigirl.svg');
+    background-position: center bottom;
+  }
+
+  @include media-breakpoint-up(md) {
+    &::before {
+      background-image:
+        url('#{$site-assets}/img/pages/front/prices-elastigirl.svg'),
+        url('#{$site-assets}/img/pages/front/prices-mr-incredible.svg'),
+        url('#{$site-assets}/img/pages/front/prices-ovals.svg');
+      background-position:
+        center bottom,
+        right -220px bottom,
+        right -220px bottom;
+    }
+  }
+}
+
+.is-full-time .plan-title {
+  &::before {
+    background-image:
+      url('#{$site-assets}/img/pages/front/prices-mr-incredible.svg'),
+      url('#{$site-assets}/img/pages/front/prices-ovals.svg');
+    background-position:
+      right -10px bottom,
+      right bottom;
+  }
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 5) ABOUT
+// -----------------------------------------------------------------------------
+// #region
+
+.main-header.is-about {
+  @include media-breakpoint-up(md) {
+    background-image: url('#{$site-assets}/img/pages/page/about/bg-about-marketing-agency.svg');
+  }
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// 6) BLOG
+// -----------------------------------------------------------------------------
+// #region
+
+// header
+
+.main-header.is-blog {
+  background-image:
+    url('#{$site-assets}/img/pages/blog/index/bg-blog-about-design-marketing-development.svg'),
+    url('#{$site-assets}/img/components/main/headers/bg-color.png');
+
+  @include media-breakpoint-up(md) {
+    background-image: url('#{$site-assets}/img/pages/blog/index/bg-blog-about-design-marketing-development.svg');
+  }
+}
+
+.is-blog .intro-section-copy {
+  @include media-breakpoint-up(md) {
+    order: -1;
+  }
+}
+
+.is-blog .intro-section-footer {
+  padding-top: $spacer-sm;
+}
+
+// stylelint-disable selector-max-compound-selectors
+.is-blog .is-archive-wrapper ul {
+  > li:not(:last-child) {
+    margin-bottom: $spacer-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    padding-top: 0;
+    min-height: 18.4rem;
+  }
+}
+// stylelint-enable selector-max-compound-selectors
+// #endregion

@@ -1,0 +1,288 @@
+// stylelint-disable order/order
+
+// -----------------------------------------------------------------------------
+// RESET
+// -----------------------------------------------------------------------------
+
+// Bootstrap reset
+// .btn {
+//   border-radius: $border-radius;
+//   border: 1px solid $transparent;
+//   display: inline-block;
+//   font-size: 1.6rem;
+//   font-weight: 400;
+//   line-height: 1.5;
+//   padding: .375rem .75rem;
+//   text-align: center;
+//   transition:
+//     color .15s ease-in-out,
+//     background-color .15s ease-in-out,
+//     border-color .15s ease-in-out,
+//     box-shadow .15s ease-in-out;
+//   user-select: none;
+//   vertical-align: middle;
+//   white-space: nowrap;
+// }
+
+%btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn {
+  @extend %btn;
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIACTORS
+// -----------------------------------------------------------------------------
+
+// Light green
+.btn-cta-light-green,
+%btn-cta-light-green {
+  background-image: linear-gradient(#fff, rgb(222, 255, 102));
+  border: 1px solid $color-primary-dark;
+  box-shadow:
+    inset 0 2px 0 0 rgba(255, 255, 255, .4),
+    inset 0 -2px 0 0 rgba(255, 255, 255, .24),
+    $box-shadow-z1;
+  color: rgba(0, 0, 0, .44);
+  font-weight: normal;
+  text-shadow: 0 1px 0 #fff;
+
+  &:visited {
+    color: rgba(0, 0, 0, .44);
+  }
+
+  // Plus %btn-cta enlargment
+  &:hover,
+  &:focus {
+    box-shadow:
+      inset 0 2px 0 0 rgba(255, 255, 255, .4),
+      inset 0 -2px 0 0 rgba(255, 255, 255, .24),
+      $box-shadow-z2;
+  }
+
+  &:not(:disabled):active {
+    color: rgba(0, 0, 0, .44);
+  }
+}
+
+// Extends for secondary buttons
+.btn.is-secondary,
+.btn-secondary,
+%btn-secondary {
+  background-image: linear-gradient(var(--grey-l96), var(--grey-l92));
+  border-radius: 5rem;
+  box-shadow:
+    inset 0 1px 0 var(--color-ink-light-normal),
+    0 0 0 1px var(--color-ink-border),
+    $box-shadow-z1;
+  text-align: center;
+  padding: 15px 16px;
+  transition: box-shadow $duration-xs;
+
+  &:hover {
+    background-image: linear-gradient(var(--grey-l98), var(--grey-l94));
+    box-shadow:
+      inset 0 1px 0 var(--color-ink-light-normal),
+      0 0 0 1px var(--color-ink-border),
+      $box-shadow-z2;
+  }
+}
+
+%btn-compact {
+  border: 0;
+  width: 44px;
+  height: 24px;
+}
+
+// -----------------------------------------------------------------------------
+// CTA BUTTON
+// -----------------------------------------------------------------------------
+
+.btn-primary {
+  background-image: $color-tertiary-gradient;
+  box-shadow:
+    inset 0 2px 0 0 rgba(255, 255, 255, .24),
+    inset 0 0 0 1px rgba(0, 76, 13, .12),
+    $box-shadow-z1;
+  border: 0;
+  border-radius: $border-radius-xl;
+  color: $color-ink-light-normal;
+  display: block;
+  font-size: 100%;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(0, 51, 0, .16);
+  padding: 15px 16px;
+  transition: 1.6s box-shadow;
+
+  // Relative for rotating labels animation
+  position: relative;
+  width: 100%;
+
+  &:visited {
+    color: $color-ink-light-normal;
+  }
+
+  &:hover,
+  &:focus {
+    background-image: $color-tertiary-gradient-lighter;
+    color: $color-ink-light-normal;
+    box-shadow:
+      inset 0 2px 0 0 rgba(255, 255, 255, .24),
+      inset 0 0 0 1px rgba(0, 76, 13, .12),
+      $box-shadow-z2;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    margin-top: 1px;
+    padding: 16px 12px 14px;
+  }
+
+  &:not(:disabled):active {
+    color: $color-ink-light-normal;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.btn-lg {
+  @include media-breakpoint-up(md) {
+    padding: 15px 24px;
+
+    &:active {
+      margin-top: 1px;
+      padding: 16px 24px 14px;
+    }
+  }
+}
+
+
+// LABEL ANIMATION
+
+.btn-rotator,
+%btn-rotator {
+  overflow: hidden;
+  min-height: 48px;
+
+  &-item {
+    animation: rotateWords 24s ease-out 0s infinite;
+    opacity: 0;
+
+    // Each span inside button will be positioned absolutely for animation.
+    // In order not to change its position in the hover position, top: 50%
+    // and negative top margin are used.
+    position: absolute;
+    margin-top: -.8rem;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 24px;
+
+    &:nth-child(2) {
+      animation-delay: 12s;
+    }
+  }
+}
+
+// The whole animation will run 24 seconds. Every span is visible during
+// 12sec while another is hidden.
+// 1) Delay between changes
+// 2) Visible
+// 3-4) Transition
+// 5)
+// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
+@keyframes rotateWords {
+  0%   { opacity: 0; }
+  1%   { opacity: 0; transform: translateY(0); } // 1
+  4%   { opacity: 1; } // 2
+  48%  { opacity: 1; transform: translateY(0); } //3
+  50%  { opacity: 0; transform: translateY(-8px); } // 4
+  100% { opacity: 0; } // 5
+}
+
+// -----------------------------------------------------------------------------
+// CTA BUTTON MODIFICATIONS
+// -----------------------------------------------------------------------------
+
+.header > .btn-primary,
+.navbar > .btn-primary,
+.intro-section.is-highlight > .btn-primary,
+.intro-section-footer > .btn-primary {
+  @extend %btn-rotator;
+  transition: unset;
+}
+
+
+// On phones show these ones
+.intro-section.is-highlight > .btn-primary,
+.intro-section-footer > .btn-primary {
+  @include media-breakpoint-only(md) {
+    display: none;
+  }
+}
+
+
+// On tablets show this one
+.header > .btn-primary {
+  display: none;
+
+  @include media-breakpoint-only(md) {
+    display: block;
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    width: 192px;
+  }
+}
+
+// On desktops show this one
+.navbar > .btn-primary {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+// On the first slide of the frontpage
+.is-highlight .header > .btn.btn-primary,
+.is-highlight .navbar > .btn.btn-primary,
+.intro-section.is-highlight > .btn-primary {
+  @extend %btn-cta-light-green;
+}
+
+// -----------------------------------------------------------------------------
+// LINK STYLE
+// -----------------------------------------------------------------------------
+
+.btn.is-link {
+  @extend %a;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// DISABLED
+// -----------------------------------------------------------------------------
+
+.btn.is-disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+

@@ -1,0 +1,13 @@
+# www.robotstxt.org/
+
+User-agent: *
+
+Crawl-delay: 10
+
+# Build, WIP and System Files and Directories
+Disallow: /CNAME
+
+# Don't block webmaster tools verification files
+
+Host: super-mark.ru
+Sitemap: https://super-mark.ru/sitemap.xml

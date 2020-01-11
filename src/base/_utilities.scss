@@ -1,0 +1,29 @@
+.nobr {
+  white-space: nowrap;
+}
+
+
+// Spacing
+@include media-breakpoint-up(md) {
+  .pl-md-half {
+    padding-left: ($spacer-sm / 2);
+  }
+
+  .pr-md-half {
+    padding-right: ($spacer-sm / 2);
+  }
+
+  .pl-md-2 {
+    padding-left: ($spacer-sm * 2);
+  }
+
+  .pr-md-2 {
+    padding-right: ($spacer-sm * 2);
+  }
+}
+
+
+// Sizing
+.h-auto {
+  height: auto !important;
+}

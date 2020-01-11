@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// SHARED STYLES
+// -----------------------------------------------------------------------------
+
+@mixin chevron-right() {
+  // Shortcut has not used to ability use background-color on hover
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Echevron-right%3C%2Ftitle%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M15%2015H0V0h15z%22%2F%3E%3Cpath%20d%3D%22M10.296%208.296l-3.565%203.96-.669.744-1.487-1.338.67-.743%202.997-3.331-2.998-3.331-.669-.744%201.487-1.338.669.744%203.565%203.96.704.634-.067.075.067.074-.704.634z%22%20fill%3D%22%23B5B8BC%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  background-position: 100% calc(50% + .1rem);
+  background-repeat: no-repeat;
+  text-decoration: none;
+  padding-right: 16px;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+@mixin chevron-right-white() {
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.296%208.296l-3.565%203.96-.669.744-1.487-1.338.67-.743%202.997-3.331-2.998-3.331-.669-.744%201.487-1.338.669.744%203.565%203.96.704.634-.067.075.067.074-.704.634z%22%20fill-opacity%3D%22.64%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E');
+  background-position: 100% calc(50% + .1rem);
+  background-repeat: no-repeat;
+  color: rgba(255, 255, 255, .64);
+  text-decoration: none;
+  padding-right: 16px;
+
+  &:hover {
+    color: $color-ink-light-normal;
+  }
+}
+
+// CSS image replacement
+@mixin image-replacement() {
+  background-color: $transparent;
+  border: 0;
+  color: $transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+

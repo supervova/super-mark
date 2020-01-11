@@ -1,0 +1,221 @@
+// stylelint-disable selector-list-comma-newline-after, order/order, selector-no-qualifying-type
+
+// Vertical rhythm can be done in other ways.
+// 1) With sass mixins
+// https://github.com/hiulit/Sassy-Gridlover
+// https://github.com/mindthetic/gridlover-mixin
+// 2) Within Compass project
+// $ cd ~/Sites/client && compass create project
+// @import "compass/typography/vertical_rhythm";
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+// TODO: develop vertical rhythm mixin based on top-padding method and gridlover
+// mixins
+
+//------------------------------------------------------------------------------
+// HEADINGS
+//------------------------------------------------------------------------------
+
+// SHARED
+
+// 32 / 40
+.headline-lg,
+%headline-lg {
+  font-size: $headline-lg-font-size;
+  line-height: $headline-lg-line-height;
+}
+
+.headline-md,
+%headline-md {
+  font-size: $headline-md-font-size;
+  line-height: $headline-md-line-height;
+}
+
+// 20 / 24
+.headline-sm,
+%headline-sm {
+  font-size: $headline-sm-font-size;
+  line-height: $headline-sm-line-height;
+}
+
+.headline-inverted,
+%headline-inverted {
+  color: $color-ink-light-normal;
+  font-weight: 300;
+}
+
+// HEADLINES: BASE STYLES
+
+h1, h2 {
+  // OpenType kerning
+  // If system fonts are not set for body, use the short form of the rule.
+  // font-feature-settings: 'kern' 1;
+  font-family: $headings-font-family;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  letter-spacing: -.02em;
+}
+
+// Hedaing 1
+h1 {
+  @extend %headline-md;
+
+  font-weight: $headline-lg-font-weight;
+
+  a:visited { color: $link-color; }
+
+  @include media-breakpoint-up(md) {
+    font-size: $headline-lg-font-size;
+    line-height: $headline-lg-line-height;
+  }
+
+  b, strong {
+    font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+      line-height: 1;
+    }
+  }
+}
+
+// Heading 2
+h2 {
+  @extend %headline-sm;
+  font-weight: $headline-md-font-weight;
+
+  a,
+  a:visited {
+    color: $headings-color;
+  }
+
+  h1 + & { padding-top: 0; }
+
+  @include media-breakpoint-up(md) {
+    font-size: $headline-md-font-size;
+    line-height: $headline-md-line-height;
+  }
+}
+
+
+h3, h4, h5, h6 {
+  font-family: $font-family-base;
+  font-size: 100%;
+  margin: 0;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h3 + h4,
+.h3 + .h4 {
+  margin-top: $spacer;
+}
+
+h5, h6 {
+  color: $color-ink-muted;
+}
+
+//------------------------------------------------------------------------------
+// BODY COPY
+//------------------------------------------------------------------------------
+
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+
+  &::after {
+    color: $color-ink-muted;
+    content: '*';
+  }
+}
+
+b, strong { font-weight: bold; }
+
+p {
+  // Remove Bootstrap hyphens. They do more harm than good
+  hyphens: none;
+  word-break: normal;
+}
+
+.lead,
+%lead, {
+  font-size: 100%;
+  font-weight: bolder;
+}
+
+
+// -----------------------------------------------------------------------------
+// LINKS
+// -----------------------------------------------------------------------------
+
+// better focus for links
+a:focus {
+  outline: none;
+  text-decoration: outline;
+}
+
+a,
+%a {
+  color: $color-ink-link;
+  text-decoration: none;
+  transition: color $duration-xs $easing;
+
+  &:visited {
+    color: darken($color-ink-link, 10%);
+  }
+
+  &:hover {
+    color: lighten($color-ink-link, 5%);
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MEDIA, DIVIDERS
+// -----------------------------------------------------------------------------
+
+// Remove the gap between audio, canvas, iframes, images, videos and the bottom
+// of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+figure > img {
+  display: block;
+}
+
+figcaption {
+  color: $color-ink-muted;
+}
+
+table {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+
+// -----------------------------------------------------------------------------
+// SPECIALS
+// -----------------------------------------------------------------------------
+
+::selection {
+  // background: $color-primary-dark;
+  background: $black-transparent;
+  color: $color-ink-light-normal;
+  text-shadow: none;
+}
+
+@include media-breakpoint-up(md) {
+  .text-new-line { display: block; }
+}

@@ -1,0 +1,213 @@
+# ⚠️ Every time you modify your config file, you have to restart Jekyll for the
+# changes to take effect.
+
+# Use snake_case in variables names.
+# Use the unquoted style for short strings except the one starting with
+# reserved characters: @, #, % etc. Use pair of single quotes for empty strings.
+# Use and the folded block scalar style with the chomping indicator (>-) for
+# long strings.
+# http://blogs.perl.org/users/tinita/2018/03/strings-in-yaml---to-quote-or-not-to-quote.html
+# https://yaml-multiline.info/
+
+# spell-checker: disable
+
+encoding: 'utf-8'
+
+
+# SITE / COMPANY SETTINGS
+lang: ru
+lang_2nd: en
+
+title: SuperMark
+
+description: >-
+  Торговая марка Владимира Никишина. Веб-дизайн, разработка, digital-маркетинг.
+
+# The base hostname & protocol for the site without a trailing slash,
+# e.g. https://example.tld
+url: https://super-mark.ru
+
+# the subpath of the site, e.g. /blog
+baseurl: ''
+assets: /assets
+
+logo: /img/components/logo/supermark-logo-mark.svg
+image: /img/supermark.png
+icon: /img/base/icons/icon.png
+# ui_sprite: /img/icons/sprite.svg
+color: '#f2b200'
+
+fonts: Roboto:300,400,500&amp;subset=cyrillic
+rss_title: Блог SuperMark'а
+
+gtm: GTM-WXTNS9W
+apple_app_id: ''
+
+# Site content creator / author Twitter @username
+author: '@supervova'
+
+permalink: /:slug
+
+# Ruby Date Format
+date_format: '%-d %B, %Y'
+
+# ------------------------------------------------------------------------------
+
+# Server Config options
+livereload: true
+
+jekyll_tidy:
+  # exclude: ["index.html"]
+  ignore_env: development
+  compress_html: true
+
+# Build settings
+# permalink: /:year-:month-:day-:title/
+timezone: Europe/Moscow
+
+# Extended markdown letting use CSS classes: {:.btn .btn–primary}
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+  category:
+    output: true
+
+  posts:
+    output: true
+    permalink: /ru/blog/:year/:slug
+
+# Default front matter values
+defaults:
+  -
+    scope:
+      path: ''
+      type: pages # all pages
+    values:
+      layout: page
+
+  # Blog
+  -
+    scope:
+      path: ''
+      type: posts # all posts
+    values:
+      lang: ru
+      layout: post
+
+  # Blog categories
+  -
+    scope:
+      path: ''
+      type: category
+    values:
+      lang: ru
+      layout: 'index'
+      classes: p-blog has-main-header
+
+
+# sass:
+#   sass_dir: src
+#   style: compressed
+
+# Archives
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid
+#  - Archive page should exist at path when using Liquid method
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+# category_archive:
+#   type: liquid
+#   path: /categories/
+
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled: [categories]
+#   layout: index-list
+#   permalinks:
+#     category: /ru/blog/:name
+
+# HTML Compression
+# https://jch.penibelst.de/
+compress_html:
+  blanklines: true
+  comments: ["<!-- ", " -->"]
+  clippings: []
+  startings: []
+  endings: []
+  profile: false
+  # ignore:
+  #   envs: development
+
+# Pagination Settings
+paginate: 10
+paginate_path: '/ru/blog/:num'
+
+
+# jekyll-paginate-v2
+# pagination:
+#   enabled: true
+#   # Set to 'true' to enable pagination debugging
+#   debug: false
+#   per_page: 20
+#   permalink: '/:num'
+#   sort_field: 'date'
+#   # sort_reverse: true
+#   # Optional the title format for the paginated pages
+#   title: ':title - :num'
+
+plugins:
+  # GitHub Pages uses the following dependencies and versions
+  # https://pages.github.com/versions/
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+  # Plugins that are not supported by GitHub
+  #Archive pages for your Jekyll tags and categories.
+  # - jekyll-archives
+
+  # If image does not set in front matter plugin makes available the first image
+  # of a post in the template as a variable
+  # - jekyll-auto-image
+
+  # {{ 'example@example.com' | encode_email }}
+  - jekyll-email-protect
+
+
+  # {% include_cached footer.html %}
+  - jekyll-include-cache
+  # - jekyll-paginate-v2
+  # - jekyll-pug
+  # - jekyll-polyglot
+
+  # Plugin for tidying Jekyll HTML output
+  - jekyll-tidy
+
+# Exclude from processing.
+exclude:
+  - '*.pug'
+  - .jekyll-assets-cache
+  - .jekyll-cache
+  - .sass-cache
+  # - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - src
+  - dist
+  - gulpfile*
+  - node_modules/
+  - package.json
+  - readme.md
+  - yarn.lock
+
+theme: null
+
+keep_files:
+  - .git
+  - assets/css
+  - assets/img
+  - assets/js
+  - assets/video

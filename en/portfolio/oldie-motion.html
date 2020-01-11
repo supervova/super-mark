@@ -1,0 +1,47 @@
+---
+lang: en
+title: '<b>Oldie</b> but&nbsp;a&nbsp;goldie'
+section: 'Portfolio by Vladimir Nikishin'
+description: '<span class="nobr">1999–2013</span>. At&nbsp;the beginning of&nbsp;my&nbsp;career in&nbsp;digital, I&nbsp;was more involved in&nbsp;design and frontend development. A&nbsp;lot of&nbsp;Flash, a&nbsp;lot of&nbsp;vector graphics.'
+permalink: /en/projects/oldie-motion
+hreflang-ru: /ru/projects/oldie-motion
+image: /img/projects/oldie/motion-graphics/u2-poster.png
+layout: project
+styles-addons: ['/css/portfolio.css', '/css/projects-oldie-motion.css']
+classes: is-oldie is-oldie-motion
+tabs:
+  - label: 'Websites'
+    link: '/en/projects/oldie'
+  - label: 'Games'
+    link: '/en/projects/oldie-games'
+  - label: 'Old Flash clips are converted to&nbsp;mp4. Made almost 20&nbsp;years ago. Now, of&nbsp;course, the animation has gone far ahead. But then it&nbsp;was cool.'
+    link: '/en/projects/oldie-motion'
+    current: true
+---
+
+<div class="project-gallery is-oldie-motion">
+  <figure class="project-gallery__item">
+    <video poster="{{ site.assets }}/img/projects/oldie/motion-graphics/u2-poster.png" controls width="762" height="274">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/u2.mp4" type="video/mp4">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/u2.ogv" type="video/ogv">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/u2.webm" type="video/webm">
+    </video>
+  </figure>
+
+  <figure class="project-gallery__item">
+    <video poster="{{ site.assets }}/img/projects/oldie/motion-graphics/russia-2000-poster.png" controls width="760" height="229">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/russia-2000.mp4" type="video/mp4">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/russia-2000.ogv" type="video/ogv">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/russia-2000.webm" type="video/webm">
+    </video>
+  </figure>
+
+  <figure class="project-gallery__item is-homepage-2004">
+    <video poster="{{ site.assets }}/img/projects/oldie/motion-graphics/homepage-2004-poster.png" controls width="313" height="157">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/homepage-teaser.mp4" type="video/mp4">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/homepage-teaser.ogv" type="video/ogv">
+      <source src="{{ site.url }}{{ site.assets }}/video/projects/oldie/motion-graphics/homepage-teaser.webm" type="video/webm">
+    </video>
+  </figure>
+  <p>{{ site.data.projects.oldie.download[page.lang] }}</p>
+</div>

@@ -1,0 +1,48 @@
+.dropup.is-subscription {
+  z-index: $zindex-dropdown;
+}
+
+.is-subscription > .dropdown-menu {
+  background-color: $color-background-secondary;
+  box-shadow: $box-shadow-z4;
+  text-align: center;
+  padding: 3.1rem var(--size-2) 2.9rem;
+  width: $panel-width-sm;
+
+  &.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: auto;
+    right: -4.6rem;
+
+    @include media-breakpoint-up(sm) {
+      right: auto;
+    }
+  }
+}
+
+.intro-section.is-blog .is-subscription > .dropdown-menu.show {
+  right: 0;
+
+  @include media-breakpoint-up(sm) {
+    right: auto;
+  }
+}
+
+.form.is-subscription {
+  padding-bottom: 1.2rem;
+}
+
+.is-subscription .dropdown__menu-title {
+  margin: 0;
+  padding: 0 0 1rem;
+}
+
+.form.is-subscription .form-control  {
+  padding-left: 4rem;
+}
+
+.is-subscription .form-group .icon {
+  left: 16px;
+}

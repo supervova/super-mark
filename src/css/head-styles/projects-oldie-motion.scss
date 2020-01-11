@@ -1,0 +1,39 @@
+// Bootstrap and plugins styles
+@import './src/base/variables';
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+
+.project-gallery.is-oldie-motion {
+  padding-right: 1.6rem;
+  padding-left: 1.6rem;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.is-oldie-motion > .project-gallery__item {
+  display: inline-block;
+  margin: 0 auto 2.4rem;
+  width: auto;
+}
+
+.project-gallery__item.is-homepage-2004 {
+  display: block;
+  overflow: hidden;
+  width: 309px;
+  height: 155px;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+  }
+
+  > video {
+    max-width: none;
+    transform: translateX(-.2rem);
+  }
+}
