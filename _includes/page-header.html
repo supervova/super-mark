@@ -1,9 +1,9 @@
 <header class="main-header {{ include.class }}">
   <figure>
-    <img src="{{ site.assets }}{{ include.image }}.png" srcset="{{ site.assets }}{{ include.image }}.png 1x, {{ site.assets }}{{ include.image }}@2x.png 2x" alt="{{ include.title }}">
+    <img src="{{ site.assets }}{{ include.image }}.png" srcset="{{ site.assets }}{{ include.image }}.png 1x, {{ site.assets }}{{ include.image }}@2x.png 2x" itemprop="image" alt="{{ include.title }}">
   </figure>
 
-  <h1>{{ include.title }}</h1>
+  <h1 itemprop="headline">{{ include.title }}</h1>
 
   {% if include.subtitle %}
     <p itemprop="description">
