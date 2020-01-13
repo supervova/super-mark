@@ -623,6 +623,7 @@ function serveBS(done) {
 
 const build = gulp.series(
   clean,
+  cleanSrc,
   jekyllBuild,
   svg,
   img,
