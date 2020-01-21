@@ -73,7 +73,7 @@
   {% comment %} MAIN MENU / Drawer on mobiles {% endcomment %}
   <ul class="navbar-primary nav" role="menubar">
     {% for item in menu %}
-      <li>
+      <li role="menuitem">
         <a
           {% if item.slug == 'blog' %}class="navbar-primary-link blog" {% endif %}
           {% if page.home %}href="#intro" data-slide-to="{{ item.ordinal }}"
