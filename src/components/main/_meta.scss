@@ -23,6 +23,7 @@
 .meta time {
   color: $color-ink-muted;
   display: inline-block;
+  flex-shrink: 0;
   padding-right: 4px;
 }
 
