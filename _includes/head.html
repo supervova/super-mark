@@ -22,6 +22,11 @@
   <meta property="og:image" content="{{ site.image | prepend: site.assets | prepend: site.url }}">
   {% endif %}
   {% if social.facebook.admins %}
+  {% comment %} To use the Like Button and have the Open Graph inspect the website,
+  we need an application. The script of Like Button associates it with the app.
+  If we want other users to see the administration page for the website (app
+  page) on Facebook we add fb:admins. But the sole developer of the application /
+  the website owner does not need to add fb:admins {% endcomment %}
   <meta property="fb:admins" content="{{ social.facebook.admins }}">
   {% endif %}
   <meta name="twitter:card" content="summary_large_image">
