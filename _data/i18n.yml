@@ -4,13 +4,13 @@ company:
     en: 'UX/UI, development and&nbsp;marketing'
     ru: 'UX/UI, разработка и&nbsp;маркетинг'
   street: ''
+  city:
+    en: 'Herceg Novi'
+    ru: 'Херцег Нови'
   postal_code: 85340
   country:
     en: 'Montenegro'
     ru: 'Черногория'
-  city:
-    en: 'Herceg Novi'
-    ru: 'Херцег Нови'
   phone: +382 69 184524
   phone_link: +38269184524
   email: vladimir.nikishin(at)gmail.com
