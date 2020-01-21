@@ -23,7 +23,6 @@
   {% endif %}
   {% if social.facebook.admins %}
   <meta property="fb:admins" content="{{ social.facebook.admins }}">
-  <link rel="preconnect" href="https://staticxx.facebook.com">
   {% endif %}
   <meta name="twitter:card" content="summary_large_image">
 {% endif %}
@@ -54,6 +53,9 @@
   {% comment %} Apple touch icon. In most cases, one 192×192px touch icon named icon.png
   is enough {% endcomment %}
   <link rel="apple-touch-icon" href="{{ site.icon | prepend: site.assets | prepend: site.url }}">
+{% endif %}
+{% if social.facebook %}
+  <link rel="preconnect" href="https://staticxx.facebook.com">
 {% endif %}
 {% if site.fonts %}
   <link rel="preconnect" href="https://fonts.googleapis.com/">

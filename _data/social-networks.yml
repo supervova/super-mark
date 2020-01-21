@@ -5,7 +5,6 @@ facebook:
   ctaLike:
     en: Facebook Like
     ru: Фейсбук — Нравится
-  admins: 506386402
   acc: supervova
 
 vk:
@@ -50,5 +49,3 @@ email:
 # pinterest:
 
 disqus: smark
-
-
