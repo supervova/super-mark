@@ -347,7 +347,7 @@ const imgTasks = (src, subtitle) => gulp.src(src)
     ),
   )
   .pipe(gulp.dest(`${config.dest.site}/assets/img`))
-  .pipe(size({ title: `styles: ${subtitle}` }));
+  .pipe(size({ title: `images: ${subtitle}` }));
 
 // Graphics
 function imgGraphics(done) {
