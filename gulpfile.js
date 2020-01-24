@@ -466,7 +466,7 @@ const jsTasks = (src, file, compiler) => gulp.src(src)
   .pipe(concat(`${file}.js`))
   .pipe(uglify())
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-  .pipe(size({ title: `styles: ${file}` }))
+  .pipe(size({ title: `scripts: ${file}` }))
   .pipe(gulp.dest(paths.js.dest));
   // .pipe(browserSync.stream());
 
