@@ -31,8 +31,14 @@ headings:
   ydnad:
     en: '#You_Don_t_Need_a_Department'
     ru: '#ВамНеНуженОтдел'
+  form:
+    en: 'Everything will be fine'
+    ru: 'Всё будет хорошо'
 
 descriptions:
+  form:
+    en: 'Need a&nbsp;specialist for a&nbsp;web project?<br>Tell me&nbsp;about the task&nbsp;— we&nbsp;will contact, discuss'
+    ru: 'Нужен специалист на&nbsp;веб-проект?<br>Расскажите о&nbsp;задаче&nbsp;— свяжемся, обсудим'
   oneManArmy:
     en: 'A&nbsp;person works for three. Get progressive web design, modern development standards, proven and latest promotion techniques three times cheaper. I&rsquo;ve been in&nbsp;the business since 1999.'
     ru: 'Один универсал работает за&nbsp;троих. Прогрессивный веб-дизайн. Современные стандарты разработки. А&nbsp;также всегда проверенные и&nbsp;новейшие методики продвижения. В&nbsp;диджитал-маркетинге с&nbsp;1999&nbsp;года.'
@@ -121,8 +127,8 @@ messages:
     en: 'JavaScript is currently disabled. The site requires JavaScript to function correctly. Please <a href="http://enable-javascript.com/" target="_blank" rel="noopener noreferrer nofollow">enable Javascript in your browser</a>.'
     ru: 'В вашем браузере выключен JavaScript. Поэтому не работает основная навигация, не открываются окна дополнительной информации. <a href="https://yandex.ru/support/mail/tech-glossary.html#js-enable" target="_blank" rel="noopener noreferrer nofollow">Включите Javascript</a>.'
   formThanks:
-    en: '<div class="alert is-success" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-success"></use></svg>Thanks. The message should already be&nbsp;in&nbsp;my&nbsp;inbox. I&nbsp;will contact you shortly.</div>'
-    ru: '<div class="alert is-success" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-success"></use></svg>Спасибо. Сообщение уже должно попасть в&nbsp;мой почтовый ящик. Я&nbsp;свяжусь с&nbsp;вами в&nbsp;ближайшее время.</div>'
+    en: '<div class="alert is-success" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-success"></use></svg>Thanks. The message should already be&nbsp;in&nbsp;my&nbsp;inbox. I&nbsp;will contact you shortly. <span class="btn is-link" data-dismiss="modal" aria-label="{{ site.data.i18n.labels.close[page.lang] }}" role="button">Close the form</span></div>'
+    ru: '<div class="alert is-success" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-success"></use></svg>Спасибо. Сообщение уже должно попасть в&nbsp;мой почтовый ящик. Я&nbsp;свяжусь с&nbsp;вами в&nbsp;ближайшее время. <span class="btn is-link" data-dismiss="modal" aria-label="{{ site.data.i18n.labels.close[page.lang] }}" role="button">Закрыть форму</span></div>'
   formError:
     en: '<div class="alert is-error" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-error"></use></svg>Oops! There was a problem. Please make sure all required fields are filled out correctly.</div>'
     ru: '<div class="alert is-error" role="alert"><svg class="icon" role="presentation" focusable="false"><use xlink:href="/assets/img/base/icons/sprite.svg#icon-error"></use></svg>Вот зараза! Какая-то ошибка… Проверьте, пожалуйста, всё ли вы правильно заполнили.</div>'

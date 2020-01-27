@@ -85,11 +85,10 @@ input[type='checkbox'] {
 // CAPTCHA
 // -----------------------------------------------------------------------------
 
-// // img
-// .form-captcha {
-//   height: 100%;
-//   max-width: 100%;
-// }
+.g-recaptcha:not(:empty) {
+  padding-top: .2rem;
+  padding-bottom: var(--size-line);
+}
 
 
 // -----------------------------------------------------------------------------
