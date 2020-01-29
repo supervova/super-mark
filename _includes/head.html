@@ -103,11 +103,6 @@
     }
   </script>
 {% endunless %}
-{% comment %} VK API {% endcomment %}
-{% if site.data.social-networks.vk.api %}
-  <script src="https://vk.com/js/api/openapi.js?162"></script>
-  <script>VK.init({apiId: API_ID, onlyWidgets: true});</script>
-{% endif %}
 {% comment %} Google Tag Manager {% endcomment %}
 {% if jekyll.environment == 'production' and site.gtm %}
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
