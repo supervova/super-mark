@@ -35,6 +35,9 @@
 {% if site.author %}
   <meta name="twitter:creator" content="{{ site.author }}">
 {% endif %}
+{% if page.permalink == '/' %}
+  <meta name="p:domain_verify" content="e489415027649c2c99b4862038fdb1a8">
+{% endif %}
   <meta name="theme-color" content="{{ site.color }}">
 {% comment %} SEO deals w/ HTTPS {% endcomment %}
   <meta name="referrer" content="origin">
