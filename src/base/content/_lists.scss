@@ -18,25 +18,30 @@
 // ORDERED LISTS
 // -----------------------------------------------------------------------------
 
-.main-body ol:not([class]) {
+.list.is-nested-ol,
+.list.is-nested-ol ol {
   counter-reset: item;
-  list-style-position: inside;
+  list-style-type: none;
+}
 
-  > li {
-    display: block;
+.list.is-nested-ol {
+  padding-left: 0;
+}
 
-    &::before {
-      color: $color-primary;
-      content: counter(item) '. ';
-      counter-increment: item;
-      font-weight: bold;
-    }
-  }
+.list.is-nested-ol ol {
+  padding-left: 2rem;
+  margin-bottom: 0 !important;
+}
 
-  ul {
-    list-style-position: outside;
+.list.is-nested-ol li {
+  margin-bottom: .8rem;
+
+  &::before {
+    content: counters(item, '.') '. ';
+    counter-increment: item;
   }
 }
+
 
 
 // -----------------------------------------------------------------------------
