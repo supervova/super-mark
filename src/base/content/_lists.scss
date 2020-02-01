@@ -42,6 +42,12 @@
   }
 }
 
+.is-toc {
+  border-bottom: 1px solid $color-ink-border;
+  padding-bottom: calc(var(--size-line) + .9rem);
+  margin-bottom: calc(var(--size-line) * 2);
+}
+
 
 
 // -----------------------------------------------------------------------------
