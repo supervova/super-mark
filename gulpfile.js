@@ -675,6 +675,6 @@ exports.ba          = buildAssets;
 exports.jks         = jekyllServe;
 exports.j           = jekyllBuild;
 exports.deploy      = deploy;
-exports.bs           = serveBS;
+exports.bs          = serveBS;
 exports.s           = serve;
 exports.default     = build;
