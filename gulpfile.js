@@ -668,6 +668,7 @@ exports.clean       = clean;
 exports.pug         = pugCompile;
 exports.html        = html;
 exports.sprite      = sprite;
+exports.video       = video;
 exports.img         = img;
 exports.js          = js;
 exports.css         = css;
