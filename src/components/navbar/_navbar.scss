@@ -227,12 +227,13 @@
 
 // CURRENT SECTION HIGHLIGHTING
 
-.single-post .navbar-primary-link.blog {
+.single-post .navbar-primary-link.blog,
+.p-blog .navbar-primary-link.blog {
   background-color: rgb(221, 224, 228);
   border-radius: $border-radius;
   color: $color-ink-normal;
-  cursor: default;
-  pointer-events: none;
+  // cursor: default;
+  // pointer-events: none;
 
   @include media-breakpoint-up(lg) {
     background-color: rgba(0, 0, 0, .04);

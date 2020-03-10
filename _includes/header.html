@@ -2,7 +2,7 @@
 
   {% comment %} Humburger button {% endcomment %}
   <button class="header-navbar-toggler" aria-label="{{ site.data.i18n.labels.menu[page.lang] }}" title="{{ site.data.i18n.labels.menu[page.lang] }}">
-    <svg class="icon-hamburger" viewbox="0 0 16 16" role="presentation">
+    <svg class="icon-hamburger" viewbox="0 0 16 16" aria-hidden="true">
       <rect width="16" height="2" rx="1"/>
       <rect y="5" width="16" height="2" rx="1"/>
       <rect y="10" width="16" height="2" rx="1"/>
@@ -17,13 +17,13 @@
 
   {% if page.lang == 'ru' %}
     <a class="header-lang-switcher is-mobile" href="/en" aria-label="In English" title="In English">
-      <svg class="icon icon-flag-us" role="presentation">
+      <svg class="icon icon-flag-us" aria-hidden="true">
         <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-us"></use>
       </svg>
     </a>
   {% else %}
     <a class="header-lang-switcher is-mobile" href="/" aria-label="По-русски / In Russian" title="По-русски / In Russian">
-      <svg class="icon icon-flag-ru" role="presentation">
+      <svg class="icon icon-flag-ru" aria-hidden="true">
         <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-ru"></use>
       </svg>
     </a>

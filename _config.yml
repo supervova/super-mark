@@ -97,6 +97,7 @@ defaults:
     values:
       lang: ru
       layout: post
+      classes: single-post
 
   # Blog categories
   -

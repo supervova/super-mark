@@ -38,7 +38,7 @@ $cobalt-gradient:                       linear-gradient(rgb(0, 171, 234), rgb(0,
 
 // Neutrals
 
-$grey-l96:                              hsl(214, 33%, 96%); // rgb(241, 244, 248) | #f1f4f8
+$grey-l95:                              hsl(214, 17%, 95%); // rgb(241, 244, 248) | #f1f4f8
 $grey-l92:                              hsl(214, 17%, 92%); // rgb(231, 234, 238) | #e7eaee
 $grey-l88:                              hsl(214, 11%, 88%); // rgb(221, 224, 228) | #dde0e4
 $grey-l57:                              hsl(214, 3%, 57%); // rgb(141, 144, 148) | #8d9094
@@ -110,7 +110,7 @@ $color-warning:                         $color-primary-light;
 $color-danger:                          $red;
 
 $color-background-primary:              $grey-l92;
-$color-background-secondary:            $grey-l96;
+$color-background-secondary:            $grey-l95;
 $color-background-tertiary:             $white-max;
 $color-background-negative:             $grey-l17;
 $color-background-success:              lighten($color-success, 30%);

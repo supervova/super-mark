@@ -27,7 +27,7 @@ classes: p-blog has-main-header
       <li class="page-item is-prev">
         {% if paginator.previous_page %}
           <a href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
-            <svg class="icon icon-prev" role="presentation">
+            <svg class="icon icon-prev" aria-hidden="true">
               <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
             </svg>
           </a>
@@ -39,7 +39,7 @@ classes: p-blog has-main-header
       <li class="page-item is-next">
         {% if paginator.next_page %}
           <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
-            <svg class="icon" role="presentation">
+            <svg class="icon" aria-hidden="true">
               <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
             </svg>
           </a>

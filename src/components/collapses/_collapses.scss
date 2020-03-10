@@ -28,38 +28,69 @@ $chevvy-top-position: 1.6rem;
   cursor: pointer;
   font-size: 100%;
   font-weight: bolder;
-
-  // 'HR' margin
-  margin-top: 1px;
-
-  // 32px is a padding for chevvy
-  padding: 2.5rem ($spacer-sm * 4) 2.5rem ($spacer-sm * 3);
   position: relative;
-  transition: color .2s;
-
-  // The first item under the picture. Remove margin and increase top padding
-  &.is-first {
-    border-radius: $border-radius-sm $border-radius-sm 0 0;
-    margin-top: .6rem;
-    padding-top: 2.6rem;
-  }
 
   .collapse-toggler[aria-expanded='true'] .icon-chevron {
     transform: rotate(90deg);
   }
 }
 
+.collapse-toggler:not(.is-compact) {
+  // 'HR' margin
+  margin-top: 1px;
+
+  // 32px is a padding for chevvy
+  padding: 2.5rem ($spacer-sm * 4) 2.5rem ($spacer-sm * 3);
+  transition: color .2s;
+
+  // The first item under the picture. Remove margin and increase top padding
+  &.is-first {
+    border-radius: $border-radius $border-radius 0 0;
+    margin-top: .6rem;
+    padding-top: 2.6rem;
+  }
+}
+
 .collapse-toggler .icon-chevron {
   position: absolute;
-  top: 2.8rem;
+
   right: ($spacer-sm * 1.5);
   transform: rotate(180deg);
   transition: transform $duration-sm $easing;
 }
 
+.collapse-toggler:not(.is-compact) .icon-chevron {
+  top: 2.8rem;
+}
+
 .collapse-toggler[aria-expanded='true'] .icon-chevron {
   transform: rotate(90deg);
 }
+
+// Table of content
+
+.collapse-toggler.is-compact {
+  text-transform: none;
+  margin-bottom: 0;
+  padding: $spacer-sm ($spacer-sm * 4) $spacer-sm ($spacer-sm * 3);
+
+
+  &.is-single.collapsed {
+    border-radius: $border-radius;
+  }
+
+  &.is-first,
+  &.is-single {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+}
+
+.collapse-toggler.is-compact .icon-chevron {
+  top: $spacer-sm + .1rem;
+}
+
+
+
 
 // -----------------------------------------------------------------------------
 // COLLAPSIBLE SECTION BODY
@@ -71,6 +102,13 @@ $chevvy-top-position: 1.6rem;
   > :first-child {
     padding-top: 0;
   }
+}
+
+.main-collapse.is-nested-ol {
+  border-radius: 0 0 $border-radius $border-radius;
+  margin-bottom: $spacer-sm * 3;
+  padding-left: $spacer-sm * 4;
+  padding-bottom: $spacer-sm * 3;
 }
 
 // -----------------------------------------------------------------------------

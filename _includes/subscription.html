@@ -1,6 +1,6 @@
 <div class="dropup is-subscription">
   <button class="btn is-link is-subscription" id="btn-subscribe" data-toggle="dropdown" data-display="static" aria-expanded="false">
-    <svg class="icon icon-label-email" role="presentation">
+    <svg class="icon icon-label-email" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-label-email"></use>
     </svg>
     Подписаться
@@ -12,7 +12,7 @@
     <form class="form is-subscription validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" action="https://facebook.us19.list-manage.com/subscribe/post?u=fa995f3948bfdd76675b8cf2b&amp;id=cd3b2297c2" method="post" target="_blank" novalidate>
       <div class="form-group">
         <label for="mce-EMAIL" aria-label="{{ site.data.i18n.labels.formEmail[page.lang] }}" title="{{ site.data.i18n.labels.formEmail[page.lang] }}">
-          <svg class="icon icon-label-email" role="presentation">
+          <svg class="icon icon-label-email" aria-hidden="true">
             <use xlink:href="/assets/img/base/icons/sprite.svg#icon-label-email"></use>
           </svg>
         </label>
@@ -21,7 +21,7 @@
 
       <div class="form-group">
         <label for="mce-FNAME" aria-label="{{ site.data.i18n.labels.formName[page.lang] }}" title="{{ site.data.i18n.labels.formName[page.lang] }}">
-          <svg class="icon icon-label-name" role="presentation">
+          <svg class="icon icon-label-name" aria-hidden="true">
             <use xlink:href="/assets/img/base/icons/sprite.svg#icon-label-name"></use>
           </svg>
         </label>
@@ -39,7 +39,7 @@
     </form>
 
     <a href="/feed.xml" title="Лента блога" >
-      <svg class="icon is-inline is-rss" role="presentation" focusable="false">
+      <svg class="icon is-inline is-rss" focusable="false" aria-hidden="true">
         <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-rss"></use>
       </svg>
       Подписаться на ленту

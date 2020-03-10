@@ -28,13 +28,13 @@
 
     {% if page.lang == 'ru' %}
       <a class="btn lang tablet" href="/en" aria-label="English">
-        <svg class="icon icon-flag-us" role="presentation">
+        <svg class="icon icon-flag-us" aria-hidden="true">
           <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-us"></use>
         </svg>
       </a>
     {% else %}
       <a class="btn lang tablet" href="/" aria-label="In Russian / По-русски">
-        <svg class="icon icon-flag-ru" role="presentation">
+        <svg class="icon icon-flag-ru" aria-hidden="true">
           <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-ru"></use>
         </svg>
       </a>
@@ -49,13 +49,13 @@
     <li>
       {% if page.lang == 'ru' %}
         <a class="link-flag" href="/en" aria-label="In English" title="In English">
-          <svg class="icon icon-flag-us" role="presentation">
+          <svg class="icon icon-flag-us" aria-hidden="true">
             <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-us"></use>
           </svg>
         </a>
       {% else %}
         <a class="link-flag" href="/" aria-label="In Russian / По-русски" title="In Russian / По-русски">
-          <svg class="icon icon-flag-ru" role="presentation">
+          <svg class="icon icon-flag-ru" aria-hidden="true">
             <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-flag-ru"></use>
           </svg>
         </a>
@@ -63,7 +63,7 @@
     </li>
     <li>
       <button class="btn btn-search is-spotlight" data-target="#modal-search" data-toggle="modal" data-src="navbar-search" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" title="{{ site.data.i18n.labels.search[page.lang] }}">
-        <svg class="icon icon-search" role="presentation">
+        <svg class="icon icon-search" aria-hidden="true">
           <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-search" />
         </svg>
       </button>
@@ -75,9 +75,16 @@
     {% for item in menu %}
       <li role="menuitem">
         <a
-          {% if item.slug == 'blog' %}class="navbar-primary-link blog" {% endif %}
-          {% if page.home %}href="#intro" data-slide-to="{{ item.ordinal }}"
-          {% else %}href="/?slide={{ item.ordinal }}"{% endif %}>
+          {% if page.home %}
+            href="#intro" data-slide-to="{{ item.ordinal }}"
+          {% else %}
+            {% if item.slug == 'blog' %}
+              class="navbar-primary-link blog" href="/ru/blog"
+            {% else %}
+              href="/?slide={{ item.ordinal }}"
+            {% endif %}
+          {% endif %}
+        >
           {{ item.title }}
         </a>
       </li>

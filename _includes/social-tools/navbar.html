@@ -6,7 +6,7 @@
   <span class="btn btn-social facebook-like fb-like" data-href="{{ page.url | absolute_url | strip_index }}" data-width="" data-layout="button" data-action="like" data-size="large" data-share="false"></span>
 
   <button class="btn btn-social facebook is-last" data-href="https://www.facebook.com/share.php?u={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" data-tracking-label="FacebookShare" aria-label="{{ social.facebook.name[page.lang] }}" title="{{ social.facebook.name[page.lang] }}">
-    <svg class="icon icon-social-facebook-original" role="presentation">
+    <svg class="icon icon-social-facebook-original" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-facebook-original"></use>
     </svg>
     {{ labels.shareCta[page.lang] }}
@@ -17,31 +17,31 @@
 <div class="social-tools-group" role="group" aria-label="{{ labels.shareNetworks[page.lang] }}">
 
   <button class="btn btn-social vk" data-href="http://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}" data-tracking-label="VK" aria-label="{{ social.vk.name[page.lang] }}" title="{{ social.vk.name[page.lang] }}">
-    <svg class="icon icon-social-vk" role="presentation">
+    <svg class="icon icon-social-vk" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-vk"></use>
     </svg>
   </button>
 
   <button class="btn btn-social twitter" data-href="https://twitter.com/home?status='{{ page.title | url_encode }}'+{{ page.url | absolute_url | url_encode }}" data-tracking-label="Twitter" aria-label="{{ social.twitter.name[page.lang] }}" title="{{ social.twitter.name[page.lang] }}">
-    <svg class="icon icon-social-twitter" role="presentation">
+    <svg class="icon icon-social-twitter" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-twitter"></use>
     </svg>
   </button>
 
   <button class="btn btn-social whatsapp" data-href="whatsapp://send?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" data-tracking-label="WhatsApp" aria-label="WhatsApp" title="WhatsApp">
-    <svg class="icon icon-social-whatsapp" role="presentation">
+    <svg class="icon icon-social-whatsapp" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-whatsapp"></use>
     </svg>
   </button>
 
   <button class="btn btn-social linkedin" data-href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" data-tracking-label="Linkedin" aria-label="{{ social.linkedin.name[page.lang] }}" title="{{ social.linkedin.name[page.lang] }}">
-    <svg class="icon icon-social-linkedin" role="presentation">
+    <svg class="icon icon-social-linkedin" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-social-linkedin"></use>
     </svg>
   </button>
 
   <button class="btn btn-social mail is-last" data-href="mailto:?subject={{ page.title | url_encode }}&amp;body={{ page.url | absolute_url | url_encode }}" data-tracking-label="Mail" aria-label="{{ social.email.name[page.lang] }}" title="{{ social.email.name[page.lang] }}">
-    <svg class="icon icon-label-email" role="presentation">
+    <svg class="icon icon-label-email" aria-hidden="true">
       <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-label-email"></use>
     </svg>
   </button>
