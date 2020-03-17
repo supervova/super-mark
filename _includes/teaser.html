@@ -10,7 +10,7 @@
   <a class="teaser__wrapper-link" href="{{ post.url }}" itemprop="url">
     {% if post.image %}
       <div class="teaser__media media is-top">
-        <img class="teaser__img" src="{{ site.assets }}/{{ post.image }}" alt="{{ post.title }}" itemprop="image">
+        <img class="teaser__img" src="{{ site.assets }}/{{ post.image }}" alt="{{ post.title | strip_html }}" itemprop="image">
       </div>
     {% endif %}
     <h2 class="teaser__title" itemprop="headline">{{ post.title }}</h2>

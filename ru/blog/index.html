@@ -21,24 +21,24 @@ classes: p-blog has-main-header
 
 {% comment %} PAGINATION LINKS. The same for both versions of the pagination plugin {% endcomment %}
 {% if paginator.total_pages > 1 %}
-  <nav class="main-pagination" aria-label="Архив заметок">
+  <nav class="main__pagination" aria-label="Архив заметок">
     <ul class="pagination">
 
-      <li class="page-item is-prev">
+      <li class="pagination__control is-prev">
         {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
-            <svg class="icon icon-prev" aria-hidden="true">
+          <a class="pagination__link" href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
+            <svg class="icon" aria-hidden="true">
               <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
             </svg>
           </a>
         {% endif %}
       </li>
 
-      <li class="page-item is-current">{{ paginator.page }} / {{ paginator.total_pages }}</li>
+      <li class="pagination__control is-current">{{ paginator.page }} / {{ paginator.total_pages }}</li>
 
-      <li class="page-item is-next">
+      <li class="pagination__control is-next">
         {% if paginator.next_page %}
-          <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
+          <a class="pagination__link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
             </svg>

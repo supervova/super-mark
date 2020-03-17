@@ -1,0 +1,46 @@
+// PAGINATION
+
+// Markup
+// nav.main__pagination
+//   ul.pagination
+//     li.pagination__control.is-prev
+//       a(href='')
+//         svg.icon.icon-prev
+//     li.pagination__control.is-current 2 / 2
+//     li.pagination__control.is-next
+
+.main__pagination {
+  padding-top: 4.2rem;
+}
+
+// Counter
+.pagination__control.is-current,
+%pagination-item {
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+}
+
+.pagination__control.is-current {
+  padding: 0 $spacer-sm;
+}
+
+// Next and Prev Links
+.pagination__link {
+  @extend %pagination-item;
+
+  background-color: $transparent;
+  border-color: $color-border-solid;
+  border-radius: $border-radius;
+  padding: 0 1.5rem;
+
+  &:hover {
+    background-color: $color-background-secondary;
+    border-color: $color-border-solid;
+  }
+}
+
+// Previous chevron
+.pagination__control.is-prev .icon {
+  transform: scaleX(-1);
+}
