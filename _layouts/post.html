@@ -21,7 +21,7 @@ layout: default
 
   {% if page.image %}
     <figure class="main-media media">
-      <img src="{{ site.assets }}/{{ page.image }}" itemprop="image" alt="{{ page.title }}">
+      <img src="{{ site.assets }}/{{ page.image }}" itemprop="image" alt="{{ page.title | strip_html }}">
     </figure>
   {% endif %}
 
