@@ -42,12 +42,15 @@ $chevvy-top-position: 1.6rem;
   // 32px is a padding for chevvy
   padding: 2.5rem ($spacer-sm * 4) 2.5rem ($spacer-sm * 3);
   transition: color .2s;
+}
 
-  // The first item under the picture. Remove margin and increase top padding
-  &.is-first {
+// The first item under the picture. Remove margin and increase top padding
+.collapse-toggler:not(.is-compact).is-first {
+  margin-top: .6rem;
+  padding-top: 2.6rem;
+
+  @include media-breakpoint-up(md) {
     border-radius: $border-radius $border-radius 0 0;
-    margin-top: .6rem;
-    padding-top: 2.6rem;
   }
 }
 
@@ -73,23 +76,26 @@ $chevvy-top-position: 1.6rem;
   text-transform: none;
   margin-bottom: 0;
   padding: $spacer-sm ($spacer-sm * 4) $spacer-sm ($spacer-sm * 3);
+}
 
-
-  &.is-single.collapsed {
-    border-radius: $border-radius;
-  }
-
-  &.is-first,
-  &.is-single {
+.collapse-toggler.is-compact.is-first,
+.collapse-toggler.is-compact.is-single {
+  @include media-breakpoint-up(md) {
     border-radius: $border-radius $border-radius 0 0;
+  }
+}
+
+.collapse-toggler.is-compact.is-single.collapsed {
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    border-radius: $border-radius;
   }
 }
 
 .collapse-toggler.is-compact .icon-chevron {
   top: $spacer-sm + .1rem;
 }
-
-
 
 
 // -----------------------------------------------------------------------------
@@ -107,6 +113,7 @@ $chevvy-top-position: 1.6rem;
 .main-collapse.is-nested-ol {
   border-radius: 0 0 $border-radius $border-radius;
   margin-bottom: $spacer-sm * 3;
+  padding-top: .3rem;
   padding-left: $spacer-sm * 4;
   padding-bottom: $spacer-sm * 3;
 }

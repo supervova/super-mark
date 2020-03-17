@@ -185,6 +185,13 @@
   margin-bottom: var(--size-line);
 }
 
+.img.is-inline {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  // use top or bottom to adjust position
+}
+
 /* #endregion */
 
 
