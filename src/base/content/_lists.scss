@@ -112,6 +112,12 @@
   background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23FF8080%22%20cx%3D%227.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M3%207h9v1H3z%22%2F%3E%3C%2Fsvg%3E');
 }
 
+// UNSTYLED
+.list.is-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
 // -----------------------------------------------------------------------------
 // ARCHIVE
 // -----------------------------------------------------------------------------
