@@ -1,7 +1,7 @@
 ---
 title: 'Мы смерти смотрели в лицо'
 description: 'Жена, вздыхая: «Ну, если заболеем, закупим побольше красной рыбки и&nbsp;дорогого вина...»'
-image: /img/blog/2020-03-24-waiting-around-to-die.jpg
+image: /img/blog/2020/03-24-waiting-around-to-die.jpg
 date: 2020-03-24
 categories: Facebook
 ---

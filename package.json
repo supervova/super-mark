@@ -206,5 +206,14 @@
   "dependencies": {
     "minimal-mistakes": "mmistakes/minimal-mistakes",
     "popper.js": "^1.16.0"
-  }
+  },
+  "beautify.config": {
+    "html": {
+      "wrap_line_length": 0
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
