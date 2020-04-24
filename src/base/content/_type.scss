@@ -69,7 +69,7 @@ h1 {
   }
 
   b, strong {
-    font-weight: 500;
+    font-weight: bolder;
 
     @include media-breakpoint-up(md) {
       line-height: 1;
