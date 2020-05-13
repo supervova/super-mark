@@ -1,6 +1,6 @@
 ---
-title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 3.&nbsp;Линии и&nbsp;сетки
-description: 'В Illustrator&rsquoе можно рисовать прямые, дуги, прямоугольные и полярные сетки.'
+title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 3)&nbsp;Линии и&nbsp;сетки
+description: 'В Illustrator’е можно рисовать прямые, дуги, прямоугольные и полярные сетки.'
 date: 2020-05-13
 categories: Illustrator
 ---
