@@ -52,13 +52,20 @@ h2:not([class]),
   padding-top: $headline-md-baseline-shift;
 }
 
+.main-subhead.is-smaller,
+%small-subhead-margins {
+  margin-bottom: ($spacer - $body-baseline-shift);
+  padding-top: $headline-xs-baseline-shift;
+}
+
 h3, h4, h5, h6 {
   &:not([class]),
   .main-body & {
-    margin-bottom: ($spacer - $body-baseline-shift);
-    padding-top: $headline-xs-baseline-shift;
+    @extend %small-subhead-margins;
   }
 }
+
+
 
 blockquote:not([class]),
 .main-body blockquote,

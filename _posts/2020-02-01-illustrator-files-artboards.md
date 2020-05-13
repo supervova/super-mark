@@ -1,5 +1,5 @@
 ---
-title:  Adobe Illustrator для веб-дизайнера.<br> 1.1) Файлы, монтажные области
+title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 1.1) Файлы, монтажные области
 description: '<a href="https://helpx.adobe.com/ru/illustrator/using/using-multiple-artboards.html" target="_blank" rel="noopener noreferrer">На монтажных областях</a> можно разрабатывать дизайн для разных устройств и экранов.'
 image: /img/blog/2020/02-01/illustrator-03-artboard-tool.png
 date: 2020-02-01

@@ -72,6 +72,19 @@
   }
 }
 
+// Second eyebrow
+.main-title.has-eyebrow .eyebrow {
+  color: $color-ink-muted;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  margin-bottom: .2rem;
+  padding-top: .1rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 1.2rem;
+  }
+}
+
 // 3) Headline Under Top Image
 
 // .main-header > .main-media-top + h1 {

@@ -1,5 +1,5 @@
 ---
-title:  Adobe Illustrator для веб-дизайнера.<br> 1.2) Слои
+title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 1.2) Слои
 description: 'UX&nbsp;палитры слоев Illustrator&rsquo;а непривычен для&nbsp;пользователей других графических редакторов, включая Photoshop.'
 date: 2020-03-10
 categories: Illustrator

@@ -1,5 +1,5 @@
 ---
-title:  Adobe Illustrator для веб-дизайнера.<br> 2. Трансформация объектов
+title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 2. Трансформация объектов
 description: 'Ну, что щеглы? Держите конспект о простых, но важных операциях — увеличении и уменьшении графики в Illustrator’е.'
 date: 2020-03-17
 categories: Illustrator
