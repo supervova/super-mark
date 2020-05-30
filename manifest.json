@@ -1,0 +1,12 @@
+{
+  "short_name": "SuperMark",
+  "name": "SuperMark",
+  "icons": [{
+    "src": "/assets/img/base/icons/icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "background_color": "#e7eaee",
+  "theme_color": "#f2b200"
+}
