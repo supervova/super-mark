@@ -67,7 +67,7 @@
 {% endif %}
 {% if site.fonts %}
   <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ site.fonts }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ site.fonts }}&display=swap">
 {% endif %}
   <link rel="stylesheet" href="{{ site.assets }}/css/style.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
 {% if page.styles-addons %}

@@ -233,19 +233,23 @@ $sizes: (
 
 $font-family-base:
  'Helvetica Neue',
-  Helvetica,
- 'Roboto',
+  system-ui,
+ -apple-system,
+  Roboto,
+ 'Segoe UI',
   Arial,
+ 'Noto Sans',
   sans-serif,
  'Apple Color Emoji',
  'Segoe UI Emoji',
- 'Segoe UI Symbol';
+ 'Segoe UI Symbol',
+ 'Noto Color Emoji';
 
 $headings-font-family:
- 'Roboto',
- 'SF Pro Text',
+  system-ui,
  -apple-system,
  'Helvetica Neue',
+ 'Inter',
   Helvetica,
   Arial,
   sans-serif,

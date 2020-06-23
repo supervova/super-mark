@@ -38,7 +38,7 @@ icon: /img/base/icons/icon.png
 # ui_sprite: /img/icons/sprite.svg
 color: '#f2b200'
 
-fonts: Roboto:300,400,500&amp;subset=cyrillic
+fonts: Inter:wght@300;400;600
 rss_title: Блог SuperMark'а
 
 gtm: GTM-WXTNS9W
