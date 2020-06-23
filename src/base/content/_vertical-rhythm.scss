@@ -75,7 +75,7 @@ blockquote:not([class]),
   padding-top: $body-baseline-shift;
 }
 
-dl, figure, ol, p, ul {
+dl, ol, p, ul {
   &:not([class]),
   .main-body &:not([class]) {
     @extend %copy-block-vr;

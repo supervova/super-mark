@@ -11,6 +11,11 @@
   }
 }
 
+p img:only-child,
+figure img:only-child {
+  margin-bottom: 0;
+}
+
 // Thumbnails hover animation
 // stylelint-disable block-opening-brace-space-before
 @keyframes tbnHover {
