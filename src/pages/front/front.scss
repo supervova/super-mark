@@ -264,7 +264,12 @@
     }
 
     @include media-breakpoint-up(lg) {
-      background-image: url('#{$site-assets}/img/base/body/bg-front-md.svg');
+      background-image:
+        url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2240%22%20r%3D%2240%22%20fill%3D%22%23FFBC00%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate%28-24%29%22%2F%3E%3C%2Fsvg%3E'),
+        url('#{$site-assets}/img/base/body/bg-front-md.svg');
+      background-position:
+        calc(50% + 118px) calc(50% - 130px),
+        50% calc(50% + 99px);
     }
   }
 
@@ -396,6 +401,74 @@
     }
   } // end of img / cinemagraph
 }
+
+// Bubbles
+.picture-main::before,
+.picture-main::after {
+  @include media-breakpoint-up(md) {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+.picture-main::before {
+  @include media-breakpoint-up(md) {
+    background: rgba(255, 255, 255, .28);
+    top: 220px;
+    right: -45px;
+    width: 129px;
+    height: 129px;
+  }
+}
+
+.picture-main::after {
+  @include media-breakpoint-up(md) {
+    background: rgba($color-primary, .9);
+    top: 285px;
+    left: 0;
+    width: 209px;
+    height: 209px;
+  }
+}
+
+// RECENT WORK
+// stylelint-disable selector-list-comma-newline-after
+.recent-work {
+  overflow: hidden;
+  transition: max-width $duration $easing;
+  max-width: 0;
+
+  // Если не получится чистым CSS, использовать JS: на recent-work__toggler:hover
+  // добавлять родителю .is-open. На клике за пределами панели и esc убирать
+  // .is-open
+  &:hover {
+    animation: hide-scroll $duration backwards;
+    overflow: auto;
+    // Magic number. Dropdown height can be any, but max-height should be 400px.
+    // Not auto, no other number, but 400.
+    max-width: 400px;
+
+    @keyframes hide-scroll {
+      from, to { overflow: hidden; }
+    }
+  }
+}
+// stylelint-enable selector-list-comma-newline-after
+
+.recent-work__togller {
+  // code
+}
+
+.recent-work__thumbnail {
+  // code
+}
+
+.recent-work__caption {
+  // code
+}
+
 // #endregion
 
 // -----------------------------------------------------------------------------
