@@ -322,6 +322,10 @@
 
   @include media-breakpoint-up(lg) {
     padding-top: .1rem;
+
+    [lang='en'] & {
+      margin-right: -4rem;
+    }
   }
 }
 
