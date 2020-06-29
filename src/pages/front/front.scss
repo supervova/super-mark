@@ -268,8 +268,8 @@
         url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2240%22%20r%3D%2240%22%20fill%3D%22%23FFBC00%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate%28-24%29%22%2F%3E%3C%2Fsvg%3E'),
         url('#{$site-assets}/img/base/body/bg-front-md.svg');
       background-position:
-        calc(50% + 118px) calc(50% - 130px),
-        50% calc(50% + 99px);
+        calc(50% + 11.8rem) calc(50% - 13rem),
+        50% calc(50% + 9.9rem);
     }
   }
 
@@ -416,57 +416,120 @@
 .picture-main::before {
   @include media-breakpoint-up(md) {
     background: rgba(255, 255, 255, .28);
-    top: 220px;
-    right: -45px;
-    width: 129px;
-    height: 129px;
+    top: 22rem;
+    right: -4.5rem;
+    width: 12.9rem;
+    height: 12.9rem;
   }
 }
 
 .picture-main::after {
   @include media-breakpoint-up(md) {
     background: rgba($color-primary, .9);
-    top: 285px;
-    left: 0;
-    width: 209px;
-    height: 209px;
+    top: 28.5rem;
+    left: -2.4rem;
+    width: 20.9rem;
+    height: 20.9rem;
   }
 }
 
 // RECENT WORK
-// stylelint-disable selector-list-comma-newline-after
 .recent-work {
-  overflow: hidden;
-  transition: max-width $duration $easing;
-  max-width: 0;
+  display: none;
+  margin-top: .2rem;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - (48rem / 2));
+  right: 0;
+  transition: opacity $duration $easing;
+  width: var(--size-6);
+  height: calc(var(--size-line) * 5);
 
-  // Если не получится чистым CSS, использовать JS: на recent-work__toggler:hover
-  // добавлять родителю .is-open. На клике за пределами панели и esc убирать
-  // .is-open
   &:hover {
-    animation: hide-scroll $duration backwards;
-    overflow: auto;
-    // Magic number. Dropdown height can be any, but max-height should be 400px.
-    // Not auto, no other number, but 400.
-    max-width: 400px;
+    width: 26.4rem;
+  }
+}
 
-    @keyframes hide-scroll {
-      from, to { overflow: hidden; }
+.is-highlight .recent-work {
+  @include media-breakpoint-up(lg) {
+    display: block;
+    pointer-events: all;
+    opacity: 1;
+
+    // Button
+    &::before {
+      background: darken($color-primary, 4%) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2236%22%20viewBox%3D%220%200%2011%2036%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23BD8B00%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%226%22%20d%3D%22M21.5793463%2C59.8330771%20L25.3391615%2C74.9128724%20M21.5793463%2C60.3354592%20L25.3391615%2C45.2556638%22%20transform%3D%22matrix%28-1%200%200%201%2028.926%20-42%29%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
+      border-radius: $border-radius 0 0 $border-radius;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: var(--size-6);
+      height: calc(var(--size-line) * 5);
     }
   }
 }
-// stylelint-enable selector-list-comma-newline-after
 
-.recent-work__togller {
-  // code
+.recent-work__label  {
+  opacity: 0;
 }
+
+.is-highlight .recent-work__label {
+  // position: absolute;
+  // top: 50%;
+  // left: -$size-line;
+  display: block;
+  opacity: 1;
+  color: $color-ink-on-highlight-link;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: rotate(-90deg) translateX(1.2rem);
+  transition:
+    transform $duration $easing,
+    opacity $duration $easing;
+  width: calc(var(--size-line) * 5);
+}
+
+.is-highlight .recent-work:hover .recent-work__label {
+  transform: rotate(-90deg) translateX(1.2rem) translateY(-20.2rem);
+}
+
+.is-highlight .recent-work__figure {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: width $duration $easing;
+  width: 0;
+  height: calc(var(--size-line) * 7);
+}
+
+// stylelint-disable selector-max-compound-selectors, selector-list-comma-newline-after
+.is-highlight .recent-work:hover .recent-work__figure {
+  animation: hide-scroll $duration backwards;
+  overflow: auto;
+  width: 26.4rem;
+
+  @keyframes hide-scroll {
+    from, to { overflow: hidden; }
+  }
+}
+// stylelint-enable selector-max-compound-selectors
 
 .recent-work__thumbnail {
-  // code
+  display: none;
+  border: var(--size-1) solid $color-ink-light-normal;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-z3;
+  margin-left: var(--size-2);
 }
 
-.recent-work__caption {
-  // code
+.is-highlight .recent-work__thumbnail {
+  display: block;
 }
 
 // #endregion
@@ -561,7 +624,7 @@
   }
 }
 
-// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, selector-list-comma-newline-after, declaration-block-semicolon-newline-after
+// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
 @keyframes slideshowCaption {
   0%          { opacity: 0; }
   4%          { opacity: 1; text-shadow: 0 0 1px rgba(255, 255, 255, 0); }

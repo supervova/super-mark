@@ -1,6 +1,6 @@
 ---
 title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 4)&nbsp;Редактирование контуров
-description: Для работы с&nbsp;контурами в&nbsp;Illustrator’е есть абсолютно гениальный виджет динамического угла, а&nbsp;также стандартные ножицы, ластик и&nbsp;т.&nbsp;д.
+description: Для работы с&nbsp;контурами в&nbsp;Illustrator’е есть абсолютно гениальный виджет динамического угла, а&nbsp;также стандартное перо (в следующем выпуске), ножницы и&nbsp;т.&nbsp;д.
 date: 2020-06-23
 categories: Illustrator
 ---

@@ -33,6 +33,16 @@ layout: compress
       {% endif  %}
     </div>
 
+    {% comment %} Recent Work {% endcomment %}
+    {% if page.home %}
+      <a class="recent-work" href="{{ page.recent-work }}">
+        <span class="recent-work__label" id="recent-work-label">Из последнего</span>
+        <figure class="recent-work__figure">
+          <img class="recent-work__thumbnail" src="{{ site.assets }}/img/projects/recent-work.png" alt="Смотри последние работы в портфолио">
+        </figure>
+      </a>
+    {% endif %}
+
     {% unless page.layout == 'project' %}
       {% comment %} SPOTLIGHT SEARCH AND MODALS {% endcomment %}
 
