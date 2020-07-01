@@ -68,6 +68,9 @@ labels:
   write:
     en: 'Write:'
     ru: 'Пишите:'
+  recent:
+    en: 'Recent Work'
+    ru: 'Из последнего'
 
   # Navbar
   navbarPinup:

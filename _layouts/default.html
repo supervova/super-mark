@@ -35,12 +35,14 @@ layout: compress
 
     {% comment %} Recent Work {% endcomment %}
     {% if page.home %}
-      <a class="recent-work" href="{{ page.recent-work }}">
-        <span class="recent-work__label" id="recent-work-label">Из последнего</span>
-        <figure class="recent-work__figure">
-          <img class="recent-work__thumbnail" src="{{ site.assets }}/img/projects/recent-work.png" alt="Смотри последние работы в портфолио">
-        </figure>
-      </a>
+      <aside class="recent-work">
+        <a class="recent-work__link" href="{{ page.recent-work }}">
+          <span class="recent-work__label" id="recent-work-label">{{ site.data.i18n.labels.recent[page.lang] }}</span>
+          <figure class="recent-work__figure">
+            <img class="recent-work__thumbnail" src="{{ site.assets }}/img/projects/recent-work.png" alt="{{ site.data.i18n.labels.recent[page.lang] }}">
+          </figure>
+        </a>
+      </aside>
     {% endif %}
 
     {% unless page.layout == 'project' %}
