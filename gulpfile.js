@@ -15,8 +15,13 @@
  * ☝️🧐 Uncss shows better results when styles are checked against special pages
  * containing all interface and text components.
  */
+
+// The last option: symlink
+const {
+  src, dest, watch, series, parallel, lastRun,
+} = require('gulp');
+
 const browserSync = require('browser-sync').create();
-const gulp        = require('gulp');
 const changed     = require('gulp-changed');
 const child       = require('child_process');
 const gulpif      = require('gulp-if');
@@ -30,8 +35,8 @@ const yargs       = require('yargs').alias('p', 'production');
 // Look for the --p flag
 const PRODUCTION  = !!(yargs.argv.production);
 
-// Config
-const config = {
+// Paths
+const root = {
   root: '.',
   src: './src',
   // It is better to stick to the system standards to avoid errors.
@@ -46,66 +51,66 @@ const config = {
 const paths = {
   css: {
     src: {
-      main: `${config.src}/style.scss`,
-      front: `${config.src}/pages/front/front.scss`,
-      portfolio: `${config.src}/pages/page/portfolio/portfolio.scss`,
-      head: `${config.src}/css/head-styles/*.scss`,
-      critical: `${config.src}/critical.scss`,
+      main: `${root.src}/style.scss`,
+      front: `${root.src}/pages/front/front.scss`,
+      portfolio: `${root.src}/pages/page/portfolio/portfolio.scss`,
+      head: `${root.src}/css/head-styles/*.scss`,
+      critical: `${root.src}/critical.scss`,
     },
-    watch: `${config.src}/**/*.scss`,
-    tmp: `${config.src}/css`,
-    dest: `${config.dest.assets}/css`,
+    watch: `${root.src}/**/*.scss`,
+    tmp: `${root.src}/css`,
+    dest: `${root.dest.assets}/css`,
   },
 
   jekyll: {
     docs: [
-      `${config.root}/*.html`,
-      `${config.root}/_config.yml`, `${config.root}/_data/*.yml`,
-      `${config.root}/_includes/*.html`,
-      `${config.root}/_layouts/*.html`,
-      `${config.root}/_posts/*.*`,
+      `${root.base}/*.html`,
+      `${root.base}/_config.yml`, `${root.base}/_data/*.yml`,
+      `${root.base}/_includes/*.html`,
+      `${root.base}/_layouts/*.html`,
+      `${root.base}/_posts/*.*`,
     ],
   },
 
   markup: {
     src: {
       pug: [
-        `${config.src}/**/*.pug`,
-        `!${config.src}/**/_*.pug`,
-        `!${config.src}/pages/base/*.pug`,
+        `${root.src}/**/*.pug`,
+        `!${root.src}/**/_*.pug`,
+        `!${root.src}/pages/base/*.pug`,
       ],
-      html: `${config.dest.site}/**/*.html`,
+      html: `${root.dest.site}/**/*.html`,
     },
-    watch: `${config.src}/**/*.pug`,
-    dest: `${config.src}`,
+    watch: `${root.src}/**/*.pug`,
+    dest: `${root.src}`,
   },
 
   img: {
     src: {
       graphics: [
-        `${config.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
-        `!${config.src}/base/icons/sprite/**/*`,
-        `!${config.src}/img/**/*`,
+        `${root.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
+        `!${root.src}/base/icons/sprite/**/*`,
+        `!${root.src}/img/**/*`,
       ],
-      content: `${config.src}/img/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
+      content: `${root.src}/img/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
     },
     // Vars array in watchers breaks build process, so there is one var for a watcher
     watch: [
-      `${config.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
-      `!${config.src}/base/icons/sprite/**/*`,
+      `${root.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
+      `!${root.src}/base/icons/sprite/**/*`,
     ],
-    dest: `${config.dest.assets}/img`,
+    dest: `${root.dest.assets}/img`,
   },
 
   js: {
     src: {
       main: [
-        `${config.src}/**/*.js`,
-        `!${config.src}/js/search.js`,
-        `!${config.src}/js/vendor/*.js`,
+        `${root.src}/**/*.js`,
+        `!${root.src}/js/search.js`,
+        `!${root.src}/js/vendor/*.js`,
       ],
       plugins: [
-        `${config.src}/js/vendor/jquery.mobile.custom.js`,
+        `${root.src}/js/vendor/jquery.mobile.custom.js`,
         './node_modules/popper.js/dist/umd/popper.js',
         './node_modules/bootstrap/js/dist/util.js',
         './node_modules/bootstrap/js/dist/alert.js',
@@ -116,26 +121,26 @@ const paths = {
         './node_modules/bootstrap/js/dist/modal.js',
         './node_modules/bootstrap/js/dist/tab.js',
       ],
-      search: `${config.src}/js/search.js`,
+      search: `${root.src}/js/search.js`,
       unoptimized: [
-        `${config.src}/js/vendor/*.js`,
-        `!${config.src}/js/vendor/jquery.mobile.custom.js`,
+        `${root.src}/js/vendor/*.js`,
+        `!${root.src}/js/vendor/jquery.mobile.custom.js`,
       ],
     },
-    dest: `${config.dest.assets}/js`,
+    dest: `${root.dest.assets}/js`,
   },
 
   sprite: {
-    src: `${config.src}/base/icons/sprite/*.svg`,
-    dest: `${config.src}/base/icons`,
+    src: `${root.src}/base/icons/sprite/*.svg`,
+    dest: `${root.src}/base/icons`,
   },
 
   video: {
     src: [
-      `${config.src}/**/*.+(mp4|ogg|ogv|webm)`,
-      `${config.src}/**/video.zip`,
+      `${root.src}/**/*.+(mp4|ogg|ogv|webm)`,
+      `${root.src}/**/video.zip`,
     ],
-    dest: `${config.dest.assets}/video`,
+    dest: `${root.dest.assets}/video`,
   },
 };
 
@@ -153,10 +158,12 @@ const settings = {
 
         /* eslint-disable max-len */
         // Bootstrap
-        /\w\.in/, /\.navbar(-[a-zA-Z]+)?/, /\.modal(-[a-zA-Z]+)?/, /\.dropdown(-[a-zA-Z]+)?/, /\.carousel(-[a-zA-Z]+)?/, /\.open/, /\.fade/, /\.collaps((-[a-zA-Z])+)?/,
+        /\.carousel(-[a-zA-Z]+)?/, /\.collaps((-[a-zA-Z])+)?/, /\.dropdown(-[a-zA-Z]+)?/, /\.modal(-[a-zA-Z]+)?/, /\.navbar(-[a-zA-Z]+)?/, /\w\.fade\b/, /\w\.in\b/, /\w\.open\b/,
+
 
         // Custom
-        /\.hlaquo-h1/, /\.slaquo-h1/, /\.vk/, /iframe/, /\.mb(-[a-zA-Z0-9]+)?/, /\.mt(-[a-zA-Z0-9]+)?/,
+        /\.[hs]laquo-[a-z0-9]+\b/, /\.[mp][bt]-[a-z0-9]+\b/, /\.vk\b/, /\biframe\b/,
+
         /* eslint-enable max-len */
       ],
     },
@@ -187,30 +194,39 @@ const settings = {
  */
 // #region
 
+// Error: no acceptor (port is in use or requires root privileges)'
+// We need to stop the local server, see what processes are running
+// on the 4000th port ...
+// $ lsof -i tcp:4000
+// And then terminate unnecessary processes by specifying the PID
+// $ kill -9 <PID>
+
 const shell = require('shelljs');
 
 function jekyllBuild(done) {
   let command;
 
-  if (!PRODUCTION) {
-    command = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--incremental'], { stdio: 'inherit' });
+  if (PRODUCTION) {
+    command = shell.exec('JEKYLL_ENV=production jekyll build');
     done();
   }
 
-  if (PRODUCTION) {
-    command = shell.exec('JEKYLL_ENV=production jekyll build');
+  if (!PRODUCTION) {
+    command = shell.exec('bundle exec jekyll build --config _config.yml');
+    // command = child.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config.yml,_config.dev.yml'], { stdio: 'inherit' });
     done();
   }
   return command;
 }
 
-function jekyllServe() {
-  return child.spawn(
+function jekyllServe(done) {
+  child.spawn(
     'jekyll',
-    // ['serve', '--host=192.168.0.14', '--watch', '--incremental', '--drafts'],
-    ['serve', '--watch', '--incremental', '--drafts'],
+    // ['serve', '--host=192.168.0.14', '--watch', '--incremental', '--drafts', '--config', '_config.yml'],
+    ['serve', '--watch', '--incremental', '--drafts', '--trace', '--config', '_config.yml'],
     { stdio: 'inherit' },
   );
+  done();
 }
 // #endregion
 
@@ -227,9 +243,11 @@ const sass         = require('gulp-sass');
 const unCSS        = require('gulp-uncss');
 
 // COMMON STYLES FUNCTION
-const cssTasks = (src, subtitle, uncssHTML, dest, link = true) => gulp.src(src)
-  .pipe(plumber())
+const cssTasks = (
+  source, subtitle, uncssHTML, destination, link = true,
+) => src(source)
   .pipe(changed(paths.css.dest))
+  .pipe(plumber())
   .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
   .pipe(sass({
     precision: 4,
@@ -237,7 +255,7 @@ const cssTasks = (src, subtitle, uncssHTML, dest, link = true) => gulp.src(src)
   }).on('error', sass.logError))
   .pipe(autoprefixer({ cascade: false }))
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-  .pipe(gulp.dest(paths.css.tmp))
+  .pipe(dest(paths.css.tmp))
   .pipe(
     gulpif(
       PRODUCTION,
@@ -253,7 +271,7 @@ const cssTasks = (src, subtitle, uncssHTML, dest, link = true) => gulp.src(src)
   )
   .pipe(gulpif(PRODUCTION, cleanCSS({ level: { 1: { specialComments: 0 } } })))
   .pipe(size({ title: `styles: ${subtitle}` }))
-  .pipe(gulp.dest(dest))
+  .pipe(dest(destination))
   .pipe(browserSync.stream());
 
 // MAIN
@@ -262,7 +280,7 @@ function cssMain(done) {
     paths.css.src.main, // src
     'main', // subtitle
     // uncssHTML; use array syntax for normal results
-    [`${config.src}/css/uncss/**/*.html`],
+    [`${root.src}/css/uncss/**/*.html`],
     paths.css.dest,
   );
   done();
@@ -273,7 +291,7 @@ function cssFront(done) {
   cssTasks(
     paths.css.src.front, // src
     'front', // subtitle
-    [`${config.src}/css/uncss/index.html`], // uncssHTML
+    [`${root.src}/css/uncss/index.html`], // uncssHTML
     paths.css.dest,
   );
   done();
@@ -284,7 +302,7 @@ function cssPortfolio(done) {
   cssTasks(
     paths.css.src.portfolio, // src
     'portfolio', // subtitle
-    [`${config.src}/css/uncss/portfolio.html`], // uncssHTML
+    [`${root.src}/css/uncss/portfolio.html`], // uncssHTML
     paths.css.dest,
   );
   done();
@@ -303,7 +321,7 @@ function cssHead(done) {
 }
 
 // STYLES BUILD
-const css = gulp.parallel(
+const css = parallel(
   cssFront,
   cssHead,
   cssPortfolio,
@@ -325,8 +343,8 @@ const imageminPNG = require('imagemin-pngquant');
 const imageminSVG = require('imagemin-svgo');
 
 // Common images function
-const imgTasks = (src, subtitle) => gulp.src(src)
-  .pipe(changed(`${config.dest.site}/assets/img`))
+const imgTasks = (source, subtitle) => src(source)
+  .pipe(changed(`${root.dest.site}/assets/img`))
   .pipe(
     imagemin(
       [
@@ -346,7 +364,7 @@ const imgTasks = (src, subtitle) => gulp.src(src)
       { verbose: true },
     ),
   )
-  .pipe(gulp.dest(`${config.dest.site}/assets/img`))
+  .pipe(dest(`${root.dest.site}/assets/img`))
   .pipe(size({ title: `images: ${subtitle}` }));
 
 // Graphics
@@ -368,7 +386,7 @@ function imgContent(done) {
 }
 
 // OPTIMIZE
-const img = gulp.parallel(
+const img = parallel(
   imgGraphics,
   imgContent,
 );
@@ -384,14 +402,14 @@ const img = gulp.parallel(
 const svgSprite = require('gulp-svg-sprite');
 
 function svg() {
-  return gulp.src(paths.sprite.src)
+  return src(paths.sprite.src)
     .pipe(svgSprite(settings.sprite))
-    .pipe(gulp.dest(paths.sprite.dest));
+    .pipe(dest(paths.sprite.dest));
 }
 
-const sprite = gulp.series(
+const sprite = series(
   svg,
-  gulp.parallel(cssMain, imgGraphics),
+  parallel(cssMain, imgGraphics),
 );
 // #endregion
 
@@ -406,15 +424,15 @@ const sprite = gulp.series(
 const pug = require('gulp-pug');
 
 function pugCompile() {
-  return gulp.src(paths.markup.src.pug)
+  return src(paths.markup.src.pug)
     .pipe(plumber())
     .pipe(pug({
       doctype: 'html',
       pretty: true,
-      basedir: config.src,
+      basedir: root.src,
     }))
     .pipe(size({ title: 'html' }))
-    .pipe(gulp.dest(paths.markup.dest));
+    .pipe(dest(paths.markup.dest));
 }
 
 // MINIMIZE HTML
@@ -423,7 +441,7 @@ function pugCompile() {
 const htmlmin = require('gulp-htmlmin');
 
 function html(done) {
-  gulp.src(paths.markup.src.html)
+  src(paths.markup.src.html)
     .pipe(
       gulpif(
         PRODUCTION,
@@ -439,7 +457,7 @@ function html(done) {
       ),
     )
     .pipe(gulpif(PRODUCTION, size({ title: 'optimized HTML' })))
-    .pipe(gulp.dest(paths.markup.dest));
+    .pipe(dest(paths.markup.dest));
   done();
 }
 // #endregion
@@ -456,19 +474,19 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
 // Common scripts function
-const jsTasks = (src, file, compiler) => gulp.src(src)
+const jsTasks = (source, file, compiler) => src(source)
+  .pipe(changed(paths.js.dest))
   .pipe(plumber())
   // Use webpack instead others
   // .pipe(webpackstream(webpackconfig, webpack))
-  .pipe(changed(paths.js.dest))
   .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
   .pipe(gulpif(compiler, babel({ presets: ['@babel/preset-env'] })))
   .pipe(concat(`${file}.js`))
   .pipe(uglify())
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
   .pipe(size({ title: `scripts: ${file}` }))
-  .pipe(gulp.dest(paths.js.dest));
-  // .pipe(browserSync.stream());
+  .pipe(dest(paths.js.dest))
+  .pipe(browserSync.stream());
 
 // Plugins
 function jsPlugins(done) {
@@ -491,22 +509,23 @@ function jsMain(done) {
 
 // Search
 function jsSearch() {
-  return gulp.src(paths.js.src.search)
+  return src(paths.js.src.search)
     .pipe(changed(paths.js.dest))
+    .pipe(plumber())
     .pipe(size({ title: 'search script' }))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(dest(paths.js.dest));
   // .pipe(browserSync.stream());
 }
 
 function jsUnoptimized() {
-  return gulp.src(paths.js.src.unoptimized, { base: `${config.src}/js/` })
+  return src(paths.js.src.unoptimized, { base: `${root.src}/js/`, since: lastRun(jsUnoptimized) })
     .pipe(changed(paths.js.dest))
     .pipe(size({ title: 'unoptimized scripts' }))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(dest(paths.js.dest));
 }
 
 // SCRIPTS BUILD
-const js = gulp.parallel(
+const js = parallel(
   jsPlugins,
   jsMain,
   jsSearch,
@@ -521,9 +540,9 @@ const js = gulp.parallel(
  */
 // #region
 function video() {
-  return gulp.src(paths.video.src)
+  return src(paths.video.src, { since: lastRun(video) })
     .pipe(changed(paths.video.dest))
-    .pipe(gulp.dest(paths.video.dest));
+    .pipe(dest(paths.video.dest));
 }
 // #endregion
 
@@ -540,13 +559,13 @@ const del = require('del');
 // Docs
 function clean() {
   return del([
-    `${config.root}/.jekyll-metadata`,
-    `${config.dest.site}/**/*`,
-    `!${config.dest.site}/assets`,
-    `!${config.dest.site}/CNAME`,
-    `!${config.dest.site}/favicon.ico`,
-    `!${config.dest.site}/manifest.json`,
-    `!${config.dest.site}/robots.txt`,
+    `${root.base}/.jekyll-metadata`,
+    `${root.dest.site}/**/*`,
+    `!${root.dest.site}/assets`,
+    `!${root.dest.site}/CNAME`,
+    `!${root.dest.site}/favicon.ico`,
+    `!${root.dest.site}/manifest.json`,
+    `!${root.dest.site}/robots.txt`,
   ]);
 }
 
@@ -554,14 +573,14 @@ function clean() {
 function cleanAssets() {
   return del([
     `${paths.css.dest}/**/*`,
-    `${config.dest.site}_includes/critical.css`,
+    `${root.dest.site}_includes/critical.css`,
     `${paths.js.dest}/**/*`,
     `${paths.img.dest}/**/*`,
   ]);
 }
 
 function cleanSrc() {
-  return del([`${config.src}/**/*.css`]);
+  return del([`${root.src}/**/*.css`]);
 }
 
 // CLEAN _site with all assets and Jekyll caches
@@ -582,21 +601,21 @@ function cleanAll(done) {
  */
 // #region
 
-function watch() {
-  gulp.watch(paths.css.watch, gulp.series(css));
-  gulp.watch(paths.js.src.main, gulp.series(jsMain));
-  gulp.watch(paths.img.watch, gulp.series(img));
-  gulp.watch(paths.jekyll.docs, gulp.series(jekyllBuild));
+function watchFiles() {
+  watch(paths.css.watch, series(css));
+  watch(paths.js.src.main, series(jsMain));
+  watch(paths.img.watch, series(img));
+  watch(paths.jekyll.docs, series(jekyllBuild));
 }
 
-const serve = gulp.series(
+const serve = series(
   clean,
   jekyllBuild,
   svg,
   img,
   video,
-  gulp.parallel(css, js),
-  gulp.parallel(jekyllServe, watch),
+  parallel(css, js),
+  parallel(jekyllServe, watchFiles),
 );
 
 /* Use Browsersync for testing on mobile devices. Use html paths instead
@@ -604,12 +623,12 @@ extension-free permalinks */
 function serveBS(done) {
   browserSync.init({
     server: {
-      baseDir: config.dest.site,
+      baseDir: root.dest.site,
     },
     port: 9000,
     notify: false,
   });
-  watch();
+  watchFiles();
   done();
 }
 // #endregion
@@ -621,21 +640,21 @@ function serveBS(done) {
  */
 // #region
 
-const build = gulp.series(
+const build = series(
   clean,
   cleanSrc,
   jekyllBuild,
   svg,
   img,
   video,
-  gulp.parallel(css, js),
+  parallel(css, js),
 );
 
-const buildAssets = gulp.series(
+const buildAssets = series(
   svg,
   img,
   video,
-  gulp.parallel(css, js),
+  parallel(css, js),
 );
 // #endregion
 
@@ -649,7 +668,7 @@ const buildAssets = gulp.series(
 const ghPages = require('gulp-gh-pages');
 
 function deploy() {
-  return gulp.src(`${config.dest.site}/**/*`)
+  return src(`${root.dest.site}/**/*`)
     .pipe(ghPages());
 }
 // #endregion

@@ -2,11 +2,11 @@
 lang: ru
 title: 'Блог о веб-дизайне и диджитал-маркетинге'
 description: 'Личные конспекты по графическим редакторам, веб-технологиям и диджитал маркетингу.'
-# Don't set a permalink
-# Setting a permalink in the front matter of your blog page will cause pagination to break.The paginate_path is set in the config.
-# The build-in pagination does not support tags or categories. The more recent jekyll-paginate-v2 plugin supports. But this plugin is not supported by GitHub Pages.
+# Don't set a permalink. Setting a permalink in the front matter of your blog page will cause pagination to break.The paginate_path is set in the config.
 layout: page
 classes: p-blog has-main-header
+pagination:
+  enabled: true
 ---
 
 {% comment %} LIST HEADER {% endcomment %}

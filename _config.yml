@@ -51,20 +51,18 @@ permalink: /:slug
 
 # Ruby Date Format
 date_format: '%-d %B, %Y'
+timezone: Europe/Moscow
+
+livereload: true
 
 # ------------------------------------------------------------------------------
 
-# Server Config options
-livereload: true
+# Advanced Settings
 
 jekyll_tidy:
   # exclude: ["index.html"]
   ignore_env: development
   compress_html: true
-
-# Build settings
-# permalink: /:year-:month-:day-:title/
-timezone: Europe/Moscow
 
 # Extended markdown letting use CSS classes: {:.btn .btn–primary}
 markdown: kramdown
@@ -79,6 +77,17 @@ collections:
   posts:
     output: true
     permalink: /ru/blog/:year/:slug
+
+# Pagination Settings
+pagination:
+  enabled: true
+  debug: false
+  per_page: 10
+  permalink: '/:num/'
+  title: ':title — :num / :max'
+  sort_field: 'date'
+  sort_reverse: true
+  # paginate_path: '/ru/blog/:num'
 
 # Default front matter values
 defaults:
@@ -109,27 +118,6 @@ defaults:
       layout: 'index'
       classes: p-blog has-main-header
 
-
-# sass:
-#   sass_dir: src
-#   style: compressed
-
-# Archives
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid
-#  - Archive page should exist at path when using Liquid method
-#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path>/my-awesome-category/index.html ~> path: /
-# category_archive:
-#   type: liquid
-#   path: /categories/
-
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled: [categories]
-#   layout: index-list
-#   permalinks:
-#     category: /ru/blog/:name
-
 # HTML Compression
 # https://jch.penibelst.de/
 compress_html:
@@ -141,10 +129,6 @@ compress_html:
   profile: false
   # ignore:
   #   envs: development
-
-# Pagination Settings
-paginate: 10
-paginate_path: '/ru/blog/:num'
 
 
 # jekyll-paginate-v2
@@ -164,45 +148,38 @@ plugins:
   # https://pages.github.com/versions/
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-seo-tag
+  # - jekyll-paginate
 
   # Plugins that are not supported by GitHub
-  #Archive pages for your Jekyll tags and categories.
-  # - jekyll-archives
-
-  # If image does not set in front matter plugin makes available the first image
-  # of a post in the template as a variable
-  # - jekyll-auto-image
 
   # {{ 'example@example.com' | encode_email }}
   - jekyll-email-protect
 
-
   # {% include_cached footer.html %}
   - jekyll-include-cache
-  # - jekyll-paginate-v2
-  # - jekyll-pug
-  # - jekyll-polyglot
+  - jekyll-paginate-v2
 
   # Plugin for tidying Jekyll HTML output
   - jekyll-tidy
 
 # Exclude from processing.
 exclude:
+  # - CNAME
   - '*.pug'
   - .jekyll-assets-cache
   - .jekyll-cache
   - .sass-cache
-  # - CNAME
   - Gemfile
   - Gemfile.lock
-  - src
-  - dist
+  - gemfiles
   - gulpfile*
-  - node_modules/
+  - gulpfile.js
+  - node_modules
   - package.json
   - readme.md
+  - src
+  - yarn-error.log
   - yarn.lock
 
 theme: null
