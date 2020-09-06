@@ -76,7 +76,7 @@
       "scss/at-extend-no-missing-placeholder": null,
       "scss/dollar-variable-colon-space-after": null,
       "selector-attribute-quotes": "always",
-      "selector-class-pattern": "^[a-z0-9]+([a-z0-9-_]+[a-z0-9]+)?$"
+      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*"
     }
   },
   "eslintConfig": {

@@ -1,20 +1,17 @@
 /**
  * -----------------------------------------------------------------------------
- * 🎛 COMMON PLUGINS AND SETTINGS
+ * 🧩 PLUGINS AND PATHS
  * -----------------------------------------------------------------------------
  */
 // #region
 
-/**
- * ☝️🧐 In order to build a Jekyll site and run a local server,
- * it is preferable to keep package.json, node_modules and execute gulp commands
- * within the source directory.
- * ☝️🧐 The combination of Jekyll built-in server + gulp watchers + Chrome Live
- * Reload Extension is much more faster than the 'gulp only' process.
- * And the first workflow allows us to use extension-free links.
- * ☝️🧐 Uncss shows better results when styles are checked against special pages
- * containing all interface and text components.
- */
+// ☝️🧐 In order to build a Jekyll site and run a local server,
+// it is preferable to keep package.json, node_modules and execute gulp commands
+// within the source directory.
+
+// ☝️🧐 The combination of Jekyll built-in server + gulp watchers + Chrome Live
+// Reload Extension is much more faster than the 'gulp only' process.
+// And the first workflow allows us to use extension-free links.
 
 // The last option: symlink
 const {
@@ -143,48 +140,6 @@ const paths = {
     dest: `${root.dest.assets}/video`,
   },
 };
-
-const settings = {
-  css: {
-    autoprefixer: {
-      browsers: [
-        '> 1%',
-        'last 2 versions',
-      ],
-    },
-
-    uncss: {
-      ignore: [
-
-        /* eslint-disable max-len */
-        // Bootstrap
-        /\.carousel(-[a-zA-Z]+)?/, /\.collaps((-[a-zA-Z])+)?/, /\.dropdown(-[a-zA-Z]+)?/, /\.modal(-[a-zA-Z]+)?/, /\.navbar(-[a-zA-Z]+)?/, /\w\.fade\b/, /\w\.in\b/, /\w\.open\b/,
-
-
-        // Custom
-        /\.[hs]laquo-[a-z0-9]+\b/, /\.[mp][bt]-[a-z0-9]+\b/, /\.vk\b/, /\biframe\b/,
-
-        /* eslint-enable max-len */
-      ],
-    },
-  },
-
-  sprite: {
-    mode: {
-      symbol: {
-        dest: '.', // Mode specific output directory
-        sprite: 'sprite.svg', // Sprite path and name
-        prefix: '.', // Prefix for CSS selectors
-        dimensions: '', // Suffix for dimension CSS selectors
-        example: true, // Create an HTML example document
-      },
-    },
-    svg: {
-      xmlDeclaration: false, // strip out the XML attribute
-      doctypeDeclaration: false, // don't include the !DOCTYPE declaration
-    },
-  },
-};
 // #endregion
 
 /**
@@ -240,7 +195,8 @@ function jekyllServe(done) {
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS     = require('gulp-clean-css');
 const sass         = require('gulp-sass');
-const unCSS        = require('gulp-uncss');
+const postcss      = require('gulp-postcss');
+const uncss        = require('postcss-uncss');
 
 // COMMON STYLES FUNCTION
 const cssTasks = (
@@ -259,14 +215,23 @@ const cssTasks = (
   .pipe(
     gulpif(
       PRODUCTION,
-      gulpif(link, unCSS({
+      gulpif(
+        link,
+        postcss([
+          uncss({
+            html: uncssHTML,
+            ignore: [
+              /* eslint-disable max-len */
+              // Bootstrap
+              /\.carousel(-[a-zA-Z]+)?/, /\.collaps((-[a-zA-Z])+)?/, /\.dropdown(-[a-zA-Z]+)?/, /\.modal(-[a-zA-Z]+)?/, /\.navbar(-[a-zA-Z]+)?/, /\w\.fade/, /\w\.in/, /\w\.open/,
 
-        // In case of an error, try to add the array brackets
-        html: uncssHTML,
-
-        // CSS Selectors for UnCSS to ignore
-        ignore: settings.css.uncss.ignore,
-      })),
+              // Custom
+              '.vk', 'iframe', /\.[hs]laquo-[a-z0-9]+/, /\.[mp][bt]-[a-z0-9]+/,
+              /* eslint-enable max-len */
+            ],
+          }),
+        ]),
+      ),
     ),
   )
   .pipe(gulpif(PRODUCTION, cleanCSS({ level: { 1: { specialComments: 0 } } })))
@@ -403,7 +368,21 @@ const svgSprite = require('gulp-svg-sprite');
 
 function svg() {
   return src(paths.sprite.src)
-    .pipe(svgSprite(settings.sprite))
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          dest: '.', // Mode specific output directory
+          sprite: 'sprite.svg', // Sprite path and name
+          prefix: '.', // Prefix for CSS selectors
+          dimensions: '', // Suffix for dimension CSS selectors
+          example: true, // Create an HTML example document
+        },
+      },
+      svg: {
+        xmlDeclaration: false, // strip out the XML attribute
+        doctypeDeclaration: false, // don't include the !DOCTYPE declaration
+      },
+    }))
     .pipe(dest(paths.sprite.dest));
 }
 
