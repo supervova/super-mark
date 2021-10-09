@@ -485,6 +485,8 @@ function jsPlugins(done) {
   done();
 }
 
+exports.js2 = jsPlugins;
+
 // Main
 function jsMain(done) {
   jsTasks(
