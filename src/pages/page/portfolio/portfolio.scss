@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // stylelint-disable order/order
 
 // Bootstrap and plugins styles
@@ -240,9 +242,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-right: -($spacer / 2);
+  margin-right: -(math.div($spacer, 2));
   margin-bottom: 4.6rem;
-  margin-left: -($spacer / 2);
+  margin-left: -(math.div($spacer, 2));
 
   @supports ((display: -ms-grid) or (display: grid)) {
     @include media-breakpoint-up(lg) {
@@ -258,7 +260,7 @@ body {
 
 .project-gallery__item {
   border-radius: $border-radius-sm;
-  margin: 0 ($spacer-sm / 2) $spacer-sm;
+  margin: 0 (math.div($spacer-sm, 2)) $spacer-sm;
   position: relative;
   overflow: hidden;
   min-height: 1px;
@@ -515,6 +517,10 @@ body {
     // }
   }
 
+  .navbar__project.is-2020 {
+    background-image: url('#{$site-assets}/img/projects/2020/thumbnail.png');
+  }
+
   .navbar__project.is-2019 {
     background-image: url('#{$site-assets}/img/projects/2019/thumbnail.png');
   }
@@ -541,6 +547,7 @@ body {
 }
 
 // Active Project Links
+.is-2020  .navbar__project.is-2020,
 .is-2019  .navbar__project.is-2019,
 .is-cloud-delivery  .navbar__project.is-cloud-delivery,
 .is-forex-club  .navbar__project.is-forex-club,

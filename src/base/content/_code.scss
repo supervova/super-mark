@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // stylelint-disable indentation, block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
 
 pre,
@@ -10,7 +12,7 @@ code {
 
 code {
   display: inline-block;
-  padding: 1px ($spacer-sm / 2);
+  padding: 1px math.div($spacer-sm, 2);
 
   &.d-block {
     margin-top: 1.1rem;

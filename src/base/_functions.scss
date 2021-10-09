@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // -----------------------------------------------------------------------------
 // MAPS HELPERS
 // -----------------------------------------------------------------------------
@@ -30,7 +32,7 @@
   @if $rough-value % $factor == 0 {
     @return $ratio;
   } @else {
-    @return ((round($rough-value / $factor) * $factor) / $headline-size);
+    @return (math.div((round(math.div($rough-value, $factor)) * $factor), $headline-size));
   }
 }
 
@@ -73,11 +75,11 @@
   }
 
   @if $mode == round {
-    @return round($number * $n) / $n;
+    @return math.div(round($number * $n), $n);
   } @else if $mode == ceil {
-    @return ceil($number * $n) / $n;
+    @return math.div(ceil($number * $n), $n);
   } @else if $mode == floor {
-    @return floor($number * $n) / $n;
+    @return math.div(floor($number * $n), $n);
   } @else {
     @warn '#{ $mode } is undefined keyword.';
     @return $number;

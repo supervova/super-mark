@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // stylelint-disable order/order
 
 // ../../front.scss
@@ -109,13 +111,13 @@
 
 .intro-section-copy {
   @include media-breakpoint-up(md) {
-    flex: 0 0 percentage(384/640);
-    max-width: percentage(384/640);
+    flex: 0 0 percentage(math.div(384, 640));
+    max-width: percentage(math.div(384, 640));
   }
 
   @include media-breakpoint-up(lg) {
-    flex-basis: percentage(400/640);
-    max-width: percentage(400/640);
+    flex-basis: percentage(math.div(400, 640));
+    max-width: percentage(math.div(400, 640));
   }
 }
 
@@ -132,15 +134,15 @@
 
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
-    margin-left: percentage(64/640);
-    flex: 0 0 percentage(192/640);
-    max-width: percentage(192/640);
+    margin-left: percentage(math.div(64, 640));
+    flex: 0 0 percentage(math.div(192, 640));
+    max-width: percentage(math.div(192, 640));
   }
 
   @include media-breakpoint-up(lg) {
-    margin-left: percentage(80/640);
-    flex-basis: percentage(160/640);
-    max-width: percentage(160/640);
+    margin-left: percentage(math.div(80, 640));
+    flex-basis: percentage(math.div(160, 640));
+    max-width: percentage(math.div(160, 640));
   }
 }
 
@@ -446,7 +448,7 @@
     pointer-events: none;
     position: absolute;
     // minus half the height of the picture base
-    top: calc(50% - (48rem / 2));
+    top: calc(50% - math.div(48rem, 2));
     right: 0;
     transition: opacity $duration $easing;
     width: var(--size-6);
@@ -664,8 +666,8 @@
 .is-prices .intro-section-body {
   display: flex;
   flex-wrap: wrap;
-  margin-right: ($grid-gutter-sm / -2);
-  margin-left: ($grid-gutter-sm / -2);
+  margin-right: math.div($grid-gutter-sm, -2);
+  margin-left: math.div($grid-gutter-sm, -2);
   position: relative;
 
   @include media-breakpoint-up(md) {
@@ -701,19 +703,18 @@
 
 .plan {
   $cols: 3;
-  $deduction: ($grid-gutter-sm * ($cols -  1) / $cols);
-  $approximate-col-width: percentage(1 / $cols);
-
+  $deduction: ($grid-gutter-sm * math.div(($cols -  1), $cols));
+  $approximate-col-width: percentage(math.div(1, $cols));
   position: relative;
-  padding-right: ($grid-gutter-sm / 2);
-  padding-left: ($grid-gutter-sm / 2);
+  padding-right: math.div($grid-gutter-sm, 2);
+  padding-left: math.div($grid-gutter-sm, 2);
   width: 100%;
   min-height: 1px;
   margin-bottom: $spacer;
 
   @include media-breakpoint-up(md) {
-    flex: 0 0 percentage(1/3);
-    max-width: 0 0 percentage(1/3);
+    flex: 0 0 percentage(math.div(1, 3));
+    max-width: 0 0 percentage(math.div(1, 3));
     margin-bottom: 0;
   }
 }

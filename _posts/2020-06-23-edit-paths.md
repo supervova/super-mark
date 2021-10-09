@@ -32,7 +32,7 @@ categories: Illustrator
 <figure><img src="{{ site.assets }}/img/blog/2020/06-23/07-eraser-tool.png" alt="Стирание контура"></figure>
 <p>Кликнув ножницами на&nbsp;контур, добавляешь разрыв&nbsp;— две опорных точки, одну под другой.</p>
 <figure><img src="{{ site.assets }}/img/blog/2020/06-23/08-scissors.png" alt="Ножницы"></figure>
-<h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Инструмент соединения контуров</h2>
+<h2 class="main-subhead is-smaller" id="join-tool">🔵&nbsp;&nbsp;Инструмент соединения контуров</h2>
 <p>Последний пункт в&nbsp;меню карандаша</p>
 <figure><img src="{{ site.assets }}/img/blog/2020/06-23/09-join-tool.png" alt="Инструмент соединения контуров"></figure>
 <ul>

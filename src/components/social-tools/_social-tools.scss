@@ -73,12 +73,20 @@
 
   > span {
     // In Chrome button aligned vertically only this way.
-    transform: translateY(-.3rem);
+    transform: translate3d(-.1rem, -.2rem, 0);
+    // Override inline styles
+    width: 96px !important;
 
     @-moz-document url-prefix('') {
       position: static;
     }
   }
+}
+
+.btn-social.facebook-like iframe {
+  margin-bottom: 0;
+  // Override inline styles
+  width: 96px !important;
 }
 
 .btn-social.facebook .icon {

@@ -48,6 +48,24 @@
   margin-bottom: calc(var(--size-line) * 2);
 }
 
+// CUSTOM MARKERS
+
+// .list.is-upper-cyrillic li::before { content: counter(list-counter upper-cyrillic-ru) '. ';}
+
+.list.is-upper-alpha {
+  list-style: none;
+  counter-reset: list-counter;
+}
+
+.list.is-upper-alpha li {
+  counter-increment: list-counter;
+
+  &::before {
+    color: darken($color-secondary, 15%);
+    content: counter(list-counter, upper-alpha) '. ';
+    font-weight: bold;
+  }
+}
 
 
 // -----------------------------------------------------------------------------
@@ -163,4 +181,5 @@
   top: 0;
   left: 0;
 }
+
 

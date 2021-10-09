@@ -4,17 +4,16 @@
 @import 'base/functions';
 @import 'base/variables';
 
-// Bootstrap. Importing an entire framework and removing unnecessary styles with
-// UnCSS requires less effort than importing parts of the BS.
-
+// Bootstrap. Import an entire framework and then clean styles with UnCSS
+// Partial import leads to the typography issues and needs debugging
 @import './node_modules/bootstrap/scss/bootstrap';
 
-// TODO: Try replace full Bootstrap with BS grid
-@import './node_modules/bootstrap/scss/functions';
-@import './node_modules/bootstrap/scss/variables';
-@import './node_modules/bootstrap/scss/mixins';
-@import './node_modules/bootstrap/scss/grid';
-@import './node_modules/bootstrap/scss/utilities/display';
+// TODO: Replace full Bootstrap with BS grid
+// @import './node_modules/bootstrap/scss/functions';
+// @import './node_modules/bootstrap/scss/variables';
+// @import './node_modules/bootstrap/scss/mixins';
+// @import './node_modules/bootstrap/scss/grid';
+// @import './node_modules/bootstrap/scss/utilities/display';
 // @import './node_modules/bootstrap/scss/utilities/spacing';
 
 // Base

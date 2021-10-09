@@ -66,6 +66,8 @@ const paths = {
       `${root.base}/_includes/*.html`,
       `${root.base}/_layouts/*.html`,
       `${root.base}/_posts/*.*`,
+      `${root.base}/ru/portfolio/*.html`,
+      `${root.base}/en/portfolio/*.html`,
     ],
   },
 
@@ -139,6 +141,11 @@ const paths = {
     ],
     dest: `${root.dest.assets}/video`,
   },
+
+  downloads: {
+    src: `${root.src}/downloads/**/*`,
+    dest: `${root.dest.assets}/downloads`,
+  },
 };
 // #endregion
 
@@ -162,7 +169,7 @@ function jekyllBuild(done) {
   let command;
 
   if (PRODUCTION) {
-    command = shell.exec('JEKYLL_ENV=production jekyll build');
+    command = shell.exec('JEKYLL_ENV=production bundle exec jekyll build');
     done();
   }
 
@@ -175,12 +182,13 @@ function jekyllBuild(done) {
 }
 
 function jekyllServe(done) {
-  child.spawn(
-    'jekyll',
-    // ['serve', '--host=192.168.0.14', '--watch', '--incremental', '--drafts', '--config', '_config.yml'],
-    ['serve', '--watch', '--incremental', '--drafts', '--trace', '--config', '_config.yml'],
-    { stdio: 'inherit' },
-  );
+  shell.exec('bundle exec jekyll serve --incremental --watch --drafts --trace --config _config.yml');
+  // child.spawn(
+  //   'jekyll',
+  //   // ['serve', '--host=192.168.0.14', '--watch', '--incremental', '--drafts', '--config', '_config.yml'],
+  //   ['serve', '--watch', '--incremental', '--drafts', '--trace', '--config', '_config.yml'],
+  //   { stdio: 'inherit' },
+  // );
   done();
 }
 // #endregion
@@ -194,7 +202,7 @@ function jekyllServe(done) {
 
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS     = require('gulp-clean-css');
-const sass         = require('gulp-sass');
+const sass         = require('gulp-sass')(require('sass'));
 const postcss      = require('gulp-postcss');
 const uncss        = require('postcss-uncss');
 
@@ -208,6 +216,7 @@ const cssTasks = (
   .pipe(sass({
     precision: 4,
     includePaths: ['.'],
+    quietDeps: true,
   }).on('error', sass.logError))
   .pipe(autoprefixer({ cascade: false }))
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
@@ -514,7 +523,7 @@ const js = parallel(
 
 /**
  * -----------------------------------------------------------------------------
- * 📼 VIDEO
+ * 📼 COPY FILES
  * -----------------------------------------------------------------------------
  */
 // #region
@@ -522,6 +531,12 @@ function video() {
   return src(paths.video.src, { since: lastRun(video) })
     .pipe(changed(paths.video.dest))
     .pipe(dest(paths.video.dest));
+}
+
+function downloads() {
+  return src(paths.downloads.src, { since: lastRun(downloads) })
+    .pipe(changed(paths.downloads.dest))
+    .pipe(dest(paths.downloads.dest));
 }
 // #endregion
 
@@ -593,6 +608,7 @@ const serve = series(
   svg,
   img,
   video,
+  downloads,
   parallel(css, js),
   parallel(jekyllServe, watchFiles),
 );
@@ -626,6 +642,7 @@ const build = series(
   svg,
   img,
   video,
+  downloads,
   parallel(css, js),
 );
 
@@ -633,6 +650,7 @@ const buildAssets = series(
   svg,
   img,
   video,
+  downloads,
   parallel(css, js),
 );
 // #endregion
@@ -667,6 +685,7 @@ exports.pug         = pugCompile;
 exports.html        = html;
 exports.sprite      = sprite;
 exports.video       = video;
+exports.downloads   = downloads;
 exports.img         = img;
 exports.js          = js;
 exports.css         = css;

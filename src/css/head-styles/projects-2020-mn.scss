@@ -1,0 +1,14 @@
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+
+.main.is-project {
+  display: block;
+  text-align: center;
+}
+
+.project-gallery__item {
+  display: inline-block;
+  margin: 0 auto 2.4rem;
+  width: auto;
+}

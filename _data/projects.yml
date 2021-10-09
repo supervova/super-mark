@@ -27,6 +27,49 @@ common:
     en: 'Checkout'
     ru: 'Оплата'
 
+projects-2020:
+  title:
+    en: '2020'
+    ru: '2020'
+  twelve:
+    en: 'Online store design'
+    ru: 'Дизайн интернет-магазина'
+  magic-notebook:
+    edit:
+      en: 'Main app window'
+      ru: 'Основное окно программы'
+    presentation-cover:
+      en: 'Presentation cover'
+      ru: 'Обложка презентации'
+    presentation-customers:
+      en: 'Presentation “Customers” slide'
+      ru: 'Презентация — слайд «Потребители»'
+    presentation-market:
+      en: 'Presentation “Market” slide'
+      ru: 'Презентация — слайд «Рынок»'
+    presentation-product:
+      en: 'Presentation “Product” slide'
+      ru: 'Презентация — слайд «Продукт»'
+    proof-reader:
+      en: '“Proof reader” pane'
+      ru: 'Панель «Корректор»'
+  our-portugal:
+    property:
+      en: 'Property page'
+      ru: 'Страница каталога недвижимости'
+    wp:
+      en: 'WordPress administration screen'
+      ru: 'Админка'
+    home:
+      en: 'Homepage'
+      ru: 'Главная страница'
+  sportmaster:
+    en: 'Newsletter design'
+    ru: 'Дизайн письма рассылки'
+  timeweb:
+    en: 'Internet service provider’s “Community” section design'
+    ru: 'Дизайн проекта Community для крупнейшего интернет-провайдера'
+
 cloud-delivery:
   base:
     en: 'Forwarding company app'
