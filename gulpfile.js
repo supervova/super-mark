@@ -612,7 +612,8 @@ const serve = series(
   video,
   downloads,
   parallel(css, js),
-  parallel(jekyllServe, watchFiles),
+  jekyllServe,
+  watchFiles,
 );
 
 /* Use Browsersync for testing on mobile devices. Use html paths instead
@@ -692,6 +693,7 @@ exports.img         = img;
 exports.js          = js;
 exports.css         = css;
 exports.ba          = buildAssets;
+exports.w           = watchFiles;
 exports.jks         = jekyllServe;
 exports.j           = jekyllBuild;
 exports.deploy      = deploy;

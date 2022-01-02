@@ -505,6 +505,10 @@ body {
 
 // Project Links Thumbnails
 @include media-breakpoint-up(md) {
+  .navbar__project.is-2021 {
+    background-image: url('#{$site-assets}/img/projects/2021/thumbnail.png');
+  }
+
   .navbar__project.is-cloud-delivery {
     background-image: url('#{$site-assets}/img/projects/cloud-delivery/thumbnail.png');
     // background-image:
@@ -547,6 +551,7 @@ body {
 }
 
 // Active Project Links
+.is-2021  .navbar__project.is-2021,
 .is-2020  .navbar__project.is-2020,
 .is-2019  .navbar__project.is-2019,
 .is-cloud-delivery  .navbar__project.is-cloud-delivery,

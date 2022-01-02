@@ -1,5 +1,5 @@
 ---
-title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 9.3)&nbsp;Направляющие и&nbsp;линейки
+title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 9.4)&nbsp;Направляющие и&nbsp;линейки
 description: Illustrator оснащен самой мощной системой направляющих. Здесь они не&nbsp;только вертикальные и&nbsp;горизонтальные, но&nbsp;и&nbsp;диагональные, круглые, какие угодно.
 date: 2021-10-09
 categories: Illustrator

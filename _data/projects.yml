@@ -27,6 +27,17 @@ common:
     en: 'Checkout'
     ru: 'Оплата'
 
+projects-2021:
+  socmedical:
+    en: 'Medical social network'
+    ru: 'Медицинская социальная сеть'
+  white-crows:
+    en: 'Social network and job search portal for IT industry'
+    ru: 'Социальная сеть и портал поиска работы для ИТ-индустрии'
+  slykesport:
+    en: 'Sports social network'
+    ru: 'Спортивная социальная сеть'
+
 projects-2020:
   title:
     en: '2020'
