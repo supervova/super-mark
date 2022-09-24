@@ -2,23 +2,25 @@
   "name": "supermark",
   "version": "1.0.0",
   "description": "web design portfolio",
+  "author": {
+    "name": "Vladimir Nikishin",
+    "email": "vlaimir.nikishin@gmail.com",
+    "url": "https://super-mark.ru/"
+  },
+  "license": "MIT",
   "scripts": {
-    "j": "jekyll s -I",
-    "jp": "JEKYLL_ENV=production jekyll s -I"
+    "start": "concurrently --kill-others 'gulp s' 'gulp w'"
   },
   "engines": {
     "node": ">=10",
     "npm": ">=3"
   },
-  "author": "Vladimir Nikishin",
-  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
   "devDependencies": {
-    "animate.css": "github:daneden/animate.css",
-    "beautiful-jekyll": "daattali/beautiful-jekyll",
-    "bootstrap": "^4.3.1",
-    "html5-boilerplate": "github:h5bp/html5-boilerplate",
-    "jekyll-paginate-v2": "sverrirs/jekyll-paginate-v2",
-    "savas-take-two": "savaslabs/savaslabs.github.io"
+    "@popperjs/core": "^2.10.2",
+    "the-new-css-reset": "elad2412/the-new-css-reset"
   },
   "stylelint": {
     "extends": [
@@ -30,6 +32,7 @@
       "node_modules/**/*"
     ],
     "rules": {
+
       "comment-whitespace-inside": "always",
       "font-family-name-quotes": "always-where-recommended",
       "function-parentheses-space-inside": "never-single-line",
@@ -76,23 +79,26 @@
       "scss/at-extend-no-missing-placeholder": null,
       "scss/dollar-variable-colon-space-after": null,
       "selector-attribute-quotes": "always",
-      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*"
+      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*",
+      "selector-no-qualifying-type" : [
+        true,
+        {"ignore": ["attribute"]}
+      ]
     }
   },
   "eslintConfig": {
     "root": true,
     "extends": [
-      "eslint-config-prettier",
-      "airbnb-base"
+      "airbnb-base",
+      "plugin:prettier/recommended"
     ],
     "globals": {
       "wp": true
     },
     "env": {
-      "node": true,
-      "es6": true,
-      "amd": true,
       "browser": true,
+      "es2021": true,
+      "node": true,
       "jquery": true
     },
     "plugins": [
@@ -100,7 +106,7 @@
       "import"
     ],
     "parserOptions": {
-      "ecmaVersion": 2017,
+      "ecmaVersion": 2021,
       "sourceType": "module"
     },
     "settings": {
@@ -141,75 +147,26 @@
       ]
     }
   },
-  "pugLintConfig": {
-    "disallowAttributeConcatenation": null,
-    "disallowAttributeInterpolation": true,
-    "disallowAttributeTemplateString": null,
-    "disallowBlockExpansion": null,
-    "disallowClassAttributeWithStaticValue": true,
-    "disallowClassLiteralsBeforeAttributes": null,
-    "disallowClassLiteralsBeforeIdLiterals": true,
-    "disallowClassLiterals": null,
-    "disallowDuplicateAttributes": true,
-    "disallowHtmlText": null,
-    "disallowIdAttributeWithStaticValue": null,
-    "disallowIdLiteralsBeforeAttributes": null,
-    "disallowIdLiterals": null,
-    "disallowLegacyMixinCall": true,
-    "disallowMultipleLineBreaks": true,
-    "disallowSpaceAfterCodeOperator": null,
-    "disallowSpacesInsideAttributeBrackets": true,
-    "disallowSpecificAttributes": null,
-    "disallowSpecificTags": null,
-    "disallowStringConcatenation": null,
-    "disallowStringInterpolation": null,
-    "disallowTagInterpolation": true,
-    "disallowTemplateString": null,
-    "maximumNumberOfLines": null,
-    "requireClassLiteralsBeforeAttributes": true,
-    "requireIdLiteralsBeforeAttributes": true,
-    "requireLineFeedAtFileEnd": true,
-    "requireLowerCaseAttributes": true,
-    "requireLowerCaseTags": true,
-    "requireSpaceAfterCodeOperator": true,
-    "requireSpacesInsideAttributeBrackets": null,
-    "requireSpecificAttributes": [
-      {
-        "img": [
-          "alt",
-          "src"
-        ]
-      },
-      {
-        "a": [
-          "href"
-        ]
-      }
-    ],
-    "requireStrictEqualityOperators": true,
-    "validateAttributeQuoteMarks": "'",
-    "validateAttributeSeparator": {
-      "separator": ", ",
-      "multiLineSeparator": "\n  "
-    },
-    "validateDivTags": null,
-    "validateExtension": true,
-    "validateIndentation": 2,
-    "validateLineBreaks": "LF",
-    "validateSelfClosingTags": true,
-    "validateTemplateString": [
-      "variable",
-      "string"
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
     ]
   },
-  "dependencies": {
-    "minimal-mistakes": "mmistakes/minimal-mistakes",
-    "popper.js": "^1.16.0"
-  },
-  "beautify.config": {
-    "html": {
-      "wrap_line_length": 0
-    }
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "printWidth": 40000,
+          "bracketSameLine": true
+        }
+      }
+    ]
   },
   "browserslist": [
     "> 1%",

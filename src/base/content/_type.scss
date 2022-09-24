@@ -157,6 +157,29 @@ p {
   color: $color-ink-muted;
 }
 
+blockquote {
+  > footer {
+    color: $color-ink-muted;
+    font-style: normal;
+
+    &::before {
+      content: '\2014\00A0'; // em dash, nbsp
+    }
+  }
+}
+
+:lang(ru) {
+  blockquote p:first-child::before,
+  q::before {
+    content: '«';
+  }
+
+  blockquote p:last-of-type::after,
+  q::after {
+    content: '»';
+  }
+}
+
 
 // -----------------------------------------------------------------------------
 // LINKS
@@ -217,7 +240,6 @@ figcaption {
 table {
   font-variant-numeric: lining-nums tabular-nums;
 }
-
 
 // -----------------------------------------------------------------------------
 // SPECIALS

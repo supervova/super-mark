@@ -5,32 +5,59 @@
  */
 // #region
 
-// ☝️🧐 In order to build a Jekyll site and run a local server,
-// it is preferable to keep package.json, node_modules and execute gulp commands
-// within the source directory.
-
 // ☝️🧐 The combination of Jekyll built-in server + gulp watchers + Chrome Live
 // Reload Extension is much more faster than the 'gulp only' process.
 // And the first workflow allows us to use extension-free links.
+// But for some reason, the watchFiles() does not work in the `serve` series.
+// Therefore, I launch two processes in parallel: `npm start`.
 
 // The last option: symlink
-const {
-  src, dest, watch, series, parallel, lastRun,
-} = require('gulp');
+import { src, dest, watch, series, parallel, lastRun } from 'gulp';
 
-const browserSync = require('browser-sync').create();
-const changed     = require('gulp-changed');
-const child       = require('child_process');
-const gulpif      = require('gulp-if');
-// const newer       = require('gulp-newer');
+// GENERAL
+import browserSync from 'browser-sync';
+import changed from 'gulp-changed';
+import child from 'child_process';
+import gulpif from 'gulp-if';
+
 // Prevent pipe breaking caused by errors from gulp plugins
-const plumber     = require('gulp-plumber');
-const size        = require('gulp-size');
-const sourcemaps  = require('gulp-sourcemaps');
-const yargs       = require('yargs').alias('p', 'production');
+import plumber from 'gulp-plumber';
+import size from 'gulp-size';
+import sourcemaps from 'gulp-sourcemaps';
+import yargs from 'yargs';
 
-// Look for the --p flag
-const PRODUCTION  = !!(yargs.argv.production);
+// JEKYLL & MARKUP
+import htmlmin from 'gulp-htmlmin';
+import pug from 'gulp-pug';
+import shell from 'shelljs';
+
+// STYLES
+import autoprefixer from 'gulp-autoprefixer';
+import cssnano from 'cssnano';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import uncss from 'postcss-uncss';
+
+// IMAGES
+import imagemin from 'gulp-imagemin';
+import imageminGIF from 'imagemin-gifsicle';
+import imageminJPG from 'imagemin-mozjpeg';
+import imageminPNG from 'imagemin-pngquant';
+import imageminSVG from 'imagemin-svgo';
+import svgSprite from 'gulp-svg-sprite';
+
+// SCRIPTS
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+
+// UTILITIES
+const del = require('del');
+
+const PRODUCTION = yargs.argv.p;
+const sass = gulpSass(dartSass);
+const server = browserSync.create();
 
 // Paths
 const root = {
@@ -62,7 +89,8 @@ const paths = {
   jekyll: {
     docs: [
       `${root.base}/*.html`,
-      `${root.base}/_config.yml`, `${root.base}/_data/*.yml`,
+      `${root.base}/_config.yml`,
+      `${root.base}/_data/*.yml`,
       `${root.base}/_includes/*.html`,
       `${root.base}/_layouts/*.html`,
       `${root.base}/_posts/*.*`,
@@ -135,10 +163,7 @@ const paths = {
   },
 
   video: {
-    src: [
-      `${root.src}/**/*.+(mp4|ogg|ogv|webm)`,
-      `${root.src}/**/video.zip`,
-    ],
+    src: [`${root.src}/**/*.+(mp4|ogg|ogv|webm)`, `${root.src}/**/video.zip`],
     dest: `${root.dest.assets}/video`,
   },
 
@@ -163,8 +188,6 @@ const paths = {
 // And then terminate unnecessary processes by specifying the PID
 // $ kill -9 <PID>
 
-const shell = require('shelljs');
-
 function jekyllBuild(done) {
   let command;
 
@@ -182,7 +205,9 @@ function jekyllBuild(done) {
 }
 
 function jekyllServe(done) {
-  shell.exec('bundle exec jekyll serve --incremental --watch --drafts --trace --config _config.yml');
+  shell.exec(
+    'bundle exec jekyll serve --incremental --watch --drafts --trace --config _config.yml'
+  );
   // child.spawn(
   //   'jekyll',
   //   // ['serve', '--host=192.168.0.14', '--watch', '--incremental', '--drafts', '--config', '_config.yml'],
@@ -200,62 +225,72 @@ function jekyllServe(done) {
  */
 // #region
 
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS     = require('gulp-clean-css');
-const sass         = require('gulp-sass')(require('sass'));
-const postcss      = require('gulp-postcss');
-const uncss        = require('postcss-uncss');
-
 // COMMON STYLES FUNCTION
-const cssTasks = (
-  source, subtitle, uncssHTML, destination, link = true,
-) => src(source)
-  .pipe(changed(paths.css.dest))
-  .pipe(plumber())
-  .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-  .pipe(sass({
-    precision: 4,
-    includePaths: ['.'],
-    quietDeps: true,
-  }).on('error', sass.logError))
-  .pipe(autoprefixer({ cascade: false }))
-  .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-  .pipe(dest(paths.css.tmp))
-  .pipe(
-    gulpif(
-      PRODUCTION,
+function cssTasks(source, subtitle, destination, unCssHtml) {
+  src(source)
+    .pipe(changed(destination))
+    .pipe(plumber())
+    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+    .pipe(
+      sass({
+        precision: 4,
+        includePaths: ['.'],
+        // deprecate warnings from external libraries
+        quietDeps: true,
+      }).on('error', sass.logError)
+    )
+    // autoprefixer (browserslist) has been set in package.json
+    .pipe(autoprefixer({ cascade: false }))
+    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+    .pipe(dest(paths.css.tmp))
+    .pipe(
       gulpif(
-        link,
-        postcss([
-          uncss({
-            html: uncssHTML,
-            ignore: [
-              /* eslint-disable max-len */
-              // Bootstrap
-              /\.carousel(-[a-zA-Z]+)?/, /\.collaps((-[a-zA-Z])+)?/, /\.dropdown(-[a-zA-Z]+)?/, /\.modal(-[a-zA-Z]+)?/, /\.navbar(-[a-zA-Z]+)?/, /\w\.fade/, /\w\.in/, /\w\.open/,
+        PRODUCTION,
+        gulpif(
+          unCssHtml,
+          postcss([
+            uncss({
+              html: unCssHtml,
+              ignore: [
+                /* eslint-disable max-len */
+                // Bootstrap
+                /\.carousel(-[a-zA-Z]+)?/,
+                /\.collaps((-[a-zA-Z])+)?/,
+                /\.dropdown(-[a-zA-Z]+)?/,
+                /\.modal(-[a-zA-Z]+)?/,
+                /\.navbar(-[a-zA-Z]+)?/,
+                /\w\.fade/,
+                /\w\.in/,
+                /\w\.open/,
 
-              // Custom
-              '.vk', 'iframe', /\.[hs]laquo-[a-z0-9]+/, /\.[mp][bt]-[a-z0-9]+/,
-              /* eslint-enable max-len */
-            ],
-          }),
-        ]),
-      ),
-    ),
-  )
-  .pipe(gulpif(PRODUCTION, cleanCSS({ level: { 1: { specialComments: 0 } } })))
-  .pipe(size({ title: `styles: ${subtitle}` }))
-  .pipe(dest(destination))
-  .pipe(browserSync.stream());
+                // Custom
+                '.vk',
+                'iframe',
+                /\.[hs]laquo-[a-z0-9]+/,
+                /\.[mp][bt]-[a-z0-9]+/,
+                /* eslint-enable max-len */
+              ],
+            }),
+          ])
+        )
+      )
+    )
+    .pipe(postcss([cssnano({ reduceIdents: { keyframes: false } })]))
+    .pipe(size({ title: `styles: ${subtitle}` }))
+    .pipe(dest(destination))
+    .pipe(server.stream());
+}
 
 // MAIN
+// source, subtitle, destination, unCssHtml
 function cssMain(done) {
   cssTasks(
     paths.css.src.main, // src
     'main', // subtitle
-    // uncssHTML; use array syntax for normal results
-    [`${root.src}/css/uncss/**/*.html`],
     paths.css.dest,
+
+    // uncssHTML; use array syntax for normal results
+    [`${root.src}/css/uncss/**/*.html`]
   );
   done();
 }
@@ -265,8 +300,8 @@ function cssFront(done) {
   cssTasks(
     paths.css.src.front, // src
     'front', // subtitle
-    [`${root.src}/css/uncss/index.html`], // uncssHTML
     paths.css.dest,
+    [`${root.src}/css/uncss/index.html`] // uncssHTML
   );
   done();
 }
@@ -276,8 +311,8 @@ function cssPortfolio(done) {
   cssTasks(
     paths.css.src.portfolio, // src
     'portfolio', // subtitle
-    [`${root.src}/css/uncss/portfolio.html`], // uncssHTML
     paths.css.dest,
+    [`${root.src}/css/uncss/portfolio.html`] // uncssHTML
   );
   done();
 }
@@ -287,20 +322,14 @@ function cssHead(done) {
   cssTasks(
     paths.css.src.head, // src
     'head', // subtitle
-    '', // uncss
     paths.css.dest,
-    false,
+    false // uncss
   );
   done();
 }
 
 // STYLES BUILD
-const css = parallel(
-  cssFront,
-  cssHead,
-  cssPortfolio,
-  cssMain,
-);
+const css = parallel(cssFront, cssHead, cssPortfolio, cssMain);
 // #endregion
 
 /**
@@ -309,43 +338,35 @@ const css = parallel(
  * -----------------------------------------------------------------------------
  */
 // #region
-
-const imagemin    = require('gulp-imagemin');
-const imageminGIF = require('imagemin-gifsicle');
-const imageminJPG = require('imagemin-mozjpeg');
-const imageminPNG = require('imagemin-pngquant');
-const imageminSVG = require('imagemin-svgo');
-
 // Common images function
-const imgTasks = (source, subtitle) => src(source)
-  .pipe(changed(`${root.dest.site}/assets/img`))
-  .pipe(
-    imagemin(
-      [
-        imageminGIF({
-          interlaced: true,
-          optimizationLevel: 3,
-        }),
-        imageminJPG({ quality: 85 }),
-        imageminPNG([0.8, 0.9]),
-        imageminSVG({
-          plugins: [
-            { removeViewBox: false },
-            { cleanupIDs: false },
-          ],
-        }),
-      ],
-      { verbose: true },
-    ),
-  )
-  .pipe(dest(`${root.dest.site}/assets/img`))
-  .pipe(size({ title: `images: ${subtitle}` }));
+function imgTasks(source, subtitle) {
+  src(source)
+    .pipe(changed(`${root.dest.site}/assets/img`))
+    .pipe(
+      imagemin(
+        [
+          imageminGIF({
+            interlaced: true,
+            optimizationLevel: 3,
+          }),
+          imageminJPG({ quality: 85 }),
+          imageminPNG([0.8, 0.9]),
+          imageminSVG({
+            plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+          }),
+        ],
+        { verbose: true }
+      )
+    )
+    .pipe(dest(`${root.dest.site}/assets/img`))
+    .pipe(size({ title: `images: ${subtitle}` }));
+}
 
 // Graphics
 function imgGraphics(done) {
   imgTasks(
     paths.img.src.graphics, // src
-    'graphics', // subtitle
+    'graphics' // subtitle
   );
   done();
 }
@@ -354,16 +375,13 @@ function imgGraphics(done) {
 function imgContent(done) {
   imgTasks(
     paths.img.src.content, // src
-    'content', // subtitle
+    'content' // subtitle
   );
   done();
 }
 
 // OPTIMIZE
-const img = parallel(
-  imgGraphics,
-  imgContent,
-);
+const img = parallel(imgGraphics, imgContent);
 // #endregion
 
 /**
@@ -373,32 +391,29 @@ const img = parallel(
  */
 // #region
 
-const svgSprite = require('gulp-svg-sprite');
-
 function svg() {
   return src(paths.sprite.src)
-    .pipe(svgSprite({
-      mode: {
-        symbol: {
-          dest: '.', // Mode specific output directory
-          sprite: 'sprite.svg', // Sprite path and name
-          prefix: '.', // Prefix for CSS selectors
-          dimensions: '', // Suffix for dimension CSS selectors
-          example: true, // Create an HTML example document
+    .pipe(
+      svgSprite({
+        mode: {
+          symbol: {
+            dest: '.', // Mode specific output directory
+            sprite: 'sprite.svg', // Sprite path and name
+            prefix: '.', // Prefix for CSS selectors
+            dimensions: '', // Suffix for dimension CSS selectors
+            example: true, // Create an HTML example document
+          },
         },
-      },
-      svg: {
-        xmlDeclaration: false, // strip out the XML attribute
-        doctypeDeclaration: false, // don't include the !DOCTYPE declaration
-      },
-    }))
+        svg: {
+          xmlDeclaration: false, // strip out the XML attribute
+          doctypeDeclaration: false, // don't include the !DOCTYPE declaration
+        },
+      })
+    )
     .pipe(dest(paths.sprite.dest));
 }
 
-const sprite = series(
-  svg,
-  parallel(cssMain, imgGraphics),
-);
+const sprite = series(svg, parallel(cssMain, imgGraphics));
 // #endregion
 
 /**
@@ -409,25 +424,22 @@ const sprite = series(
 // #region
 
 // PUG
-const pug = require('gulp-pug');
-
 function pugCompile() {
   return src(paths.markup.src.pug)
     .pipe(plumber())
-    .pipe(pug({
-      doctype: 'html',
-      pretty: true,
-      basedir: root.src,
-    }))
+    .pipe(
+      pug({
+        doctype: 'html',
+        pretty: true,
+        basedir: root.src,
+      })
+    )
     .pipe(size({ title: 'html' }))
     .pipe(dest(paths.markup.dest));
 }
 
 // MINIMIZE HTML
 // 'gulp html' does nothing; 'gulp html --p' minifies
-
-const htmlmin = require('gulp-htmlmin');
-
 function html(done) {
   src(paths.markup.src.html)
     .pipe(
@@ -441,8 +453,8 @@ function html(done) {
           removeRedundantAttributes: false,
           minifyJS: true,
           minifyCSS: true,
-        }),
-      ),
+        })
+      )
     )
     .pipe(gulpif(PRODUCTION, size({ title: 'optimized HTML' })))
     .pipe(dest(paths.markup.dest));
@@ -457,42 +469,39 @@ function html(done) {
  */
 // #region
 
-const babel  = require('gulp-babel');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-
-// Common scripts function
-const jsTasks = (source, file, compiler) => src(source)
-  .pipe(changed(paths.js.dest))
-  .pipe(plumber())
-  // Use webpack instead others
-  // .pipe(webpackstream(webpackconfig, webpack))
-  .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-  .pipe(gulpif(compiler, babel({ presets: ['@babel/preset-env'] })))
-  .pipe(concat(`${file}.js`))
-  .pipe(uglify())
-  .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-  .pipe(size({ title: `scripts: ${file}` }))
-  .pipe(dest(paths.js.dest))
-  .pipe(browserSync.stream());
+// COMMON SCRIPTS FUNCTION
+// BS4 does use CommonJS modules, so we can't use ES6 import and webpack stream
+function jsTasks(source, file, compiler) {
+  src(source)
+    .pipe(changed(paths.js.dest))
+    .pipe(plumber())
+    // Use webpack instead others
+    // .pipe(webpackstream(webpackconfig, webpack))
+    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+    .pipe(gulpif(compiler, babel({ presets: ['@babel/preset-env'] })))
+    .pipe(concat(`${file}.js`))
+    .pipe(uglify())
+    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+    .pipe(size({ title: `scripts: ${file}` }))
+    .pipe(dest(paths.js.dest))
+    .pipe(server.stream());
+}
 
 // Plugins
 function jsPlugins(done) {
   jsTasks(
     paths.js.src.plugins, // src
-    'plugins', // file
+    'plugins' // file
   );
   done();
 }
-
-exports.js2 = jsPlugins;
 
 // Main
 function jsMain(done) {
   jsTasks(
     paths.js.src.main, // src
     'main', // file
-    true,
+    true
   );
   done();
 }
@@ -504,23 +513,21 @@ function jsSearch() {
     .pipe(plumber())
     .pipe(size({ title: 'search script' }))
     .pipe(dest(paths.js.dest));
-  // .pipe(browserSync.stream());
+  // .pipe(server.stream());
 }
 
 function jsUnoptimized() {
-  return src(paths.js.src.unoptimized, { base: `${root.src}/js/`, since: lastRun(jsUnoptimized) })
+  return src(paths.js.src.unoptimized, {
+    base: `${root.src}/js/`,
+    since: lastRun(jsUnoptimized),
+  })
     .pipe(changed(paths.js.dest))
     .pipe(size({ title: 'unoptimized scripts' }))
     .pipe(dest(paths.js.dest));
 }
 
 // SCRIPTS BUILD
-const js = parallel(
-  jsPlugins,
-  jsMain,
-  jsSearch,
-  jsUnoptimized,
-);
+const js = parallel(jsPlugins, jsMain, jsSearch, jsUnoptimized);
 // #endregion
 
 /**
@@ -548,9 +555,6 @@ function downloads() {
  * -----------------------------------------------------------------------------
  */
 // #region
-
-// CLEAN
-const del = require('del');
 
 // Docs
 function clean() {
@@ -612,21 +616,24 @@ const serve = series(
   video,
   downloads,
   parallel(css, js),
-  jekyllServe,
-  watchFiles,
+  jekyllServe
 );
 
 /* Use Browsersync for testing on mobile devices. Use html paths instead
 extension-free permalinks */
 function serveBS(done) {
-  browserSync.init({
+  server.init({
     server: {
+      // baseDir: '../../../',
       baseDir: root.dest.site,
+    },
+    middleware(req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      next();
     },
     port: 9000,
     notify: false,
   });
-  watchFiles();
   done();
 }
 // #endregion
@@ -646,16 +653,10 @@ const build = series(
   img,
   video,
   downloads,
-  parallel(css, js),
+  parallel(css, js)
 );
 
-const buildAssets = series(
-  svg,
-  img,
-  video,
-  downloads,
-  parallel(css, js),
-);
+const buildAssets = series(svg, img, video, downloads, parallel(css, js));
 // #endregion
 
 /**
@@ -668,8 +669,7 @@ const buildAssets = series(
 const ghPages = require('gulp-gh-pages');
 
 function deploy() {
-  return src(`${root.dest.site}/**/*`)
-    .pipe(ghPages());
+  return src(`${root.dest.site}/**/*`).pipe(ghPages());
 }
 // #endregion
 
@@ -678,25 +678,27 @@ function deploy() {
  * ☑️ TASKS
  * -----------------------------------------------------------------------------
  */
-
-/* eslint-disable no-multi-spaces */
-exports.cleanSrc    = cleanSrc;
+// Add-ons
+exports.ba = buildAssets;
+exports.bs = serveBS;
+exports.clean = clean;
+exports.cleanAll = cleanAll;
 exports.cleanAssets = cleanAssets;
-exports.cleanAll    = cleanAll;
-exports.clean       = clean;
-exports.pug         = pugCompile;
-exports.html        = html;
-exports.sprite      = sprite;
-exports.video       = video;
-exports.downloads   = downloads;
-exports.img         = img;
-exports.js          = js;
-exports.css         = css;
-exports.ba          = buildAssets;
-exports.w           = watchFiles;
-exports.jks         = jekyllServe;
-exports.j           = jekyllBuild;
-exports.deploy      = deploy;
-exports.bs          = serveBS;
-exports.s           = serve;
-exports.default     = build;
+exports.cleanSrc = cleanSrc;
+exports.downloads = downloads;
+exports.html = html;
+exports.j = jekyllBuild;
+exports.jks = jekyllServe;
+exports.jsp = jsPlugins;
+exports.pug = pugCompile;
+exports.video = video;
+
+// Base
+exports.img = img;
+exports.js = js;
+exports.css = css;
+exports.sprite = sprite;
+exports.w = watchFiles;
+exports.s = serve;
+exports.default = build;
+exports.deploy = deploy;
