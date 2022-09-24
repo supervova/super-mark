@@ -15,13 +15,6 @@
     "node": ">=10",
     "npm": ">=3"
   },
-  "dependencies": {
-    "bootstrap": "^4.3.1"
-  },
-  "devDependencies": {
-    "@popperjs/core": "^2.10.2",
-    "the-new-css-reset": "elad2412/the-new-css-reset"
-  },
   "stylelint": {
     "extends": [
       "stylelint-config-sass-guidelines"
@@ -32,7 +25,6 @@
       "node_modules/**/*"
     ],
     "rules": {
-
       "comment-whitespace-inside": "always",
       "font-family-name-quotes": "always-where-recommended",
       "function-parentheses-space-inside": "never-single-line",
@@ -80,9 +72,13 @@
       "scss/dollar-variable-colon-space-after": null,
       "selector-attribute-quotes": "always",
       "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*",
-      "selector-no-qualifying-type" : [
+      "selector-no-qualifying-type": [
         true,
-        {"ignore": ["attribute"]}
+        {
+          "ignore": [
+            "attribute"
+          ]
+        }
       ]
     }
   },
@@ -171,5 +167,12 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
+    "popper.js": "^1.16.1",
+    "the-new-css-reset": "elad2412/the-new-css-reset"
+  }
 }
