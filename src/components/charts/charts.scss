@@ -85,3 +85,6 @@
   height: ($spacer-sm-px * 5);
 }
 
+// BS has no such utility
+.w-80 { width: 80% !important; }
+
