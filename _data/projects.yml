@@ -27,6 +27,30 @@ common:
     en: 'Checkout'
     ru: 'Оплата'
 
+projects-2022:
+  friends:
+    en: 'Social network "With Friends"'
+    ru: 'Социальная сеть «В кругу друзей»'
+  chatbot:
+    en: 'Qwerty Networks messenger with a chatbot named Max'
+    ru: 'Мессенджер Qwerty Networks с чат-ботом по имени Макс'
+  business-power:
+    en: '"Business Power", business-focused social media platform'
+    ru: '«Бизнес-сила» — социальная сеть для поиска и установления деловых контактов'
+  fintech:
+    en: 'Financial applications for the Russian-Turkish fintech startup'
+    ru: 'Финансовые приложения для российско-турецкого финтех-стартапа'
+  hla-club:
+    en: 'HealthTech - "Healthy Longevity Academy"'
+    ru: 'HealthTech — «Академия здорового долголетия»'
+  varyag:
+    en: 'The website of the board game "Varyag"'
+    ru: 'Сайт настольной игры «Варяг»'
+  wine:
+    en: 'The online wine shop'
+    ru: 'Интернет-магазин вина'
+
+
 projects-2021:
   socmedical:
     en: 'Medical social network'
