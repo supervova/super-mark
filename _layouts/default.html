@@ -39,7 +39,14 @@ layout: compress
         <a class="recent-work__link" href="{{ page.recent-work }}">
           <span class="recent-work__label" id="recent-work-label">{{ site.data.i18n.labels.recent[page.lang] }}</span>
           <figure class="recent-work__figure">
-            <img class="recent-work__thumbnail" src="{{ site.assets }}/img/projects/recent-work.png" alt="{{ site.data.i18n.labels.recent[page.lang] }}">
+            <img
+              class="recent-work__thumbnail"
+              src="{{ site.assets }}/img/projects/recent-work.png"
+              srcset="
+                {{ site.assets }}/img/projects/recent-work.png 1x,
+                {{ site.assets }}/img/projects/recent-work@2x.png 2x"
+              alt="{{ site.data.i18n.labels.recent[page.lang] }}"
+            >
           </figure>
         </a>
       </aside>

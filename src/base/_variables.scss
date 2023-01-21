@@ -166,14 +166,15 @@ $color-ink-light-icon:                  $white-transparent-more;
 /* #region */
 
 :root {
-  --size-1: .8rem;
-  --size-2: 1.6rem;
-  --size-3: 2.4rem;
-  --size-4: 3.2rem;
-  --size-5: 4rem;
-  --size-6: 4.8rem;
-  --size-7: 5.6rem;
-  --size-8: 6.4rem;
+  --size-1:   .8rem;
+  --size-1p5: 1.2rem;
+  --size-2:   1.6rem;
+  --size-3:   2.4rem;
+  --size-4:   3.2rem;
+  --size-5:   4rem;
+  --size-6:   4.8rem;
+  --size-7:   5.6rem;
+  --size-8:   6.4rem;
 
   --size-line: var(--size-3);
 }
@@ -304,19 +305,18 @@ $border-width:                          1px;
 // BOX BORDER RADIUS
 
 // Alerts, Cards, Rectangular Images, Tooltips
-$border-radius-sm:                      3px;
+$border-radius-sm:   3px;
 
 // Buttons
-$border-radius:                         5px;
-
-
-$border-radius-md:                      10px;
+$border-radius:      6px;
 
 // Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers
-$border-radius-lg:                      12px;
+$border-radius-lg:   12px;
 
 // Modals
-$border-radius-xl:                      24px;
+$border-radius-xl:   24px;
+
+$border-radius-pill: 100vmax;
 
 
 // BOX SHADOWS

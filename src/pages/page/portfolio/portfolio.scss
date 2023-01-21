@@ -5,13 +5,10 @@
 // Bootstrap and plugins styles
 @import './src/base/functions';
 @import './src/base/variables';
+@import './src/base/mixins';
 @import './node_modules/bootstrap/scss/functions';
 @import './node_modules/bootstrap/scss/variables';
 @import './node_modules/bootstrap/scss/mixins';
-
-
-$tooltip-background:                    $color-background-secondary;
-$tooltip-width:                         $panel-width-xs;
 
 body {
   background: $color-background-primary;
@@ -246,8 +243,8 @@ body {
   margin-bottom: 4.6rem;
   margin-left: -(math.div($spacer, 2));
 
-  @supports ((display: -ms-grid) or (display: grid)) {
-    @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(lg) {
+    &:not(.is-flex) {
       display: grid;
       grid-gap: $spacer-sm;
       grid-template-columns: repeat(12, 1fr);
@@ -255,6 +252,19 @@ body {
       margin-bottom: 5.4rem;
       margin-left: 0;
     }
+
+    &.is-flex {
+      gap: var(--size-1);
+
+      > * {
+        margin-bottom: 0;
+
+        @supports not (gap: 4px) {
+          margin: 4px;
+        }
+      }
+    }
+
   }
 }
 
@@ -407,28 +417,63 @@ body {
   }
 
   @include media-breakpoint-up(md) {
+    @include scrollbar;
+
     display: block;
     font-size: $font-size-sm;
     line-height: $line-height-sm;
     // Extended top padding and slight upward shift to avoid hidden overflow
     // issue for the first tooltip
-    padding: 4.8rem 1rem ($spacer-sm * 2);
+    padding: 0 1rem ($spacer-sm * 2);
+    scrollbar-gutter: stable both-edges;
     transform: translate3d(0, -3.1rem, 0);
-    overflow-x: hidden;
-    overflow-y: auto;
     width: 100%;
+
+    &::before {
+      background:
+        linear-gradient(
+          #{$color-background-primary} 10%,
+          hsl(214 17% 92% / .5) 43.33%,
+          hsl(214 17% 92% / 0)
+        );
+      content: '';
+      display: block;
+      left: 0;
+      margin: 0 -1.6rem;
+      position: sticky;
+      top: 0;
+      right: 0;
+      height: 4.8rem;
+      z-index: 1;
+    }
 
     > li {
       white-space: normal;
       margin-right: 0;
       margin-bottom: $spacer-sm;
     }
+
+    @media (pointer: coarse) {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    @media (pointer: fine) {
+      overflow: hidden;
+
+      &:hover {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
   }
+
+
 
   @include media-breakpoint-up(lg) {
     // Extended top padding and slight upward shift to avoid hidden overflow
     // issue for the first tooltip
-    padding: 4.8rem ($spacer-sm * 3) ($spacer-sm * 5);
+    padding: 0 ($spacer-sm * 3) ($spacer-sm * 5);
     transform: translate3d(0, -.4rem, 0);
   }
 }
@@ -437,7 +482,7 @@ body {
 .navbar__project {
   background: $color-primary-pale;
   border: 5px solid #fff;
-  border-radius: $border-radius-md;
+  border-radius: $border-radius-lg;
   box-shadow: $box-shadow-z1;
   color: $color-ink-on-highlight-normal;
   display: block;
@@ -505,6 +550,14 @@ body {
 
 // Project Links Thumbnails
 @include media-breakpoint-up(md) {
+  .navbar__project.is-2022 {
+    background-image:
+      image-set(
+        url('#{$site-assets}/img/projects/2022/thumbnail.png') 1x,
+        url('#{$site-assets}/img/projects/2022/thumbnail@2x.png') 2x
+      );
+  }
+
   .navbar__project.is-2021 {
     background-image: url('#{$site-assets}/img/projects/2021/thumbnail.png');
   }
@@ -551,9 +604,10 @@ body {
 }
 
 // Active Project Links
-.is-2021  .navbar__project.is-2021,
-.is-2020  .navbar__project.is-2020,
-.is-2019  .navbar__project.is-2019,
+.is-2022 .navbar__project.is-2022,
+.is-2021 .navbar__project.is-2021,
+.is-2020 .navbar__project.is-2020,
+.is-2019 .navbar__project.is-2019,
 .is-cloud-delivery  .navbar__project.is-cloud-delivery,
 .is-forex-club  .navbar__project.is-forex-club,
 .is-gambling  .navbar__project.is-gambling,
@@ -597,10 +651,6 @@ body {
 
     @include media-breakpoint-up(md) {
       width: 104px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      width: 152px;
     }
   }
 }

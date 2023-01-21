@@ -42,6 +42,9 @@ _site
 src/**/*.css
 sprite.symbol.html
 
+# Big media files
+/src/projects
+
 # Logs, backups
 *.bak
 *.log
@@ -94,3 +97,4 @@ $RECYCLE.BIN/
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
