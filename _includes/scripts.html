@@ -59,14 +59,16 @@
 </script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+{% comment %}
 {% if page.lang == 'ru' %}
   {% assign fb_lang = 'ru_RU' %}
 {% else %}
   {% assign fb_lang = 'en_US' %}
 {% endif %}
+{% endcomment %}
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/{{ fb_lang }}/sdk.js#xfbml=1&version=v5.0&appId=1477564732401123&autoLogAppEvents=1" nonce="rndxRhrD"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1477564732401123&autoLogAppEvents=1" nonce="rndxRhrD"></script>
 
 {% comment %}
 {% if page.url contains 'ru/blog' %}
