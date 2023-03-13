@@ -7,6 +7,9 @@ Crawl-delay: 10
 # Build, WIP and System Files and Directories
 Disallow: /CNAME
 
+Disallow: /?ref=*
+Disallow: /?slide=*
+
 # Don't block webmaster tools verification files
 
 Host: super-mark.ru
