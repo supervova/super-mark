@@ -14,7 +14,7 @@
   background-size: auto auto, 1px 192px;
 
   // Full width
-  margin: 0 -16px;
+  margin: 0 -$size-2p5;
 
   @include media-breakpoint-up(md) {
     background-color: $color-primary;
@@ -61,7 +61,7 @@
   padding: 4.3rem 16px 2.7rem;
 
   @include media-breakpoint-up(md) {
-    color: $color-ink-light-normal;
+    color: $color-ink-light-base;
     font-size: $headline-lg-font-size;
     font-weight: 300;
     line-height: $headline-lg-line-height;
@@ -78,7 +78,7 @@
   padding: 0 16px 2.4rem;
 
   @include media-breakpoint-up(md) {
-    color: $color-ink-light-normal;
+    color: $color-ink-light-base;
     padding: 0;
   }
 }
@@ -406,7 +406,11 @@
 
 .main-header.is-services img {
   top: auto;
-  bottom: 0;
+  bottom: -2rem;
+
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+  }
 }
 
 

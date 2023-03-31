@@ -2,7 +2,7 @@
 // ACTIVITY SPINNER
 // -----------------------------------------------------------------------------
 
-.icon-spinner { animation: spin 1000ms infinite linear; }
+.icon.is-spinner { animation: spin 1000ms infinite linear; }
 
 // stylelint-disable block-opening-brace-space-before
 @keyframes spin {
@@ -15,30 +15,14 @@
 // SHARED
 // -----------------------------------------------------------------------------
 
-.inline-icon-on-left,
-%inline-icon-on-left {
+.has-left-icon,
+%has-left-icon {
   position: relative;
   padding-left: 24px;
 
   .icon {
     position: absolute;
     left: 0;
-  }
-}
-
-.icon-on-right,
-%icon-on-right {
-  text-decoration: none;
-  padding-right: 16px;
-}
-
-.icon-font-medium-right,
-%icon-font-medium-right {
-  background-position: calc(100% - 8px) .9rem;
-  padding-right: 24px;
-
-  &:hover {
-    color: $link-color;
   }
 }
 
@@ -49,7 +33,6 @@
 }
 
 .icon.is-rss {
-  fill: var(--color-ink-icon);
   margin-right: .4rem;
   transform: translateY(-.3rem);
 }

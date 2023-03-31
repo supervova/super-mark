@@ -15,9 +15,7 @@ layout: page
     {% comment %} It's required for correct hash links work {% endcomment %}
     <a name="{{ category-name | slugify | uri_escape }}"></a>
     <h2 class="section__title" id="#{{ category-name | slugify | uri_escape }}">
-      <svg class="icon" focusable="false" aria-hidden="true">
-        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-tag"></use>
-      </svg>
+      {% include icon.html name="tag" %}
       {{ category-name }}
     </h2>
 

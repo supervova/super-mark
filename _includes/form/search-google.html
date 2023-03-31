@@ -2,8 +2,6 @@
   <input type="hidden" name="sitesearch" value="https://super-mark.ru">
   <input class="form-control form__search-input" name="q" type="text" maxlength="255" tabindex="-1" autocomplete="off" value="" placeholder="{{ site.data.i18n.labels.search[page.lang] }}">
   <button class="btn btn-search" type="submit" aria-label="{{ site.data.i18n.labels.search[page.lang] }}">
-    <svg class="icon-search" aria-hidden="true">
-      <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-search" />
-    </svg>
+    {% include icon.html name="search" %}
   </button>
 </form>

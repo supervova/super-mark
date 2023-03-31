@@ -9,7 +9,7 @@ date: 2021-03-06 13:30
 <p>После 5&nbsp;минут простоя, macOS запускает скринсейвер&nbsp;— слайд-шоу из&nbsp;этих картинок. И&nbsp;достаточно посмотреть на&nbsp;них пару минут, чтобы успокоиться и&nbsp;восстановить силы.</p>
 <p>Собаки и&nbsp;кошки, тигры и&nbsp;медведи, волки и&nbsp;лисы, зайчики и&nbsp;белочки, коровки и&nbsp;лошадки, совы и&nbsp;попугайчики, киты и&nbsp;золотые рыбки. Сбалансированный комплекс прямого визуального воздействия для восстановления психологического равновесия. Попробуйте как-нибудь.</p>
 <p>
-  <a class="btn is-secondary" href="https://www.dropbox.com/s/dlb8s5b1blorzw6/animal-screensaver.zip?dl=1" download>
+  <a class="btn is-2ry" href="https://www.dropbox.com/s/dlb8s5b1blorzw6/animal-screensaver.zip?dl=1" download>
     <b>Скачайте <span class="d-none d-sm-inline">все картинки</span> прямо сейчас</b>
   </a>
   <br><br>

@@ -5,6 +5,7 @@ html {
   // of sizing rems in a way that is similar to using px.
   // body { font-size: 1.6rem; }
   font-size: 62.5%;
+  // scrollbar-gutter: stable;
 }
 
 html,
@@ -22,11 +23,17 @@ body {
 
   // Add space for fixed header
   padding: 5.6rem 0 0;
+  // padding:
+  //   calc(env(safe-area-inset-top) + 5.6rem)
+  //   env(safe-area-inset-right)
+  //   env(safe-area-inset-bottom)
+  //   env(safe-area-inset-left);
+
   transition: background-color $duration-lg $easing-appearance;
   min-height: 100%;
 
   @include media-breakpoint-up(md) {
-    background-color: $color-background-primary;
+    background-color: $color-background-base;
     background-image: none;
     background-position: 50% calc(50% + 102px);
     background-repeat: no-repeat;

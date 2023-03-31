@@ -3,10 +3,10 @@
 }
 
 .is-subscription > .dropdown-menu {
-  background-color: $color-background-secondary;
+  background-color: $color-background-2ry;
   box-shadow: $box-shadow-z4;
   text-align: center;
-  padding: 3.1rem var(--size-2) 2.9rem;
+  padding: 3.1rem $size-2 2.9rem;
   width: $panel-width-sm;
 
   &.show {

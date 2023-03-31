@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .section {
-  padding: ($spacer * 3) 0 ($spacer * 3 - .1rem);
+  padding: ($size-line * 3) 0 ($size-line * 3 - .1rem);
   position: relative;
 
   h2 {
@@ -11,7 +11,7 @@
   }
 
   &.last {
-    padding-bottom: ($spacer * 3);
+    padding-bottom: ($size-line * 3);
   }
 
   // Multicolumn subsections
@@ -76,7 +76,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: calc(-1 * var(--size-4));
-    transform: translateY(-49%);
+    left: calc(-1 * $size-4);
+    transform: translateY(-40%);
   }
 }

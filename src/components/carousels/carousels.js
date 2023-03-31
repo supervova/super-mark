@@ -12,12 +12,12 @@
  */
 
 jQuery(document).ready(($) => {
-  const carousel     = $('.carousel');
+  const carousel = $('.carousel');
   const carouselMain = $('#intro');
-  const totalItems   = $('.carousel-item').length;
-  const body         = $('body');
+  const totalItems = $('.carousel-item').length;
+  const body = $('body');
   // const likeShare    = $('.social-tools');
-  const pager        = $('.carousel-pager');
+  const pager = $('.carousel-pager');
   let currentSlide;
 
   // Preventing Bootstrap carousel from auto sliding
@@ -37,7 +37,9 @@ jQuery(document).ready(($) => {
     // Escape RegEx meta chars
     const pureKey = key.replace(/[*+?^$.[\]{}()|\\/]/g, '\\$&');
     // eslint-disable-next-line no-restricted-globals
-    const match = location.search.match(new RegExp(`[?&]${pureKey}=([^&]+)(&|$)`));
+    const match = location.search.match(
+      new RegExp(`[?&]${pureKey}=([^&]+)(&|$)`)
+    );
     const slide = match && decodeURIComponent(match[1].replace(/\+/g, ' '));
     if ($.isNumeric(slide)) {
       return parseInt(slide, 10);
@@ -110,7 +112,6 @@ jQuery(document).ready(($) => {
   //   }, 1);
   // });
 
-
   /**
    * ---------------------------------------------------------------------------
    * Prev
@@ -142,9 +143,11 @@ jQuery(document).ready(($) => {
     toggleBodyClass(totalItems);
   });
 
-  $('.carousel-control.next, .intro-section.is-highlight .link-next').click(() => {
-    toggleBodyClass(totalItems);
-  });
+  $('.carousel-control.next, .intro-section.is-highlight .link.is-next').click(
+    () => {
+      toggleBodyClass(totalItems);
+    }
+  );
 
   // Return to the first slide
 
@@ -155,25 +158,52 @@ jQuery(document).ready(($) => {
     return false;
   });
 
-
   /**
    * ---------------------------------------------------------------------------
    * Set label of carousel-control
    * ---------------------------------------------------------------------------
    */
+
   const carouselPager = {
-    titles: ['Плюсы и минус', 'Услуги', 'Цены', 'Об агентстве', 'Блог', 'В начало'],
+    titles: [
+      'Плюсы и минус',
+      'Услуги',
+      'Цены',
+      'Об агентстве',
+      'Блог',
+      'В начало',
+    ],
     setTitle() {
-      $('.carousel-control.next').text(this.titles[currentSlide - 1]);
+      $('[data-role="next-screen-title"]').text(this.titles[currentSlide - 1]);
     },
   };
+
+  // const lang = document.body.getAttribute('title');
+  const { lang } = document.documentElement;
+  if (lang === 'ru') {
+    carouselPager.titles = [
+      'Плюсы и минус',
+      'Услуги',
+      'Цены',
+      'Об агентстве',
+      'Блог',
+      'В начало',
+    ];
+  } else {
+    carouselPager.titles = [
+      'Pros & cons',
+      'Services & Works',
+      'Prices',
+      'About',
+      'Home',
+    ];
+  }
 
   carouselPager.setTitle();
 
   carousel.on('slid.bs.carousel', () => {
     carouselPager.setTitle();
   });
-
 
   /**
    * ---------------------------------------------------------------------------
@@ -191,7 +221,6 @@ jQuery(document).ready(($) => {
   //     likeShare.removeClass('hidden');
   //   }
   // });
-
 
   /**
    * ---------------------------------------------------------------------------

@@ -5,8 +5,8 @@
 
 .main,
 %main {
-  background-color: $color-background-primary;
-  padding: 0 16px $spacer;
+  background-color: $color-background-base;
+  padding: 0 $size-2p5 $size-line;
   scroll-behavior: smooth;
 
   @include media-breakpoint-up(md) {
@@ -74,10 +74,9 @@
 
 // Second eyebrow
 .main-title.has-eyebrow .eyebrow {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  letter-spacing: 0;
   margin-bottom: .2rem;
   padding-top: .1rem;
 
@@ -149,9 +148,9 @@
 // -----------------------------------------------------------------------------
 /* #region */
 
-.main-body h3,
-.main-body h4 {
-  margin-bottom: $spacer-sm;
+.main-body h3:not([class]),
+.main-body h4:not([class]) {
+  margin-bottom: $size-1;
 }
 /* #endregion */
 
@@ -195,8 +194,8 @@
 
 .main-body img:not([class]) {
   display: block;
-  margin-top: var(--size-line);
-  margin-bottom: var(--size-line);
+  margin-top: $size-line;
+  margin-bottom: $size-line;
 }
 
 .img.is-inline {

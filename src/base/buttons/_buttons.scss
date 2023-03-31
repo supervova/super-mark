@@ -47,56 +47,38 @@
 // -----------------------------------------------------------------------------
 
 // Light green
-.btn-cta-light-green,
-%btn-cta-light-green {
-  background-image: linear-gradient(#fff, rgb(222, 255, 102));
-  border: 1px solid $color-primary-dark;
-  box-shadow:
-    inset 0 2px 0 0 rgba(255, 255, 255, .4),
-    inset 0 -2px 0 0 rgba(255, 255, 255, .24),
-    $box-shadow-z1;
-  color: rgba(0, 0, 0, .44);
+.btn-cta-light,
+%btn-cta-light {
+  background-image: linear-gradient($color-brand-50,$color-brand-300);
+  border: 1px solid $color-primary-shade-2;
+  color: $color-brand-700;
   font-weight: normal;
   text-shadow: 0 1px 0 #fff;
 
-  &:visited {
-    color: rgba(0, 0, 0, .44);
-  }
-
-  // Plus %btn-cta enlargment
-  &:hover,
-  &:focus {
-    box-shadow:
-      inset 0 2px 0 0 rgba(255, 255, 255, .4),
-      inset 0 -2px 0 0 rgba(255, 255, 255, .24),
-      $box-shadow-z2;
-  }
-
+  &:visited,
   &:not(:disabled):active {
-    color: rgba(0, 0, 0, .44);
+    color: $color-brand-700;
   }
 }
 
 // Extends for secondary buttons
-.btn.is-secondary,
-.btn-secondary,
-%btn-secondary {
-  background-image: linear-gradient(var(--grey-l96), var(--grey-l92));
-  border-radius: 5rem;
-  box-shadow:
-    inset 0 1px 0 var(--color-ink-light-normal),
-    0 0 0 1px var(--color-ink-border),
-    $box-shadow-z1;
+.btn.is-2ry,
+.btn-2ry,
+%btn-2ry {
+  background-color: $color-background-base;
+  background-image: none;
+  border: 1px solid $color-ink-border;
+  border-radius: $border-radius-pill;
+  box-shadow: $box-shadow-z1;
   text-align: center;
   padding: 15px 16px;
-  transition: box-shadow $duration-xs;
+  transition:
+    background-color $duration-xs,
+    box-shadow $duration-xs;
 
   &:hover {
-    background-image: linear-gradient(var(--grey-l98), var(--grey-l94));
-    box-shadow:
-      inset 0 1px 0 var(--color-ink-light-normal),
-      0 0 0 1px var(--color-ink-border),
-      $box-shadow-z2;
+    background-color: $color-background-2ry;
+    box-shadow: $box-shadow-z2;
   }
 }
 
@@ -110,19 +92,18 @@
 // CTA BUTTON
 // -----------------------------------------------------------------------------
 
-.btn-primary {
+.btn.is-primary {
   background-image: $color-tertiary-gradient;
+  border: 1px solid $color-ink-border;
   box-shadow:
-    inset 0 2px 0 0 rgba(255, 255, 255, .24),
-    inset 0 0 0 1px rgba(0, 76, 13, .12),
+    inset 0 2px 0 0 rgb(255 255 255 / .5),
+    inset 0 0 0 1px rgba(255, 255, 255, .2),
     $box-shadow-z1;
-  border: 0;
   border-radius: $border-radius-xl;
-  color: $color-ink-light-normal;
+  color: $color-ink-2ry;
   display: block;
   font-size: 100%;
   line-height: 1;
-  text-shadow: 0 1px 0 rgba(0, 51, 0, .16);
   padding: 15px 16px;
   transition: 1.6s box-shadow;
 
@@ -131,16 +112,16 @@
   width: 100%;
 
   &:visited {
-    color: $color-ink-light-normal;
+    color: $color-ink-2ry;
   }
 
   &:hover,
   &:focus {
     background-image: $color-tertiary-gradient-lighter;
-    color: $color-ink-light-normal;
+    color: $color-ink-2ry;
     box-shadow:
-      inset 0 2px 0 0 rgba(255, 255, 255, .24),
-      inset 0 0 0 1px rgba(0, 76, 13, .12),
+      inset 0 1px 0 0 rgb(255 255 255),
+      inset 0 0 0 1px rgba(255, 255, 255, .24),
       $box-shadow-z2;
     transform: translateY(-1px);
   }
@@ -151,7 +132,7 @@
   }
 
   &:not(:disabled):active {
-    color: $color-ink-light-normal;
+    color: $color-ink-light-base;
   }
 
   @include media-breakpoint-up(sm) {
@@ -159,7 +140,7 @@
   }
 }
 
-.btn-lg {
+.btn.is-lg {
   @include media-breakpoint-up(md) {
     padding: 15px 24px;
 
@@ -173,28 +154,28 @@
 
 // LABEL ANIMATION
 
-.btn-rotator,
+.btn.is-rotator,
 %btn-rotator {
   overflow: hidden;
   min-height: 48px;
+}
 
-  &-item {
-    animation: rotateWords 24s ease-out 0s infinite;
-    opacity: 0;
+.btn-rotator-item {
+  animation: rotateWords 24s ease-out 0s infinite;
+  opacity: 0;
 
-    // Each span inside button will be positioned absolutely for animation.
-    // In order not to change its position in the hover position, top: 50%
-    // and negative top margin are used.
-    position: absolute;
-    margin-top: -.8rem;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 24px;
+  // Each span inside button will be positioned absolutely for animation.
+  // In order not to change its position in the hover position, top: 50%
+  // and negative top margin are used.
+  position: absolute;
+  margin-top: -.8rem;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 24px;
 
-    &:nth-child(2) {
-      animation-delay: 12s;
-    }
+  &:nth-child(2) {
+    animation-delay: 12s;
   }
 }
 
@@ -218,18 +199,18 @@
 // CTA BUTTON MODIFICATIONS
 // -----------------------------------------------------------------------------
 
-.header > .btn-primary,
-.navbar > .btn-primary,
-.intro-section.is-highlight > .btn-primary,
-.intro-section-footer > .btn-primary {
+.header > .btn.is-primary,
+.navbar > .btn.is-primary,
+.intro-section.is-highlight > .btn.is-primary,
+.intro-section-footer > .btn.is-primary {
   @extend %btn-rotator;
   transition: unset;
 }
 
 
 // On phones show these ones
-.intro-section.is-highlight > .btn-primary,
-.intro-section-footer > .btn-primary {
+.intro-section.is-highlight > .btn.is-primary,
+.intro-section-footer > .btn.is-primary {
   @include media-breakpoint-only(md) {
     display: none;
   }
@@ -237,7 +218,7 @@
 
 
 // On tablets show this one
-.header > .btn-primary {
+.header > .btn.is-primary {
   display: none;
 
   @include media-breakpoint-only(md) {
@@ -250,7 +231,7 @@
 }
 
 // On desktops show this one
-.navbar > .btn-primary {
+.navbar > .btn.is-primary {
   display: none;
 
   @include media-breakpoint-up(lg) {
@@ -259,10 +240,10 @@
 }
 
 // On the first slide of the frontpage
-.is-highlight .header > .btn.btn-primary,
-.is-highlight .navbar > .btn.btn-primary,
-.intro-section.is-highlight > .btn-primary {
-  @extend %btn-cta-light-green;
+.is-highlight .header > .btn.is-primary,
+.is-highlight .navbar > .btn.is-primary,
+.intro-section.is-highlight > .btn.is-primary {
+  @extend %btn-cta-light;
 }
 
 // -----------------------------------------------------------------------------

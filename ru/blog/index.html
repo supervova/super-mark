@@ -27,9 +27,7 @@ pagination:
       <li class="pagination__control is-prev">
         {% if paginator.previous_page %}
           <a class="pagination__link" href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
-            </svg>
+            {% include icon.html name="chevron-left" %}
           </a>
         {% endif %}
       </li>
@@ -39,9 +37,7 @@ pagination:
       <li class="pagination__control is-next">
         {% if paginator.next_page %}
           <a class="pagination__link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-chevron"></use>
-            </svg>
+            {% include icon.html name="chevron-right" %}
           </a>
         {% endif %}
       </li>

@@ -1,5 +1,6 @@
 .header {
   background: $color-background-negative url('#{$site-assets}/img/base/body/bg.png');
+  padding-top: env(safe-area-inset-top);
   position: fixed;
   top: 0;
   right: 0;
@@ -51,7 +52,6 @@
   display: block;
   position: absolute;
   user-select: none;
-  vertical-align: top;
   transition: background $duration-xs $easing;
   width: 48px;
   height: 56px;
@@ -61,11 +61,7 @@
   }
 
   &:hover {
-    background: rgba(0, 0, 0, .24);
-
-    @include media-breakpoint-up(md) {
-      background: rgba(0, 0, 0, .04);
-    }
+    background: $color-ink-min;
   }
 
   @include media-breakpoint-up(md) {
@@ -75,7 +71,7 @@
 
 // LANGUAGE SWITCHER
 .header-lang-switcher {
-  padding: 2rem 0 0 17px;
+  padding: 1.5rem 0 0 17px;
   top: 0;
   right: 0;
 
@@ -91,41 +87,37 @@
 .header__back {
   @extend .d-lg-none;
 
-  padding: .1rem 0 0;
+  padding: 0 0 .2rem;
   top: 0;
   left: 0;
 
+  .icon {
+    --icon-fill: #{$color-ink-light-2ry};
+  }
+
   @include media-breakpoint-up(md) {
-    border-radius: 3px;
+    border-radius: $border-radius;
     top: 75px;
     left: -46px;
   }
 }
 
-.icon-hamburger {
-  display: inline-block;
+.icon.is-hamburger {
   margin: 0 auto;
-  fill: $grey-l88;
-  transition: fill $duration-sm $easing;
-  width: 16px;
-  height: 16px;
+  transition: stroke $duration-sm $easing;
+
+  @include media-breakpoint-down(md) {
+    --icon-stroke: #{$color-ink-light-2ry};
+  }
 
   @include media-breakpoint-up(md) {
-    fill: $logo-super-color;
-
     .is-highlight & {
-      fill: $color-ink-on-highlight-muted;
+      --icon-stroke: #{$color-brand-700};
     }
   }
 }
 
 .header__back .icon {
-  // display: block;
-  // width: 16px;
-  // height: 16px;
-  // vertical-align: middle;
-
-  fill: $grey-l88;
   margin: 0 auto;
 }
 
@@ -160,7 +152,7 @@
   }
 
   &-footer {
-    color: $color-ink-muted;
+    color: $color-ink-2ry;
     border-top: 1px solid $color-ink-border;
     margin-top: .7rem;
     padding-top: 1.6rem;
@@ -173,12 +165,15 @@
     li {
       padding-left: 24px;
       position: relative;
+
+      &:first-child {
+        margin-bottom: $size-1;
+      }
     }
 
     .icon {
-      fill: var(--color-ink-icon);
       position: absolute;
-      top: .5rem;
+      top: .3rem;
       left: 0;
     }
 
@@ -186,7 +181,7 @@
 
   a,
   a:visited {
-    color: $color-ink-muted;
+    color: $color-ink-2ry;
     cursor: text;
   }
 }

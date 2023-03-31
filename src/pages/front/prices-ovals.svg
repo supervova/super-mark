@@ -1,15 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="281" height="144" viewBox="0 0 281 144">
-  <defs>
-    <circle id="prices-ovals-a" cx="59.5" cy="190.5" r="59.5"/>
-    <mask id="prices-ovals-b" width="119" height="119" x="0" y="0" fill="#fff">
-      <use xlink:href="#prices-ovals-a"/>
-    </mask>
-  </defs>
-  <g fill="none" fill-rule="evenodd" transform="translate(0 -50)">
-    <use stroke="#FFF" stroke-dasharray="2" stroke-opacity=".4" stroke-width="2" mask="url(#prices-ovals-b)" xlink:href="#prices-ovals-a"/>
-    <circle cx="59.5" cy="190.5" r="36.5" fill="#FFF" fill-opacity=".16"/>
-    <circle cx="100.5" cy="96.5" r="59.5" fill="#FFF" fill-opacity=".2"/>
-    <circle cx="101" cy="97" r="23" fill="#FFF" fill-opacity=".16"/>
-    <path fill="#E5A600" d="M256,192 C309.019336,192 352,149.019336 352,96 C352,42.980664 309.019336,0 256,0 C202.980664,0 160,42.980664 160,96 C160,149.019336 202.980664,192 256,192 Z"/>
-  </g>
+<svg width="281" height="144" viewBox="0 0 281 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_553_16413)">
+<mask id="mask0_553_16413" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="80" width="121" height="121">
+<path d="M59.5 200C92.3609 200 119 173.361 119 140.5C119 107.639 92.3609 81 59.5 81C26.6391 81 0 107.639 0 140.5C0 173.361 26.6391 200 59.5 200Z" stroke="white" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="2 2"/>
+</mask>
+<g mask="url(#mask0_553_16413)">
+<path d="M59.5 200C92.3609 200 119 173.361 119 140.5C119 107.639 92.3609 81 59.5 81C26.6391 81 0 107.639 0 140.5C0 173.361 26.6391 200 59.5 200Z" stroke="white" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="2 2"/>
+</g>
+<path d="M59.5 177C79.6584 177 96 160.658 96 140.5C96 120.342 79.6584 104 59.5 104C39.3416 104 23 120.342 23 140.5C23 160.658 39.3416 177 59.5 177Z" fill="white" fill-opacity="0.16"/>
+<path d="M100.5 106C133.361 106 160 79.3609 160 46.5C160 13.6391 133.361 -13 100.5 -13C67.6391 -13 41 13.6391 41 46.5C41 79.3609 67.6391 106 100.5 106Z" fill="white" fill-opacity="0.2"/>
+<path d="M101 70C113.703 70 124 59.7025 124 47C124 34.2975 113.703 24 101 24C88.2975 24 78 34.2975 78 47C78 59.7025 88.2975 70 101 70Z" fill="white" fill-opacity="0.16"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M256 142C309.019 142 352 99.0193 352 46C352 -7.01934 309.019 -50 256 -50C202.981 -50 160 -7.01934 160 46C160 99.0193 202.981 142 256 142Z" fill="#FF512E"/>
+</g>
+<defs>
+<clipPath id="clip0_553_16413">
+<rect width="281" height="144" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -52,10 +52,14 @@
 
 .navbar {
   // Drawer on mobiles
-  background: $color-background-primary;
+  background: $color-background-base;
   border-radius: 0;
   display: block;
-  padding: 0 0 89px;
+  padding:
+    0
+    0
+    $size-1 * 11
+    env(safe-area-inset-left);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -135,9 +139,10 @@
 
   // Button
   .btn-search {
-    padding: 14px 15px 0;
+    padding: .2rem 15px 0;
     top: 3.7rem;
     right: 17px;
+    height: 40px;
   }
 }
 
@@ -158,13 +163,12 @@
   // Links on phones and tablets
   > li a,
   > li a:visited {
-    background: $transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Echevron-right%3C%2Ftitle%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M15%2015H0V0h15z%22%2F%3E%3Cpath%20d%3D%22M10.296%208.296l-3.565%203.96-.669.744-1.487-1.338.67-.743%202.997-3.331-2.998-3.331-.669-.744%201.487-1.338.669.744%203.565%203.96.704.634-.067.075.067.074-.704.634z%22%20fill%3D%22%23B5B8BC%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat 12px 1.2rem;
     border-radius: $border-radius;
-    color: $color-ink-muted;
+    color: $color-ink-2ry;
     display: block;
     text-align: left;
     text-shadow: 0 1px 0 #fff;
-    padding: 8px 12px 8px 32px;
+    padding: $size-1 $size-1p5;
     position: relative;
     white-space: nowrap;
     transition:
@@ -175,8 +179,8 @@
   > li a:active,
   > li a:hover,
   > li a:focus {
-    background-color: $grey-l88;
-    color: $color-ink-normal;
+    background-color: $color-ink-min;
+    color: $color-ink-base;
     text-decoration: none;
   }
 
@@ -198,19 +202,25 @@
       padding: 6px 12px 5px;
 
       .is-highlight & {
-        color: $color-ink-light-muted;
+        color: $color-ink-on-highlight-inverted;
       }
     }
 
     > li a:active,
     > li a:focus,
     > li a:hover {
-      background-color: rgba(0, 0, 0, .04);
+      background-color: $color-ink-min;
 
       .is-highlight & {
-        color: $color-ink-light-normal;
+        color: $color-ink-light-base;
       }
     }
+  }
+}
+
+.navbar-primary > li a .icon {
+  @include media-breakpoint-up(lg) {
+    display: none;
   }
 }
 
@@ -219,7 +229,7 @@
     &:active,
     &:focus {
       @include media-breakpoint-up(lg) {
-        background-color: $color-primary-dark;
+        background-color: $color-primary-tint-1;
       }
     }
   }
@@ -229,14 +239,14 @@
 
 .single-post .navbar-primary-link.blog,
 .p-blog .navbar-primary-link.blog {
-  background-color: rgb(221, 224, 228);
+  background-color: $color-ink-min;
   border-radius: $border-radius;
-  color: $color-ink-normal;
+  color: $color-ink-base;
   // cursor: default;
   // pointer-events: none;
 
   @include media-breakpoint-up(lg) {
-    background-color: rgba(0, 0, 0, .04);
+    background-color: $color-ink-min;
   }
 }
 
@@ -245,9 +255,10 @@
 // SECONDARY MENU
 // -----------------------------------------------------------------------------
 
-.navbar-secondary {
-  @extend .d-none, .d-lg-block;
-  text-align: center;
+.navbar-2ry {
+  @extend .d-none, .d-lg-flex;
+
+  justify-content: center;
 
   // Search and Language bases
   li {
@@ -255,24 +266,21 @@
     margin: 0;
     padding: 0 4px;
     position: relative;
-  }
+    vertical-align: bottom;
 
-  li:first-child::before {
-    background: rgba(0, 0, 0, .12);
-    box-shadow: 1px 0 0 rgba(255, 255, 255, .2);
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -2px;
-    width: 1px;
-    height: 32px;
+    &:first-child {
+      border-right: 1px solid $color-ink-border;
+    }
   }
 }
 
+.is-highlight .navbar-2ry > li:first-child {
+  border-right: 1px solid $color-brand-600;
+}
+
 // Buttons common
-.navbar-secondary .link-flag,
-.navbar-secondary .btn-search {
+.navbar-2ry .link-flag,
+.navbar-2ry .btn-search {
   border-radius: $border-radius-sm;
   display: flex;
   align-items: center;
@@ -284,12 +292,8 @@
   &:active,
   &:focus,
   &:hover {
-    background: rgba(0, 0, 0, .04);
+    background: $color-ink-min;
     text-decoration: none;
-
-    .is-highlight & {
-      background: rgb(229, 166, 0);
-    }
   }
 
   &.active { cursor: default;}
@@ -297,22 +301,18 @@
 
 // SEARCH BTN / ICON
 
-.navbar-secondary .btn-search {
+.navbar-2ry .btn-search {
   opacity: 1;
   position: static;
+}
 
-  &:hover .icon-search {
-    opacity: 1;
-  }
+.icon.is-search {
+  --icon-stroke: #{$color-ink-3ry};
 }
 
 // Icon
-.navbar-secondary .icon-search {
-  opacity: .64;
-
-  .is-highlight & {
-    fill: rgb(140, 102, 0);
-  }
+.is-highlight .icon.is-search {
+  --icon-stroke: #{$color-brand-700};
 }
 
 

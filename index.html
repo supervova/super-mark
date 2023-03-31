@@ -16,7 +16,7 @@ date: 2023-01-15
   <article class="carousel-inner" itemscope itemtype="http://schema.org/Article">
 
     {% comment %} COVER {% endcomment %}
-    <header class="intro-section is-highlight carousel-item active">
+    <header class="intro-section is-highlight carousel-item active" data-role="hero">
       <span class="sr-only" itemprop="author">Владимир Никишин</span>
       <span class="sr-only" itemprop="publisher">Владимир Никишин</span>
       <span class="sr-only" itemprop="datePublished">{{ page.date | date: '%Y-%m-%d' }}</span>
@@ -37,7 +37,10 @@ date: 2023-01-15
       {% include cta.html %}
 
       {% comment %} CTA Secondary {% endcomment %}
-      <a class="link-next" href="#intro" data-slide-to="1">Плюсы и минус</a>
+      <a class="link is-next" href="#intro" data-slide-to="1">
+        Плюсы и минус
+        {% include icon.html name="chevron-right" %}
+      </a>
     </header>
 
     {% comment %} BENEFITS AND MINUS {% endcomment %}
@@ -51,7 +54,7 @@ date: 2023-01-15
 
       <div class="intro-section-body">
         <div class="intro-section-copy">
-          <p><strong>Работа с&nbsp;внештатными веб-мастерами и&nbsp;маркетологами исключительно выгодна.</strong> Нам не&nbsp;оплачивают отпуска, рабочие места, медицинские страховки. Никакого <abbr title="Если подрядчик — индивидуальный предприниматель, а не физическое лицо">НДФЛ</abbr>. На&nbsp;карантине во&nbsp;время эпидемии коронавируса работодатели поняли, что и&nbsp;контроль не&nbsp;проблема. Минус один&nbsp;— мы&nbsp;редко…</p>
+          <p><strong>Работа с&nbsp;внештатными веб-мастерами и&nbsp;маркетологами исключительно выгодна.</strong> Нам не&nbsp;оплачивают отпуска, рабочие места, медицинские страховки. Никакого <abbr title="Если подрядчик — индивидуальный предприниматель, а не физическое лицо">НДФЛ</abbr>. <span class="d-none d-lg-inline">Никаких разговоров у кулера.</span> На&nbsp;карантине во&nbsp;время эпидемии коронавируса работодатели поняли, что и&nbsp;контроль не&nbsp;проблема. Минус один&nbsp;— мы&nbsp;редко…</p>
         </div>
         <ul class="intro-section-sidebar list-pros-cons">
           <li class="item-pro">Системность.</li>
@@ -63,11 +66,13 @@ date: 2023-01-15
 
       {% comment %} Footer {% endcomment %}
       <nav class="intro-section-footer">
-        <a class="link-modal" href="/ru/benefits" data-target="#modal" data-toggle="modal" data-src="external">
+        <a class="link is-modal" href="/ru/benefits" data-target="#modal" data-toggle="modal" data-src="external">
           Больше букв
+          {% include icon.html name="modal" %}
         </a>
-        <a class="link-next" href="#intro" data-slide-to="2">
+        <a class="link is-next" href="#intro" data-slide-to="2">
           Услуги и примеры
+          {% include icon.html name="chevron-right" %}
         </a>
 
         {% comment %} CTA Button {% endcomment %}
@@ -100,11 +105,13 @@ date: 2023-01-15
 
       {% comment %} Footer {% endcomment %}
       <nav class="intro-section-footer">
-        <a class="link-modal" href="/ru/services" data-target="#modal" data-toggle="modal" data-src="external">
+        <a class="link is-modal" href="/ru/services" data-target="#modal" data-toggle="modal" data-src="external">
           Больше букв
+          {% include icon.html name="modal" %}
         </a>
-        <a class="link-next" href="#intro" data-slide-to="3">
+        <a class="link is-next" href="#intro" data-slide-to="3">
           Цены
+          {% include icon.html name="chevron-right" %}
         </a>
 
         {% comment %} CTA Button {% endcomment %}
@@ -185,11 +192,13 @@ date: 2023-01-15
 
       {% comment %} Footer {% endcomment %}
       <nav class="intro-section-footer">
-        <a class="link-modal" href="https://trello.com/b/DpTixwxG" rel="noopener noreferrer" target="_blank">
-          Затраты раб. времени&nbsp;— в&nbsp;action-плане
+        <a class="link is-modal" href="https://trello.com/b/DpTixwxG" rel="noopener noreferrer" target="_blank">
+          Расчёт времени&nbsp;—
+          <span class="nobr">в action-плане {% include icon.html name="modal" %}</span>
         </a>
-        <a class="link-next" href="#intro" data-slide-to="4">
+        <a class="link is-next" href="#intro" data-slide-to="4">
           Обо мне
+          {% include icon.html name="chevron-right" %}
         </a>
 
         {% comment %} CTA Button {% endcomment %}
@@ -225,11 +234,13 @@ date: 2023-01-15
 
       {% comment %} Footer {% endcomment %}
       <nav class="intro-section-footer">
-        <a class="link-modal" href="/ru/about" data-target="#modal" data-toggle="modal" data-src="external">
+        <a class="link is-modal" href="/ru/about" data-target="#modal" data-toggle="modal" data-src="external">
           Больше букв
+          {% include icon.html name="modal" %}
         </a>
-        <a class="link-next" href="#intro" data-slide-to="5" >
+        <a class="link is-next" href="#intro" data-slide-to="5" >
           Блог
+          {% include icon.html name="chevron-right" %}
         </a>
 
         {% comment %} CTA Button {% endcomment %}
@@ -267,8 +278,9 @@ date: 2023-01-15
 
       {% comment %} Footer {% endcomment %}
       <nav class="intro-section-footer">
-        <a class="link-modal" href="/ru/blog" data-target="#modal" data-toggle="modal" data-src="external">
+        <a class="link is-modal" href="/ru/blog" data-target="#modal" data-toggle="modal" data-src="external">
           Больше букв
+          {% include icon.html name="modal" %}
         </a>
         {% include subscription.html %}
 
@@ -285,14 +297,18 @@ date: 2023-01-15
 
   {% comment %} PAGER {% endcomment %}
   <nav class="carousel-pager">
-    <a class="carousel-control prev" href="#intro" data-slide="prev" aria-label="Назад" title="Назад"></a>
+    <a class="carousel-control prev" href="#intro" data-slide="prev" aria-label="Назад" title="Назад">
+      {% include icon.html name="md-chevron-left" modifier="is-md" class=true %}
+    </a>
     <div class="carousel-counter"></div>
     <div class="carousel-pager-hint">
-      <svg class="icon-swipe" aria-hidden="true">
-        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-swipe"></use>
-      </svg>
+      {% include icon.html name="md-swipe" modifier="is-md" class=true %}
       Можно листать
     </div>
-    <a class="carousel-control next" href="#intro" data-slide="next" aria-label="Вперёд" title="Вперёд"></a>
+    <a class="carousel-control next" href="#intro" data-slide="next" aria-label="Вперёд" title="Вперёд">
+      <span class="d-md-none" data-role="next-screen-title"></span>
+      {% include icon.html name="chevron-right" modifier="d-md-none" class=true %}
+      {% include icon.html name="md-chevron-right" modifier="is-md d-none d-md-inline-flex" class=true %}
+    </a>
   </nav>
 </main>

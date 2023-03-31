@@ -4,13 +4,13 @@
 
 // Input
 .form__search-input {
-  background: $color-background-secondary;
+  background: $color-background-2ry;
   border: 0;
   border-radius: 4px;
   margin-bottom: 0;
 
   &::placeholder {
-    color: var(--color-ink-hint);
+    color: $color-ink-3ry;
   }
 
   // Dev style
@@ -34,9 +34,8 @@
   }
 }
 
-.icon-search {
-  fill: $color-ink-icon;
-  transition: .4s fill;
+.icon.is-search {
+  transition: $duration-sm stroke;
   width: 16px;
   height: 16px;
 }
@@ -47,7 +46,7 @@
 
 
 .main.is-search .form.is-search {
-  padding-top: calc(1.1rem + var(--size-line));
+  padding-top: $size-line + 1.1rem;
 
   @include media-breakpoint-up(md) {
     padding-top: 0;
@@ -55,19 +54,19 @@
   }
 
   @include media-breakpoint-up(lg) {
-    margin-top: calc(1.1rem + var(--size-line) * 3);
+    margin-top: $size-line * 3 + 1.1rem;
   }
 }
 
 .main.is-search .form__search-input {
-  padding-left: var(--size-2);
+  padding-left: $size-2;
   padding-right: 4rem;
 
   @include media-breakpoint-up(md) {
     font-size: $headline-md-font-size;
     font-weight: 300;
     line-height: $headline-md-line-height;
-    padding-left: var(--size-line);
+    padding-left: $size-line;
     padding-right: 4rem;
     height: 56px;
   }

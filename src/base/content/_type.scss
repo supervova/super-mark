@@ -40,7 +40,7 @@
 
 .headline-inverted,
 %headline-inverted {
-  color: $color-ink-light-normal;
+  color: $color-ink-light-base;
   font-weight: 300;
 }
 
@@ -52,7 +52,6 @@ h1, h2 {
   // font-feature-settings: 'kern' 1;
   font-family: $headings-font-family;
   font-feature-settings: 'kern' 1, 'liga' 1;
-  letter-spacing: -.02em;
 }
 
 // Hedaing 1
@@ -114,7 +113,7 @@ h3 {
 
 h3 + h4,
 .h3 + .h4 {
-  margin-top: $spacer;
+  margin-top: $size-line;
 }
 
 .h4 {
@@ -122,7 +121,7 @@ h3 + h4,
 }
 
 h5, h6 {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
 }
 
 //------------------------------------------------------------------------------
@@ -134,7 +133,7 @@ abbr[title] {
   text-decoration: none;
 
   &::after {
-    color: $color-ink-muted;
+    color: $color-ink-2ry;
     content: '*';
   }
 }
@@ -154,12 +153,12 @@ p {
 }
 
 .note {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
 }
 
 blockquote {
   > footer {
-    color: $color-ink-muted;
+    color: $color-ink-2ry;
     font-style: normal;
 
     &::before {
@@ -185,25 +184,53 @@ blockquote {
 // LINKS
 // -----------------------------------------------------------------------------
 
-// better focus for links
-a:focus {
-  outline: none;
-  text-decoration: outline;
+@mixin a-hover {
+  color: lighten($color-ink-link, 5%);
+  text-decoration-skip-ink: auto;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 a,
 %a {
+  @include standard-focus;
+
   color: $color-ink-link;
+  // Reapply the pointer cursor for anchor tags
+  cursor: pointer;
+  outline: 0;
   text-decoration: none;
-  transition: color $duration-xs $easing;
+  transition: color $duration-xs;
 
   &:visited {
     color: darken($color-ink-link, 10%);
   }
 
+  &:is(:active, :focus-visible) {
+    @include a-hover;
+  }
+
+  // Prevent hover issues on touch screens
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include a-hover;
+    }
+  }
+
+  &:is([aria-current]) {
+    color: var(--color-ink-text);
+  }
+}
+
+.link.is-next,
+.link.is-modal {
+  &:visited {
+    color: $color-ink-link;
+  }
+
   &:hover {
     color: lighten($color-ink-link, 5%);
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -234,7 +261,7 @@ figure > img {
 }
 
 figcaption {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
 }
 
 table {
@@ -246,9 +273,8 @@ table {
 // -----------------------------------------------------------------------------
 
 ::selection {
-  // background: $color-primary-dark;
-  background: $black-transparent;
-  color: $color-ink-light-normal;
+  background: $color-brand-600;
+  color: $color-ink-light-base;
   text-shadow: none;
 }
 

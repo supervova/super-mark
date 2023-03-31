@@ -2,9 +2,7 @@
   <noscript>
   <div class="alert is-warning is-global" role="alert">
     <p>
-      <svg class="icon" focusable="false" aria-hidden="true">
-        <use xlink:href="{{ site.assets }}/img/icons/sprite.svg#icon-warning-md"></use>
-      </svg>
+      {% include icon.html name="md-alert" class=true %}
       {{ site.data.i18n.messages.jsDisabled[page.lang] }}
     </p>
   </div>
