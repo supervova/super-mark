@@ -32,11 +32,13 @@ import pug from 'gulp-pug';
 import shell from 'shelljs';
 
 // STYLES
-import autoprefixer from 'gulp-autoprefixer';
+import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import postcss from 'gulp-postcss';
+import gradients from 'postcss-easing-gradients';
+import inlineSvg from 'postcss-inline-svg';
 import uncss from 'postcss-uncss';
 
 // IMAGES
@@ -117,6 +119,7 @@ const paths = {
       graphics: [
         `${root.src}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
         `!${root.src}/base/icons/sprite/**/*`,
+        `!${root.src}/base/icons/svg-bg/**/*`,
         `!${root.src}/img/**/*`,
       ],
       content: `${root.src}/img/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
@@ -158,7 +161,10 @@ const paths = {
   },
 
   sprite: {
-    src: `${root.src}/base/icons/sprite/*.svg`,
+    src: [
+      `${root.src}/base/icons/sprite/*.svg`,
+      `!${root.src}/base/icons/sprite/oldie/*.svg`,
+    ],
     dest: `${root.src}/base/icons`,
   },
 
@@ -240,7 +246,7 @@ function cssTasks(source, subtitle, destination, unCssHtml) {
       }).on('error', sass.logError)
     )
     // autoprefixer (browserslist) has been set in package.json
-    .pipe(autoprefixer({ cascade: false }))
+    .pipe(postcss([inlineSvg(), gradients(), autoprefixer({ cascade: false })]))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest(paths.css.tmp))
     .pipe(
@@ -401,7 +407,6 @@ function svg() {
             sprite: 'sprite.svg', // Sprite path and name
             prefix: '.', // Prefix for CSS selectors
             dimensions: '', // Suffix for dimension CSS selectors
-            example: true, // Create an HTML example document
           },
         },
         svg: {
@@ -636,6 +641,19 @@ function serveBS(done) {
   });
   done();
 }
+
+// Jekyll-less
+const dev = series(
+  clean,
+  jekyllBuild,
+  svg,
+  img,
+  video,
+  downloads,
+  parallel(css, js),
+  serveBS,
+  watchFiles
+);
 // #endregion
 
 /**
@@ -680,7 +698,7 @@ function deploy() {
  */
 // Add-ons
 exports.ba = buildAssets;
-exports.bs = serveBS;
+exports.dev = dev;
 exports.clean = clean;
 exports.cleanAll = cleanAll;
 exports.cleanAssets = cleanAssets;

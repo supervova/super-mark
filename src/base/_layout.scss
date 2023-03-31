@@ -58,24 +58,24 @@
 }
 
 .row.has-wide-gutters {
-  margin-right: calc(-1 * var(--size-2));
-  margin-left: calc(-1 * var(--size-2));
+  margin-right: calc(-1 * $size-2);
+  margin-left: calc(-1 * $size-2);
 
   > .col,
   > [class*='col-'] {
-    padding-right: var(--size-2);
-    padding-left: var(--size-2);
+    padding-right: $size-2;
+    padding-left: $size-2;
   }
 }
 
 .row.has-gutters-sm {
-  margin-right: -(math.div($spacer-sm, 2));
-  margin-left: -(math.div($spacer-sm, 2));
+  margin-right: -(math.div($size-1, 2));
+  margin-left: -(math.div($size-1, 2));
 
   > .col,
   > [class*='col-'] {
-    padding-right: math.div($spacer-sm, 2);
-    padding-left: math.div($spacer-sm, 2);
+    padding-right: math.div($size-1, 2);
+    padding-left: math.div($size-1, 2);
   }
 }
 

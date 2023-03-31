@@ -14,28 +14,23 @@
 }
 
 // OUTLINES
-.outline-item,
-.has-outlined-lead .main-lead {
-  text-indent: -.2rem;
-  overflow: visible;
+// .outline-item,
+// .has-outlined-lead .main-lead {
+//   text-indent: -.2rem;
+//   overflow: visible;
 
-  &::before {
-    background: rgba(0, 0, 0, 0) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%20fill%3D%22%23FFF%22%20fill-opacity%3D%22.24%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%225%22%20r%3D%225%22%20fill%3D%22%2300B2F2%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%223.5%22%20r%3D%222.5%22%20fill%3D%22%23FFF%22%20fill-opacity%3D%22.4%22%2F%3E%3Cpath%20fill%3D%22%230080BF%22%20d%3D%22M6%2C10%20C3.23857625%2C10%201%2C7.76142375%201%2C5%20C1%2C2.23857625%203.23857625%2C0%206%2C0%20C8.76142375%2C0%2011%2C2.23857625%2011%2C5%20C11%2C7.76142375%208.76142375%2C10%206%2C10%20Z%20M6%2C9%20C8.209139%2C9%2010%2C7.209139%2010%2C5%20C10%2C2.790861%208.209139%2C1%206%2C1%20C3.790861%2C1%202%2C2.790861%202%2C5%20C2%2C7.209139%203.790861%2C9%206%2C9%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat left top;
-    content: '';
-    display: inline-block;
-    vertical-align: .1rem;
-    margin-right: .3rem;
-    transform: translateY(.2rem);
-    width: 12px;
-    height: 12px;
-  }
-}
+//   &::before {
+//     background: rgba(0, 0, 0, 0) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%20fill%3D%22%23FFF%22%20fill-opacity%3D%22.24%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%225%22%20r%3D%225%22%20fill%3D%22%2300B2F2%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%223.5%22%20r%3D%222.5%22%20fill%3D%22%23FFF%22%20fill-opacity%3D%22.4%22%2F%3E%3Cpath%20fill%3D%22%230080BF%22%20d%3D%22M6%2C10%20C3.23857625%2C10%201%2C7.76142375%201%2C5%20C1%2C2.23857625%203.23857625%2C0%206%2C0%20C8.76142375%2C0%2011%2C2.23857625%2011%2C5%20C11%2C7.76142375%208.76142375%2C10%206%2C10%20Z%20M6%2C9%20C8.209139%2C9%2010%2C7.209139%2010%2C5%20C10%2C2.790861%208.209139%2C1%206%2C1%20C3.790861%2C1%202%2C2.790861%202%2C5%20C2%2C7.209139%203.790861%2C9%206%2C9%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat left top;
+//     content: '';
+//     display: inline-block;
+//     vertical-align: .1rem;
+//     margin-right: .3rem;
+//     transform: translateY(.2rem);
+//     width: 12px;
+//     height: 12px;
+//   }
+// }
 
-.outline-nota-bene::before {
-  content: '☝️🧐 ';
-}
-
-.list-item {
-  background: rgba(0, 0, 0, 0) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%226%22%20height%3D%2216%22%20viewBox%3D%220%200%206%2016%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2211%22%20r%3D%222%22%20fill%3D%22%238D9093%22%2F%3E%3C%2Fsvg%3E') no-repeat left top .8rem;
-  padding-left: 1.3rem;
-}
+// .outline-nota-bene::before {
+//   content: '☝️🧐 ';
+// }

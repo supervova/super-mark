@@ -7,8 +7,6 @@
 <form class="form is-search" action="/{{ page.lang }}/search" method="get">
   <input class="form-control form__search-input" name="query" type="search" placeholder="{{ site.data.i18n.labels.search[page.lang] }}" tabindex="-1" autocomplete="off" value="">
   <button class="btn btn-search" type="submit" aria-label="{{ site.data.i18n.labels.search[page.lang] }}">
-    <svg class="icon-search" aria-hidden="true">
-      <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-search" />
-    </svg>
+    {% include icon.html name="search" %}
   </button>
 </form>

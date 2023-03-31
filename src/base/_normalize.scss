@@ -396,7 +396,7 @@ html {
   -webkit-tap-highlight-color: $transparent;
   font-size: 62.5%;
   text-size-adjust: 100%;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   min-height: 100%;
 }
 
@@ -421,8 +421,8 @@ body {
 // stylelint-disable property-no-vendor-prefix
 
 ::selection {
-  background: lighten($color-primary, 5%);
-  color: color-contrast(lighten($color-primary, 5%));
+  background: $color-primary;
+  color: color-contrast($color-primary);
   text-shadow: none;
 }
 

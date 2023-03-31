@@ -5,12 +5,10 @@
 // seems preferable.
 /// Based on Chris Bracco's one @link https://codepen.io/cbracco/pen/nufHz
 
-$tooltip-background:                    $color-background-secondary;
-$tooltip-padding-bottom:                1.1rem;
-$tooltip-padding:                       1.4rem ($spacer-sm * 2) $tooltip-padding-bottom;
-$tooltip-width:                         $panel-width-xs;
-$tooltip-arrow-width:                   $spacer-sm;
-$tooltip-offset:                        1.2rem;
+
+$tooltip-padding-bottom: 1.1rem;
+$tooltip-padding:        1.4rem ($size-1 * 2) $tooltip-padding-bottom;
+$tooltip-width:          $panel-width-xs;
 
 // An element that has a tooltip
 .has-tooltip {
@@ -34,10 +32,10 @@ $tooltip-offset:                        1.2rem;
 
   // Tooltip's body
   &::after {
-    background-color: $tooltip-background;
+    background-color: $color-background-2ry;
     border-radius: $border-radius;
     box-shadow: $box-shadow-z4;
-    color: $color-ink-normal;
+    color: $color-ink-base;
     content: attr(aria-label);
     font-size: $font-size-sm;
     line-height: $line-height-sm;
@@ -49,7 +47,7 @@ $tooltip-offset:                        1.2rem;
   // Tooltip's arrow
   &::before {
     background: $transparent;
-    border: math.div($tooltip-arrow-width, 2) solid $transparent;
+    border: math.div($size-1, 2) solid $transparent;
     content: '';
     z-index: ($zindex-tooltip + 1);
   }
@@ -76,9 +74,9 @@ $tooltip-offset:                        1.2rem;
   }
 
   &::before {
-    border-top-color: $tooltip-background;
-    margin-left: -(math.div($tooltip-arrow-width, 2));
-    margin-bottom: -$tooltip-arrow-width;
+    border-top-color: $color-background-2ry;
+    margin-left: -(math.div($size-1, 2));
+    margin-bottom: -$size-1;
   }
 
   &::after {
@@ -89,11 +87,11 @@ $tooltip-offset:                        1.2rem;
   &:hover,
   &:focus {
     &::before {
-      transform: translate3d(0, -$tooltip-offset, 0);
+      transform: translate3d(0, -$size-1p5, 0);
     }
 
     &::after {
-      transform: translate3d(-50%, -$tooltip-offset, 0);
+      transform: translate3d(-50%, -$size-1p5, 0);
     }
   }
 }

@@ -15,10 +15,12 @@
 .modal-open {
   // Kill the scroll on the body
   overflow: hidden;
+  padding-right: 0 !important;
 
   .modal {
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-gutter: stable both-edges;
   }
 }
 
@@ -219,7 +221,7 @@
 // INNER CONTAINER
 
 .modal-content {
-  background-color: $color-ink-muted;
+  background-color: $color-ink-2ry;
   // Remove Bootstrap rounded corners
   border-radius: 0;
   // Remove Bootstrap border

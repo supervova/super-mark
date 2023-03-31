@@ -67,7 +67,7 @@
 
 .project-gallery__item.is-well-com {
   background: #000;
-  padding: ($spacer-sm * 2);
+  padding: ($size-1 * 2);
 
   @include media-breakpoint-up(lg) {
     grid-column-start: 9;
@@ -80,7 +80,7 @@
 
 .project-gallery__item.is-crazy-m-casino {
   background: #002699;
-  padding: ($spacer-sm * 2);
+  padding: ($size-1 * 2);
 
   @include media-breakpoint-up(lg) {
     background: #002699 url('#{$site-assets}/img/projects/gambling/crazy-casino-logo.png') no-repeat top center;
@@ -107,7 +107,7 @@
 
 .project-gallery__item.is-sacra {
   background: #fff;
-  padding: ($spacer-sm * 2);
+  padding: ($size-1 * 2);
 
   @include media-breakpoint-up(lg) {
     grid-column-start: 1;
@@ -142,7 +142,7 @@
   background: #045901;
   display: flex;
   align-items: center;
-  padding: ($spacer-sm * 2);
+  padding: ($size-1 * 2);
 
   @include media-breakpoint-up(lg) {
     background: #045901 url('#{$site-assets}/img/projects/gambling/pari-match.png') no-repeat left top;

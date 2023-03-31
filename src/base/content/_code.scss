@@ -4,30 +4,29 @@
 
 pre,
 code {
-  $code-background: lighten($color-secondary, 45%);
   background-color: $color-background-negative;
   border-radius: $border-radius;
-  color: $color-secondary;
+  color: $color-2ry;
 }
 
 code {
   display: inline-block;
-  padding: 1px math.div($spacer-sm, 2);
+  padding: 1px math.div($size-1, 2);
 
   &.d-block {
     margin-top: 1.1rem;
-    padding: ($spacer-sm * 2);
+    padding: ($size-1 * 2);
   }
 }
 
 pre {
   font-size: 100%;
-  margin-bottom: $spacer;
-  padding: ($spacer-sm * 2);
+  margin-bottom: $size-line;
+  padding: ($size-1 * 2);
   overflow-x: auto;
 
   @include media-breakpoint-up(md) {
-    padding: 3rem ($spacer-sm * 3) 3.4rem;
+    padding: 3rem ($size-1 * 3) 3.4rem;
   }
 
   > code {
@@ -37,15 +36,15 @@ pre {
 }
 
 .code-attribute {
-  color: $color-primary;
+  color: $color-brand-700;
 }
 
 .code-content {
-  color: $color-ink-light-muted;
+  color: $color-ink-light-2ry;
 }
 
 .code-comment {
-  color: lighten($violet, 20%);
+  color: lighten($magenta, 20%);
 }
 
 // @see add-ons and

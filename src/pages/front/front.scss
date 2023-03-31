@@ -129,7 +129,7 @@
 // SLIDE SIDEBAR
 
 .intro-section-sidebar {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
   margin-bottom: 2.5rem;
 
   @include media-breakpoint-up(md) {
@@ -160,11 +160,11 @@
   }
 }
 
-.intro-section-footer .link-modal {
-  margin-right: ($spacer-sm * 2);
+.intro-section-footer .link.is-modal {
+  margin-right: ($size-1 * 2);
 }
 
-.intro-section-footer .link-next {
+.intro-section-footer .link.is-next {
   @extend .d-none, .d-md-inline-block;
 }
 
@@ -180,7 +180,7 @@
 // -----------------------------------------------------------------------------
 // #region
 
-.carousel-item .btn-primary {
+.carousel-item .btn.is-primary {
 
   // Extend by .d-md-none isn't impossible cause it's upper than btn-cta w/
   // display:block, so responsive behavior has determined by mixin.
@@ -190,7 +190,7 @@
 }
 
 // The first slide
-.is-highlight .btn-primary {
+.is-highlight .btn.is-primary {
   // Gap between buttons and next block (pager) change on hover since the button
   // size increases.
   margin-bottom: 4.3rem;
@@ -202,7 +202,7 @@
 }
 
 // Other slides
-.intro-section-footer .btn-primary {
+.intro-section-footer .btn.is-primary {
   margin: 36px 0 12px;
 
   &:hover,
@@ -214,14 +214,19 @@
 
 // SECONDARY CTA
 
-.intro-section.is-highlight .link-next {
+.intro-section.is-highlight .link.is-next {
   display: none;
 
   @include media-breakpoint-up(md) {
-    @include chevron-right-white();
-    background-position: 100% calc(50% + .4rem);
     display: inline-block;
+    color: $color-brand-800;
     padding-top: .6rem;
+
+    &:hover,
+    &:active {
+      color: $color-ink-on-highlight-inverted;
+      text-decoration: none;
+    }
   }
 
   @include media-breakpoint-up(lg) {
@@ -251,7 +256,7 @@
 // -----------------------------------------------------------------------------
 // #region
 
-// Yellow Body
+// Orange Body
 .p-home {
   background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%222560%22%20height%3D%221058%22%20viewBox%3D%220%200%202560%201058%22%2F%3E%0A');
   background-position: 50% calc(50% + 99px);
@@ -259,7 +264,7 @@
   transition: background-color $duration-lg $easing-appearance, background-image $duration-lg $easing-appearance;
   will-change: background-color, background-image;
 
-  // Yellow background
+  // Orange background
   &.is-highlight {
     @include media-breakpoint-up(md) {
       background-color: $color-primary;
@@ -267,7 +272,7 @@
 
     @include media-breakpoint-up(lg) {
       background-image:
-        url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2240%22%20r%3D%2240%22%20fill%3D%22%23FFBC00%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate%28-24%29%22%2F%3E%3C%2Fsvg%3E'),
+        url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20id%3D%22Oval%22%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2240%22%20fill%3D%22%23FF9B0F%22%2F%3E%3C%2Fsvg%3E%0A'),
         url('#{$site-assets}/img/base/body/bg-front-md.svg');
       background-position:
         calc(50% + 11.8rem) calc(50% - 13rem),
@@ -291,10 +296,32 @@
   }
 }
 
-// Yellow Slide
+// Focal point on hover
+.p-home.is-highlight::after {
+  @include media-breakpoint-up(lg) {
+    background: radial-gradient(50% 50% at 50% 50%, hsl(35 100% 97% / 64%), ease-out, hsl(35 100% 97% / 0));
+    background-blend-mode: lighten;
+    background-position: calc(50% + 300px) calc(50% - 140px);
+    background-repeat: no-repeat;
+    background-size: 1600px 1600px;
+    mix-blend-mode: screen;
+    content: '';
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    transition: opacity $duration-xxl $easing;
+    z-index: -1;
+  }
+}
+
+.p-home.is-illuminated::after {
+  opacity: 1;
+}
+
+// Orange Slide
 .intro-section.is-highlight {
   background: $color-primary;
-  color: $color-ink-on-highlight-normal;
+  color: $color-ink-on-highlight-base;
 
   @include media-breakpoint-up(md) {
     // Add space for above text on the top and for picture on the right
@@ -307,8 +334,44 @@
   }
 }
 
+// Bubbles
+.intro-section.is-highlight::before,
+.intro-section.is-highlight::after {
+  @include media-breakpoint-up(md) {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.intro-section.is-highlight::before {
+  @include media-breakpoint-up(md) {
+    background: rgba(255, 255, 255, .28);
+    top: 24rem;
+    right: 2.4rem;
+    width: 12.9rem;
+    height: 12.9rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: 0;
+  }
+}
+
+.intro-section.is-highlight::after {
+  @include media-breakpoint-up(md) {
+    background: rgba($color-primary, .9);
+    top: 31.9rem;
+    right: 22rem;
+    width: 20.9rem;
+    height: 20.9rem;
+  }
+}
+
 .intro-section.is-highlight > h1 {
-  color: $color-ink-light-normal;
+  color: $color-brand-800;
   font-weight: 300;
   line-height: 1;
   margin: 0;
@@ -337,9 +400,11 @@
 }
 
 .intro-section.is-highlight > p {
-  color: $color-ink-on-highlight-normal;
+  color: $color-ink-on-highlight-base;
   font-size: 100%;
   font-weight: normal;
+  position: relative;
+  z-index: 2;
 
   @include media-breakpoint-up(lg) {
     padding-right: 80px;
@@ -355,7 +420,7 @@
     background-image: linear-gradient(rgb(111, 114, 118), rgb(171, 174, 178));
     display: block;
     // full width
-    margin: 0 -16px;
+    margin: 0 -$size-2p5;
     position: relative;
     overflow: hidden;
     height: 192px;
@@ -404,37 +469,6 @@
   } // end of img / cinemagraph
 }
 
-// Bubbles
-.picture-main::before,
-.picture-main::after {
-  @include media-breakpoint-up(md) {
-    border-radius: 50%;
-    content: '';
-    display: block;
-    position: absolute;
-  }
-}
-
-.picture-main::before {
-  @include media-breakpoint-up(md) {
-    background: rgba(255, 255, 255, .28);
-    top: 22rem;
-    right: -4.5rem;
-    width: 12.9rem;
-    height: 12.9rem;
-  }
-}
-
-.picture-main::after {
-  @include media-breakpoint-up(md) {
-    background: rgba($color-primary, .9);
-    top: 28.5rem;
-    left: -2.4rem;
-    width: 20.9rem;
-    height: 20.9rem;
-  }
-}
-
 // RECENT WORK
 
 .recent-work {
@@ -451,8 +485,8 @@
     top: calc(50% - math.div(48rem, 2));
     right: 0;
     transition: opacity $duration $easing;
-    width: var(--size-6);
-    height: calc(var(--size-line) * 5);
+    width: $size-6;
+    height: $size-line * 5;
   }
 
   .is-highlight .recent-work {
@@ -463,15 +497,15 @@
 
       // Button
       &::before {
-        background: darken($color-primary, 4%) url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2236%22%20viewBox%3D%220%200%2011%2036%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23BD8B00%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%226%22%20d%3D%22M21.5793463%2C59.8330771%20L25.3391615%2C74.9128724%20M21.5793463%2C60.3354592%20L25.3391615%2C45.2556638%22%20transform%3D%22matrix%28-1%200%200%201%2028.926%20-42%29%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
+        background: $color-primary-tint-1 url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2211%22%20height%3D%2236%22%20viewBox%3D%220%200%2011%2036%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M7.3471%2017.8331L3.58728%2032.9129M7.3471%2018.3355L3.58728%203.25566%22%20stroke%3D%22%23DB8000%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E%0A') no-repeat center;
         border-radius: $border-radius 0 0 $border-radius;
         content: '';
         display: block;
         position: absolute;
         top: 0;
         right: 0;
-        width: var(--size-6);
-        height: calc(var(--size-line) * 5);
+        width: $size-6;
+        height: $size-line * 5;
       }
     }
   }
@@ -486,16 +520,16 @@
     // left: -$size-line;
     display: block;
     opacity: 1;
-    color: $color-ink-on-highlight-link;
+    color: $color-ink-on-highlight-inverted;
     text-align: center;
     position: absolute;
     top: 50%;
-    right: 0;
+    right: $size-1;
     transform: rotate(-90deg) translateX(1.2rem);
     transition:
       transform $duration $easing,
       opacity $duration $easing;
-    width: calc(var(--size-line) * 5);
+    width: $size-line * 5;
   }
 
   .is-highlight .recent-work__figure {
@@ -505,15 +539,15 @@
     right: 0;
     transition: width $duration $easing;
     width: 0;
-    height: calc(var(--size-line) * 7);
+    height: $size-line * 7;
   }
 
   .recent-work__thumbnail {
     display: none;
-    border: var(--size-1) solid $color-ink-light-normal;
+    border: $size-1 solid $color-ink-light-base;
     border-radius: $border-radius;
     box-shadow: $box-shadow-z3;
-    margin-left: var(--size-2);
+    margin-left: $size-2;
   }
 
 
@@ -541,6 +575,34 @@
     display: block;
   }
 }
+
+// ICONS
+/* stylelint-disable-next-line no-duplicate-selectors */
+.is-highlight {
+  .link.is-next .icon {
+    --icon-stroke: #{$color-brand-700};
+  }
+
+  .header-navbar-toggler .icon,
+  .header__back .icon {
+    @include media-breakpoint-up(md) {
+      --icon-stroke: #{$color-brand-700};
+    }
+  }
+
+  .carousel-control .icon {
+    --icon-stroke: #{$color-brand-600};
+  }
+
+  .carousel-pager-hint .icon {
+    --icon-fill: #{$color-brand-600};
+  }
+
+  .carousel-pager .next {
+    color: $color-brand-700;
+  }
+}
+
 
 // #endregion
 
@@ -620,7 +682,7 @@
 
 .is-services .slideshow-item.is-title {
   animation: slideshowCaption 24s linear infinite;
-  color: $color-ink-light-normal;
+  color: $color-ink-light-base;
   font-weight: normal;
   text-align: center;
   text-transform: none;
@@ -710,7 +772,7 @@
   padding-left: math.div($grid-gutter-sm, 2);
   width: 100%;
   min-height: 1px;
-  margin-bottom: $spacer;
+  margin-bottom: $size-line;
 
   @include media-breakpoint-up(md) {
     flex: 0 0 percentage(math.div(1, 3));
@@ -722,7 +784,7 @@
 .plan-title {
   background: $color-primary;
   border-radius: $border-radius $border-radius 0 0;
-  color: $color-ink-on-highlight-muted;
+  color: $color-ink-on-highlight-inverted;
   font-weight: normal;
   line-height: 4.8rem;
   text-align: center;
@@ -743,7 +805,7 @@
 }
 
 .plan-body {
-  background: $color-background-secondary;
+  background: $color-background-2ry;
   border-radius: 0 0 $border-radius $border-radius;
   box-shadow: $box-shadow-z1;
   text-align: center;
@@ -771,7 +833,7 @@
   &.is-small {
     display: inline-block;
     font-size: $headline-lg-font-size;
-    padding-top: var(--size-1);
+    padding-top: $size-1;
   }
 }
 
@@ -783,8 +845,8 @@
 }
 
 .plan-value {
-  color: $color-ink-muted;
-  margin-bottom: ($spacer-sm * 2);
+  color: $color-ink-2ry;
+  margin-bottom: ($size-1 * 2);
 }
 
 // Hourly wage
@@ -882,13 +944,13 @@
 }
 
 .is-blog .intro-section-footer {
-  padding-top: $spacer-sm;
+  padding-top: $size-1;
 }
 
 // stylelint-disable selector-max-compound-selectors
 .is-blog .is-archive-wrapper ul {
   > li:not(:last-child) {
-    margin-bottom: $spacer-sm;
+    margin-bottom: $size-1;
   }
 
   @include media-breakpoint-up(md) {

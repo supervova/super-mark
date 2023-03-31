@@ -23,6 +23,9 @@
     {% if page.categories[0] %}
     <div class="meta-tags">
       {% assign categories = page.categories %}
+      {% if categories != "" or categories != nil %}
+        {% include icon.html name="tag" %}
+      {% endif %}
       {% for category in categories %}
         <a class="meta-tag tag" href="{{ site.url }}/ru/blog/categories#{{ category | slugify | uri_escape }}" rel="tag">{{category}}</a>{%- unless forloop.last -%}, {%- endunless -%}
       {% endfor %}
@@ -30,11 +33,10 @@
     {% endif %}
 
     <a class="meta-comments-counter link-go" href="{{ post.url }}">
-      <svg class="icon-inline icon-comment" aria-hidden="true">
-        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-comment"></use>
-      </svg>
+      {% include icon.html name="message" class=true %}
       <span class="d-sm-none">Далее</span>
       <span class="d-none d-sm-inline">Полный текст и&nbsp;коммент.</span>
+      {% include icon.html name="chevron-right" %}
     </a>
   </footer>
 </li>

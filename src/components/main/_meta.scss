@@ -21,10 +21,10 @@
 
 // Date
 .meta time {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
   display: inline-block;
   flex-shrink: 0;
-  padding-right: 4px;
+  padding-right: $size-1;
 }
 
 
@@ -43,13 +43,8 @@
   }
 }
 
-.meta-tag {
-  margin-left: .8rem;
-
-  &:first-child {
-    background: $transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23B5B8BC%22%20fill-rule%3D%22evenodd%22%20d%3D%22M7.64778775%2C15.4138012%20C6.86770191%2C16.1953996%205.60318377%2C16.1953996%204.82309793%2C15.4138012%20L0.585064378%2C11.1675502%20C-0.195021459%2C10.3859517%20-0.195021459%2C9.11898172%200.585064378%2C8.33738331%20L8.90631291%2C0%20L16%2C0%20L16%2C7.04539413%20L7.64778775%2C15.4138012%20L7.64778775%2C15.4138012%20Z%20M12.5040968%2C2.00153242%20C11.6770659%2C2.00153242%2011.0058525%2C2.67404732%2011.0058525%2C3.50268174%20C11.0058525%2C4.33131616%2011.6770659%2C5.00383106%2012.5040968%2C5.00383106%20C13.3321264%2C5.00383106%2014.002341%2C4.33131616%2014.002341%2C3.50268174%20C14.002341%2C2.67404732%2013.3321264%2C2.00153242%2012.5040968%2C2.00153242%20L12.5040968%2C2.00153242%20Z%22%2F%3E%3C%2Fsvg%3E') no-repeat 0 .1rem;
-    padding-left: 2.4rem;
-  }
+.meta-tag + .meta-tag {
+  margin-left: $size-1;
 }
 
 
@@ -62,7 +57,7 @@
 }
 
 .btn.is-subscription {
-  @extend %inline-icon-on-left;
+  @extend %has-left-icon;
 
   border: 0;
   padding-top: 0;
@@ -85,9 +80,3 @@
     // right: 0;
   }
 }
-
-.meta-comments-counter {
-  background-position: 100% 50%;
-  padding-left: .8rem;
-}
-

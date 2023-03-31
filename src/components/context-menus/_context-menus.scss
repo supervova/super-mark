@@ -1,11 +1,11 @@
 .context-menu {
-  background-color: $color-background-secondary;
+  background-color: $color-background-2ry;
   box-shadow: $box-shadow-z4;
 }
 
 .context-menu-heading {
   @extend %headline-md;
-  color: $color-ink-normal;
+  color: $color-ink-base;
   font-weight: 300;
   padding: 0 0 1.7rem;
   margin: 0;

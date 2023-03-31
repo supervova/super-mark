@@ -10,12 +10,12 @@ layout: default
   <div class="main-subheader">
     {% comment %} Если первой страницы раздела нет, ссылку во .eyebrow не вставлять;
     ссылка .btn-back — на первую {% endcomment %}
-    <a class="btn-back" href="/ru/blog" aria-label="На первую страницу" title="На первую страницу"></a>
+    <a class="btn-back" href="/ru/blog" aria-label="На первую страницу" title="На первую страницу">
+      {% include icon.html name="chevron-left" %}
+    </a>
     <a class="eyebrow is-link" href="/ru/blog">Блог</a>
     <button class="modal-close" data-dismiss="modal" aria-label="Закрыть" title="Закрыть">
-      <svg class="icon-close" aria-hidden="true">
-        <use xlink:href="{{ site.assets }}/img/base/icons/sprite.svg#icon-close"></use>
-      </svg>
+      {% include icon.html name="x-mark" class=true %}
     </button>
   </div>
 
@@ -65,6 +65,9 @@ layout: default
       {% if page.categories[0] %}
       <div class="meta-tags">
         {% assign categories = page.categories %}
+        {% if categories != "" or categories != nil %}
+          {% include icon.html name="tag" %}
+        {% endif %}
         {% for category in categories %}
           <a class="meta-tag tag" href="{{ site.url }}/ru/blog/categories#{{ category | slugify | uri_escape }}" rel="tag">{{category}}</a>{%- unless forloop.last -%}, {%- endunless -%}
         {% endfor %}

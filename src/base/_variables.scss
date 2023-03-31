@@ -2,162 +2,94 @@
 
 /* stylelint-disable scss/dollar-variable-pattern, string-quotes, declaration-colon-space-after, no-duplicate-selectors */
 
+$site-assets: '/assets';
+
 // -----------------------------------------------------------------------------
 // 🎨 COLORS
 // -----------------------------------------------------------------------------
 /* #region */
 
-// COLOR NAMES
+// Palette
+$red:    hsl(10 100% 74%);
+$orange: hsl(35 100% 50%);
+$yellow: hsl(60 100% 44%);
+$green:  hsl(130 100% 40%);
+$blue:   hsl(200 100% 59%);
+$magenta: hsl(305 100% 75%);
 
-// Spectrum
-// TODO. Create a function for calculating spectrum colors based on one brand color
-$red:                                   rgb(242, 0, 0);
-// $orange:                              rgb(242, 128, 0);
-$yellow:                                rgb(242, 178, 0);
-$yellow-light:                          rgb(255, 204, 25);
-$yellow-dark:                           rgb(229, 166, 0);
-// $lime:                                rgb(178, 242, 0);
+$transparent: rgb(0 0 0 / 0);
 
-// Optional. For green, turquoise/fun-green, cyan/teal lightness can be reduced doubly
-// $green:                               rgb(0, 128, 0);
-$fun-green:                             rgb(0, 191, 128);
-$fun-green-lighter:                     rgb(0, 229, 166);
-$fun-green-light:                       rgb(0, 217, 153);
-$fun-green-dark:                        rgb(0, 178, 115);
-$fun-green-darker:                      rgb(0, 166, 102);
-$teal:                                  rgb(0, 128, 89);
-$cobalt:                                rgb(0, 178, 242);
-$cobalt-dark:                           rgb(0, 128, 191);
-// $blue:                                rgb(0, 51, 242);
-$violet:                                rgb(51, 0, 242);
-// $magenta:                             rgb(178, 0, 242);
-// $crimson:                             rgb(242, 0, 178);
-
-//Gradients
-$cobalt-gradient:                       linear-gradient(rgb(0, 171, 234), rgb(0, 149, 213) 80%, rgb(0, 159, 223));
-
-// Neutrals
-
-$grey-l95:                              hsl(214, 17%, 95%); // rgb(241, 244, 248) | #f1f4f8
-$grey-l92:                              hsl(214, 17%, 92%); // rgb(231, 234, 238) | #e7eaee
-$grey-l88:                              hsl(214, 11%, 88%); // rgb(221, 224, 228) | #dde0e4
-$grey-l57:                              hsl(214, 3%, 57%); // rgb(141, 144, 148) | #8d9094
-$grey-l25:                              hsl(214, 5%, 25%); // rgb(61, 64, 68)   | #3d4044
-$grey-l17:                              hsl(214, 8%, 17%); // rgb(41, 44, 48)   | #292c30
-$grey-l14:                              hsl(214, 10%, 14%); // rgb(31, 34, 38)   | #1f2226
-
-$transparent:                           rgba(#000, 0);
-
-$black-max:                             rgba(#000, .87);
-$black-transparent:                     rgba(#000, .54);
-$black-transparent-more:                rgba(#000, .38);
-$black-transparent-almost:              rgba(#000, .12);
-
-$white-max:                             #fff;
-$white-transparent:                     rgba(#fff, .64);
-$white-transparent-more:                rgba(#fff, .48);
-$white-transparent-almost:              rgba(#fff, .12);
-
-:root {
-  --black-transparent:                  hsla(0, 0%, 0%, .54);
-  --black-transparent-2:                hsla(0, 0%, 0%, .38);
-  --black-transparent-3:                hsla(0, 0%, 0%, .28);
-  --black-transparent-most:             hsla(0, 0%, 0%, .12);
-
-  --white-max:                          hsl(0, 0%, 100%);
-
-  --grey-l92:                           hsl(214, 17%, 92%);
-  --grey-l94:                           hsl(214, 17%, 94%);
-  --grey-l96:                           hsl(214, 17%, 96%);
-  --grey-l98:                           hsl(214, 17%, 98%);
-}
-
+$color-brand-900: hsl(35 100% 19%);
+$color-brand-800: hsl(35 100% 27%);
+$color-brand-700: hsl(35 100% 34%);
+$color-brand-600: hsl(35 100% 41%);
+$color-brand-500: hsl(35 100% 50%);
+$color-brand-400: hsl(35 100% 66%);
+$color-brand-300: hsl(35 100% 76%);
+$color-brand-200: hsl(35 100% 86%);
+$color-brand-100: hsl(35 100% 93%);
+$color-brand-50:  hsl(35 100% 98%);
 
 // COLOR ROLES
 
 // Bootstrap colors to "generate families of related CSS".
 $theme-colors: (
-  primary:                              $yellow,
-  secondary:                            $cobalt,
-  success:                              $teal,
-  info:                                 $cobalt,
-  warning:                              $yellow-light,
-  danger:                               $red
+  primary:   $color-brand-500,
+  secondary: $magenta,
+  success:   $green,
+  info:      $blue,
+  warning:   $yellow,
+  danger:    $red
 );
 
 // Main palette
-$color-primary:                         $yellow;
-$color-primary-light:                   $yellow-light;
-$color-primary-pale:                    desaturate(lighten($color-primary, 30), 30);
-$color-primary-dark:                    $yellow-dark;
-$color-primary-gradient:                linear-gradient($color-primary-light, $color-primary);
+$color-primary:         $color-brand-500;
+$color-primary-shade-1: darken($color-brand-500, 2%);
+$color-primary-shade-2: darken($color-brand-500, 7%);
+$color-primary-tint-1:  lighten($color-brand-500, 4%);
 
-$color-secondary:                       $cobalt;
-$color-secondary-dark:                  $cobalt-dark;
-$color-secondary-gradient:              $cobalt-gradient;
+$color-2ry:          $magenta;
+$color-2ry-gradient: linear-gradient($magenta, darken($magenta, 15%) 80%, darken($magenta, 6%));
 
-$color-tertiary:                        $fun-green;
-$color-tertiary-lighter:                $fun-green-lighter;
-$color-tertiary-light:                  $fun-green-light;
-$color-tertiary-dark:                   $fun-green-dark;
-$color-tertiary-darker:                 $fun-green-darker;
-$color-tertiary-gradient:               linear-gradient($color-tertiary-light, $color-tertiary-darker);
-$color-tertiary-gradient-lighter:       linear-gradient($color-tertiary-lighter, $color-tertiary-dark);
+$color-tertiary-gradient:         linear-gradient(hsl(35 10% 94%), hsl(35 10% 84%));
+$color-tertiary-gradient-lighter: linear-gradient(hsl(35 10% 99%), hsl(35 10% 89%));
 
-$color-success:                         $fun-green;
-$color-info:                            $cobalt;
-$color-warning:                         $color-primary-light;
-$color-danger:                          $red;
+$color-success: $green;
+$color-info:    $blue;
+$color-warning: $yellow;
+$color-danger:  $red;
 
-$color-background-primary:              $grey-l92;
-$color-background-secondary:            $grey-l95;
-$color-background-tertiary:             $white-max;
-$color-background-negative:             $grey-l17;
-$color-background-success:              lighten($color-success, 30%);
-$color-background-info:                 lighten($color-secondary, 45%);
-$color-background-warning:              lighten($color-warning, 30%);
-$color-background-danger:               lighten($red, 45%);
+$color-background-base: hsl(35 10% 92%);
+$color-background-2ry: hsl(35 10% 96%);
 
-$color-border-solid:                    $grey-l88;
+$color-background-negative: hsl(35 10% 18%);
+$color-background-success:  lighten($color-success, 52%);
+$color-background-info:     lighten($color-2ry, 37%);
+$color-background-warning:  lighten($color-warning, 6%);
+$color-background-danger:   lighten($red, 23%);
+$color-ink-alert:           rgb(0 0 0 / .87);
 
 // Inks
-$color-ink-accent:                      $grey-l14;
-$color-ink-normal:                      $grey-l25;
-$color-ink-muted:                       $grey-l57;
-$color-ink-alert:                       $black-max;
-// $color-ink-hint:                        $black-transparent-more;
-// $color-ink-disabled:                    $black-transparent-more;
-$color-ink-icon:                        $black-transparent-more;
-$color-ink-border:                      $black-transparent-almost;
-$color-ink-link:                        $cobalt-dark;
+$color-ink-accent: $color-brand-700;
+$color-ink-base:   hsl(35 10% 29%);
+$color-ink-2ry:    hsl(35 10% 43%);
+$color-ink-3ry:    hsl(35 10% 52%);
+$color-ink-icon:   hsl(35 10% 64%);
+$color-ink-border: hsl(35 10% 80%);
+$color-ink-min:    hsl(35 10% 10% / .04);
+$color-ink-link:   darken($blue, 24%);
 
-$color-ink-on-highlight-normal:         rgba(89, 64, 0, .8);
-$color-ink-on-highlight-muted:          $white-max;
-$color-ink-on-highlight-tertiary:       $black-transparent-more;
-// $color-ink-on-highlight-border:         $black-transparent-almost;
-// $color-ink-on-highlight-link:           $white-max;
-$color-ink-on-highlight-link:           rgba(255, 255, 255, .64);
+$color-ink-on-highlight-base:     $color-brand-900;
+$color-ink-on-highlight-2ry:      $color-brand-800;
+$color-ink-on-highlight-3ry:      $color-brand-800;
+$color-ink-on-highlight-inverted: hsl(35 100% 99%);
 
-$color-ink-light-normal:                $white-max;
-$color-ink-light-muted:                 $white-transparent;
-// $color-ink-light-hint:                  $white-transparent-more;
-// $color-ink-light-disabled:              $white-transparent-more;
-$color-ink-light-icon:                  $white-transparent-more;
-// $color-ink-light-border:                $white-transparent-almost;
-// $color-ink-light-link:                  $cobalt;
+$color-ink-light-base: hsl(0 0% 100% / .87);
+$color-ink-light-2ry:  hsl(0 0% 100% / .54);
+$color-ink-light-3ry:  hsl(0 0% 100% / .38);
 
-:root {
-  --color-background-primary:           $grey-l92;
-
-  --color-ink-hint:                     var(--black-transparent-2);
-  --color-ink-icon:                     var(--black-transparent-3);
-  --color-ink-border:                   var(--black-transparent-most);
-
-  --color-ink-light-normal:             var(--white-max);
-
-  --color-brand-facebook:               rgb(24, 119, 242);
-}
-
+$color-brightness-up:   brightness(1.2);
+$color-brightness-down: brightness(.8);
 /* #endregion */
 
 // -----------------------------------------------------------------------------
@@ -165,31 +97,26 @@ $color-ink-light-icon:                  $white-transparent-more;
 // -----------------------------------------------------------------------------
 /* #region */
 
-:root {
-  --size-1:   .8rem;
-  --size-1p5: 1.2rem;
-  --size-2:   1.6rem;
-  --size-3:   2.4rem;
-  --size-4:   3.2rem;
-  --size-5:   4rem;
-  --size-6:   4.8rem;
-  --size-7:   5.6rem;
-  --size-8:   6.4rem;
-
-  --size-line: var(--size-3);
-}
-
-$spacer-sm:                             .8rem;
-$spacer-sm-px:                          8px;
-$spacer:                                $spacer-sm * 3; // empty line
+$size-half: .4rem;
+$size-1:    .8rem;
+$size-1p5:  $size-1 * 1.5;
+$size-2:    $size-1 * 2;
+$size-2p5:  $size-1 * 2.5;
+$size-3:    $size-1 * 3;
+$size-4:    $size-1 * 4;
+$size-5:    $size-1 * 5;
+$size-6:    $size-1 * 6;
+$size-7:    $size-1 * 7;
+$size-8:    $size-1 * 8;
+$size-line: $size-3;
 
 $spacers: (
-  0: 0,
-  sm: $spacer-sm,
-  2sm: ($spacer-sm * 2),
-  1: $spacer,
-  2: ($spacer * 2),
-  3: ($spacer * 3)
+  0:   0,
+  sm:  $size-1,
+  2sm: $size-1 * 2,
+  1:   $size-line,
+  2:   $size-line * 2,
+  3:   $size-line * 3
 );
 
 $grid-breakpoints: (
@@ -207,11 +134,11 @@ $container-max-widths: (
   xl: 1140px
 );
 
-$grid-columns:                          12;
-$grid-gutter-width:                     0;
-$grid-gutter-sm:                        16px;
-$grid-gutter-md:                        24px;
-$grid-gutter-lg:                        32px;
+$grid-columns:      12;
+$grid-gutter-width: 0;
+$grid-gutter-sm:    16px;
+$grid-gutter-md:    24px;
+$grid-gutter-lg:    32px;
 
 $sizes: (
   25: 25%,
@@ -225,6 +152,8 @@ $sizes: (
   100: 100%,
   auto: auto
 );
+
+$mq-resolution-retina: 'print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi)';
 /* #endregion */
 
 // -----------------------------------------------------------------------------
@@ -232,75 +161,68 @@ $sizes: (
 // -----------------------------------------------------------------------------
 /* #region */
 
-/* stylelint-disable indentation */
-// Don't use system-ui (Tahoma in Win7) and Segoe UI. These fonts are ugly
+// stylelint-disable indentation
 
+// Neo-grotesque is our everything
 $font-family-base:
- 'Helvetica Neue',
  -apple-system,
+  BlinkMacSystemFont,
+  Inter,
   Roboto,
+ 'Helvetica Neue',
+ 'Arial Nova',
+ 'Nimbus Sans',
   Arial,
- 'Noto Sans',
   sans-serif,
  'Apple Color Emoji',
  'Segoe UI Emoji',
  'Segoe UI Symbol',
  'Noto Color Emoji';
 
-$headings-font-family:
- -apple-system,
- 'Helvetica Neue',
- 'Inter',
-  Helvetica,
-  Arial,
-  sans-serif,
- 'Apple Color Emoji',
- 'Segoe UI Emoji',
- 'Segoe UI Symbol';
-/* stylelint-enable */
+$headings-font-family: $font-family-base;
 
-$font-size-sm:                          $spacer-sm * 1.5; // 12px
-$line-height-sm:                        1.333; // 16px
+// stylelint-enable
 
-// It would be better to name these variables $body-{font-size|line-height},
-// but they are used in the reboot.scss and renaming them leads to undesirable
-// results
-$font-size-base:                        $spacer-sm * 2; // 16px
-$line-height-base:                      1.5; // 24px
-$body-baseline-shift:                   math.div($spacer, 4); // This requires trial and error, as top offset depends on font and line-height
+$body-baseline-shift:        math.div($size-line, 4);
 
-$headline-xs-baseline-shift:            $spacer + $body-baseline-shift;
+$display-1-font-size:        $size-8;
 
-$headline-sm-font-size:                 $spacer-sm * 2.5; // 20px
-$headline-sm-line-height:               line-height(20);
-$headline-sm-baseline-shift:            0;
-$headline-sm-margin-bottom:             0;
+$display-2-font-size:        $size-5;
+$display-2-line-height:      line-height(40);
 
-$headline-md-font-size:                 $spacer-sm * 3; // 24px
-$headline-md-line-height:               line-height(24);
-$headline-md-font-weight:               500;
-$headline-md-baseline-shift:            2.4rem;
-$headline-md-margin-bottom:            .1rem;
+$headline-lg-font-size:      $size-4;
+$headline-lg-line-height:    1;
+$headline-lg-font-weight:    400;
+$headline-lg-baseline-shift: $size-2;
+$headline-lg-margin-bottom:  $size-2;
 
-$headline-lg-font-size:                 $spacer-sm * 4; // 32px
-$headline-lg-line-height:               1; // 40px
-$headline-lg-font-weight:               400;
-$headline-lg-baseline-shift:            $spacer-sm * 2;
-$headline-lg-margin-bottom:             $spacer-sm * 2;
+$headline-md-font-size:      $size-3;
+$headline-md-line-height:    line-height(24);
+$headline-md-font-weight:    500;
+$headline-md-baseline-shift: 2.4rem;
+$headline-md-margin-bottom:  .1rem;
 
-$display-2-font-size:                   $spacer-sm * 5;
-$display-2-line-height:                 line-height(40);
+$headline-sm-font-size:      $size-2p5;
+$headline-sm-line-height:    line-height(20);
+$headline-sm-baseline-shift: 0;
+$headline-sm-margin-bottom:  0;
 
-$display-1-font-size:                   $spacer-sm * 8;
+$headline-xs-baseline-shift: $size-line + $body-baseline-shift;
 
-$list-bullet:                           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%3E%3Ccircle%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20fill-opacity%3D%22.38%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E') !default;
+$font-size-base:             $size-2;
+$line-height-base:           1.5;
+
+$font-size-sm:               $size-1p5;
+$line-height-sm:             1.333;
+$padding-top-small:          $size-half;
+$padding-bottom-small:       $size-half;
 /* #endregion */
 
 // -----------------------------------------------------------------------------
 // 🍱 COMPONENTS BOXES
 // -----------------------------------------------------------------------------
 /* #region */
-$border-width:                          1px;
+$border-width: 1px;
 
 // BOX BORDER RADIUS
 
@@ -322,50 +244,49 @@ $border-radius-pill: 100vmax;
 // BOX SHADOWS
 
 // Raised buttons, Cards, Alerts, App Bar, Bottom Navigation Bar, Switches
-$box-shadow-z1:                         0 1px 0 rgba(0, 0, 0, .06);
+$box-shadow-z1: 0 1px 0 hsl(35 10% 10% / .06);
 
 // FAB, Raised Button hover state, Snackbars
-$box-shadow-z2:                         0 2px 4px -1px rgba(0, 0, 0, .24), 0 8px 16px -4px rgba(0, 0, 0, .12);
+$box-shadow-z2:
+  0 2px 4px -1px hsl(35 10% 10% / .24),
+  0 8px 16px -4px hsl(35 10% 10% / .12);
 
 // Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks
-$box-shadow-z3:                         0 9px 10px -3px rgba(0, 0, 0, .21), 0 18px 34px -7px rgba(0, 0, 0, .12);
+$box-shadow-z3:
+  0 9px 10px -3px hsl(35 10% 10% / .21),
+  0 18px 34px -7px hsl(35 10% 10% / .12);
 
 // Popovers, Tooltips
-$box-shadow-z4:                         0 16px 17px -5px rgba(0, 0, 0, .19), 0 29px 53px -10px rgba(0, 0, 0, .12);
+$box-shadow-z4:
+  0 16px 17px -5px hsl(35 10% 10% / .19),
+  0 29px 53px -10px hsl(35 10% 10% / .12);
 
 // Modals
-$box-shadow-z5:                         0 24px 24px -8px rgba(0, 0, 0, .16), 0 40px 72px -12px rgba(0, 0, 0, .12);
-/* box-shadow-xl: */
+$box-shadow-z5:
+  0 24px 24px -8px hsl(35 10% 10% / .16),
+  0 40px 72px -12px hsl(35 10% 10% / .12);
 
-// BOX Z-INDEX
-// $zindex-dropdown:                    1000;
-// $zindex-sticky:                      1020;
-// $zindex-fixed:                       1030;
-// $zindex-modal-backdrop:              1040;
-// $zindex-modal:                       1050;
-// $zindex-popover:                     1060;
-// $zindex-tooltip:                     1070;
-
+$box-shadow-focus-outline: 0 0 0 $size-half rgba($blue, .4);
 
 // BOX PADDINGS
 
 // Modals, Cards, Alerts, Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
-$box-padding-on-mobile:                 $spacer ($spacer-sm * 2);
+$box-padding-on-mobile:                  $size-line $size-2;
 
 // Cards, Alerts, Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
-$box-padding-on-tablets-and-desktops-sm: $spacer;
+$box-padding-on-tablets-and-desktops-sm: $size-line;
 
 // Modals
-$box-padding-on-tablets-and-desktops-lg: ($spacer * 2);
+$box-padding-on-tablets-and-desktops-lg: ($size-line * 2);
 
 
 // BOX MARGINS
 
 // Cards in Grid, Modal Bottom Sheets
-$box-margin-bottom-sm:                  $spacer-sm;
+$box-margin-bottom-sm: $size-1;
 
 // Cards, Alerts
-$box-margin-bottom:                     $spacer;
+$box-margin-bottom:    $size-line;
 
 // PANELS WIDTH
 
@@ -373,47 +294,41 @@ $box-margin-bottom:                     $spacer;
 $panel-width-xs: 160px;
 
 // Tooltips
-$panel-width-sm: 280px;
+$panel-width-sm: 272px;
 
 // Dropdowns, popovers, tablet and desktop drawers
-$panel-width: 320px;
+$panel-width:    320px;
 
 // Wide drawers
-$panel-width-lg: 640px;
+$panel-width-lg: 544px;
 
 // Modals
-$panel-width-xl: 800px;
+$panel-width-xl: 720px;
 
 // ANIMATION & TRANSITIONS
 
-// Use shorter for disappearing elements. To do that set transitions on both
-// states, like this:
-// .el { transition: all $duration-disappearance $easing-disappearance; }
-// .el.hidden { transition: all $duration-appearance $easing-appearance; }
-$duration-xs:                           .1s;
+// Micro-interactions such as button and toggle
+$duration-xs:  .07s;
 
-// Medium elements changing states
-// and disappearance
-$duration-sm:                           .2s;
+// Micro-interactions such as fade
+$duration-sm:  .11s;
 
-// Medium elements appearance,
-// large elements changing states
-// and disappearance
-$duration:                              .25s;
+// Micro-interactions, small expansion, short distance movements
+$duration:     .15s;
 
-// Large elements appearance
-$duration-lg:                           .3s;
+// Expansion, system communication, toast
+$duration-lg:  .24s;
 
-// Slower large elements appearance
-$duration-xl:                           .5s;
-$duration-xxl:                          .8s;
+// Large expansion, important system notifications
+$duration-xl:  .4s;
 
-// $easing:                                cubic-bezier(.71, 1.7, .77, 1.24);
-$easing:                                cubic-bezier(.4, 0, .2, 1);
-$easing-appearance:                     cubic-bezier(0, 0, .2, 1);
-$easing-disappearance:                  cubic-bezier(.4, 0, 1, 1);
+// Background dimming
+$duration-xxl: .7s;
 
-$delay:                                 .05s;
+$easing:               cubic-bezier(.4, 0, .2, 1);
+$easing-appearance:    cubic-bezier(0, 0, .2, 1);
+$easing-disappearance: cubic-bezier(.4, 0, 1, 1);
+$delay:                .05s;
 
 /* #endregion */
 
@@ -422,40 +337,17 @@ $delay:                                 .05s;
 // -----------------------------------------------------------------------------
 /* #region */
 
-$body-bg:                               $color-background-primary;
-$body-color:                            $color-ink-normal;
-$link-color:                            $cobalt-dark;
-$paragraph-margin-bottom:               $spacer;
-$input-placeholder-color:               var(--color-ink-hint);
+$body-bg:                 $color-background-base;
+$body-color:              $color-ink-base;
+$dropdown-bg:             $color-background-2ry;
+$input-placeholder-color: $color-ink-3ry;
+$link-color:              darken($blue, 20%);
+$paragraph-margin-bottom: $size-line;
 /* #endregion */
 
 //------------------------------------------------------------------------------
-// 🔲 BASE COMPONENTS
+// 💜 ICONS
 // -----------------------------------------------------------------------------
-/* #region */
-
-//#{$site-assets}
-$site-assets:                           '/assets';
-
-$btn-primary-bg:                        $color-secondary;
-
-$btn-secondary-bg:                      $color-background-secondary;
-$btn-secondary-box-shadow:              inset 0 -1px 0 0 $color-ink-border;
-
-$dropdown-bg:                           $color-background-secondary;
-
-$logo-super-color:                      rgb(134, 137, 141);
-$logo-super-color-md:                   $color-ink-muted;
-$logo-super-home-color:                 $grey-l88;
-$logo-mark-color:                       $color-ink-on-highlight-muted;
-$logo-mark-color-md:                    rgb(115, 118, 122);
-$logo-tagline-color:                    $color-ink-muted;
-$logo-tagline-home-color:               $color-ink-on-highlight-tertiary;
-
-// Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
-// $carousel-transition:                   transform .6s ease-in-out;
-
-$article-max-width:                     560px;
-// Look at add-ons for other components vars
-
-/* #endregion */
+// #region
+// $icon-chevron-right: svg-load('/web/src/base/icons/svg-bg/icon-chevron-right.svg');
+// #endregion

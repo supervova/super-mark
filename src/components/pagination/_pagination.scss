@@ -5,7 +5,7 @@
 //   ul.pagination
 //     li.pagination__control.is-prev
 //       a(href='')
-//         svg.icon.icon-prev
+//         svg.icon.is-prev
 //     li.pagination__control.is-current 2 / 2
 //     li.pagination__control.is-next
 
@@ -30,7 +30,7 @@
 }
 
 .pagination__control.is-current {
-  padding: 0 $spacer-sm;
+  padding: 0 $size-1;
 }
 
 // Next and Prev Links
@@ -38,17 +38,12 @@
   @extend %pagination-item;
 
   background-color: $transparent;
-  border-color: $color-border-solid;
+  border-color: $color-ink-border;
   border-radius: $border-radius;
   padding: 0 1.5rem;
 
   &:hover {
-    background-color: $color-background-secondary;
-    border-color: $color-border-solid;
+    background-color: $color-background-2ry;
+    border-color: $color-ink-border;
   }
-}
-
-// Previous chevron
-.pagination__control.is-prev .icon {
-  transform: scaleX(-1);
 }

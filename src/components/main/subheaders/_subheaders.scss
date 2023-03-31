@@ -1,5 +1,5 @@
 .main-subheader {
-  background: $color-background-primary;
+  background: $color-background-base;
   border-bottom: 1px solid $color-ink-border;
 
   // Initially it's hidden on phones. But it swapped with the main header
@@ -9,7 +9,7 @@
   top: 0;
   right: 0;
   left: 0;
-  transition: transform .4s;
+  transition: transform $duration-sm;
   transform: translateY(-56px);
   height: 56px;
   z-index: $zindex-fixed + 1;
@@ -61,7 +61,10 @@
 
 .btn-back {
   @extend .d-md-none;
-  background: $transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2212%22%20height%3D%2221%22%20viewBox%3D%220%200%2012%2021%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M.257%2011L0%2010.747l.707-.697%208.482-8.354L9.896%201l1.414%201.392-.707.697L2.57%2011l8.033%207.911.707.697L9.896%2021l-.707-.696L.707%2011.95%200%2011.253.257%2011z%22%2F%3E%3Cpath%20fill%3D%22%23ABAEB2%22%20d%3D%22M.257%2010L0%209.747l.707-.697L9.189.696%209.896%200l1.414%201.392-.707.697L2.57%2010l8.033%207.911.707.697L9.896%2020l-.707-.696L.707%2010.95%200%2010.253.257%2010z%22%2F%3E%3C%2Fsvg%3E') 16px 50% no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   position: absolute;
   top: 0;
@@ -72,7 +75,7 @@
   height: 56px;
 
   &:hover {
-    background-color: rgb(221, 224, 228);
+    background-color: $color-ink-min;
   }
 }
 
@@ -81,7 +84,7 @@
 
 // Section name in header.
 .eyebrow {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
   display: block;
   text-shadow: 0 1px 0 #fff;
   text-overflow: ellipsis;
@@ -90,7 +93,7 @@
   overflow: hidden;
 
   @include media-breakpoint-up(md) {
-    color: $color-ink-light-normal;
+    color: $color-ink-light-base;
     font-size: 100%;
     line-height: 48px;
     text-shadow: none;
@@ -103,11 +106,11 @@
 .eyebrow.is-link {
   &:hover,
   &:visited {
-    color: $color-ink-normal;
+    color: $color-ink-base;
   }
 
   @include media-breakpoint-up(md) {
-    color: $color-ink-light-normal;
+    color: $color-ink-light-base;
     font-size: 100%;
     line-height: 48px;
     text-shadow: none;
@@ -117,8 +120,8 @@
 
     &:hover,
     &:visited {
-      background: $color-primary-light;
-      color: $color-ink-light-normal;
+      background: $color-primary-tint-1;
+      color: $color-ink-light-base;
       text-decoration: none;
     }
   }

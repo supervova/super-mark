@@ -4,15 +4,15 @@
     0 0 0 1px $color-ink-border,
     $box-shadow-z1;
   color: $color-ink-alert;
-  margin-bottom: $spacer;
+  margin-bottom: $size-line;
   padding-top: 1rem;
-  padding-right: var(--size-2);
+  padding-right: $size-2;
   padding-bottom: 1rem;
-  padding-left: var(--size-6);
+  padding-left: $size-6;
   position: relative;
 
   @include media-breakpoint-up(md) {
-    padding-right: var(--size-line);
+    padding-right: $size-line;
   }
 }
 
@@ -21,7 +21,7 @@
 .alert .icon {
   position: absolute;
   top: 2.1rem;
-  left: var(--size-2);
+  left: $size-2;
   transform: translateY(-50%);
 }
 
@@ -51,12 +51,12 @@
 // DISMISSIBLE ALERTS
 
 // .alert-dismissible {
-//   padding-right: $spacer-sm * 4; // 32px
+//   padding-right: $size-1 * 4; // 32px
 
 //   // Adjust close link position
 //   .btn-close {
 //     position: absolute;
-//     top: $spacer-sm;
-//     right: $spacer-sm;
+//     top: $size-1;
+//     right: $size-1;
 //   }
 // }

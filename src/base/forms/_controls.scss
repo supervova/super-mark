@@ -4,7 +4,7 @@
 
 .form-group {
   position: relative;
-  margin-bottom: $spacer-sm;
+  margin-bottom: $size-1;
 }
 
 
@@ -42,7 +42,7 @@ label {
   appearance: none;
   border-radius: $border-radius-sm;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .52);
-  margin-bottom: $spacer-sm;
+  margin-bottom: $size-1;
   padding: 1.1rem 16px 1.1rem 40px;
   height: auto;
 
@@ -60,7 +60,7 @@ label {
 // -----------------------------------------------------------------------------
 
 .form-check-label {
-  color: $color-ink-muted;
+  color: $color-ink-2ry;
   padding-top: 1.2rem;
   position: relative;
 }
@@ -87,7 +87,7 @@ input[type='checkbox'] {
 
 .g-recaptcha:not(:empty) {
   padding-top: .2rem;
-  padding-bottom: var(--size-line);
+  padding-bottom: $size-line;
 }
 
 
@@ -109,7 +109,7 @@ input[type='checkbox'] {
 // $dropdown-arrow-width:            8px;
 
 // .form-control-feedback {
-//   background: $color-background-secondary;
+//   background: $color-background-2ry;
 //   border: 1px solid $color-ink-border;
 //   border-radius: $border-radius;
 //   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .06), inset 0 1px 0 0 #fff;

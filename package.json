@@ -168,6 +168,13 @@
     "> 1%",
     "last 2 versions"
   ],
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "postcss-easing-gradients": {},
+      "postcss-inline-svg": {}
+    }
+  },
   "dependencies": {
     "bootstrap": "^4.3.1"
   },

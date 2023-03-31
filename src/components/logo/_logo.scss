@@ -78,17 +78,17 @@
   position: absolute;
   top: 1.5rem;
   left: 3.2rem;
-  width: 116px;
-  height: 25px;
+  width: 122px;
+  height: 22px;
 
   @include media-breakpoint-up(md) {
-    top: 4rem;
+    top: 3.8rem;
     left: 113px;
   }
 
   @include media-breakpoint-up(lg) {
     position: static;
-    margin: .4rem auto .3rem;
+    margin: .4rem auto 1.4rem;
   }
 }
 
@@ -101,60 +101,31 @@
 // ? So we must abandon SVG <use> with external reference and go WET
 
 .logo-type svg {
-  width: 116px;
-  height: 25px;
+  width: 122px;
+  height: 22px;
 }
 
 .logo-type-super {
-  fill: $logo-super-color;
-  // transition: all $duration-lg $easing-appearance;
+  fill: $color-ink-3ry;
 
   @include media-breakpoint-up(md) {
-    fill: $logo-super-color-md;
     transition: fill $duration $easing $delay;
 
     .is-highlight & {
-      fill: $logo-super-home-color;
-    }
-
-    // Reset for navbar
-    .navbar-header & {
-      fill: $logo-super-color;
+      fill: $color-brand-800;
     }
   }
 }
 
 .logo-type .logo-type-mark {
-  fill: $logo-mark-color;
-  // transition: all $duration-lg $easing-appearance;
+  fill: $color-ink-border;
 
   @include media-breakpoint-up(md) {
-    fill: $logo-mark-color-md;
-    transition: fill $duration $easing $delay;
-
-    // Reset for navbar
-    .is-highlight &,
-    .navbar-header & {
-      fill: $logo-mark-color;
-    }
-  }
-}
-
-.logo-type-shadow {
-  fill: rgba(0, 0, 0, .24);
-  // transition: all $duration-lg $easing-appearance;
-
-  @include media-breakpoint-up(md) {
-    fill: #fff;
+    fill: $color-ink-base;
     transition: fill $duration $easing $delay;
 
     .is-highlight & {
-      fill: #c18e00;
-    }
-
-    // Reset for navbar
-    .navbar-header & {
-      fill: rgba(0, 0, 0, .24);
+      fill: $color-brand-700;
     }
   }
 }
@@ -166,22 +137,26 @@
 .logo-tagline {
   @extend .d-none, .d-md-block;
 
-  color: $logo-tagline-color;
+  color: $color-ink-2ry;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  line-height: $line-height-sm;
+  padding-top: $padding-top-small;
+  padding-bottom: $padding-bottom-small;
   transition: color $duration-sm $easing $delay;
 
   @include media-breakpoint-up(md) {
     position: absolute;
-    top: 6.4rem;
+    top: 6.2rem;
     left: 113px;
     width: 270px;
 
     .is-highlight & {
-      color: $logo-tagline-home-color;
+      color: $color-ink-on-highlight-2ry;
     }
   }
 
   @include media-breakpoint-up(lg) {
-    line-height: 2.3rem;
     position: static;
     width: 100%;
   }
