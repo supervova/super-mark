@@ -11,6 +11,10 @@
 .teaser__title {
   font-size: 2.4rem;
   padding: 0 0 1.1rem;
+
+  .teaser__media + & {
+    margin-top: $size-line;
+  }
 }
 
 .teaser__title > .eyebrow {
