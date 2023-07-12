@@ -299,7 +299,8 @@
 // Focal point on hover
 .p-home.is-highlight::after {
   @include media-breakpoint-up(lg) {
-    background: radial-gradient(50% 50% at 50% 50%, hsl(35 100% 97% / 64%), ease-out, hsl(35 100% 97% / 0));
+    background: radial-gradient(800px 800px at 50% 56%, hsl(35 100% 97% / 12%) 40%, transparent 40.1%);
+    // background: radial-gradient(50% 50% at 50% 50%, hsl(35 100% 97% / 64%), ease-out, hsl(35 100% 97% / 0));
     background-blend-mode: lighten;
     background-position: calc(50% + 300px) calc(50% - 140px);
     background-repeat: no-repeat;
