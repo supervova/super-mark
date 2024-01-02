@@ -321,12 +321,10 @@
 
 // Orange Slide
 .intro-section.is-highlight {
-  background: $color-brand-200;
-  color: $color-brand-800;
+  background: $color-primary;
+  color: $color-ink-on-highlight-base;
 
   @include media-breakpoint-up(md) {
-    background: $color-primary;
-    color: $color-ink-on-highlight-base;
     // Add space for above text on the top and for picture on the right
     padding: 11.9rem 320px 0 64px;
   }
@@ -374,14 +372,15 @@
 }
 
 .intro-section.is-highlight > h1 {
-  color: $color-brand-800;
+  color: $color-brand-50;
+  font-size: $display-1-font-size-ph;
   font-weight: 600;
-  line-height: 1;
+  letter-spacing: -.1rem;
+  line-height: $display-1-line-height-ph;
   margin: 0;
-  padding-top: 4.3rem;
-  padding-right: 0;
-  padding-bottom: .9rem;
-  padding-left: 0;
+  padding-top: 4.5rem;
+  padding-inline: 0;
+  padding-bottom: 1.5rem;
 
   @include media-breakpoint-up(md) {
     color: $color-brand-800;
