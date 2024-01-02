@@ -20,7 +20,7 @@ $magenta: hsl(305 100% 75%);
 $transparent: rgb(0 0 0 / 0);
 
 $color-brand-900: hsl(35 100% 19%);
-$color-brand-800: hsl(35 100% 27%);
+$color-brand-800: hsl(35 100% 26%);
 $color-brand-700: hsl(35 100% 34%);
 $color-brand-600: hsl(35 100% 41%);
 $color-brand-500: hsl(35 100% 50%);
@@ -61,6 +61,7 @@ $color-danger:  $red;
 
 $color-background-base: hsl(35 10% 92%);
 $color-background-2ry: hsl(35 10% 96%);
+$color-fill-lightest: hsl(35 10% 99%);
 
 $color-background-negative: hsl(35 10% 18%);
 $color-background-success:  lighten($color-success, 52%);
@@ -186,6 +187,7 @@ $headings-font-family: $font-family-base;
 $body-baseline-shift:        math.div($size-line, 4);
 
 $display-1-font-size:        $size-8;
+$display-1-line-height:      $size-7;
 
 $display-2-font-size:        $size-5;
 $display-2-line-height:      line-height(40);
