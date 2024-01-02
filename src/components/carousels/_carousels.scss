@@ -106,6 +106,13 @@
   // On color background
   .is-highlight & {
     color: $color-ink-light-base;
+    background-color: $color-primary;
+    bottom: 0;
+    height: auto;
+
+    @include media-breakpoint-down(sm) {
+      padding-block: $size-2p5;
+    }
 
     @include media-breakpoint-up(md) {
       border-top: 0;

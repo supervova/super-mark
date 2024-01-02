@@ -4,6 +4,18 @@
   white-space: nowrap;
 }
 
+.is-col {
+  flex-direction: column;
+}
+
+.has-gap-2 {
+  gap: $size-2;
+}
+
+.is-centered {
+  align-items: center;
+}
+
 
 // Spacing
 @include media-breakpoint-up(md) {

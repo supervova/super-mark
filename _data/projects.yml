@@ -27,6 +27,14 @@ common:
     en: 'Checkout'
     ru: 'Оплата'
 
+projects-2023:
+  foundation:
+    en: 'Cryptocurrency fund website'
+    ru: 'Сайт криптовалютного фонда'
+  logos:
+    en: 'Various logos'
+    ru: 'Различные логотипы'
+
 projects-2022:
   friends:
     en: 'Social network "With Friends"'
