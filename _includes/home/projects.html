@@ -1,0 +1,25 @@
+<div class="carousel">
+  <ul class="carousel__items">
+    {% for project in include.data %}
+      <li class="carousel__item">
+        <a href="#" onclick="openInNewTab('https://dribbble.com/shots/{{ project.link }}', 'supermark-portfolio')">
+          <figure>
+            <img src="{{ site.assets }}/img/pages/home/projects/{{ project.img }}.png" srcset="{{ site.assets }}/img/pages/home/projects/{{ project.img }}.png 1x, {{ site.assets }}/img/pages/home/projects/{{ project.img }}@2x.png 2x" width="400" height="300" alt="{{ project.title[page.lang] }}" loading="lazy">
+            <figcaption class="visually-hidden">{{ project.title[page.lang] }}</figcaption>
+          </figure>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="carousel__buttons">
+    <button class="carousel__button is-prev" type="button">
+      {% include icon.html name="chevron-left" %}
+      <span class="visually-hidden">{{ site.data.base.labels.buttons.previous[page.lang] }}</span>
+    </button>
+    <button class="carousel__button is-next" type="button">
+      {% include icon.html name="chevron-right" %}
+      <span class="visually-hidden">{{ site.data.base.labels.buttons.next[page.lang] }}</span>
+    </button>
+  </div>
+</div>

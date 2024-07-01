@@ -1,0 +1,12 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "indentation",
+    "overrides"
+  ],
+  "baseFontSize": 18,
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "baseFontSizeAction": false
+}

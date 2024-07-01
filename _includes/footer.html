@@ -1,3 +1,13 @@
 <footer class="footer">
-  <p class="footer-copyright">© {{ 'now' | date: "%Y" }} SuperMark</p>
+  <div class="col-1/1">
+    © {{ 'now' | date: "%Y" }} SuperMark
+
+    <span class="fb-like" role="button" data-href="{{ page.url | absolute_url | strip_index }}" data-width="" data-layout="button" data-action="like" data-size="large"></span>
+
+    <details class="popover is-share" data-role="popover">
+      <summary>{% include icon.html name="share" %}</summary>
+      {% assign page_url = page.url | absolute_url %}
+      {% include menu.html items=site.data.menu-share url=page_url %}
+    </details>
+  </div>
 </footer>

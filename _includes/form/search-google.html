@@ -1,7 +1,10 @@
-<form class="form is-search" action="https://www.google.com/search" method="get" target="_blank">
+<form class="form is-search" action="https://www.google.com/search" method="get" role="search" target="_blank">
   <input type="hidden" name="sitesearch" value="https://super-mark.ru">
-  <input class="form-control form__search-input" name="q" type="text" maxlength="255" tabindex="-1" autocomplete="off" value="" placeholder="{{ site.data.i18n.labels.search[page.lang] }}">
-  <button class="btn btn-search" type="submit" aria-label="{{ site.data.i18n.labels.search[page.lang] }}">
+  <input name="q" type="search" maxlength="255" tabindex="-1" autocomplete="off" value="" placeholder="{{ site.data.base.labels.search[page.lang] }}">
+  <button class="btn is-search" type="submit" aria-label="{{ site.data.base.labels.search[page.lang] }}">
     {% include icon.html name="search" %}
+  </button>
+  <button class="btn is-ghost" type="button" data-role="close-modal">
+    {{ site.data.base.labels.buttons.cancel[page.lang] }}
   </button>
 </form>

@@ -1,67 +1,49 @@
-{% if page.lang == 'ru' %}
-  {% assign menu = site.data.navbar %}
-{% else %}
-  {% assign menu = site.data.navbar-en %}
-{% endif %}
+<nav class="navbar" aria-label="Global">
 
-<nav class="navbar">
-
-  {% comment %} Mobile drawer header {% endcomment %}
-  {% include navbar-header.html %}
-
-  {% comment %} Search form {% endcomment %}
-  {% include form/search-google.html %}
-
-  {% comment %} Search and language buttons {% endcomment %}
-  <ul class="navbar-2ry nav">
-    <li>
-      {% if page.lang == 'ru' %}
-        <a class="link-flag" href="/en" aria-label="In English" title="In English">
-          {% include icon.html name="flag-us" class=true %}
-        </a>
-      {% else %}
-        <a class="link-flag" href="/" aria-label="In Russian / По-русски" title="In Russian / По-русски">
-          {% include icon.html name="flag-ru" class=true %}
-        </a>
-      {% endif %}
-    </li>
-    <li>
-      <button class="btn btn-search is-spotlight" data-target="#modal-search" data-toggle="modal" data-src="navbar-search" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" title="{{ site.data.i18n.labels.search[page.lang] }}">
-        {% include icon.html name="search" class=true %}
-      </button>
-    </li>
-  </ul>
-
-  {% comment %} MAIN MENU / Drawer on mobiles {% endcomment %}
-  <ul class="navbar-primary nav" role="menubar">
-    {% for item in menu %}
-      <li role="menuitem">
-        <a
-          {% if page.home %}
-            href="#intro" data-slide-to="{{ item.ordinal }}"
-          {% else %}
-            {% if item.slug == 'blog' %}
-              class="navbar-primary-link blog" href="/ru/blog"
-            {% else %}
-              href="/?slide={{ item.ordinal }}"
+  <div>
+    <ul class="navbar__base">
+      {% for item in include.data %}
+        {% if item.label[page.lang] %}
+          <li{% if item.class %} class="{{ item.class }}"{% endif %}>
+            {% assign item_url = item.url %}
+            {% if item.url and page.lang %}
+              {% unless page.is-home %}
+                {% if page.lang == 'ru' %}
+                  {% assign item_url = '/' | append: item.url %}
+                {% elsif page.lang == 'en' %}
+                  {% assign item_url = '/en' | append: item.url %}
+                {% endif %}
+              {% endunless %}
             {% endif %}
-          {% endif %}
-        >
-          {% include icon.html name="chevron-right" %}
-          {{ item.title }}
-        </a>
+            <a class="navbar__link" href="{{ item_url }}">
+              {% if item.icon %}
+                {% include icon.html name=item.icon %}
+              {% endif %}
+              <span>{{ item.label[page.lang] }}</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <ul class="navbar__actions">
+      <li>
+        <button class="btn is-search" data-target="modal-search" aria-label="{{ site.data.base.labels.search[page.lang] }}">
+          {% include icon.html name="search" %}
+        </button>
       </li>
-    {% endfor %}
-  </ul>
 
-  {% comment %} Social Sharing and Pin Up {% endcomment %}
-  <footer class="navbar-footer">
-
-    {% include social-tools/navbar.html %}
-
-  </footer>{% comment %} / navbar footer {% endcomment %}
-
-  {% comment %} CTA Button {% endcomment %}
-  {% include cta.html %}
-
+      <li>
+        {% if page.lang == 'ru' %}
+          <a href="/en" aria-label="In English">
+            {% include icon.html name="flag-us" %}
+          </a>
+        {% else %}
+          <a href="/" aria-label="По-русски / In Russian">
+            {% include icon.html name="flag-ru" %}
+          </a>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
 </nav>

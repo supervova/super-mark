@@ -1,163 +1,58 @@
-// -----------------------------------------------------------------------------
-// LOGO AND TAGLINE CONTAINER
-// -----------------------------------------------------------------------------
+@use '../../theme/config' as *;
 
-.header-logo {
-  position: absolute;
-  top: 0;
+.logo {
+  --logo-color: hsl($h $s 40%);
 
-  // Next to toggler
-  left: 72px;
-  width: 144px;
-  height: 56px;
+  border-radius: $border-radius-base;
+  flex-shrink: 0;
 
-  @include media-breakpoint-up(md) {
-    top: 38px;
-    left: 0;
-    width: 380px;
-    height: 106px;
+  &:hover {
+    text-decoration: none;
   }
 
-  @include media-breakpoint-up(lg) {
-    top: 62px;
-    width: 160px;
-    height: 187px;
+  &:focus-visible {
+    background: var(--color-background-2ry);
+    box-shadow: 0 0 0 $size-1 var(--color-background-2ry);
+  }
+
+  &,
+  &:visited {
+    color: var(--logo-color);
   }
 }
 
-.logo-link {
-  left: 0;
+.logo__logotype,
+.logo__tagline {
+  @include text-format(small);
+}
 
-  // Set absolute position for link height and width
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.logo__logotype {
+  font-weight: bolder;
 
-  &:focus {
-    outline: 0;
-  }
-
-  .is-highlight & {
-    cursor: default;
-    pointer-events: none;
+  @media (--laptop) {
+    font-size: rem(23);
+    line-height: calc(24 / 23);
+    white-space: nowrap;
+    padding-top: rem(5);
+    padding-bottom: rem(3);
   }
 }
 
-// -----------------------------------------------------------------------------
-// LOGOMARK
-// -----------------------------------------------------------------------------
+.logo__tagline {
+  display: none;
 
-.logo-mark {
-  position: absolute;
-  top: 13px;
-  left: 0;
-
-  // On tablets
-  @include media-breakpoint-up(md) {
-    top: 0;
-  }
-
-  // On desktops
-  @include media-breakpoint-up(lg) {
-    position: static;
-    margin: 0 auto;
+  @media (--tablet) {
+    color: var(--color-ink-2ry);
+    display: block;
+    margin-top: -$size-half;
   }
 }
 
-// -----------------------------------------------------------------------------
-// LOGOTYPE (SVG)
-// -----------------------------------------------------------------------------
+.page.is-home .logo {
+  pointer-events: none;
+  cursor: default;
 
-// DIV - Container for SVG
-
-.logo-type {
-  // Set alt text to normal size
-  font-size: 100%;
-  font-weight: normal;
-  line-height: 1.5;
-  position: absolute;
-  top: 1.5rem;
-  left: 3.2rem;
-  width: 122px;
-  height: 22px;
-
-  @include media-breakpoint-up(md) {
-    top: 3.8rem;
-    left: 113px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    position: static;
-    margin: .4rem auto 1.4rem;
-  }
-}
-
-// SVG
-// WARNING! First style for individual <path> will affect all instances of that
-// path. But we can't redefine style of externally referenced because <path> it
-// crosses a shadow DOM boundary
-// https://css-tricks.com/svg-use-with-external-reference-take-2/
-// https://css-tricks.com/svg-sprites-use-better-icon-fonts/
-// ? So we must abandon SVG <use> with external reference and go WET
-
-.logo-type svg {
-  width: 122px;
-  height: 22px;
-}
-
-.logo-type-super {
-  fill: $color-ink-3ry;
-
-  @include media-breakpoint-up(md) {
-    transition: fill $duration $easing $delay;
-
-    .is-highlight & {
-      fill: $color-brand-800;
-    }
-  }
-}
-
-.logo-type .logo-type-mark {
-  fill: $color-ink-border;
-
-  @include media-breakpoint-up(md) {
-    fill: $color-ink-base;
-    transition: fill $duration $easing $delay;
-
-    .is-highlight & {
-      fill: $color-brand-700;
-    }
-  }
-}
-
-// -----------------------------------------------------------------------------
-
-// TAGLINE
-
-.logo-tagline {
-  @extend .d-none, .d-md-block;
-
-  color: $color-ink-2ry;
-  font-size: $font-size-sm;
-  font-weight: 500;
-  line-height: $line-height-sm;
-  padding-top: $padding-top-small;
-  padding-bottom: $padding-bottom-small;
-  transition: color $duration-sm $easing $delay;
-
-  @include media-breakpoint-up(md) {
-    position: absolute;
-    top: 6.2rem;
-    left: 113px;
-    width: 270px;
-
-    .is-highlight & {
-      color: $color-ink-on-highlight-2ry;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    position: static;
-    width: 100%;
+  &:hover {
+    color: var(--logo-color);
   }
 }

@@ -5,7 +5,7 @@ categories: Illustrator
 date: 2021-04-03 12:30
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;tl;dr</h2>
 <ol>

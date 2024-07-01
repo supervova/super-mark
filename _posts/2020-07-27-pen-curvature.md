@@ -5,7 +5,7 @@ date: 2020-07-27
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <h2 class="main-subhead is-smaller">🔵 Перо</h2>
 <ul>

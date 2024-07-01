@@ -5,7 +5,7 @@ date: 2023-05-27
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 ## Инструменты символов
 {: .main-subhead .is-smaller }

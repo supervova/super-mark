@@ -1,0 +1,64 @@
+- id: "subsection-design"
+  active: false
+  button:
+    phone:
+      en: "Des."
+      ru: "Раз"
+    base:
+      en: "Design"
+      ru: "Дизайн"
+  content:
+    en:
+      - "Websites and promotional materials in academic traditions of visual arts."
+      - "Unique vector illustrations in the client&rsquo;s corporate style."
+      - "Design systems defining colors, fonts, graphics, and UI elements."
+      - "Animation expressing the brand&rsquo;s character: micro-interactions, screen transitions, and video presentations."
+    ru:
+      - "Веб-сайты и промоматериалы в академических традициях визуальных искусств."
+      - "Уникальные векторные иллюстрации в фирменном стиле клиента."
+      - "Дизайн-системы, определяющие цвета, шрифты, графику и элементы пользовательского интерфейса."
+      - "Анимация, выражающая характер бренда: микровзаимодействия, смена экранов и компонентов, видеопрезентации."
+- id: "subsection-development"
+  active: true
+  button:
+    phone:
+      en: "Dev."
+      ru: "Два"
+    base:
+      en: "Development"
+      ru: "Разработка"
+  content:
+    en:
+      - "Websites on traditional and headless CMS or static site generators: WordPress, Strapi, Jekyll."
+      - "Complex cross-browser responsive layouts built on HTML that meets W3C standards, including WCAG. Elegant, semantic markup extended with schema.org microdata. Templating engines: Handlebars / Mustache, Pug, Twig."
+      - "Properly structured CSS using best practices and modules. CSS grid, Flexbox, custom properties, SVG sprites, custom Sass functions, etc."
+      - "Vanilla JavaScript <code>(\"es2023\": true)</code>."
+      - "Site speed optimization according to Lighthouse recommendations."
+    ru:
+      - "Сайты на генераторах или традиционных и headless CMS: WordPress, Strapi, Jekyll."
+      - "Сложные кроссбраузерные адаптивные макеты, собранные на HTML, соответствующем стандартам W3C, включая WCAG. Элегантная, семантическая разметка, расширенная микроданными в формате schema.org. Шаблонизаторы: Handlebars / Mustache, Pug, Twig."
+      - "Правильно структурированные CSS с применением передовых практик и модулей. CSS grid, Flexbox, custom properties, SVG-спрайты, пользовательские Sass-функции и т. д."
+      - "«Ванильный» JavaScript <code>(\"es2023\": true)</code>."
+      - "Оптимизация скорости загрузки сайта по рекомендациям Lighthouse."
+- id: "subsection-marketing"
+  active: false
+  button:
+    phone:
+      en: "Mark."
+      ru: "Три"
+    base:
+      en: "Marketing"
+      ru: "Маркетинг"
+  content:
+    en:
+      - "Setting up campaigns in Google Ads."
+      - "SEO and ASO: on-page optimization."
+      - "Analytics, growth hacking, CRO."
+      - "Email marketing: launch transactional, promotional and newsletter campaigns in MailChimp."
+    ru:
+      - "Настройка кампаний в Google Ads и Директе, «медийка»."
+      - "SEО и ASO: техническая оптимизация и наращивание ссылочной массы."
+      - "Контент-маркетинг, блоггинг. В том числе — мультимедийные лонгриды."
+      - "Аналитика, гроус-хакинг, CRO."
+      - "Email-маркетинг: запуск кампаний в MailChimp и альтернативах. Трансакционные, триггерные, акционные и новостные рассылки."
+      - "SMM: создание и поддержка корпоративных аккаунтов, наращивание и вовлечение подписчиков."

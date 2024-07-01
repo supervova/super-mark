@@ -2,29 +2,26 @@
 layout: default
 ---
 
-{% if page.index %}
-<main class="main is-modal-src">
-  {{ content }}
+{% if page.is-index %}
+<main class="main col-1/1">
+  <div class="container">
+    {{ content }}
+  </div>
 </main>
-{% else %}
-<article class="main is-modal-src" itemscope itemtype="http://schema.org/Article">
-  {% unless page.classes contains 'has-main-header' %}
-    {% if page.eyebrow %}
-      <div class="main-subheader">
-        <span class="eyebrow">{{ page.eyebrow }}</span>
-      </div>
-    {% endif %}
 
-    <h1 class="main-title" itemprop="headline">
+{% else %}
+<article class="main col-1/1" itemscope itemtype="http://schema.org/Article">
+  <div class="container">
+    <h1 class="main__title" itemprop="headline">
       {{ page.title }}
     </h1>
 
     {% if page.description %}
-      <p class="main-lead" itemprop="description">
+      <p class="main__lead" itemprop="description">
         {{ page.description }}
       </p>
     {% endif %}
-  {% endunless %}
-  {{ content }}
+    {{ content }}
+  </div>
 </article>
 {% endif %}

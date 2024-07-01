@@ -21,9 +21,9 @@ gem "liquid-c"
 # But I get dependency error trying run the site without jekyll-include-cache
 # here
 group :jekyll_plugins do
-  gem "jekyll-include-cache"
   gem "jekyll-email-protect"
   gem "jekyll-feed"
+  gem "jekyll-include-cache"
   gem "jekyll-paginate-v2"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"

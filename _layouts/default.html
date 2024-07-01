@@ -8,60 +8,23 @@ layout: compress
 <html lang="{{ page.lang | default: site.lang | default: 'ru' }}" prefix="og: http://ogp.me/ns#">
   {% include head.html %}
 
-  <body {% if page.layout == 'project' or page.classes %}class="{% if page.layout == 'project' %}p-portfolio {% endif %}{% if page.classes %}{{ page.classes }}{% endif %}"{% endif %}>
+  <body class="page{% if page.class %} {{ page.class }}{% endif %}{% if page.layout == 'post' %} is-blog is-post{% endif %}">
     {% if jekyll.environment == 'production' and site.gtm %}
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% endif %}
 
-    {% include alerts.html %}
+    {% include alert.html %}
 
-    <div class="wrapper">
-      {% unless page.layout == 'project' %}
-        {% include header.html %}
-      {% endunless %}
+    {% include header.html %}
 
-      {{ content }}
+    {{ content }}
 
-      {% unless page.home %}
-        {% include footer.html %}
-      {% endunless %}
+    {% include footer.html %}
 
-      {% if page.layout != 'project' %}
-        {% include navbar.html %}
-      {% else %}
-        {% include navbar-projects.html %}
-      {% endif  %}
-    </div>
-
-    {% comment %} Recent Work {% endcomment %}
-    {% if page.home %}
-      <aside class="recent-work">
-        <a class="recent-work__link" href="https://dribbble.com/supervova" target="_blank" rel="noopener noreferrer">
-          <span class="recent-work__label" id="recent-work-label">{{ site.data.i18n.labels.recent[page.lang] }}</span>
-          <figure class="recent-work__figure">
-            <img
-              class="recent-work__thumbnail"
-              src="{{ site.assets }}/img/projects/recent-work.png"
-              srcset="
-                {{ site.assets }}/img/projects/recent-work.png 1x,
-                {{ site.assets }}/img/projects/recent-work@2x.png 2x"
-              alt="{{ site.data.i18n.labels.recent[page.lang] }}"
-            >
-          </figure>
-        </a>
-      </aside>
-    {% endif %}
-
-    {% unless page.layout == 'project' %}
-      {% comment %} SPOTLIGHT SEARCH AND MODALS {% endcomment %}
-
-      {% comment %} <div class="modal is-search " id="modal-search" tabindex="-1" role="dialog" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" aria-hidden="true"> {% endcomment %}
-      <div class="modal is-search" id="modal-search" tabindex="-1" role="dialog" aria-label="{{ site.data.i18n.labels.search[page.lang] }}" aria-hidden="true">
-        {% include form/search-google.html %}
-      </div>
-    {% endunless %}
-
-    {% include modal.html %}
+    {% comment %} SPOTLIGHT SEARCH {% endcomment %}
+    <dialog class="modal" id="modal-search">
+      {% include form/search-google.html %}
+    </dialog>
 
     {% include scripts.html %}
   </body>

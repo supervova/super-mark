@@ -1,0 +1,36 @@
+@use '../../theme/config' as *;
+
+.card.is-kpi {
+  background-color: var(--color-background-2ry);
+  border-radius: $border-radius-base;
+  box-shadow: var(--box-shadow-z1);
+  text-align: center;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: $size-line;
+  width: 100%;
+  max-width: $width-md;
+}
+
+// Big beauty number
+.card.is-kpi .card__header {
+  background-image: var(--color-brand-gradient-triple);
+  color: var(--color-ink-inverse-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-title;
+  font-size: var(--font-size-hero-title);
+  font-weight: 300;
+  letter-spacing: -.04em;
+  line-height: 1;
+  text-shadow: 0 1px 0 var(--color-ink-min);
+  padding: 0;
+  height: $size-1 * 14;
+}
+
+.card.is-kpi .card__body {
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+  padding-inline: $size-3;
+}

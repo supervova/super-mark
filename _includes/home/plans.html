@@ -1,0 +1,17 @@
+<div class="grid is-auto mb-1" data-animation>
+  {% for plan in include.data %}
+  <div class="plan {{ plan.class }}">
+    <h4>{{ plan.title[page.lang] }}</h4>
+    <div class="plan__body">
+      <p class="plan__price">
+        <b>{{ plan.price[page.lang] }}</b>
+        {% if plan.small_text[page.lang] %}
+        <small>{{ plan.small_text[page.lang] }}</small>
+        {% endif %}
+      </p>
+      <p>{{ plan.description[page.lang] }}</p>
+      <a class="plan__action" href="#form" data-message="{{ plan.title[page.lang] }}">{{ plan.button_text[page.lang] }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

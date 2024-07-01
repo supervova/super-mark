@@ -1,0 +1,49 @@
+- class: is-hourly-wage
+  title:
+    en: “Pay As You Go”
+    ru: «Мастер на час»
+  price:
+    en: $24
+    ru: '1,49'
+  small_text:
+    en: .99 / hour
+    ru: тыс. <span class="nobr">руб./час</span>
+  description:
+    en: 'One-time works: banners, articles, etc. Minimum 8 hours.'
+    ru: 'Разовые работы: баннеры, статьи etc. Минимум — 8 часов.'
+  button_text:
+    en: Good choice!
+    ru: Берите сразу много!
+
+- class: is-100-hours
+  title:
+    en: “100 hours” plan
+    ru: «Пакет „100 часов“»
+  price:
+    en: $1599
+    ru: 99
+  small_text:
+    ru: тыс. руб.
+  description:
+    en: In 100 hours I will make up to 20 banners, up to 4 pages, etc.
+    ru: За 100 ч. работы — до 4 лендингов, до 16 статей и т. д.
+  button_text:
+    en: 'OK :)'
+    ru: 'Ну, окей :)'
+
+- class: is-full-time
+  title:
+    en: “Full-time”
+    ru: «Постоянка»
+  price:
+    en: $2399
+    ru: 149
+  small_text:
+    en: / month
+    ru: тыс. <span class="nobr">руб./мес.</span>
+  description:
+    en: I work 21 days a month for 8 hours.
+    ru: Работаю 21 день в месяц по 8 часов.
+  button_text:
+    en: Exactly what is needed
+    ru: То, что нужно

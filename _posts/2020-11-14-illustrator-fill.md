@@ -5,7 +5,7 @@ date: 2020-11-14
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Образцы (swatches)</h2>
 <p>Образцы стоит группировать по&nbsp;папкам. В&nbsp;процессе работы переключаться между видами палитры: список и&nbsp;миниатюры.</p>

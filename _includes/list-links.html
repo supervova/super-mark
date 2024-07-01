@@ -1,0 +1,16 @@
+{% assign list_tag = include.type | default: 'ul' %}
+
+<{{ list_tag }} class="list {{ include.classes }}">
+  {% for item in include.items %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url }}">{{ item.label }}</a>
+        {% if item.children %}
+          {% include list-links.html items=item.children type=list_tag classes=include.classes %}
+        {% endif %}
+      {% else %}
+        {{ item.label }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</{{ list_tag }}>

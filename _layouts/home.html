@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<main class="main" itemscope itemtype="https://schema.org/WebPage">
+
+  <!-- Hero -->
+  <header class="hero col-1/1" id="hero" data-animation>
+    <figure role="img" aria-label="{{ site.data.home.base.hero.alt[page.lang] }} 😎">
+      <div class="hero__overlay is-grid" aria-hidden="true"></div>
+      <div class="hero__overlay is-japanese" aria-hidden="true"></div>
+      <div class="hero__arrow" aria-hidden="true">
+        <img src="{{ site.assets }}/img/pages/home/hero-arrow-t.svg" alt="">
+      </div>
+      <div class="hero__overlay is-43" aria-hidden="true"></div>
+      <a class="hero__latest" href="#" onclick="openInNewTab('https://dribbble.com/shots/{{ site.data.home.base.hero.latest-work.link }}', 'supermark-portfolio')">
+        <img src="{{ site.assets }}/img/pages/home/latest-work.png" srcset="/assets/img/pages/home/latest-work.png 1x, /assets/img/pages/home/latest-work@2x.png 2x" width="194" height="96" alt="{{ site.data.home.base.hero.latest-work.alt[page.lang] }}">
+      </a>
+      <div class="hero__overlay is-red-patch" aria-hidden="true"></div>
+      <div class="hero__space" aria-hidden="true"></div>
+    </figure>
+
+    <a class="hero__btn btn" href="#section-contacts">
+      <span class="btn__label">{{ site.data.base.labels.buttons.help[page.lang] }}</span>
+      <span class="btn__label">{{ site.data.base.labels.buttons.contact[page.lang] }}</span>
+    </a>
+
+    <div class="hero__copy">
+      <h1 itemprop="headline">{{ site.data.home.base.hero.title[page.lang] }}</h1>
+      <p itemprop="description">{{ site.data.home.base.hero.desc[page.lang] }}</p>
+    </div>
+  </header>
+
+  <!-- Portfolio -->
+  <section class="section is-portfolio pb-0" id="section-portfolio">
+    <h2 class="col-1/1 text-center mb-1">
+      {{ site.data.home.headings.portfolio[page.lang] }}
+    </h2>
+    {% include home/projects.html data=site.data.home.projects %}
+  </section>
+
+  <!-- Services -->
+  <section class="section is-services col-1/1" id="section-services">
+    <div class="container">
+      <h2 class="text-center">
+        {{ site.data.home.headings.services[page.lang] }}
+      </h2>
+
+      {% include home/services.html data=site.data.home.services %}
+
+      <h3 class="visually-hidden">
+        {{ site.data.home.headings.prices[page.lang] }}
+      </h3>
+
+      {% include home/plans.html data=site.data.home.plans %}
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section is-about col-1/1" id="section-about">
+    <div class="container">
+      <h2 class="text-center">
+        {{ site.data.home.headings.about[page.lang] }}
+      </h2>
+
+      <div class="grid is-auto mb-1" data-animation>
+        <div class="card is-kpi">
+          <h3 class="card__header">25</h3>
+          <div class="card__body">{{ site.data.home.base.about.kpi.n25[page.lang] }}</div>
+
+        </div>
+        <div class="card is-kpi">
+          <h3 class="card__header">8</h3>
+          <div class="card__body">{{ site.data.home.base.about.kpi.n8[page.lang] }}</div>
+        </div>
+      </div>
+
+      <p class="mb-2">{{ site.data.home.base.about.desc[page.lang] }}</p>
+
+      <div class="border mt-1 mb-2 max-w-none">
+        {% if page.lang == 'ru' %}
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9mmB1qglODA?si=s041AQxg_iEMeNIn" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% else %}
+        <video poster="{{ site.assets }}/img/pages/home/bruce-allmighty-poster.jpg" preload="metadata" autoplay muted playsinline loop width="100%">
+          <source src="{{ site.assets }}/video/pages/home/bruce-allmighty.mp4" type="video/mp4">
+        </video>
+        {% endif %}
+      </div>
+
+      {% include home/skills.html data=site.data.home.skills %}
+    </div>
+  </section>
+
+  <!-- Contacts -->
+  <form class="section form" id="section-contacts" itemscope itemtype="https://schema.org/ContactPoint" action="https://formspree.io/xvozadqg" method="post" data-animation>
+    <div class="col-1/1">
+      <h2 class="text-center">
+        {{ site.data.home.headings.contacts[page.lang] }}
+      </h2>
+
+      <div class="container">
+        {% include form/input-field.html data=site.data.home.form-contact.name %}
+        {% include form/input-field.html data=site.data.home.form-contact.email %}
+        {% include form/input-field.html data=site.data.home.form-contact.task %}
+
+        <p class="form__disclaimer">
+          {{ site.data.home.form-contact.privacy[page.lang] }}
+        </p>
+        <div class="form__feedback" id="form-contact-status"></div>
+
+        {% include button.html data=site.data.home.form-contact.button %}
+      </div>
+    </div>
+  </form>
+</main>

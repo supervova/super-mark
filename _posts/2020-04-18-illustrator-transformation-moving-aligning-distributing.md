@@ -5,7 +5,7 @@ date: 2020-04-18
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <img class="img is-inline" src="{{ site.assets }}/img/blog/2020/04-18-alignment.png" alt="Палитра «Выравнивание»">
 <p class="list-caption">🔵 <strong>Выравнивание по&nbsp;объекту.</strong></p>

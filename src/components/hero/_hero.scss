@@ -1,0 +1,332 @@
+@use '../../theme/config' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (--tablet) {
+    perspective: 1200px;
+  }
+}
+
+// Main image
+.hero > figure {
+  aspect-ratio: 1;
+  background:
+    url('#{$site-assets}/img/pages/home/hero.png') 50% 50% no-repeat,
+    url('#{$site-assets}/img/pages/home/hero-space.png') 50% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: rem(624);
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  // Frosted glass
+  &::before {
+    background: hsl(var(--h) var(--s-neutral) 99% / 0.44);
+    backdrop-filter: var(--color-background-frosted-glass-backdrop);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: $size-line * 4;
+  }
+
+  // Border
+  &::after{
+    background:
+      url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px no-repeat,
+      url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px) bottom (-1px) no-repeat,
+      url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left (-1px) bottom $size-2 no-repeat;
+    border: 1px solid var(--color-ink-inverse-border);
+    inset: $size-2p5;
+  }
+
+  @media (--tablet) {
+    background-position:
+      50% rem(216),
+      50% 50%;
+    background-attachment:
+      fixed,
+      scroll;
+    background-size: rem(648);
+    border-radius: $border-radius-lg;
+
+    &::before,
+    &::after {
+      opacity: 0;
+      transition: opacity $duration-md $easing-base;
+    }
+
+    &::before {
+      right: $size-6;
+      bottom: $size-6;
+      left: $size-6;
+      transition-delay: $duration-xs * 3;
+    }
+
+    &::after {
+      inset: $size-6;
+      background:
+        url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px) bottom (-1px) no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left rem(176) bottom $size-2 no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-barcode.svg') right $size-3 bottom 0 no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-superpower.svg') left $size-2 top rem(70) no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-icon.svg') left $size-2 top $size-2 no-repeat;
+        transition-delay: $duration-xs * 2;
+    }
+  }
+
+  @media #{$mq-resolution-retina} {
+    background-image:
+      url('#{$site-assets}/img/pages/home/hero@2x.png'),
+      url('#{$site-assets}/img/pages/home/hero-space@2x.png');
+  }
+}
+
+.hero.is-animated > figure {
+  @media (--tablet) {
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+// Stickers
+.hero__overlay {
+  position: absolute;
+  inset: 0 0 (-$size-1);
+  pointer-events: none;
+}
+
+.hero__overlay.is-grid {
+  background: url('#{$site-assets}/img/pages/home/hero-grid.svg') $size-2p5 $size-2p5 no-repeat;
+  mix-blend-mode: screen;
+
+  @media (--tablet) {
+    background-position: $size-6 rem(144);
+  }
+}
+
+.hero__overlay.is-japanese {
+  background: url('#{$site-assets}/img/pages/home/hero-japanese.svg') right $size-4 bottom $size-2p5 no-repeat;
+  mix-blend-mode: exclusion;
+
+  @media (--tablet) {
+    background-position: left ($size-line * 3) bottom rem(96);
+  }
+}
+
+.hero__overlay.is-43 {
+  display: none;
+
+  @media (--tablet) {
+    background: url('#{$site-assets}/img/pages/home/hero-43.svg') left rem(96) bottom rem(80) no-repeat;
+    mix-blend-mode: overlay;
+    display: block;
+  }
+}
+
+.hero__overlay.is-red-patch {
+  background: var(--color-error-base);
+  border-radius: 0 $border-radius-base $border-radius-base 0;
+  mix-blend-mode: multiply;
+  top: 23%;
+  width: 28%;
+  height: $size-line * 4;
+
+  @media (--phone-l) {
+    top: 27%
+  }
+
+  @media (--tablet) {
+    top: rem(192);
+  }
+}
+
+.hero__latest {
+  display: none;
+
+  @media (--tablet-l) {
+    display: block;
+    border-radius: $border-radius-base;
+    box-shadow: var(--box-shadow-z4);
+    overflow: hidden;
+    position: absolute;
+    height: $size-line * 4;
+    top: rem(192);
+    left: -$size-line * 4;
+    transition: translate $duration-md $easing-base;
+    translate: (-$size-line * 2) 0;
+    z-index: 1;
+
+    .is-animated & {
+      translate: 0 0;
+    }
+  }
+}
+
+.hero__arrow {
+  position: absolute;
+  bottom: -$size-1;
+  left: $size-2p5;
+  z-index: 1;
+
+  @media (--tablet) {
+    left: rem(208);
+    bottom: $size-5;
+  }
+}
+
+.hero__space {
+  display: none;
+
+  @media (--tablet) {
+    border-radius: $border-radius-base 0 0 $border-radius-base;
+    background: url('#{$site-assets}/img/pages/home/hero-space.png') 50% 50% no-repeat;
+    display: block;
+    position: absolute;
+    top: rem(144);
+    left: -$size-6;
+    bottom: $size-5;
+    transition: translate $duration-md $easing-base;
+    transition-delay: $duration-xs;
+    translate: ($size-line * 2) 0;
+    width: $size-6;
+    height: rem(384);
+    z-index: -1;
+
+    .is-animated & {
+      translate: 0 0;
+    }
+  }
+}
+
+// Copy
+.hero__copy {
+  text-align: center;
+  padding-inline: $size-2p5;
+
+  @media (--tablet) {
+    border-radius: $border-radius-lg;
+    box-shadow: var(--box-shadow-z5);
+    text-align: left;
+    padding-inline: 0;
+    position: absolute;
+    top: 50%;
+    right: -$size-1p5;
+    transform-style: preserve-3d;
+    transition: rotate $duration-lg $easing-base;
+    transition-delay: $duration-xs * 2;
+    translate: 0 -55% rem(160);
+    width: rem(414);
+
+    .is-animated & {
+      rotate: y -30deg;
+    }
+  }
+}
+
+.hero__copy h1 {
+  @include text-format(hero-title);
+
+  font-family: $font-family-title;
+  font-weight: var(--font-weight-hero-title);
+  letter-spacing: -1 * rem(1.44);
+
+  b {
+    font-weight: 600;
+  }
+
+  @media (--tablet) {
+    background-color: var(--color-brand-primary);
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    color: var(--color-ink-inverse-base);
+    margin-bottom: 0;
+    padding-top: rem(37);
+    padding-bottom: rem(35);
+    padding-inline: $size-4;
+  }
+}
+
+.hero__copy [itemprop='description'] {
+  @media (--tablet) {
+    background-color: var(--color-background-frosted-glass);
+    backdrop-filter: var(--color-background-frosted-glass-backdrop);
+    border-radius: 0 0 $border-radius-lg $border-radius-lg;
+    margin-bottom: 0;
+    padding-top: rem(22);
+    padding-bottom: rem(34);
+    padding-inline: $size-4;
+  }
+}
+
+.hero__btn {
+  background: linear-gradient(
+    var(--color-background-2ry),
+    hsl(var(--h) var(--s-neutral) 85%)
+  );
+  border: 1px solid hsl(var(--h) var(--s-neutral) 78%);
+  box-shadow: inset 0 2px 0 0 hsl(0 0% 100% / 0.5),
+    inset 0 0 0 1px hsl(0 0% 100% / 0.2), var(--box-shadow-z1);
+  color: var(--color-ink-2ry);
+  text-shadow: 0 1px 0 var(--color-ink-inverse-max);
+  overflow: visible;
+  position: relative;
+  top: calc(var(--height-btn) / -2);
+  transition: translate $duration-xxs $easing-base,
+    box-shadow $duration-xxs $easing-base;
+  min-width: $size-line * 7;
+
+  @media (any-hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: inset 0 2px 0 0 hsl(0 0% 100% / 0.5),
+        inset 0 0 0 1px hsl(0 0% 100% / 0.2), var(--box-shadow-z3);
+    }
+  }
+}
+
+.hero__btn > span {
+  animation: rotating-label ($duration-xl * 20) $easing-appearance 0s infinite;
+  opacity: 0;
+
+  // Each span inside button will be positioned absolutely for animation.
+  // In order not to change its position in the hover position, top: 50%
+  // and negative margin are used.
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1 * rem(26); // tweak for visual centering
+  width: 100%;
+  height: $size-7;
+
+  &:nth-child(2) {
+    animation-delay: $duration-xl * 10;
+  }
+}
+
+// The whole animation will run 22 seconds. Every span is visible during
+// 11sec while another is hidden.
+// 1) Delay between changes
+// 2) Visible
+// 3-4) Transition
+// 5)
+// stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
+@keyframes rotating-label {
+  0%   { opacity: 0; }
+  1%   { opacity: 0; translate: 0; } // 1
+  4%   { opacity: 1; } // 2
+  48%  { opacity: 1; translate: 0; } //3
+  50%  { opacity: 0; translate: 0 (-$size-1); } // 4
+  100% { opacity: 0; } // 5
+}

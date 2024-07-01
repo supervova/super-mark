@@ -1,0 +1,48 @@
+- primary:
+    name: "Figma"
+    percentage: 95
+  secondary:
+    name: "Photoshop"
+    percentage: 95
+- primary:
+    name: "Illustrator"
+    percentage: 95
+  secondary:
+    name: "HTML, Handlebars, Twig etc"
+    percentage: 95
+- primary:
+    name: "CSS, Sass, PostCSS"
+    percentage: 95
+  secondary:
+    name: "Jekyll"
+    percentage: 95
+- primary:
+    name: "JavaScript"
+    percentage: 80
+  secondary:
+    name: "React"
+    percentage: 75
+- primary:
+    name: "After Effects"
+    percentage: 70
+  secondary:
+    name: "Wordpress, Strapi"
+    percentage: 70
+- primary:
+    name:
+      en: "Google Ads"
+      ru: "G. Ads / Я. Директ"
+    percentage: 70
+  secondary:
+    name: "SEO"
+    percentage: 70
+- primary:
+    name:
+      en: "Email marketing"
+      ru: "Email-маркетинг"
+    percentage: 70
+  secondary:
+    name:
+      en: "Google Analytics"
+      ru: "Analytics / Метрика"
+    percentage: 70

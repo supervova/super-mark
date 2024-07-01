@@ -1,0 +1,109 @@
+@use 'sass:meta';
+@use '../../theme/config' as *;
+@use '../../theme/config/custom';
+
+@import '../../components/accordion/accordion';
+@import '../../components/eyebrow';
+@import '../../components/pagination';
+@import '../../components/snippet/snippet';
+
+:where(.page.is-post) {
+  .header__logo.is-full {
+    @media (--phone), (--phone-l-height) {
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+
+  .btn.is-back {
+    @media (--phone), (--phone-l-height) {
+      --height-btn: #{$size-5};
+
+      padding-right: $size-2p5;
+      position: absolute;
+      top: $size-1p5;
+      left: $size-2p5;
+
+      img {
+        margin-bottom: 0;
+        margin-right: $size-1p5;
+        margin-left: $size-1;
+        translate: 0 #{-1 * rem(1)};
+      }
+    }
+
+    @media (--tablet) {
+      display: none
+    }
+  }
+}
+
+:where(.page.is-blog .navbar__item.is-blog) .navbar__link {
+  background-color: var(--color-brand-100);
+
+  > span {
+    color: var(--color-brand-text);
+  }
+
+  .icon {
+    --icon-stroke: var(--color-brand-ink-2ry);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CATEGORIES
+// -----------------------------------------------------------------------------
+.is-blog.is-links .main__lead {
+  color: var(--color-ink-2ry);
+  margin-top: -$size-line;
+}
+
+.section.is-articles-list {
+  padding: $size-line 0 0;
+
+  @media (--tablet) {
+    padding: $size-6 0 0;
+  }
+}
+
+.is-articles-list .section__title {
+  position: relative;
+  margin-bottom: $size-2;
+}
+
+.is-articles-list .section__title .icon {
+  display: none;
+
+  @media (--tablet) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * $size-4);
+    translate: 0 (-50%);
+  }
+}
+
+.is-articles-list .section__list {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    @include text-truncate();
+    margin-bottom: $size-1;
+    padding-left: rem(100);
+    position: relative;
+  }
+}
+
+.is-articles-list time {
+  color: var(--color-ink-2ry);
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.is-articles-list .eyebrow {
+  display: none;
+}

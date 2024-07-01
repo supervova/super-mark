@@ -1,0 +1,16 @@
+portfolio:
+  en: 'Portfolio'
+  ru: 'Портфолио'
+services:
+  en: 'Services and Prices'
+  ru: 'Услуги и цены'
+prices:
+  en: 'Prices'
+  ru: 'Цены'
+about:
+  en: 'About'
+  ru: 'Обо мне'
+contacts:
+  en: "Got ideas? Let's discuss"
+  ru: 'Есть проект? Пишите'
+

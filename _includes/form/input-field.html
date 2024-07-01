@@ -1,0 +1,14 @@
+{% assign field = include %}
+{% if include.data %}
+  {% assign field = include.data %}
+{% endif %}
+<p>
+  <label class="form__label is-icon" for="form-{{ field.name }}" aria-label="{{ field.label[page.lang] }}">
+    {% include icon.html name=field.icon %}
+  </label>
+  {% if field.type == 'textarea' %}
+  <textarea id="form-{{ field.name }}" name="{{ field.name }}"{% if field.params %} {{ field.params }}{% endif %}{% if field.required %} required{% endif %}{% if field.placeholder %} placeholder="{{ field.label[page.lang] }}"{% endif %}></textarea>
+  {% else %}
+  <input id="form-{{ field.name }}" name="{{ field.name }}" type="{{ field.type | default: 'text' }}"{% if field.params %} {{ field.params }}{% endif %}{% if field.required %} required{% endif %}{% if field.placeholder %} placeholder="{{ field.label[page.lang] }}"{% endif %}>
+  {% endif %}
+</p>

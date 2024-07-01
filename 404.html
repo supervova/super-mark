@@ -4,16 +4,18 @@ title: 'Page not found / Страница не найдена'
 description: 'The page you requested is no longer exist or you have mistyped URL. / То&nbsp;ли вы&nbsp;ошиблись адресом, то&nbsp;ли мы&nbsp;такую страницу зачем-то удалили.'
 permalink: /404
 layout: page
-classes: p-404
+class: is-404
 ---
 
-<div class="border">
+
+<div class="border mt-1 mb-2 mx-auto">
   <video preload="metadata" autoplay muted playsinline loop width="480" height="310">
-    <source src="{{ site.assets }}/video/pages/page/404/404.mp4" type="video/mp4">
+    <source src="{{ site.assets }}/video/pages/404/404.mp4" type="video/mp4">
   </video>
 </div>
 
-<div class="row has-wide-gutters">
-  <p class="col-sm-6 is-en" lang="en">Please, use the website navigation or site search or <a class="link" href="/en">go&nbsp;to&nbsp;the homepage</a>.</p>
-  <p class="col-sm-6 is-ru">Воспользуйтесь основным меню, поиском или <a class="link forward" href="/">перейдите на&nbsp;главную</a>.</p>
+<div class="grid is-auto">
+  <p lang="en">Please, use the website navigation or site search or <a class="link" href="/en">go&nbsp;to&nbsp;the homepage</a>.</p>
+  <p>Воспользуйтесь основным меню, поиском или <a class="link forward" href="/">перейдите на&nbsp;главную</a>.</p>
 </div>
+

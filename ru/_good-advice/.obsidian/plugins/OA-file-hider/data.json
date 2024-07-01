@@ -1,0 +1,9 @@
+{
+  "hidden": true,
+  "hiddenList": [
+    "c",
+    "sortspec.md",
+    "flutter-dart/src",
+    "_assets"
+  ]
+}

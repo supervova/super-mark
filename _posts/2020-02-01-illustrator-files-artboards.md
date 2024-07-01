@@ -6,7 +6,7 @@ date: 2020-02-01
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <ul>
   <li>⇧O&nbsp;— Инструмент Artboard </li>

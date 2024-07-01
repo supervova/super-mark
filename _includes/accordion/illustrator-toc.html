@@ -1,0 +1,8 @@
+{% assign list_data = site.data.blog.illustrator-toc %}
+
+{% capture include_content %}
+  <p class="petit">{{ list_data.note }}</p>
+  {% include list-links.html items=list_data.items type="ol" classes="is-nested-ol" %}
+{% endcapture %}
+
+{% include accordion/accordion.html summary=list_data.summary content=include_content class='is-stand-alone' %}

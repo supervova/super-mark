@@ -1,0 +1,97 @@
+@use '../../theme/config' as *;
+
+/* -----------------------------------------------------------------------------
+ * BASE ACCORDION
+ * -------------------------------------------------------------------------- */
+// #region
+
+/* details */.accordion {
+  --summary-color: var(--color-ink-base);
+  --summary-color-active: var(--color-ink-base);
+  --summary-font-weight: bolder;
+  --summary-padding-top: #{$size-3 - rem(1)};
+  --summary-padding-bottom: #{$size-3};
+  --summary-padding-left: #{$size-2};
+  --summary-padding-right: #{$size-5};
+
+  display: block;
+  overflow: hidden;
+  // transition: height $duration-md $easing-base;
+
+  summary {
+    border-top: 1px solid var(--color-ink-border);
+    color: var(--summary-color);
+    cursor: pointer;
+    // Hide the summary marker in non-Webkit
+    display: list-item;
+    font-weight: var(--summary-font-weight);
+    padding:
+      var(--summary-padding-top)
+      var(--summary-padding-right)
+      var(--summary-padding-bottom)
+      var(--summary-padding-left);
+    position: relative;
+    transition: color $duration-xxs $easing-base;
+    width: 100%;
+
+    // Chevron
+    &::after {
+      @include chevron-down;
+
+      --chevron-top: #{$size-line};
+    }
+
+    &:focus-visible {
+      box-shadow: var(--box-shadow-focus-outline);
+      color: var(--summary-color-active);
+      outline: 0;
+    }
+  }
+
+  &.is-stand-alone {
+    margin-top: $size-line * 2;
+
+    > summary {
+      --summary-padding-bottom: #{$size-3 - rem(1)};
+      border-bottom: 1px solid var(--color-ink-border);
+    }
+
+    &[open] > summary {
+      --summary-padding-bottom: #{$size-1p5};
+      border-bottom: 0;
+    }
+  }
+
+  // Body
+  > div {
+    padding: $size-2;
+  }
+
+  // Open
+  &[open] {
+    > summary {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      color: var(--summary-color-active);
+      margin-bottom: 0;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.accordion + .accordion {
+  margin-top: $size-line;
+}
+
+.accordion + :not(.accordion) {
+  margin-top: $size-line;
+
+  @media (--tablet) {
+    margin-top: $size-line * 2;
+  }
+}
+
+// #endregion

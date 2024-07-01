@@ -1,191 +1,336 @@
+@use '../../theme/config' as *;
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+// #region
+
+// We may want to add a background image to the header, so we delegate the main
+// block styles to his descendant, .container.
+
 .header {
-  background: $color-background-negative url('#{$site-assets}/img/base/body/bg.png');
-  padding-top: env(safe-area-inset-top);
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 56px;
-  z-index: $zindex-fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: $size-1;
+  padding-right: $size-1;
+  padding-left: $size-2p5;
+  height: $size-8;
 
-  @include media-breakpoint-up(md) {
-    background: $transparent none;
-    margin: 0 auto;
-    position: relative;
-    width: 660px;
-    height: 144px;
+  @media (--tablet) {
+    display: contents;
+    // display: grid;
+    // align-items: center;
+    // grid-template-columns: auto 1fr;
+    // margin-inline: auto;
+    // max-width: $width-container;
+    // padding: 0;
+    // height: auto;
   }
+}
+// #endregion
 
-  @include media-breakpoint-up(lg) {
-    text-align: center;
-    margin: 0;
+// -----------------------------------------------------------------------------
+// LOGO FULL
+// -----------------------------------------------------------------------------
+// #region
+
+.header__logo.is-full {
+  display: contents;
+
+  @media (--tablet) {
+    display: flex;
+    margin-inline: auto;
+    pointer-events: none;
     position: absolute;
-    right: auto;
+    top: $size-2;
+    left: 50%;
+    translate: -50%;
+    width: calc(100vw - #{$size-5 * 2});
+    // 10 columns of max-width container + margins
+    max-width: calc(#{rem(1096)} + #{$size-5 * 2});
+    z-index: $zindex-fixed + 1;
+  }
+
+  @media (--tablet-l) {
+    padding-left: $size-5;
+  }
+}
+
+.header__logo.is-full .logo {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+
+  @media (--tablet) {
+    flex-direction: column;
+    gap: 0;
+    pointer-events: all;
+    margin-bottom: $size-line;
+  }
+}
+
+.header__logo.is-full .logo__type {
+  @media (--tablet) {
+    margin-top: $size-1;
+    margin-bottom: $size-half;
+  }
+}
+
+.page.is-home .header__logo > a {
+  pointer-events: none;
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// LOGO COMPACT
+// -----------------------------------------------------------------------------
+// #region
+
+.header__logo.is-compact {
+  display: none;
+
+  @media (--tablet) {
+    display: flex;
+    margin-inline: auto;
+    padding-left: rem(33);
+    opacity: 0;
+    pointer-events: none;
+    position: sticky;
+    top: rem(36);
+    transition: opacity $duration-sm $easing-base;
+    width: calc(100vw - #{$size-5 * 2});
+    // 10 columns of max-width container + margins
+    max-width: calc(#{rem(1096)} + #{$size-5 * 2});
+    height: 0;
+    z-index: $zindex-fixed + 1;
+
+    &.is-visible {
+      opacity: 1;
+      height: auto;
+    }
+
+    a {
+      pointer-events: all;
+    }
+  }
+
+  @media (--tablet-l) {
+    padding-left: rem(73);
+  }
+}
+
+// #endregion
+
+// -----------------------------------------------------------------------------
+// SEARCH
+// -----------------------------------------------------------------------------
+// #region
+
+// Search toggle button
+.header__search-trigger {
+  background-color: transparent;
+  flex-shrink: 0;
+  margin-right: -$size-2;
+  padding-right: $size-1 * 1.5;
+  padding-left: $size-1 * 1.5;
+
+  @media (--tablet) {
+    display: none;
+  }
+}
+
+// Base
+.header__search {
+  @media (--phone) {
+    background-color: var(--color-background-base);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: $size-2p5;
+    padding-left: $size-2p5;
+    padding-inline: $size-2p5;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 160px;
-    height: 240px;
+    right: 0;
+    transform: translateY(-$size-line * 3);
+    transition:
+      opacity $duration-sm $easing-base,
+      transform $duration-sm $easing-base;
+    height: $size-line * 3;
+    z-index: $zindex-fixed;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+
+  @media (--tablet) {
+    display: block;
+    transform: none;
+    height: auto;
   }
 }
 
-
-// LINKS
-
-.header a {
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+// Input container
+.header__search p {
+  padding-bottom: 0;
+  flex-grow: 1;
 }
 
+.header__search [type='search'] {
+  padding-right: $size-7;
+  min-width: 100%;
+}
 
-// -----------------------------------------------------------------------------
-// HAMBURGER AND LANGUAGE SWITCHER
-// -----------------------------------------------------------------------------
-
-.header-lang-switcher,
-.header-navbar-toggler,
-.header__back {
-  appearance: none;
-  background: $transparent;
-  border: 0;
-  cursor: pointer;
-  display: block;
+// Submit
+/* .btn.is-ghost */.header__search-submit {
+  background: transparent;
   position: absolute;
-  user-select: none;
-  transition: background $duration-xs $easing;
-  width: 48px;
-  height: 56px;
-
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
-  }
-
-  &:hover {
-    background: $color-ink-min;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 48px;
-  }
-}
-
-// LANGUAGE SWITCHER
-.header-lang-switcher {
-  padding: 1.5rem 0 0 17px;
-  top: 0;
+  top: 50%;
   right: 0;
-
-  &.is-mobile { // On mobile
-    @extend .d-md-none;
-  }
+  transform: translateY(-50%);
+  width: $size-6;
+  height: $size-6;
 }
 
+// Cancel button
+/* .btn.is-ghost */.header__search-cancel {
+  color: var(--color-ink-2ry);
+  margin-left: $size-1;
+  height: $size-6;
 
-// NAVBAR TOGGLER (HAMBURGER) & BACK BUTTON
-
-.header-navbar-toggler,
-.header__back {
-  @extend .d-lg-none;
-
-  padding: 0 0 .2rem;
-  top: 0;
-  left: 0;
-
-  .icon {
-    --icon-fill: #{$color-ink-light-2ry};
-  }
-
-  @include media-breakpoint-up(md) {
-    border-radius: $border-radius;
-    top: 75px;
-    left: -46px;
+  @media (--tablet) {
+    display: none;
   }
 }
+// #endregion
 
-.icon.is-hamburger {
-  margin: 0 auto;
-  transition: stroke $duration-sm $easing;
+// -----------------------------------------------------------------------------
+// MENU
+// -----------------------------------------------------------------------------
+// #region
 
-  @include media-breakpoint-down(md) {
-    --icon-stroke: #{$color-ink-light-2ry};
+@mixin adaptive-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__navbar {
+  @include adaptive-menu;
+
+  justify-content: center;
+  padding: 0 0 0 $size-1;
+
+  @media (--tablet) {
+    align-items: center;
+    border-radius: 0;
+    box-shadow: none;
+    justify-content: flex-end;
+    padding-left: 0;
+    position: static;
   }
+}
+// #endregion
 
-  @include media-breakpoint-up(md) {
-    .is-highlight & {
-      --icon-stroke: #{$color-brand-700};
+// -----------------------------------------------------------------------------
+// SIGN IN, SIGN UP, USER MENU
+// -----------------------------------------------------------------------------
+// #region
+
+.header__sign-up,
+.header__sign-in {
+  align-items: center;
+  padding: 0;
+  height: $size-line * 2;
+
+  > .btn.is-outline {
+
+    margin-right: $size-1;
+    max-width: $size-1 * 10;
+
+    @media (--phone) {
+      padding-right: $size-1;
+      padding-left: $size-1;
+      height: $size-line * 2;
+    }
+
+    @media (--phone-l) {
+      max-width: $size-line * 7;
     }
   }
 }
 
-.header__back .icon {
-  margin: 0 auto;
-}
-
-
-// -----------------------------------------------------------------------------
-// CTA BUTTON
-// -----------------------------------------------------------------------------
-
-// 👉 _buttons
-
-// -----------------------------------------------------------------------------
-// CONTEXT MENU
-// -----------------------------------------------------------------------------
-
-// Extend Bootstrap dropdown component
-// @see dropdown/context-menu
-
-.header .context-menu {
-  top: -15px;
-  // Skype and mail
-  left: 120px;
-  padding: 47px 31px 31px;
-  width: 400px;
-
-  // Caret
-  &::before {
-    top: 55px;
-  }
-
-  &::after {
-    top: 56px;
-  }
-
-  &-footer {
-    color: $color-ink-2ry;
-    border-top: 1px solid $color-ink-border;
-    margin-top: .7rem;
-    padding-top: 1.6rem;
-
-    > p {
-      padding-bottom: .8rem;
-    }
-
-    // Skype and mail
-    li {
-      padding-left: 24px;
-      position: relative;
-
-      &:first-child {
-        margin-bottom: $size-1;
-      }
-    }
-
-    .icon {
-      position: absolute;
-      top: .3rem;
-      left: 0;
-    }
-
-  }
-
-  a,
-  a:visited {
-    color: $color-ink-2ry;
-    cursor: text;
+.header__sign-up {
+  @media (--tablet) {
+    margin-left: $size-1;
   }
 }
 
-.header .context-menu-heading {
-  margin-left: -1.3rem;
+.header__user {
+  margin-right: $size-1;
+  padding: 0;
+
+  @media (--phone) {
+    position: static;
+  }
 }
+// #endregion
+
+
+// -----------------------------------------------------------------------------
+// RIGHT CLICK POPOVER
+// -----------------------------------------------------------------------------
+// #region
+.header__popover {
+  background-color: var(--color-background-frosted-glass);
+  backdrop-filter: var(--color-background-frosted-glass-backdrop);
+  border-radius: $border-radius-base;
+  box-shadow: var(--box-shadow-z3);
+  display: none;
+  padding: $size-3 $size-4 $size-4;
+  opacity: 0;
+  position: absolute;
+  top: $size-2;
+  left: rem(144);
+  transition:
+    display $duration-sm $easing-base,
+    opacity $duration-sm $easing-base;
+  transition-behavior: allow-discrete;
+  width: $width-md;
+
+  &.is-visible {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+.header__popover-title {
+  font-size: var(--font-size-big);
+  line-height: var(--line-height-big);
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+
+  + p {
+    color: var(--color-ink-2ry)
+  }
+}
+
+.header__popover li {
+  margin-bottom: $size-1;
+}
+
+.header__popover .icon {
+  margin-top: -1px;
+  margin-right: $size-1;
+}
+// #endregion

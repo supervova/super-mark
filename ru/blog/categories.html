@@ -3,14 +3,22 @@ lang: ru
 title: 'Темы блога'
 description: 'Illustrator, Figma, Sketch, WordPress и личное.'
 permalink: /ru/blog/categories
-index: true
+is-index: true
 layout: page
+styles-addons: ['/css/blog.css']
+class: 'is-blog is-links'
 ---
 
-{% include page-header.html class='is-blog' title='Темы блога' image='/img/pages/blog/index/img-blog-about-design-marketing-development' %}
+
+<h1 class="main__title">
+  {{ page.title }}
+</h1>
+<p class="main__lead">
+  Illustrator, Figma, Sketch, WordPress и личное.
+</p>
 
 {% for category in site.categories %}
-  <section class="section has-articles-list">
+  <section class="section is-articles-list">
     {% capture category-name %}{{ category | first }}{% endcapture %}
     {% comment %} It's required for correct hash links work {% endcomment %}
     <a name="{{ category-name | slugify | uri_escape }}"></a>
@@ -19,11 +27,11 @@ layout: page
       {{ category-name }}
     </h2>
 
-    <ul class="list is-articles-list">
+    <ul class="section__list">
       {% for post in site.categories[category-name] %}
         <li>
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}2008-02-14 20:00">{{ post.date | date: '%d.%m.%Y' }}</time>
           <a href="{{ post.url }}">{{ post.title}}</a>
-          <span class="list__date">{{ post.date | date: '%d.%m.%Y' }}</span>
         </li>
       {% endfor %}
     </ul>

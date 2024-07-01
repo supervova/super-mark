@@ -1,0 +1,142 @@
+@use 'sass:meta';
+@use '../../theme/config' as *;
+@use '../../theme/config/custom';
+
+@import '../../components/carousel/carousel';
+@import '../../components/chart/chart';
+@import '../../components/pricing-table';
+@import '../../components/hero/hero';
+@import '../../components/tabs/tabs';
+
+// -----------------------------------------------------------------------------
+// Plans
+// -----------------------------------------------------------------------------
+// #region
+:where(.section.is-services) {
+  .plan {
+    translate: 0 rem(120);
+    transition: translate $duration-lg $easing-appearance;
+  }
+
+  .grid.is-animated .plan {
+    translate: 0 0;
+  }
+}
+
+.plan.is-100-hours {
+  transition-delay: $duration-xs;
+}
+
+.plan.is-full-time {
+  transition-delay: $duration-xs * 2;
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// About
+// -----------------------------------------------------------------------------
+// #region
+
+// #region: KPI
+.section.is-about .grid {
+  justify-content: center;
+  > * {
+    margin-inline: auto;
+  }
+}
+
+
+// :where(.section.is-about) {
+//   .card.is-kpi {
+//     transition: translate $duration-lg $easing-appearance;
+//   }
+
+//   .card.is-kpi:first-child {
+//     translate: (-1 * rem(208)) 0;
+//   }
+
+//   .card.is-kpi:last-child {
+//     translate: rem(208) 0;
+//   }
+
+//   .grid.is-animated .card.is-kpi {
+//     translate: 0 0;
+//   }
+// }
+// #endregion
+
+
+// #region: Skills
+
+.is-skills .table__caption {
+  transition: width $duration-sm $easing-base;
+}
+
+.is-skills:not(.is-animated) .table__caption {
+  width: 0;
+}
+
+$skills-rows: 8;
+$skills-cols: 2;
+$skills-base-delay: 0.07;
+$skills-increment: 0.04;
+
+@for $row from 1 through $skills-rows {
+  @for $col from 1 through $skills-cols {
+    $index: ($row - 1) * $skills-cols + $col;
+    $delay: $skills-base-delay + ($index - 1) * $skills-increment;
+
+    :where(.table.is-skills tr:nth-child(#{$row})) {
+      th:nth-child(#{2 * $col - 1}) .table__caption {
+        transition-delay: #{$delay}s;
+      }
+    }
+  }
+}
+// #endregion
+// #endregion
+
+// -----------------------------------------------------------------------------
+// Contacts
+// -----------------------------------------------------------------------------
+// #region
+
+[id='section-contacts'] {
+  background-color: var(--color-brand-background);
+  border-color: 1px solid var(--color-ink-border);
+  // border-top: 1px solid transparent;
+  margin-top: $size-5;
+  padding-top: $size-line * 4;
+  padding-bottom: rem(112);
+  // transition:
+  //   background-color ($duration-xl * 4) $easing-base,
+  //   border-color ($duration-xl * 4) $easing-base;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  .form__disclaimer {
+    text-align: center;
+  }
+
+  // &.is-animated {
+  //   background-color: var(--color-brand-background);
+  //   border-color: var(--color-ink-border);
+  // }
+}
+
+.footer {
+  background-color: var(--color-brand-background);
+}
+
+// :where(body:has([id='section-contacts'].is-animated)) .footer {
+//   background-color: var(--color-brand-background);
+// }
+// #endregion

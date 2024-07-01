@@ -1,0 +1,20 @@
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  width: 40px;
+  border-right: 0;
+}
+
+.nav-folder.mod-root .nav-folder > .nav-folder-children,
+.tree-item-children {
+  border-left: 0;
+}
+
+.markdown-embed {
+  border-left: 0;
+  padding: 0;
+}
+
+.embed-title {
+  color: hsl(0 0% 54%);
+  font-size: 12px;
+  padding: 0;
+}

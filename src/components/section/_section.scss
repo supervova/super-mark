@@ -1,82 +1,84 @@
-// -----------------------------------------------------------------------------
-// BASE
-// -----------------------------------------------------------------------------
+@use '../../theme/config' as *;
 
 .section {
-  padding: ($size-line * 3) 0 ($size-line * 3 - .1rem);
-  position: relative;
+  padding-top: ($size-line * 2);
+  padding-bottom: ($size-line * 2);
+}
 
-  h2 {
-    padding-top: 0;
-  }
-
-  &.last {
-    padding-bottom: ($size-line * 3);
-  }
-
-  // Multicolumn subsections
-  &-halfs {
-    column-count: 2;
-  }
-
-  &-thirds {
-    column-count: 3;
-  }
-
-  &-halfs,
-  &-thirds {
-    column-gap: 24px;
-    widows: 2;
-
-    &-ul {
-      margin-left: -1em;
-
-      li {
-        margin-left: 1em;
-      }
-    }
-  }
+.is-auto-visible {
+  content-visibility: auto;
+  contain-intrinsic-size: var(--section-height, 640px);
 }
 
 // -----------------------------------------------------------------------------
-// MODIFICATIONS
+// SECTION ELEMENTS
 // -----------------------------------------------------------------------------
+// #region
 
-.section.has-articles-list {
-  padding: 1.3rem 0 0;
+// Heading + extra stuff
+.section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @include media-breakpoint-up(md) {
-    padding: 4.8rem 0 0;
+.section__title {
+  @include text-format(h2);
+
+  margin: 0;
+}
+
+.section__summary {
+  @include text-format(big);
+  margin: 0;
+}
+// #endregion
+
+// -----------------------------------------------------------------------------
+// WIDE ELEMENTS
+// -----------------------------------------------------------------------------
+// #region
+
+// Section inside col-1/1
+.section.is-full-bleed {
+  margin-left: 50%;
+  translate: -50%, 0;
+  width: 100vw;
+}
+
+:where(.section) {
+  > img, // It's outside grid and column, so, let expand it
+  > table,
+  > .border,
+  > .scroller {
+    margin-inline: auto;
+    max-width: var(--width-content-10-col);
+  }
+
+  > .border {
+    width: fit-content;
   }
 }
 
-.main-header + .section.has-articles-list {
-  padding: 0;
-  margin-top: -1.7rem;
+// #endregion
 
-  @include media-breakpoint-up(md) {
-    margin-top: 0;
-    padding: 4.8rem 0 0;
-  }
+// -----------------------------------------------------------------------------
+// VARIATIONS
+// -----------------------------------------------------------------------------
+// #region
+
+.section.is-alt {
+  background-color: var(--color-background-2ry);
 }
 
-.has-articles-list .section__title {
-  position: relative;
-  margin-bottom: .1rem;
+// HIGHLIGHT
 
-  @include media-breakpoint-up(md) {
-    margin-bottom: .7rem;
+.section.is-highlight {
+  background-color: var(--color-brand-background-dark);
+
+  h2,
+  p {
+    color: var(--color-ink-inverse-base);
   }
 }
-
-.has-articles-list .section__title .icon {
-  display: none;
-
-  @include media-breakpoint-up(md) {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: calc(-1 * $size-4);
-    transform: translateY(-40%);
-  }
-}
+// #endregion

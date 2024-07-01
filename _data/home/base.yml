@@ -1,0 +1,29 @@
+hero:
+  title:
+    en: '<b>Full stack</b> webmaster'
+    ru: '<b>Веб-мастер</b> на все руки'
+  desc:
+    en: 'Are you not interested in a team of marketers, designers, and developers? But you still need site maintenance, promotion, new landing pages? High-quality service at a reasonable price? Replace the department with one outsourced generalist and you will be happy…'
+    ru: 'Вам невыгодна постоянная команда программистов, маркетологов и дизайнеров? Но нужны продвижение, поддержка сайта, лендинг-страницы? Причём на уровне, а не из сельпо. И за разумные деньги. Замените отдел одним удалённым универсалом на подряде – будет вам счастье…'
+  alt:
+    en: "My portrait. Here I am still young and handsome, now I'm just handsome"
+    ru: 'Мой портрет. Здесь я еще молод и красив, сейчас просто красив'
+  latest-work:
+    alt:
+      en: 'Latest work'
+      ru: 'Последняя работа'
+    link: '23599842-The-NDA-social-network'
+
+about:
+  kpi:
+    n25:
+      en: 'years in web design, development, and marketing'
+      ru: 'лет в веб-разработке и диджитал-маркетинге'
+    n8:
+      en: 'years in leadership positions in the newspapers'
+      ru: 'лет на руководящей работе в СМИ'
+
+  desc:
+    en: '<strong>SuperMark is a trademark of Vladimir Nikishin.</strong> A journalist by education. I started on the editorial boards of the largest newspapers in Vladivostok, Russia. 25 years in the digital industry. Over the years in the IT industry, I have gained skills in all areas of production and promotion of internet projects: design, front-end development, online marketing.'
+    ru: '<strong>SuperMark – это торговая марка Владимира Никишина.</strong> Журналист по образованию. Начинал в редколлегиях крупнейших газет Владивостока. Сменил профессию, и за долгие годы в диджитал-индустрии стал универсалом: дизайн, фронт-энд разработка, онлайн-маркетинг. И швец, и жнец, и на дуде маркетолог.'
+

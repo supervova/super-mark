@@ -1,0 +1,47 @@
+@use '../theme/config' as *;
+
+// PAGINATION
+
+// Markup
+// nav.main__pagination
+//   ul.pagination
+//     li.pagination__control.is-prev
+//       a(href='')
+//         svg.icon.is-prev
+//     li.pagination__current 2 / 2
+//     li.pagination__control.is-next
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+// Counter
+.pagination__current {
+  display: flex;
+  align-items: center;
+  height: $size-5;
+}
+
+// Next and Prev Links
+.pagination__link {
+  @include button-base;
+
+  border-radius: $border-radius-sm;
+  padding-block: $size-1;
+  padding-inline: $size-2;
+
+  @media (any-hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-background-2ry);
+    }
+  }
+}
+
+.is-prev .pagination__link {
+  margin-right: $size-1;
+}
+
+.is-next .pagination__link {
+  margin-left: $size-1;
+}

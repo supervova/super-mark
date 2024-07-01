@@ -5,7 +5,7 @@ date: 2020-09-06
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <ul>
   <li>

@@ -1,0 +1,12 @@
+{% assign data = include %}
+{% if include.data %}
+  {% assign data = include.data %}
+{% endif %}
+<button
+  class="btn{% if data.class %} {{ data.class }}{% endif %}"
+  {% if data.id %} id="{{ data.id }}"{% endif %}
+  type="{{ data.type | default: 'button' }}"
+  {% if data.params %} {{ data.params }}{% endif %}
+>
+  {{ data.label[page.lang] }}
+</button>

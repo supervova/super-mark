@@ -1,0 +1,239 @@
+mixin navbarItem(name, icon, anchor)
+  - const href = anchor ? '#' + name : '/' + name
+  li
+    a.menu__link(href=href)
+    span= name
+
+mixin carouselItem(img, caption, link)
+
+  li
+    a.catousel__item(href=`https://dribbble.com/shots/${link}`)
+      figure
+        img(src='/img/projects/thumbnails/${img}.png' width='400' height='300' alt= caption)
+        figcaption.visually-hidden
+          = caption
+
+header.header
+  .logo
+    .logo_mark
+    .logo_type
+  //- TODO: посмотреть еще ~/notes/👨🏻‍💻 development/frontend/markup/solutions/nav-apple-like.md
+  nav.navbar(aria-label='Global'): ul
+      //-
+        Подпись переводится в i18n.yml, ссылки собираются
+        в миксине из поля name: якорным добавляется #, блогу — /
+      +navbarItem('portfolio', 'case')
+      +navbarItem('services', 'case')
+      +navbarItem('about', 'hi')
+      +navbarItem('contacts', 'mail')
+      +navbarItem('blog', 'doc')
+      li.navbar__search-button
+        button: svg
+      li.navbar__language-button
+        button: svg
+
+main.main(itemscope itemtype='https://schema.org/Article')
+  header.hero
+    figure
+      //-
+        Графические накладки будем делать множественным background'ом
+        псевдоэлемента :after. Блок размытия — псевдоэлементом :before
+        Но если потребуется добавить какой-то дополнительный элемент
+        для накладки, тогда — .hero__something(aria-hidden="true")
+      img.hero__base(alt="Тут я еще молод и красив, сейчас просто красив")
+      .border
+    .hero__copy
+      h1
+      div Are you interested…
+    a.btn(#href='request')
+      span.btn__label Вам помочь?
+      span.btn__label Обращайтесь
+
+  section.section.is-portfolio
+    h2 Portfolio
+    //- Use https://codepen.io/mobalti/pen/poYmvqj
+    ul
+      +carouselItem('nda', 'NDA Social Network', '23599842-The-NDA-social-network')
+      //- ...
+
+
+
+  section.section.is-services
+    h2 Services and Prices
+    ul.nav.nav-pills#pills-tab(role='tablist')
+      li.nav-item
+        a.nav-link#pills-design-tab(data-toggle='pill' href='#pills-design' role='tab' aria-controls='pills-design' aria-selected='false')
+          span.d-inline.d-sm-none Des.
+          |
+          span.d-none.d-sm-inline Design
+          |
+      li.nav-item
+        a.nav-link.active#pills-development-tab(data-toggle='pill' href='#pills-development' role='tab' aria-controls='pills-development' aria-selected='true')
+          span.d-inline.d-sm-none Dev.
+          |
+          span.d-none.d-sm-inline Development
+          |
+      li.nav-item
+        a.nav-link#pills-marketing-tab(data-toggle='pill' href='#pills-marketing' role='tab' aria-controls='pills-marketing' aria-selected='false')
+          span.d-inline.d-sm-none Mark.
+          |
+          span.d-none.d-sm-inline Marketing
+          |
+    .tab-content.is-services.is-shortened
+      section.tab-pane.fade#pills-design(role='tabpanel' aria-labelledby='pills-design-tab')
+        ul
+          li Websites and promotional materials in the academic tradition of visual arts.
+          li Unique vector illustrations in the corporate style of the client.
+          li Design systems that define colors, fonts, graphics and user interface elements.
+          li Animation expressing the brand: Micro-interactions, screen and component transitions, video presentations.
+      section.tab-pane.fade.show.active#pills-development(role='tabpanel' aria-labelledby='pills-development-tab')
+        ul
+          li Sites using CMS or generators: WordPress, Drupal, Jekyll, Hugo.
+          li Sophisticated cross-browser responsive layouts developed on valid HTML (W3C standards, including WCAG). Elegant, semantic, enhanced with microdata.
+          li Properly structured CSS using the best practices and modules. CSS Grid, Flexbox, custom properties, SVG sprites, custom Sass functions, etc.
+          li Vanilla JavaScript in modern fashion.
+          li Performance optimization according to the recommendations of Lighthouse.
+      section.tab-pane.fade#pills-marketing(role='tabpanel' aria-labelledby='pills-marketing-tab')
+        ul
+          li Setting up campaigns in Google Ads.
+          li SEO and ASO: on-page optimization.
+          li Analytics, grows hacking, CRO.
+          li Email marketing: launch transactional, promotional and newsletter campaigns in MailChimp.
+
+    h3.visually-hidden Prices
+    .plan.is-hourly-wage
+      h4.plan__title “Pay As You Go”
+      .plan__body
+        .plan__price
+          span.plan__amount.is-small $24
+          span.plan__rubles
+            | .99 /<br>hour
+
+        p.plan__value One-time works: banners, articles, etc. Minimum 8 hours.
+        a.plan__footer(href='#form' data-message='Pay As You Go') Good choice!
+
+    .plan.is-100-hours
+      h4.plan__title “100 hours” plan
+      .plan__body
+        .plan__price
+          span.plan__amount.is-small $1599
+        p.plan__value In 100 hours I will make up to 30 banners, up to 6 pages, etc.
+        a.plan__footer(href='#form' data-message='“100 hours” plan') OK :)
+
+    .plan.is-full-time
+      h4.plan__title “Full-time”
+      .plan__body
+        .plan__price
+          span.plan__amount.is-small $2399
+          |
+          span.plan__rubles / month
+        p.plan__value I work<br>21 days a month<br>for 8 hours.
+
+        a.plan__footer(href='#form' data-message='Full-time') Exactly what is needed.
+  section.section.is-about
+    .row.has-wide-gutters
+      .col-sm-6
+        .card.card-stat
+          h3.card-header 24
+          .card-block years in web design, development, and marketing
+      .col-sm-6
+        .card.card-stat
+          h3.card-header 8
+          .card-block years in leadership positions in the newspapers
+    p SuperMark is a trademark of Vladimir Nikishin. A journalist by education. I started on the editorial boards of the largest newspapers in Vladivostok, Russia. 20 years in the digital industry. Over the years in the IT industry, I have gained skills in all areas of production and promotion of internet projects: design, front-end development, online marketing.
+    .border.mt-1
+      iframe(width='560' height='315' src='https://www.youtube.com/embed/9mmB1qglODA' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)
+
+    table.chart-bars.two-cols
+      tbody
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-95 Figma, Sketch
+          td 95%
+          th.is-2ry
+            .chart-bars-track
+              .chart-bars-caption.w-70 After Effects
+          td.is-2ry 70%
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-95 Photoshop
+          td 95%
+          th.is-2ry
+            .chart-bars-track
+              .chart-bars-caption.w-70 Wordpress, Drupal
+          td.is-2ry 70%
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-95 Illustrator
+          td 95%
+          th.is-2ry
+            .chart-bars-track
+              .chart-bars-caption.w-70 Google Analytics
+          td.is-2ry 70%
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-95 HTML / CSS (Sass)
+          td 95%
+          th.is-2ry
+            .chart-bars-track
+              .chart-bars-caption.w-70 Google Ads
+          td.is-2ry 70%
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-95 Jekyll
+          td 95%
+          th.is-2ry
+            .chart-bars-track
+              .chart-bars-caption.w-70 SEO
+          td.is-2ry 70%
+        tr
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-80 JavaScript
+          td 80%
+          th
+            .chart-bars-track
+              .chart-bars-caption.w-70 Email-маркетинг
+          td 70%
+  form.section.is-form#form-contact(action='https://formspree.io/xvozadqg' method='POST')
+    .form-group
+      label(for='form-name' aria-label='Your Name')
+        svg.icon.is-user(focusable='false' aria-hidden='true')
+          use(href='/assets/img/base/icons/sprite.svg#icon-user')
+      input.form-control#form-name(name='name' type='text' maxlength='128' required placeholder='Your Name*')
+    .form-group
+      label(for='form-email' aria-label='Email')
+        svg.icon.is-mail(focusable='false' aria-hidden='true')
+          use(href='/assets/img/base/icons/sprite.svg#icon-mail')
+      input.form-control#form-email(name='email' type='email' maxlength='128' required placeholder='Email*')
+    .form-group
+      label(for='form-project-details' aria-label='Describe the task')
+        svg.icon.is-task(focusable='false' aria-hidden='true')
+          use(href='/assets/img/base/icons/sprite.svg#icon-task')
+      textarea.form-control#form-project-details(name='message' cols='40' rows='8' required placeholder='Describe the task*' spellcheck='false' data-ms-editor='true')
+    fieldset.form-submit
+      p.form-disclaimer
+        | By clicking the button, you
+        a(href='/en/privacy' target='_blank' rel='noopener noreferrer') consent to the collection, processing and use of your data
+      .g-recaptcha(data-sitekey='6LdpRc4UAAAAAA9PsJ2Fnrjt1iV4kLa8agJx-pCV')
+        div(style='width: 304px; height: 78px')
+          div
+            iframe(width='304' height='78' role='presentation' name='a-2ghpns43icfi' frameborder='0' scrolling='no' sandbox='allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' src='https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdpRc4UAAAAAA9PsJ2Fnrjt1iV4kLa8agJx-pCV&co=aHR0cHM6Ly9zdXBlci1tYXJrLnJ1OjQ0Mw..&hl=en&v=1kRDYC3bfA-o6-tsWzIBvp7k&size=normal&cb=9bgbjhzg2blj')
+          textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response' style='width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none')
+        iframe(style='display: none')
+      .form__feedback#form-contact-status
+      button.btn.is-primary.is-lg#form-contact-button Get in Touch
+
+footer.footer
+  | © 2024 SuperMark
+  //- use popover API
+  button.btn.btn-share#btn-share(type='button' data-toggle='dropdown' data-display='static' aria-expanded='false' aria-label='Interested in web design and marketing? Share link')
+    svg.icon.is-share(focusable='false' aria-hidden='true')
+      use(href='/assets/img/base/icons/sprite.svg#icon-share')
+  ul.popover
+    li Скопировать ссылку

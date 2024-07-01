@@ -1,0 +1,172 @@
+
+// stylelint-disable selector-no-qualifying-type
+@use '../../theme/config' as *;
+
+/* -----------------------------------------------------------------------------
+ * DEFAULT
+ * -------------------------------------------------------------------------- */
+// #region
+
+.btn,
+button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+a[role='button'] {
+  --btn-border-outline: 1px solid var(--color-brand-border);
+  --btn-color-outline: var(--color-brand-text);
+
+  @include button;
+}
+
+// Remove the inner border and padding in Firefox
+:where(button, [type='button'], [type='reset'], [type='submit'])::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * PRIMARY
+ * -------------------------------------------------------------------------- */
+// #region
+
+.btn.is-primary {
+  @include button-primary;
+}
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * OUTLINE, GHOST AND ICON
+ * -------------------------------------------------------------------------- */
+// #region
+
+.btn.is-outline,
+.btn.is-ghost {
+  background: transparent;
+  color: var(--btn-color-outline);
+
+  &:active,
+  &:focus-visible {
+    background: var(--color-ink-min);
+  }
+
+  @media(any-hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-ink-min);
+    }
+  }
+}
+
+.btn.is-outline {
+  border: var(--btn-border-outline);
+}
+
+// ICON
+.btn.is-icon {
+  padding: 0;
+  width: $size-5;
+  height: $size-5;
+}
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * DISABLED
+ * -------------------------------------------------------------------------- */
+// #region
+
+.btn button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+a[role='button'] {
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &[disabled]:hover {
+    filter: none;
+  }
+}
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * SPECIALS
+ * -------------------------------------------------------------------------- */
+// #region
+
+// button
+.btn.is-close:not(footer .btn.is-close) {
+  border-radius: 50%;
+  padding: $size-half;
+  width: max-content;
+  height: auto;
+}
+
+.btn.is-search {
+  background-color: transparent;
+  border-radius: $border-radius-xs;
+  padding-inline: $size-1p5;
+
+  &:active,
+  &:focus-visible {
+    background: var(--color-ink-min);
+  }
+
+  @media(any-hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-ink-min);
+    }
+  }
+}
+
+.btn.is-back {
+  --height-btn: #{$size-4};
+
+  background-color: var(--color-ink-min);
+  border-radius: $border-radius-base;
+  color: var(--color-ink-2ry);
+  padding-left: $size-1p5;
+  padding-right: $size-2;
+
+  &:active,
+  &:focus-visible {
+    background: var(--color-ink-min);
+  }
+
+  @media(any-hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-ink-min);
+    }
+  }
+}
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * BUTTON GROUP
+ * -------------------------------------------------------------------------- */
+// #region
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $size-2;
+
+  @supports not (gap: 4px) {
+    > * {
+      margin-bottom: $size-2;
+
+      @media (--tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    .button + .button {
+      margin-left: $size-1;
+    }
+  }
+}
+// #endregion

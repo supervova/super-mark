@@ -1,24 +1,51 @@
 <header class="header">
+  <figure class="header__logo is-full">
 
-  {% comment %} Humburger button {% endcomment %}
-  <button class="header-navbar-toggler" aria-label="{{ site.data.i18n.labels.menu[page.lang] }}" title="{{ site.data.i18n.labels.menu[page.lang] }}">
-    {% include icon.html name="hamburger" %}
-  </button>
+    <!-- Logo, tagline -->
+    {% comment %} {% include logo.html %} {% endcomment %}
+    <a class="logo" href="{% if page.lang == 'ru' %}{{ site.url }}{% else %}{{ site.url }}/en{% endif %}">
 
-  {% comment %} Logo, tagline, context menu {% endcomment %}
-  {% include logo.html %}
+      <!-- Symbol -->
+      <picture>
+        <source srcset="{{ site.assets }}/img/components/logo/supermark-logomark-xs.svg" media="(max-width: 767px), (max-height: 360px)">
+        <img src="{{ site.assets }}/img/components/logo/supermark-logomark.svg" alt="{{ site.data.base.labels.logo[page.lang] }}">
+      </picture>
 
-  {% comment %} CTA Button {% endcomment %}
-  {% include cta.html %}
+      <!-- Wordmark -->
+      <img class="logo__type" src="{{ site.assets }}/img/components/logo/supermark-logotype.svg" alt="{{ site.data.base.labels.logo[page.lang] }}">
 
-  {% if page.lang == 'ru' %}
-    <a class="header-lang-switcher is-mobile" href="/en" aria-label="In English" title="In English">
-      {% include icon.html name="flag-us" class=true %}
+      <!-- Tagline -->
+      <span class="logo__tagline">{{ site.data.base.company.tagline[page.lang] }}</span>
     </a>
-  {% else %}
-    <a class="header-lang-switcher is-mobile" href="/" aria-label="По-русски / In Russian" title="По-русски / In Russian">
-      {% include icon.html name="flag-ru" class=true %}
-    </a>
-  {% endif %}
 
+    <!-- Right Click Popover -->
+    <div class="header__popover">
+      <p class="header__popover-title">
+        {{ site.data.base.headings.ydnad[page.lang] }}
+      </p>
+      <p>{{ site.data.base.descriptions.one_man_army[page.lang] }}</p>
+
+      <div class="header__popover-footer">
+        <p class="list-caption">{{ site.data.base.labels.write[page.lang] }}</p>
+        <ul class="list is-unstyled">
+          <li>
+            {% include icon.html name="mail" %}
+            {{ site.data.base.company.email }}
+          </li>
+          <li>
+            {% include icon.html name="telegram" %}
+            <a href="https://t.me/VladimirNikishin" target="_blank" rel="noopener noreferrer">VladimirNikishin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </figure>
+
+  {% include navbar.html data=site.data.navbar %}
+
+  <figure class="header__logo is-compact">
+    <a href="{% if page.lang == 'ru' %}{{ site.url }}{% else %}{{ site.url }}/en{% endif %}">
+      <img class="logo__type" src="{{ site.assets }}/img/components/logo/supermark-logotype.svg" alt="{{ site.data.base.labels.logo[page.lang] }}">
+    </a>
+  </figure>
 </header>

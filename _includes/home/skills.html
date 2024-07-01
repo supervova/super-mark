@@ -1,0 +1,33 @@
+<table class="table is-chart-bars is-skills" data-animation>
+  <tbody>
+    {% for skill in include.data %}
+      <tr>
+        <th>
+          <div class="table__track">
+            <div class="table__caption w-{{ skill.primary.percentage }}">
+              {% if skill.primary.name[page.lang] %}
+                {{ skill.primary.name[page.lang] }}
+              {% else %}
+                {{ skill.primary.name }}
+              {% endif %}
+            </div>
+          </div>
+        </th>
+        <td>{{ skill.primary.percentage }}%</td>
+
+        <th>
+          <div class="table__track">
+            <div class="table__caption w-{{ skill.secondary.percentage }}">
+              {% if skill.secondary.name[page.lang] %}
+                {{ skill.secondary.name[page.lang] }}
+              {% else %}
+                {{ skill.secondary.name }}
+              {% endif %}
+            </div>
+          </div>
+        </th>
+        <td>{{ skill.secondary.percentage }}%</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

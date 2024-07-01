@@ -1,47 +1,23 @@
 ---
 lang: ru
-title: 'Блог о веб-дизайне и диджитал-маркетинге'
-description: 'Личные конспекты по графическим редакторам, веб-технологиям и диджитал маркетингу.'
+title: 'Блог'
+description: 'Личные конспекты по графическим редакторам, веб-технологиям и диджитал-маркетингу.'
 # Don't set a permalink. Setting a permalink in the front matter of your blog page will cause pagination to break.The paginate_path is set in the config.
 layout: page
-classes: p-blog has-main-header
+is-index: true
+styles-addons: ['/css/blog.css']
+class: 'is-blog'
 pagination:
   enabled: true
 ---
 
-{% comment %} LIST HEADER {% endcomment %}
-{% include page-header.html class='is-blog' title='Блог' image='/img/pages/blog/index/img-blog-about-design-marketing-development' %}
-
 {% comment %} LIST {% endcomment %}
-<ul class="main-body">
-  {% for post in paginator.posts %}
-    {% include teaser.html %}
-  {% endfor %}
-</ul>
+<h1 class="main__title is-breadcrumbs"><b>Блог<span class="visually-hidden"> —</span></b> Профессиональное и личное</h1>
+{% for post in paginator.posts %}
+  {% include snippet.html %}
+{% endfor %}
 
 {% comment %} PAGINATION LINKS. The same for both versions of the pagination plugin {% endcomment %}
 {% if paginator.total_pages > 1 %}
-  <nav class="main__pagination" aria-label="Архив заметок">
-    <ul class="pagination">
-
-      <li class="pagination__control is-prev">
-        {% if paginator.previous_page %}
-          <a class="pagination__link" href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
-            {% include icon.html name="chevron-left" %}
-          </a>
-        {% endif %}
-      </li>
-
-      <li class="pagination__control is-current">{{ paginator.page }} / {{ paginator.total_pages }}</li>
-
-      <li class="pagination__control is-next">
-        {% if paginator.next_page %}
-          <a class="pagination__link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
-            {% include icon.html name="chevron-right" %}
-          </a>
-        {% endif %}
-      </li>
-
-    </ul>
-  </nav>
+{% include pagination.html %}
 {% endif %}
