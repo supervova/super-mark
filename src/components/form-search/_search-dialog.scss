@@ -1,0 +1,36 @@
+@use '../../theme/config' as *;
+
+.modal[id='modal-search'] {
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  @media (--phone), (--phone-l-height) {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100vw;
+    max-width: 100dvw;
+  }
+}
+
+.modal[id='modal-search'] .form.is-search {
+  @media (--phone), (--phone-l-height) {
+    transition: translate $duration-md $easing-base;
+    width: 100%;
+
+    @starting-style {
+      translate: 0 -100%;
+    }
+  }
+
+}
+
+.modal:not([open]) > .form.is-search,
+.modal[open='false'] > .form.is-search {
+  @media (--phone), (--phone-l-height) {
+    translate: 0 -100%;
+  }
+}
+

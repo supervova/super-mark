@@ -5,7 +5,7 @@ categories: Illustrator
 date: 2021-03-06
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <ul>
   <li>⇧R&nbsp;— Деформация</li>

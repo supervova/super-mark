@@ -1,0 +1,16 @@
+{% assign items = include.items %}
+
+<{{ include.list_type | default: 'ul' }} class="{{ include.list_class }}">
+  {% for item in items %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+      {% if item.subitems %}
+        {% include nested_list.html items=item.subitems list_type=include.sublist_type list_class=include.sublist_class %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</{{ include.list_type | default: 'ul' }}>

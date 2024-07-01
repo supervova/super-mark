@@ -1,0 +1,28 @@
+@use '../config' as *;
+
+// BASE CONTAINER
+.container {
+  @include container;
+}
+
+// CONTENT CONTAINERS
+.col-1\/1 {
+  // For list view, e. g. SERP or blog feed
+  list-style: none;
+  margin: 0 auto;
+  width: min(100%, calc(var(--width-readable) + var(--padding-x-container) * 2));
+}
+
+.main {
+  @media (--tablet) {
+    padding-top: rem(36);
+  }
+}
+
+.main.col-1\/1 {
+  padding-top: $size-line * 2;
+  @media (--tablet) {
+    padding-top: rem(60);
+  }
+}
+

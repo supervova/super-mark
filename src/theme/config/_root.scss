@@ -1,0 +1,94 @@
+// stylelint-desable scss/at-if-no-null
+
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:root {
+  @each $color, $value in map.get($color, base) {
+    --#{$color}: #{$value};
+  }
+
+  // Lightness and saturation are set in themes.
+
+  // Typography
+  @each $item, $set in map.get($typeset, phone) {
+    @each $prop, $value in $set {
+      --#{$prop}-#{$item}: #{$value};
+    }
+  }
+
+  // Spacing
+  @each $prop, $value in map.get($spacing, phone) {
+    --#{$prop}: #{$value};
+  }
+
+  // Width
+  @each $comp, $value in map.get($width, phone) {
+    --width-#{$comp}: #{$value};
+  }
+
+  // height
+  @each $comp, $value in map.get($height, phone) {
+    --height-#{$comp}: #{$value};
+  }
+
+  @media (--tablet) {
+    // Typography
+    @each $item, $set in map.get($typeset, tablet) {
+      @each $prop, $value in $set {
+        --#{$prop}-#{$item}: #{$value};
+      }
+    }
+
+    // Spacing
+    @each $prop, $value in map.get($spacing, tablet) {
+      --#{$prop}: #{$value};
+    }
+
+    // Width
+    @each $comp, $value in map.get($width, tablet) {
+      --width-#{$comp}: #{$value};
+    }
+  }
+
+  @media (--tablet-l) {
+    // Typography
+
+    @if (map-has-key($typeset, tablet)) {
+      @each $item, $set in map.get($typeset, tablet-l) {
+        @each $prop, $value in $set {
+          @if $value != null {
+            --#{$prop}-#{$item}: #{$value};
+          }
+        }
+      }
+    }
+
+    // Spacing
+    @each $prop, $value in map.get($spacing, tablet-l) {
+      --#{$prop}: #{$value};
+    }
+
+    // Width
+    @each $comp, $value in map.get($width, tablet-l) {
+      --width-#{$comp}: #{$value};
+    }
+  }
+
+  @media (--laptop) {
+    // Width
+    @each $comp, $value in map.get($width, laptop) {
+      --width-#{$comp}: #{$value};
+    }
+
+    // height
+    @each $comp, $value in map.get($height, laptop) {
+      --height-#{$comp}: #{$value};
+    }
+  }
+  // #endregion
+}

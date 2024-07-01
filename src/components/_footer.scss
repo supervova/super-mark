@@ -1,0 +1,29 @@
+@use '../theme/config' as *;
+
+.footer {
+  color: var(--color-ink-2ry);
+  margin-top: $size-8;
+  margin-inline: auto;
+  padding-bottom: ($size-line * 6);
+  padding-inline: $size-2p5;
+  transition: background-color ($duration-xl * 4) $easing-base;
+  width: 100%;
+
+  .col-1\/1 {
+    border-top: 1px solid var(--color-ink-border);
+    flex-direction: row;
+    align-items: center;
+    gap: $size-line;
+    justify-content: center;
+    text-align: center;
+    padding-top: ($size-line * 3);
+  }
+
+  :where(.page.is-home) & {
+    margin-top: 0;
+  }
+
+  @media (--tablet) {
+    padding-bottom: ($size-line * 3);
+  }
+}

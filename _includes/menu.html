@@ -1,0 +1,40 @@
+<ul class="popover__body menu">
+  {% assign url = include.url | url_encode %}
+  {% assign title = page.title | url_encode %}
+
+  {% for item in include.items %}
+    {% assign label = item.label[page.lang] %}
+    {% if label %}
+      {% assign url_template = item.url %}
+      {% assign url_final = url_template | replace: '{{ page.title | url_encode }}', title | replace: '{{ page.url | absolute_url | url_encode }}', url %}
+
+      {% if item.type == 'link' %}
+        <li>
+          <a class="menu__item" href="{{ url_final }}">
+            {% if item.icon %}{% include icon.html name=item.icon %}{% endif %}
+            {{ label }}
+          </a>
+        </li>
+
+      {% elsif item.type == 'button' %}
+        <li>
+          {% if item.feedback %}
+            {% assign feedback_label = item.feedback.label[page.lang] %}
+            <p class="menu__feedback-success" {% if item.feedback.id %} id="{{ item.feedback.id }}" {% endif %}>
+              {{ feedback_label }}
+            </p>
+          {% endif %}
+          <button class="menu__item" type="button" {% if item.id %} id="{{ item.id }}" {% endif %} data-href="{{ include.url }}">
+            {% if item.icon %}{% include icon.html name=item.icon %}{% endif %}
+            {{ label }}
+          </button>
+        </li>
+
+      {% elsif item.type == 'subtitle' %}
+        <li>
+          <h3 class="menu__subtitle">{{ label }}</h3>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>

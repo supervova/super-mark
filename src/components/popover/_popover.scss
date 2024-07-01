@@ -1,0 +1,92 @@
+@use '../../theme/config' as *;
+
+// Container
+/* details */.popover {
+  --popover-body-background: var(--color-background-2ry);
+  --popover-body-border-radius: #{$border-radius-base};
+  --popover-body-border: 0;
+  --popover-body-box-shadow: var(--box-shadow-z3);
+  --popover-body-color: var(--color-ink-2ry);
+  --popover-body-width: #{$width-sm};
+
+  position: relative;
+}
+
+.popover__body {
+  background-clip: padding-box;
+  background-color: var(--popover-body-background);
+  border-radius: var(--popover-body-border-radius);
+  border: var(--popover-body-border);
+  box-shadow: var(--popover-body-box-shadow);
+  color: var(--popover-body-color);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0;
+  padding: $size-2 var(--padding-x-box);
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: var(--popover-body-width);
+  z-index: $zindex-popover;
+
+  // Animations and transitions in details do not work
+  // [open] & {
+  //   opacity: 1;
+  // }
+
+  &.menu {
+    padding: $size-2;
+  }
+
+  .is-up > & {
+    bottom: 100%;
+  }
+
+  .is-right > & {
+    left: auto;
+    right: 0;
+  }
+}
+
+// Summary Marker
+:where(.popover) summary::after {
+  background-image: var(--icon-sm-chevron-down);
+  background-position: right center;
+  background-repeat: no-repeat;
+  content: '';
+  display: block;
+  width: $size-2p5;
+  height: $size-2p5;
+}
+
+// Share
+
+.popover.is-share {
+
+  &[open] summary {
+    background-color: var(--color-ink-min);
+  }
+
+  summary {
+    border-radius: $border-radius-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $size-1p5;
+
+    &:hover {
+      background-color: var(--color-ink-min);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .popover__body {
+    bottom: $size-7;
+    right: -$size-2;
+    left: auto;
+  }
+}

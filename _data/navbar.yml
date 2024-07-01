@@ -1,15 +1,31 @@
-- title: 'Услуги и примеры'
-  slug: 'services'
-  ordinal: 2
-
-- title: 'Цены'
-  slug: 'prices'
-  ordinal: 3
-
-- title: 'О «СуперМарке»'
-  slug: 'about'
-  ordinal: 4
-
-- title: 'Блог'
-  slug: 'blog'
-  ordinal: 5
+- label:
+    en: 'Portfolio'
+    ru: 'Пpимеры'
+  url: "#section-portfolio"
+  icon: "portfolio"
+- label:
+    en: 'Services'
+    ru: 'Услуги'
+  url: "#section-services"
+  icon: "brush"
+- label:
+    en: 'About'
+    ru: 'Обо мне'
+  url: "#section-about"
+  icon: "super"
+  class: "navbar__item is-about"
+- label:
+      en: 'Contacts'
+      ru: 'Контакты'
+  url: "#section-contacts"
+  icon: "mail"
+- label:
+      ru: 'Блог'
+  class: "navbar__item is-blog"
+  url: "ru/blog"
+  icon: "scroll"
+- label:
+      en_: 'More'
+      ru_: 'Ещё'
+  icon: "more"
+  popover: true

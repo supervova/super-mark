@@ -5,7 +5,7 @@ date: 2024-01-02
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 ![Сетчатые объекты](/assets/img/blog/2024/01-02/meshes-01.png)
 

@@ -5,7 +5,7 @@ categories: Illustrator
 date: 2020-12-06
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <figure><img src="{{ site.assets }}/img/blog/2020/12-06/01-illustrator-shape-menu.png" alt="Меню фигур"></figure>
 

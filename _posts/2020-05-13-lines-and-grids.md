@@ -5,7 +5,7 @@ date: 2020-05-13
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 
 <h2 class="main-subhead is-smaller">🔵 Общее</h2>

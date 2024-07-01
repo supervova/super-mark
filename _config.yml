@@ -32,11 +32,10 @@ url: https://super-mark.ru
 baseurl: ''
 assets: /assets
 
-logo: /img/components/logo/supermark-logo-mark.svg
+logo: /img/components/logo/supermark-logomark.svg
 image: /img/supermark.png
-icon: /img/base/icons/icon.png
-# ui_sprite: /img/icons/sprite.svg
-color: '#f2b200'
+icon: /img/components/icon/icon-192.png
+
 
 fonts: Inter:wght@300;400;600
 rss_title: Блог SuperMark'а
@@ -70,6 +69,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Collections settings
 collections:
   category:
     output: true
@@ -77,6 +77,20 @@ collections:
   posts:
     output: true
     permalink: /ru/blog/:year/:slug
+
+  # en_good_advice:
+  #   output: true
+  #   permalink: /en/good-advice/:slug
+
+  ru_good_advice:
+    output: true
+    permalink: /ru/good-advice/:slug
+
+# Collections paths
+# en_good_advice:
+#   path: en/_good-advice
+ru_good_advice:
+  path: ru/_good-advice
 
 # Pagination Settings
 pagination:
@@ -106,7 +120,7 @@ defaults:
     values:
       lang: ru
       layout: post
-      classes: single-post
+      classes: page is-post
 
   # Blog categories
   -
@@ -116,7 +130,17 @@ defaults:
     values:
       lang: ru
       layout: 'index'
-      classes: p-blog has-main-header
+      classes: page is-blog
+
+  # Good advice
+  -
+    scope:
+      path: ''
+      type: ru_good_advice
+    values:
+      lang: ru
+      layout: 'advice'
+      classes: page is-advice
 
 # HTML Compression
 # https://jch.penibelst.de/
@@ -169,6 +193,7 @@ exclude:
   - '*.pug'
   - .jekyll-assets-cache
   - .jekyll-cache
+  - .obsidian
   - .sass-cache
   - Gemfile
   - Gemfile.lock
@@ -181,6 +206,13 @@ exclude:
   - src
   - yarn-error.log
   - yarn.lock
+  - ru/_good-advice/assets
+  - ru/_good-advice/how-to
+  - ru/_good-advice/source
+  - ru/_good-advice/index.md
+  - ru/_good-advice/summary.md
+  - deploy.sh
+  - readme~.md
 
 theme: null
 

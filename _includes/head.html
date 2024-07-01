@@ -1,4 +1,4 @@
-{% assign company = site.data.i18n.company %}
+{% assign company = site.data.base.company %}
 {% assign social = site.data.social-networks %}
 
 <head>
@@ -42,7 +42,7 @@
 {% if page.permalink == '/' %}
   <meta name="p:domain_verify" content="e489415027649c2c99b4862038fdb1a8">
 {% endif %}
-  <meta name="theme-color" content="{{ site.color }}">
+
 {% comment %} SEO deals w/ HTTPS {% endcomment %}
   <meta name="referrer" content="origin">
 {% unless page.index %}
@@ -56,18 +56,17 @@
   <link rel="alternate" href="{{ page.hreflang-ru | absolute_url }}" hreflang="ru">
 {% endif %}
 {% if page.lang == 'ru' %}
-  <link rel="alternate" href="{{ '/feed.xml' }}" type="application/rss+xml" title="{{ site.rss_title }}">
+  <link rel="alternate" href="{{ '/feed.xml' }}" type="application/rss+xml">
 {% endif %}
   <link rel="sitemap" href="/sitemap.xml" type="application/xml">
+
+  <link rel="icon" type="image/gif" href="{ site.assets }}/img/components/icon/favicon.gif" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="{{ site.assets }}/img/components/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ site.assets }}/img/components/icon/icon-192.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#322f29">
-  <meta name="apple-mobile-web-app-title" content="{{ site.short_name }}">
-{% if site.icon %}
-  {% comment %} Apple touch icon. In most cases, one 192×192px touch icon named icon.png
-  is enough {% endcomment %}
-  <link rel="apple-touch-icon" href="{{ site.icon | prepend: site.assets | prepend: site.url }}">
-{% endif %}
-{% if social.facebook.ctaLike %}
+
+{% if site.data.base.facebook_like %}
   <link rel="preconnect" href="https://staticxx.facebook.com">
 {% endif %}
 {% if site.fonts %}
@@ -75,6 +74,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ site.fonts }}&display=swap">
 {% endif %}
   <link rel="stylesheet" href="{{ site.assets }}/css/style.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
+{% if page.layout == 'post' %}
+  <link rel="stylesheet" href="{{ site.assets }}/css/blog.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
+{% endif %}
 {% if page.styles-addons %}
   {% for style in page.styles-addons %}
   <link rel="stylesheet" href="{{ site.assets }}{{ style }}{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
@@ -83,35 +85,35 @@
 {% if page.style %}
   <style>{{ page.style }}</style>
 {% endif %}
-{% unless page.index %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "{{ company.title }}",
-      "url": "{{ site.url }}",
-      "logo": "{{ site.logo | prepend: site.assets | prepend: site.url }}",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "{{ company.city[page.lang] }}",
-        "addressRegion": "{{ company.city[page.lang] }}",
-        "postalCode": "{{ company.postal_code }}",
-        "addressCountry": "{{ company.country[page.lang] }}"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "telephone": "{{ company.phone }}"
-      },
-      "sameAs": [
-        "https://www.facebook.com/{{ site.data.social-networks.facebook.acc }}",
-        "https://www.instagram.com/{{ site.data.social-networks.instagram.acc }}",
-        "https://www.linkedin.com/in/{{ site.data.social-networks.linkedin.acc }}"
-      ]
-    }
-  </script>
-{% endunless %}
-{% comment %} Google Tag Manager {% endcomment %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "{{ company.title }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.logo | prepend: site.assets | prepend: site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ company.city[page.lang] }}",
+      "addressRegion": "{{ company.city[page.lang] }}",
+      "postalCode": "{{ company.postal_code }}",
+      "addressCountry": "{{ company.country[page.lang] }}"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "telephone": "{{ company.phone }}"
+    },
+    "sameAs": [
+      "https://www.facebook.com/{{ site.data.social-networks.facebook.acc }}",
+      "https://www.instagram.com/{{ site.data.social-networks.instagram.acc }}",
+      "https://www.linkedin.com/in/{{ site.data.social-networks.linkedin.acc }}"
+    ]
+  }
+</script>
+
+<!-- Google Tag Manager -->
 {% if jekyll.environment == 'production' and site.gtm %}
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

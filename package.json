@@ -17,69 +17,77 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-sass-guidelines"
-    ],
-    "ignoreFiles": [
-      "**/*.css",
-      "**/*.html",
-      "node_modules/**/*"
+      "stylelint-config-recommended-scss"
     ],
     "rules": {
-      "comment-whitespace-inside": "always",
+      "at-rule-empty-line-before": null,
+      "at-rule-no-vendor-prefix": true,
+      "color-named": "never",
+      "declaration-empty-line-before": null,
+      "declaration-no-important": true,
       "font-family-name-quotes": "always-where-recommended",
-      "function-parentheses-space-inside": "never-single-line",
-      "max-nesting-depth": 3,
-      "media-feature-colon-space-after": "always",
-      "media-feature-colon-space-before": "never",
-      "media-feature-range-operator-space-after": "always",
-      "media-feature-range-operator-space-before": "always",
+      "font-weight-notation": [
+        "numeric",
+        {
+          "ignore": [
+            "relative"
+          ]
+        }
+      ],
+      "function-url-no-scheme-relative": true,
+      "function-url-quotes": "always",
+      "length-zero-no-unit": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "no-descending-specificity": null,
       "no-duplicate-selectors": true,
-      "number-leading-zero": "never",
-      "order/order": [
-        "custom-properties",
-        "dollar-variables",
-        {
-          "type": "at-rule",
-          "name": "include"
-        },
-        "declarations",
-        "rules",
-        {
-          "type": "at-rule",
-          "name": "include",
-          "hasBlock": true
-        }
-      ],
-      "order/properties-alphabetical-order": null,
-      "property-no-unknown": [
+      "no-empty-source": null,
+      "media-feature-name-no-unknown": [
         true,
         {
-          "ignoreProperties": [
-            "appearance"
+          "ignoreMediaFeatureNames": [
+            "prefers-reduced-motion"
           ]
         }
       ],
-      "rule-empty-line-before": [
-        "always",
-        {
-          "ignore": [
-            "after-comment",
-            "inside-block"
-          ]
-        }
-      ],
-      "scss/at-extend-no-missing-placeholder": null,
-      "scss/dollar-variable-colon-space-after": null,
+      "property-no-vendor-prefix": true,
+      "rule-empty-line-before": null,
+      "scss/dollar-variable-default": null,
       "selector-attribute-quotes": "always",
-      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*",
-      "selector-no-qualifying-type": [
-        true,
+      "selector-class-pattern": [
+        "^[a-z0-9-_\\/:]+$",
         {
-          "ignore": [
-            "attribute"
+          "message": "Class names should only contain lowercase letters, numbers, hyphens, underscores (for BEM elements only), and may include forward slashes for fractions and colons."
+        }
+      ],
+      "selector-max-attribute": 2,
+      "selector-max-class": 4,
+      "selector-max-combinators": 4,
+      "selector-max-compound-selectors": 4,
+      "selector-max-id": 0,
+      "selector-max-specificity": null,
+      "selector-max-type": 2,
+      "selector-max-universal": 1,
+      "selector-no-qualifying-type": null,
+      "selector-no-vendor-prefix": true,
+      "value-keyword-case": [
+        "lower",
+        {
+          "camelCaseSvgKeywords": true,
+          "ignoreKeywords": [
+            "BlinkMacSystemFont",
+            "Roboto",
+            "Arial",
+            "Inter",
+            "Baskerville",
+            "Times",
+            "SFMono-Regular",
+            "Menlo",
+            "Monaco",
+            "Consolas"
           ]
         }
-      ]
+      ],
+      "value-no-vendor-prefix": true
     }
   },
   "eslintConfig": {
@@ -143,14 +151,15 @@
       ]
     }
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
   "prettier": {
-    "singleQuote": true,
+    "arrowParens": "always",
     "bracketSpacing": true,
+    "endOfLine": "auto",
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "quoteProps": "as-needed",
+    "semi": true,
+    "singleQuote": true,
     "trailingComma": "es5",
     "overrides": [
       {
@@ -164,6 +173,11 @@
       }
     ]
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
@@ -172,14 +186,29 @@
     "map": false,
     "plugins": {
       "postcss-easing-gradients": {},
-      "postcss-inline-svg": {}
+      "postcss-inline-svg": {},
+      "postcss-preset-env": {
+        "stage": 2,
+        "features": {
+          "cascade-layers": false,
+          "custom-media-queries": true,
+          "custom-properties": false,
+          "custom-selectors": true,
+          "has-pseudo-class": true,
+          "image-set-function": true,
+          "is-pseudo-class": false,
+          "logical-properties-and-values": false,
+          "media-query-ranges": true,
+          "nesting-rules": true,
+          "unset-value": true
+        },
+        "autoprefixer": {
+          "cascade": false
+        }
+      }
     }
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
-  },
-  "devDependencies": {
-    "popper.js": "^1.16.1",
-    "the-new-css-reset": "elad2412/the-new-css-reset"
+    "swiper": "^11.1.3"
   }
 }

@@ -1,0 +1,37 @@
+<div class="tabs" itemprop="description">
+  <nav role="tablist" aria-label="Services">
+    {% for tab in include.data %}
+      <button class="flex-1" type="button" role="tab" aria-selected="{{ tab.active }}" aria-controls="{{ tab.id }}">
+        <span class="phone-l:d-none">{{ tab.button.phone[page.lang] }}</span>
+        <span class="d-none phone-l:d-inline">{{ tab.button.base[page.lang] }}</span>
+      </button>
+    {% endfor %}
+  </nav>
+
+  <div class="tabs__content">
+    {% for tab in include.data %}
+      <section{% if tab.active %} class="is-active"{% endif %} id="{{ tab.id }}" role="tabpanel" tabindex="0"  itemscope itemtype="https://schema.org/Service">
+        <h3 class="visually-hidden" itemprop="name">{{ tab.button.base[page.lang] }}</h3>
+        <ul itemprop="description">
+          {% for item in tab.content[page.lang] %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        {% if page.lang == 'ru' %}
+          {% assign price = '1,49' %}
+          {% assign currency = 'RUB' %}
+          {% assign unit_price = 'тыс. руб./час' %}
+        {% else %}
+          {% assign price = '$24.99' %}
+          {% assign currency = 'USD' %}
+          {% assign unit_price = '/ hour' %}
+        {% endif %}
+
+        <p class="visually-hidden" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span itemprop="price">{{ price }}</span>
+          <span itemprop="priceCurrency" content="{{ currency }}">{{ unit_price }}</span>
+        </p>
+      </section>
+    {% endfor %}
+  </div>
+</div>

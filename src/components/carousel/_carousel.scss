@@ -1,0 +1,104 @@
+@use '../../theme/config' as *;
+
+// https://swiperjs.com/swiper-api
+// @import "../../../../node_modules/swiper/swiper.scss";
+
+.carousel {
+  padding-bottom: $size-line * 2;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  // Fix of Webkit flickering
+  z-index: 1;
+}
+
+.carousel__items {
+  // --gap: #{$size-3};
+  // gap: var(--gap);
+
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  touch-action: pan-y;
+  transition: transform $duration-md $easing-base;
+  width: 100%;
+  will-change: transform;
+}
+
+.carousel__item {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  // margin-inline: $size-1p5;
+  padding: 0 $size-2p5;
+  opacity: 0.4;
+  transition: opacity $duration-sm $easing-base;
+  width: fit-content;
+  height: 100%;
+
+  figure {
+    margin-bottom: 0;
+  }
+
+  a {
+    border: $size-1 solid var(--color-background-2ry);
+    border-radius: $border-radius-base;
+    box-shadow: 0 0 0 rgb(0 0 0 / 0);
+    overflow: hidden;
+    pointer-events: none;
+    transition: box-shadow $duration-lg $easing-base;
+  }
+
+  &.is-active {
+    opacity: 1;
+
+    a {
+      box-shadow: var(--box-shadow-z3);
+      pointer-events: all;
+    }
+  }
+
+  @media (--tablet) {
+    padding: 0;
+  }
+}
+
+.carousel__buttons {
+  display: flex;
+  gap: $size-2;
+  justify-content: center;
+  padding-top: $size-line;
+
+  @media (--tablet) {
+    display: contents;
+  }
+}
+
+.carousel__button {
+  background-color: var(--color-background-2ry);
+  box-shadow: var(--box-shadow-z3);
+  padding: 0;
+  width: $size-7;
+
+  @media (--tablet) {
+    margin-top: -$size-line;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+  }
+}
+
+.carousel__button.is-prev {
+  @media (--tablet) {
+    left: $size-line;
+  }
+}
+
+.carousel__button.is-next {
+  @media (--tablet) {
+    right: $size-line;
+  }
+}

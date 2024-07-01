@@ -5,7 +5,7 @@ date: 2023-01-15
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <ul>
   <li>Ручками внизу можно менять уровень поверхности.</li>

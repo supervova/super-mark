@@ -5,7 +5,7 @@ date: 2022-01-02
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <p>Переходы цвета&nbsp;— это, по&nbsp;сути, градиенты по&nbsp;сложному контуру и&nbsp;внутренние тени.</p>
 <figure><img src="{{ site.assets }}/img/blog/2022/01-02/01-blend.png" alt="Переходы в Illustrator"></figure>

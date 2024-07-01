@@ -5,7 +5,7 @@ date: 2020-10-03
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Переменная толщина обводки.</h2>
 <p>Чтобы сделать толщину линии по&nbsp;периметру контура разной (как при использовании плоской кисти), нужно выбрать один из&nbsp;профилей в&nbsp;меню Variable Width Profile</p>

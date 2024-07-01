@@ -1,0 +1,43 @@
+- type: subtitle
+  label:
+    en: "Share this"
+    ru: "Поделиться ссылкой"
+- type: button
+  id: "copy-link-button"
+  icon: "link"
+  label:
+    en: "Copy link"
+    ru: "Скопировать ссылку"
+  feedback:
+    id: "copy-link-success"
+    label:
+      en: "Link copied to clipboard"
+      ru: "Скопирована в буфер обмена"
+- type: link
+  url: "mailto:?subject={{ page.title | url_encode }}&amp;body={{ page.url | absolute_url | url_encode }}"
+  icon: "mail"
+  label:
+    en: "Mail it"
+    ru: "Переслать по почте"
+- type: link
+  url: "https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+  icon: "facebook"
+  label:
+    en: "Facebook"
+- type: link
+  url: "https://vk.com/share.php?url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+  icon: "vk"
+  label:
+    ru: "Вконтакте"
+- type: link
+  url: "https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
+  icon: "ex-twitter"
+  label:
+    en: "(formerly Twitter)"
+    ru: "(бывший Twitter)"
+- type: link
+  url: "https://t.me/share/url?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
+  icon: "telegram"
+  label:
+    en: "Telegram"
+    ru: "Telegram"

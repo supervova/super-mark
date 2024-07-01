@@ -1,0 +1,6 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="3" width="10" height="14" rx="1" stroke="var(--icon-stroke)" stroke-width="var(--icon-stroke-width)" stroke-linejoin="round"/>
+<path d="M8 7H12" stroke="var(--icon-stroke)" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+<path d="M8 10H12" stroke="var(--icon-stroke)" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+<path d="M8 13H10" stroke="var(--icon-stroke)" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+</svg>

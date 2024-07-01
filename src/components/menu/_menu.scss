@@ -1,0 +1,108 @@
+@use '../../theme/config' as *;
+
+/* stylelint-disable-next-line selector-list-comma-newline-after */
+/* ul */.menu {
+  --menu-color: var(--color-ink-2ry);
+  --menu-item-padding: #{$size-1p5} #{$size-2};
+  --menu-padding: 0;
+  --menu-item-height: $size-6 - $size-half;
+
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: var(--menu-padding);
+  width: 100%;
+
+  li {
+    display: block;
+    position: relative;
+    padding: 0;
+
+    &::marker {
+      display: none;
+    }
+  }
+
+  @media (--tablet) {
+    li:not(:last-child) {
+      margin-bottom: $size-half;
+    }
+  }
+}
+
+/* a */.menu__item {
+  @include menu-item;
+
+  &[aria-current] {
+    background-color: var(--color-ink-min);
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.menu__subtitle {
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: var(--line-height-small);
+  color: var(--color-ink-2ry);
+  text-transform: uppercase;
+  margin-top: $size-1;
+  margin-bottom: rem(6);
+  padding-top: var(--padding-top-small);
+  padding-bottom: var(--padding-bottom-small);
+  padding-inline: $size-2;
+
+  > a {
+    color: var(--color-ink-base);
+  }
+}
+
+// Truncate text. Apply it on direct child using as label
+.menu__item > .label {
+  @include text-truncate;
+
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.menu__divider {
+  border-top: 1px solid var(--color-ink-border);
+  height: 0;
+}
+
+.menu__section .menu__item::before {
+  color: var(--color-ink-2ry);
+  content: '\2022\00a0';
+  align-self: flex-start;
+}
+
+// Copy link
+
+.menu__feedback-success {
+  @include text-truncate;
+
+  color: var(--color-success-text);
+  position: absolute;
+  top: rem(10);
+  left: $size-2;
+  right: $size-2;
+  opacity: 0;
+  pointer-events: none;
+
+  &,
+  + .menu__item {
+    transition: opacity $duration-sm $easing-base;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: all;
+
+    + .menu__item {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,54 @@
+@use 'config' as *;
+
+html {
+  // Remove the grey highlight on links in iOS (opinionated)
+  -webkit-tap-highlight-color: transparent;
+  // Use the default cursor in all browsers
+  cursor: default;
+  // https://caniuse.com/?search=hanging-punctuation
+  hanging-punctuation: first last;
+  // Prevent adjustments of font size after orientation changes in iOS
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  // Reserving space for the scrollbar
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  min-height: 100vh;
+
+  // Avoid Chrome to see Safari hack
+  @supports (-webkit-touch-callout: none) {
+    // stylelint-disable-next-line value-no-vendor-prefix
+    min-height: -webkit-fill-available;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background:
+    var(--color-background-base)
+    url('#{$site-assets}/img/pages/background.svg')
+    50% rem(160) no-repeat;
+  color: var(--color-ink-base);
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-base;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.011em;
+  line-height: var(--line-height-base);
+  text-align: left;
+  // Create safe areas for iPhone X+
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+
+  // Use a 2-space tab width in all browsers
+  tab-size: 2;
+  min-width: 320px;
+  min-height: 100vh;
+
+  // Avoid Chrome to see Safari hack
+  @supports (-webkit-touch-callout: none) {
+    // stylelint-disable-next-line value-no-vendor-prefix
+    min-height: -webkit-fill-available;
+  }
+}

@@ -5,7 +5,7 @@ categories: Illustrator
 date: 2021-01-30
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Форматирование</h2>

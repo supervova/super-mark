@@ -1,0 +1,276 @@
+@use '../config' as *;
+
+:focus-visible {
+  scroll-padding-block-end: 8vh;
+}
+
+/* -----------------------------------------------------------------------------
+ * BLOCK
+ * -------------------------------------------------------------------------- */
+// #region
+
+address,
+dl,
+p,
+.link.is-forward {
+  margin-top: 0;
+  margin-bottom: $size-2;
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+}
+
+address {
+  font-style: normal;
+}
+
+div,
+dd,
+dt,
+li,
+p,
+td,
+th {
+  // Formerly `word-wrap`. Breaks words to prevent overflow in all browsers
+  overflow-wrap: break-word;
+}
+
+.lead,
+:where(.main, .content, .col-1\/1) > header + p {
+  @include text-format(big);
+  margin: 0;
+}
+
+// LISTS
+// #region
+/* p, span */
+.list-caption {
+  display: block;
+  margin-bottom: $size-1;
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $size-2;
+}
+
+:where(ol:not([class], nav ol), ul:not([class], nav ul)) {
+  li {
+    padding-top: var(--padding-top-base);
+    padding-bottom: var(--padding-bottom-base);
+  }
+
+  // Nested lists
+  ul {
+    padding-left: $size-3;
+  }
+}
+
+// Unordered list
+ul {
+  @media (--tablet) {
+    padding-left: 0;
+  }
+}
+
+ul:where(:not(nav *):not(.list.is-unstyled):not(.list.is-inline)) {
+  > li::marker {
+    color: var(--color-brand-primary);
+    content: '\2022\00a0\00a0';
+  }
+}
+
+// Ordered list
+ol:not([class], nav ol) /*, ol.foo */ {
+  --start-counter: 1;
+
+  display: grid;
+  gap: $size-1;
+
+  // first column is the marker pseudo element
+  grid-template-columns: minmax(#{$size-5}, max-content) 1fr;
+
+  // don't need the default arbitrary padding
+  padding-inline: 0;
+}
+
+:where(ol:not([class], nav ol)) li {
+  counter-increment: list-item var(--start-counter);
+  display: grid;
+
+  // the whole list item covers both columns. then *its* children (the marker
+  // and regular <li> content) are subgrid-ed into the parent's grid
+  grid-column: 1 / -1;
+
+  // use the parent grid's columns
+  grid-template-columns: subgrid;
+
+  // ::marker isn't available because the <li>s are set to `display: grid`,
+  // so we have to do it ourselves with ::before and counters
+  &::before {
+    color: var(--color-ink-2ry);
+    content: counter(list-item) '.';
+    text-align: right;
+  }
+}
+
+nav ul,
+.list.is-unstyled,
+.list.is-inline {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.list.is-inline {
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $size-half;
+    }
+  }
+}
+
+// Description List
+dl {
+  display: grid;
+  gap: $size-1 $size-2;
+  grid-template-columns: auto 1fr;
+}
+
+dt {
+  display: inline-block;
+  font-weight: bolder;
+}
+
+dd {
+  margin-left: 0;
+}
+// #endregion
+
+// Dividers
+hr {
+  border: 0;
+  border-top: $border-width solid var(--color-ink-border);
+  margin-top: $size-line * 3 - $border-width;
+  margin-bottom: $size-line * 3;
+}
+
+// #endregion
+
+/* -----------------------------------------------------------------------------
+ * INLINE
+ * -------------------------------------------------------------------------- */
+// #region
+
+// LINKS
+// #region
+@mixin a-hover {
+  color: var(--color-ink-link-hover);
+  text-decoration-skip-ink: auto;
+  text-decoration: underline;
+  text-decoration-thickness: max(0.08em, 1px);
+  text-underline-offset: 0.15em;
+}
+
+// A elements that don't have a class get default styles
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: var(--color-ink-link);
+}
+
+a,
+[role='link'] {
+  @include focus-ring;
+
+  color: var(--color-ink-link);
+  // Reapply the pointer cursor for anchor tags
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $duration-xxs;
+
+  &:is(:active, :focus-visible) {
+    @include a-hover;
+  }
+
+  // Prevent hover issues on touch screens
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include a-hover;
+    }
+  }
+
+  &:is([aria-current]) {
+    color: var(--color-ink-base);
+  }
+}
+
+.link.is-forward {
+  display: inline-block;
+  padding-right: $size-3;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: var(--padding-top-base);
+    right: 0;
+  }
+}
+
+// Scroll padding allowance above anchor links
+:target {
+  scroll-padding-block-start: $size-4;
+}
+
+// #endregion
+
+// MISC
+b,
+strong {
+  font-weight: bolder;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.petit {
+  @include text-format(small);
+}
+
+::selection {
+  background: var(--color-core-brand-800);
+  color: var(--color-core-brand-100);
+  text-shadow: none;
+}
+
+// Sub / Sup
+// #region
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers
+sub,
+sup {
+  font-size: var(--font-size-small);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+// #endregion
+
+// #endregion

@@ -6,7 +6,7 @@ date: 2019-12-24
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <h2>Назначение и&nbsp;уникальные функции</h2>
 <p>По&nbsp;моему мнению, по&nbsp;ряду позиций Illustrator проигрывает в&nbsp;удобстве Sketch’у: заливка, работа со&nbsp;слоями и&nbsp;монтажными областями, экспорт в&nbsp;SVG... Поэтому использую&nbsp;AI только для тех задач, для которых он&nbsp;по-настоящему незаменим.</p>

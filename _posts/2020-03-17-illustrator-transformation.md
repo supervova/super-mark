@@ -5,7 +5,7 @@ date: 2020-03-17
 categories: Illustrator
 ---
 
-{% include blog/illustrator.html %}
+{% include accordion/illustrator-toc.html %}
 
 <p><strong>🔵 Масштабирование</strong></p>
 <ol>
