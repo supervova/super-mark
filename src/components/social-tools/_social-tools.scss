@@ -262,6 +262,7 @@
   @include media-breakpoint-up(md) {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     text-align: center;
     width: 192px;
   }
@@ -288,7 +289,7 @@
 
   @include media-breakpoint-up(lg) {
     top: 501px;
-    right: 30px;
+    right: 25px;
   }
 }
 

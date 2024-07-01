@@ -697,26 +697,31 @@ function deploy() {
  * -----------------------------------------------------------------------------
  */
 // Add-ons
-exports.ba = buildAssets;
-exports.dev = dev;
-exports.clean = clean;
-exports.cleanAll = cleanAll;
-exports.cleanAssets = cleanAssets;
-exports.cleanSrc = cleanSrc;
-exports.downloads = downloads;
-exports.html = html;
-exports.j = jekyllBuild;
-exports.jks = jekyllServe;
-exports.jsp = jsPlugins;
-exports.pug = pugCompile;
-exports.video = video;
+export {
+  // Add-ons
+  buildAssets as ba,
+  dev,
+  clean,
+  cleanAll,
+  cleanAssets,
+  cleanSrc,
+  downloads,
+  html,
+  jekyllBuild as j,
+  jekyllServe as jks,
+  jsPlugins as jsp,
+  pugCompile as pug,
+  video,
 
-// Base
-exports.img = img;
-exports.js = js;
-exports.css = css;
-exports.sprite = sprite;
-exports.w = watchFiles;
-exports.s = serve;
-exports.default = build;
-exports.deploy = deploy;
+  // Base
+  img,
+  js,
+  css,
+  sprite,
+  watchFiles as w,
+  serve as s,
+  deploy,
+};
+
+// Default export
+export default build;
