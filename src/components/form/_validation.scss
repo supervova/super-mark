@@ -7,20 +7,17 @@
  * -------------------------------------------------------------------------- */
 // #region
 
-:--text-field {
-  &:user-invalid,
-  &:invalid.is-touched,
-  .has-been-validated &:invalid {
+:--text-field:user-invalid {
     background-image: var(--icon-error);
-    background-position: top rem(11) right $size-1;
+    background-position: top rem(14) right $size-1;
     background-repeat: no-repeat;
     background-size: $size-icon-xy auto;
-    border-color: var(--color-error-base);
-    box-shadow: inset 0 0 0 1px var(--color-error-base);
+    box-shadow: 0 0 0 2px var(--color-error-base);
+    padding-right: $size-5;
 
     // Show alert
-    + [role='alert'],
-    + small + [role='alert'] {
+    + .form__error,
+    + small + .form__error {
       opacity: 1;
       height: auto;
     }
@@ -29,18 +26,19 @@
     + small {
       display: none;
     }
-  }
 }
 // #endregion
 
 /* -----------------------------------------------------------------------------
- * ERROR MESSAGES
+ * INLINE ERROR MESSAGES
  * -------------------------------------------------------------------------- */
 // #region
 
-form [role='alert'] {
+.form__error {
   color: var(--color-error-text);
+  display: block;
   font-size: var(--font-size-small);
+  font-weight: 400;
   line-height: var(--line-height-small);
   overflow: hidden;
   opacity: 0;
@@ -50,22 +48,24 @@ form [role='alert'] {
 
 /* To hide message using height: 0 we should wrap it in another div and delegate
 paddings to it */
-form [role='alert'] > span {
+.form__error > span {
   display: block;
-  padding-top: var(--padding-top-small);
+  padding-top: calc(var(--padding-top-small) + #{$size-half});
   padding-bottom: var(--padding-bottom-small);
+  padding-inline: $size-2;
 }
 
 // Show front-end validation alert for form rows
-.grid.has-error + [role='alert'] {
+// Add validation script
+.grid.has-error + .form__error {
   opacity: 1;
   height: auto;
 }
+// #endregion
 
-// Alert under the required checkboxes
-.has-been-validated
-  label:has(input[type='checkbox']:not(:focus):invalid)
-  + [role='alert'] {
-  display: block;
-}
+/* -----------------------------------------------------------------------------
+ * SUBMISSION FEEDBACK
+ * -------------------------------------------------------------------------- */
+// #region
+
 // #endregion

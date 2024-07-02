@@ -11,4 +11,7 @@
   {% else %}
   <input id="form-{{ field.name }}" name="{{ field.name }}" type="{{ field.type | default: 'text' }}"{% if field.params %} {{ field.params }}{% endif %}{% if field.required %} required{% endif %}{% if field.placeholder %} placeholder="{{ field.label[page.lang] }}"{% endif %}>
   {% endif %}
+  {% if field.error-message %}
+  <strong class="form__error" role="alert"><span>{{ field.error-message[page.lang] }}</span></strong>
+  {% endif %}
 </p>

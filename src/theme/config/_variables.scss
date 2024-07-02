@@ -495,13 +495,14 @@ $zindex-tooltip: 50 !default;
 
 $icons: (
   chevron-down:    'icon-chevron-down.svg',
+  error:           'icon-error.svg',
+  success:         'icon-success.svg',
+  info:            'icon-info.svg',
   // check:           'icon-checkmark.svg',
   // calendar:        'icon-calendar.svg',
   // time:            'icon-time.svg',
-  // error:           'icon-warning.svg',
   // search:          'icon-search.svg',
   // sm-chevron-down: 'icon-sm-chevron-down.svg',
-  // success:         'icon-success.svg',
   // user:            'icon-user.svg',
   // x-mark:          'icon-x-mark.svg'
 ) !default;

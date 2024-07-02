@@ -7,6 +7,9 @@ name:
   required: true
   placeholder: true
   icon: user
+  error-message:
+    en: Please enter your name
+    ru: Обязательно поле. Представьтесь, пожалуйста
 email:
   name: email
   type: email
@@ -17,6 +20,9 @@ email:
   required: true
   placeholder: true
   icon: mail
+  error-message:
+    en: Please enter a valid email
+    ru: Обязательное поле. Оставьте действующий email
 task:
   name: project-details
   type: textarea
@@ -27,6 +33,9 @@ task:
   required: true
   placeholder: true
   icon: task
+  error-message:
+    en: It's required. Describe the task
+    ru: Обязательное поле. Расскажите о задаче
 button:
   label:
     en: Get in Touch
@@ -35,12 +44,6 @@ button:
   id: form-contact-button
   type: submit
   params: 'data-sitekey="6LfN0vQpAAAAAEiD0yqPri7ktpnRO1uC4WlNakjr" data-callback="onSubmit" data-action="submit"'
-thanks:
-  en: '<div class="alert is-success" role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use xlink:href="/assets/img/components/icon/sprite.svg#icon-success"></use></svg>Thanks. The message should already be in my inbox. I will contact you shortly.</div>'
-  ru: '<div class="alert is-success" role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use xlink:href="/assets/img/components/icon/sprite.svg#icon-success"></use></svg>Спасибо. Сообщение уже должно попасть в мой почтовый ящик. Я свяжусь с вами в ближайшее время.</div>'
-error:
-  en: '<div class="alert is-error" role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use xlink:href="/assets/img/components/icon/sprite.svg#icon-error"></use></svg>Oops! There was a problem. Please make sure all required fields are filled out correctly.</div>'
-  ru: '<div class="alert is-error" role="alert"><svg class="icon" aria-hidden="true" focusable="false"><use xlink:href="/assets/img/components/icon/sprite.svg#icon-error"></use></svg>Вот зараза! Какая-то ошибка… Проверьте, пожалуйста, всё ли вы правильно заполнили.</div>'
 privacy:
   en: 'By clicking the button, you <a href="/en/privacy" target="_blank" rel="noopener noreferrer">consent to the collection, processing and use of your data</a>'
   ru: 'Нажимая на кнопку, вы даете <a href="/ru/privacy" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a>.'
