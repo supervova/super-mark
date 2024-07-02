@@ -36,12 +36,24 @@ logo: /img/components/logo/supermark-logomark.svg
 image: /img/supermark.png
 icon: /img/components/icon/icon-192.png
 
-
 fonts: Inter:wght@300;400;600
 rss_title: Блог SuperMark'а
 
 gtm: GTM-WXTNS9W
 apple_app_id: ''
+
+# http://pinterest.com/pin/create/button/?url={URI-encoded URL of the page to pin}&media={URI-encoded URL of the image to pin}&description={optional URI-encoded description}"
+# pinterest:
+
+social:
+  disqus: smark
+
+  facebook: supervova
+  linkedin: nikishin
+  instagram: supervova
+
+  vk:
+    api: ''
 
 # Site content creator / author Twitter @username
 author: '@supervova'

@@ -1,5 +1,5 @@
 {% assign company = site.data.base.company %}
-{% assign social = site.data.social-networks %}
+{% assign social = site.social %}
 
 <head>
   <meta charset="utf-8">
@@ -60,7 +60,7 @@
 {% endif %}
   <link rel="sitemap" href="/sitemap.xml" type="application/xml">
 
-  <link rel="icon" type="image/gif" href="{ site.assets }}/img/components/icon/favicon.gif" sizes="32x32">
+  <link rel="icon" type="image/gif" href="{{ site.assets }}/img/components/icon/favicon.gif" sizes="32x32">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="{{ site.assets }}/img/components/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ site.assets }}/img/components/icon/icon-192.png">
@@ -106,9 +106,9 @@
       "telephone": "{{ company.phone }}"
     },
     "sameAs": [
-      "https://www.facebook.com/{{ site.data.social-networks.facebook.acc }}",
-      "https://www.instagram.com/{{ site.data.social-networks.instagram.acc }}",
-      "https://www.linkedin.com/in/{{ site.data.social-networks.linkedin.acc }}"
+      "https://www.facebook.com/{{ social.facebook }}",
+      "https://www.instagram.com/{{ social.instagram }}",
+      "https://www.linkedin.com/in/{{ social.linkedin }}"
     ]
   }
 </script>
