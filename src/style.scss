@@ -65,6 +65,7 @@
 
   // Feedback
   @include meta.load-css('components/alert/alert');
+  @include meta.load-css('components/toast');
   @include meta.load-css('components/tooltip');
 
   // Form

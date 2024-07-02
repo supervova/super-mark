@@ -28,6 +28,14 @@
   }
 }
 
+.main__body figure {
+  margin-block: $size-line;
+
+  > img {
+    border-radius: $border-radius-sm;
+  }
+}
+
 .main__disqus {
   padding-top: rem(5) + $size-line * 3;
 }

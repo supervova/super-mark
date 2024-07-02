@@ -2,7 +2,7 @@
 <script src="{{ site.assets }}/js/main.js?{{ 'now' | date: '%Y%m%d-%H%M' }}"></script>
 
 {% if page.is-home %}
-<script src="https://www.google.com/recaptcha/api.js"></script>
+
 <script>
   /**
    * Opens the specified URL in a new browser tab or window.
@@ -18,79 +18,63 @@
   }
 
   /**
-   * Makes an AJAX request to the specified URL using the provided method and data.
-   *
-   * @param {string} method - The HTTP method for the request (e.g., 'GET', 'POST').
-   * @param {string} url - The URL to which the request is made.
-   * @param {Object} data - The data to be sent with the request (e.g., JSON object, FormData).
-   * @returns {Promise} A Promise that resolves to the response data from the server.
-   * @throws {Error} If the network response is not OK or if there is an error during the fetch operation.
-   */
-  function ajax(method, url, data) {
-    return fetch(url, {
-      method,
-      body: data,
-      headers: {
-        Accept: 'application/json',
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .catch((error) => {
-        throw new Error(
-          `There was a problem with the fetch operation: ${error.message}`
-        );
-      });
-  }
-
-  /**
    * Initializes the form submission handling.
    */
-  window.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-contact');
-    const button = document.getElementById('form-contact-button');
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('section-contacts');
     const status = document.getElementById('form-contact-status');
 
-    /**
-     * Handles the form submission success.
-     */
-    function handleSuccess() {
-      form.reset();
-      button.className = 'btn is-primary is-disabled';
-      status.innerHTML = '{{ site.data.home.form-contact.thanks[page.lang] }}';
-    }
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
-    /**
-     * Handles the form submission error.
-     */
-    function handleError() {
-      status.innerHTML = '{{ site.data.home.form-contact.error[page.lang] }}';
-    }
+      const formData = new FormData(form);
+      const language = document.documentElement.lang;
 
-    /**
-     * Handles the form submission.
-     *
-     * @param {Event} ev - The submit event.
-     */
-    function handleSubmit(ev) {
-      ev.preventDefault();
-      const data = new FormData(form);
-      ajax(form.method, form.action, data)
-        .then(() => handleSuccess())
-        .catch(() => handleError());
-    }
+      const removeStatusClass = () => {
+        status.classList.remove('is-success', 'is-error');
+        status.textContent = '';
+      };
 
-    form?.addEventListener('submit', handleSubmit);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          // Successful submission of the form
+          const message =
+            language === 'ru'
+              ? 'Сообщение получено. Ждите ответа'
+              : 'Message received. Wait for a response';
+          status.textContent = message;
+          status.classList.add('is-success');
+        } else {
+          // Submission error
+          const message =
+            language === 'ru'
+              ? 'Ошибка отправки. Попробуйте позже'
+              : 'Submission error. Please try again later';
+          status.textContent = message;
+          status.classList.add('is-error');
+        }
+      } catch (error) {
+        // Catch error
+        const message =
+          language === 'ru'
+            ? 'Ошибка отправки. Попробуйте позже'
+            : 'Submission error. Please try again later';
+        status.textContent = message;
+        status.classList.add('is-error');
+      }
+
+      // Remove status classes after 4 seconds
+      setTimeout(removeStatusClass, 4000);
+    });
   });
-
-  function onSubmit(token) {
-    document.getElementById('form-contact').submit();
-  }
-
 
   /**
    * Start the animation of the hero when his background pictures are loaded
@@ -139,6 +123,7 @@
 });
 </script>
 <script type="module" src="{{ site.assets }}/js/animation.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 {% endif %}
 
 <div id="fb-root"></div>

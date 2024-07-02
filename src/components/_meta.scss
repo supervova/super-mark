@@ -21,9 +21,29 @@
 .meta__comments {
   display: none;
 
+
+
+
+
   @media (--phone-l) {
+    border-radius: $border-radius-sm;
     display: block;
     margin-left: auto;
+    padding-block: $size-half;
+    padding-left: $size-1p5;
+    padding-right: $size-1;
+
+    &:active {
+      background: var(--color-background-2ry);
+      text-decoration: none;
+    }
+
+    @media (any-hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var(--color-background-2ry);
+        text-decoration: none;
+      }
+    }
   }
 }
 
