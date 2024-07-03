@@ -13,22 +13,25 @@
 // -----------------------------------------------------------------------------
 // #region
 :where(.section.is-services) {
-  .plan {
-    translate: 0 rem(120);
-    transition: translate $duration-lg $easing-appearance;
+
+  @media (--tablet) {
+    .plan {
+      translate: 0 rem(120);
+      transition: translate $duration-lg $easing-appearance;
+    }
+
+    .grid.is-animated .plan {
+      translate: 0 0;
+    }
+
+    .plan.is-100-hours {
+      transition-delay: $duration-xs;
+    }
+
+    .plan.is-full-time {
+      transition-delay: $duration-xs * 2;
+    }
   }
-
-  .grid.is-animated .plan {
-    translate: 0 0;
-  }
-}
-
-.plan.is-100-hours {
-  transition-delay: $duration-xs;
-}
-
-.plan.is-full-time {
-  transition-delay: $duration-xs * 2;
 }
 // #endregion
 

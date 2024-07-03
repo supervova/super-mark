@@ -2,38 +2,38 @@
 <script src="{{ site.assets }}/js/main.js?{{ 'now' | date: '%Y%m%d-%H%M' }}"></script>
 
 {% if page.is-home %}
-
 <script>
   /**
-   * Opens the specified URL in a new browser tab or window.
-   *
-   * @param {string} url - The URL to open.
-   * @param {string} windowName - The name of the new window.
-   * @return {Window} The newly opened window.
-   */
+  * Opens the specified URL in a new browser tab or window.
+  *
+  * @param {string} url - The URL to open.
+  * @param {string} windowName - The name of the new window.
+  * @return {Window} The newly opened window.
+  */
+  // eslint-disable-next-line no-unused-vars
   function openInNewTab(url, windowName) {
     const newWindow = window.open(url, windowName);
     newWindow.focus();
     return newWindow;
   }
 
-  /**
-   * Initializes the form submission handling.
-   */
   document.addEventListener('DOMContentLoaded', () => {
+    /**
+    * Initializes the form submission handling.
+    */
     const form = document.getElementById('section-contacts');
     const status = document.getElementById('form-contact-status');
+
+    const removeStatusClass = () => {
+      status.classList.remove('is-success', 'is-error');
+      status.textContent = '';
+    };
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const formData = new FormData(form);
       const language = document.documentElement.lang;
-
-      const removeStatusClass = () => {
-        status.classList.remove('is-success', 'is-error');
-        status.textContent = '';
-      };
 
       try {
         const response = await fetch(form.action, {
@@ -45,7 +45,6 @@
         });
 
         if (response.ok) {
-          // Successful submission of the form
           const message =
             language === 'ru'
               ? 'Сообщение получено. Ждите ответа'
@@ -53,7 +52,6 @@
           status.textContent = message;
           status.classList.add('is-success');
         } else {
-          // Submission error
           const message =
             language === 'ru'
               ? 'Ошибка отправки. Попробуйте позже'
@@ -62,7 +60,6 @@
           status.classList.add('is-error');
         }
       } catch (error) {
-        // Catch error
         const message =
           language === 'ru'
             ? 'Ошибка отправки. Попробуйте позже'
@@ -71,59 +68,55 @@
         status.classList.add('is-error');
       }
 
-      // Remove status classes after 4 seconds
       setTimeout(removeStatusClass, 4000);
     });
   });
 
-  /**
-   * Start the animation of the hero when his background pictures are loaded
-   */
   window.addEventListener('load', () => {
-  const el = document.getElementById('hero');
+    /**
+    * Start the animation of the hero when his background pictures are loaded
+    */
+    const el = document.getElementById('hero');
 
-  const getBackgroundImageUrls = (element) => {
-    const styles = window.getComputedStyle(element);
-    const { backgroundImage } = styles;
+    const getBackgroundImageUrls = (element) => {
+      const styles = window.getComputedStyle(element);
+      const { backgroundImage } = styles;
 
-    if (!backgroundImage || backgroundImage === 'none') return [];
+      if (!backgroundImage || backgroundImage === 'none') return [];
 
-    // Extract URLs from the background-image style
-    const urls = backgroundImage
-      .match(/url\((['"])?(.*?)\1\)/gi)
-      .map((match) => {
-        return match.slice(4, -1).replace(/["']/g, '');
-      });
+      // Extract URLs from the background-image style
+      const urls = backgroundImage
+        .match(/url\((['"])?(.*?)\1\)/gi)
+        .map((match) => match.slice(4, -1).replace(/["']/g, ''));
 
-    return urls;
-  };
+      return urls;
+    };
 
-  const preloadImages = (urls) => {
-    return Promise.all(
-      urls.map((url) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = url;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      })
-    );
-  };
+    const preloadImages = (urls) => {
+      return Promise.all(
+        urls.map((url) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = url;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        })
+      );
+    };
 
-  const checkAndAnimate = async (element) => {
-    const urls = getBackgroundImageUrls(element);
-    if (urls.length > 0) {
-      await preloadImages(urls);
-    }
-    element.classList.add('is-animated');
-  };
+    const checkAndAnimate = async (element) => {
+      const urls = getBackgroundImageUrls(element);
+      if (urls.length > 0) {
+        await preloadImages(urls);
+      }
+      element.classList.add('is-animated');
+    };
 
-  checkAndAnimate(el);
-});
+    checkAndAnimate(el);
+  });
 </script>
 <script type="module" src="{{ site.assets }}/js/animation.js"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
 {% endif %}
 
 <div id="fb-root"></div>
