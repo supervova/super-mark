@@ -40,10 +40,9 @@ button:
   label:
     en: Get in Touch
     ru: Оставить заявку
-  class: is-primary g-recaptcha
+  class: is-primary
   id: form-contact-button
   type: submit
-  params: 'data-sitekey="6LfN0vQpAAAAAEiD0yqPri7ktpnRO1uC4WlNakjr" data-callback="onSubmit" data-action="submit"'
 privacy:
   en: 'By clicking the button, you <a href="/en/privacy" target="_blank" rel="noopener noreferrer">consent to the collection, processing and use of your data</a>'
   ru: 'Нажимая на кнопку, вы даете <a href="/ru/privacy" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a>.'

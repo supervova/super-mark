@@ -92,7 +92,7 @@ layout: default
   </section>
 
   <!-- Contacts -->
-  <form class="section form" id="section-contacts" itemscope itemtype="https://schema.org/ContactPoint" action="https://formspree.io/xvozadqg" method="post" novalidate>
+  <form class="section form" id="section-contacts" itemscope itemtype="https://schema.org/ContactPoint" action="https://formspree.io/f/xvozadqg" method="post" novalidate>
     <div class="col-1/1">
       <h2 class="text-center">
         {{ site.data.home.headings.contacts[page.lang] }}
@@ -106,8 +106,7 @@ layout: default
         <p class="form__disclaimer">
           {{ site.data.home.form-contact.privacy[page.lang] }}
         </p>
-        <div class="form__feedback toast" id="form-contact-status" role="alert">Здравствуйте</div>
-
+        <div class="form__feedback toast" id="form-contact-status" role="alert"></div>
         {% include button.html data=site.data.home.form-contact.button %}
       </div>
     </div>
