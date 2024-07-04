@@ -9,6 +9,10 @@ Disallow: /CNAME
 
 Disallow: /?ref=*
 Disallow: /?slide=*
+Disallow: /en/about
+Disallow: /en/projects/
+Disallow: /ru/about
+Disallow: /ru/projects/
 
 # Don't block webmaster tools verification files
 
