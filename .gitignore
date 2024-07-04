@@ -1,0 +1,10 @@
+/_data
+/_includes
+/.DS_Store
+/.yarn
+/deploy.sh
+/node_modules
+/readme~.md
+/ru/_good-advice
+/ru/.DS_Store
+/src
