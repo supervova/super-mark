@@ -13,7 +13,7 @@ import inlineSvg from 'postcss-inline-svg';
 import newer from 'gulp-newer';
 import notify from 'gulp-notify';
 import postcss from 'gulp-postcss';
-import purge from '@fullhuman/postcss-purgecss';
+// import purge from '@fullhuman/postcss-purgecss';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
 import yargs from 'yargs';
@@ -23,7 +23,7 @@ import { root, paths } from './paths';
 const PRODUCTION = yargs.argv.p;
 const sassCompiler = gulpSass(sass);
 
-const selectorsToIgnore = ['button', /^(is-|has-)/, /^(.*?)(m|p)(t|b)-/];
+// const selectorsToIgnore = ['button', /^(is-|has-)/, /^(.*?)(m|p)(t|b)-/];
 
 /**
  * Processes Sass stylesheets, applies PostCSS transformations, and outputs CSS files.
@@ -32,7 +32,7 @@ const selectorsToIgnore = ['button', /^(is-|has-)/, /^(.*?)(m|p)(t|b)-/];
  * @param {string} destination - Destination directory for the processed CSS files.
  * @param {string[]} purgeContent - Array of file paths or globs to purge unused CSS.
  */
-const processStyles = (source, subtitle, destination, purgeContent) =>
+const processStyles = (source, subtitle, destination /* , purgeContent */) =>
   src(source)
     .pipe(newer(destination))
     .pipe(gulpPlumber({ errorHandler: notify.onError() }))

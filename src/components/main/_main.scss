@@ -28,6 +28,15 @@
   }
 }
 
+.main-subhead.is-smaller {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: var(--line-height-base);
+  letter-spacing: 0;
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+}
+
 .main__body figure {
   margin-block: $size-line;
 

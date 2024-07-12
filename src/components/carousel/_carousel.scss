@@ -93,12 +93,12 @@
 
 .carousel__button.is-prev {
   @media (--tablet) {
-    left: $size-line;
+    left: calc(50% - rem(280));
   }
 }
 
 .carousel__button.is-next {
   @media (--tablet) {
-    right: $size-line;
+    right: calc(50% - rem(280));
   }
 }

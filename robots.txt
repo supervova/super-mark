@@ -13,6 +13,8 @@ Disallow: /en/about
 Disallow: /en/projects/
 Disallow: /ru/about
 Disallow: /ru/projects/
+Disallow: /ru/blog/2022/stop-the-war
+Disallow: /ru/blog/2023/illustrator-meshes
 
 # Don't block webmaster tools verification files
 
