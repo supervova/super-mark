@@ -109,7 +109,7 @@ pagination:
   enabled: true
   debug: false
   per_page: 10
-  permalink: '/:num/'
+  permalink: '/:num'
   title: ':title — :num / :max'
   sort_field: 'date'
   sort_reverse: true
@@ -209,22 +209,26 @@ exclude:
   - .sass-cache
   - Gemfile
   - Gemfile.lock
+  - deploy.sh
   - gemfiles
   - gulpfile*
   - gulpfile.js
   - node_modules
   - package.json
   - readme.md
-  - src
-  - yarn-error.log
-  - yarn.lock
+  - readme~.md
   - ru/_good-advice/assets
   - ru/_good-advice/how-to
-  - ru/_good-advice/source
   - ru/_good-advice/index.md
+  - ru/_good-advice/source
   - ru/_good-advice/summary.md
-  - deploy.sh
-  - readme~.md
+  - src
+  - src/pages/boilerplate.md
+  - src/pages/html-ipsum.html
+  - src/pages/uncss/*.html
+  - src/pages/wip.md
+  - yarn-error.log
+  - yarn.lock
 
 theme: null
 
