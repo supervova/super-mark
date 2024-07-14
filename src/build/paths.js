@@ -73,7 +73,12 @@ const paths = {
   },
 
   video: {
-    src: [`${srcBase}/**/*.+(mp4|ogg|ogv|webm)`, `${srcBase}/**/video.zip`],
+    src: [
+      `${srcBase}/**/*.+(mp4|ogg|ogv|webm)`,
+      `!${srcBase}/assets/**/*.+(mp4|ogg|ogv|webm)`,
+      `${srcBase}/assets/video/**/*.+(mp4|ogg|ogv|webm)`,
+      `${srcBase}/**/video.zip`,
+    ],
     dest: `${destAssets}/video`,
   },
 
