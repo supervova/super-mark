@@ -8,7 +8,7 @@
     name: "Illustrator"
     percentage: 95
   secondary:
-    name: "HTML, Handlebars, Twig etc"
+    name: "HTML, Pug, Twig etc"
     percentage: 95
 - primary:
     name: "CSS, Sass, PostCSS"

@@ -304,11 +304,7 @@
 
 @mixin focus-ring {
   &:focus-visible {
-    box-shadow: var(--box-shadow-focus-outline);
-    outline: 0;
-
-    // outline: $size-half solid var(--box-shadow-focus-outline);
-    // outline-offset: 2px;
+    outline: var(--size-half) solid var(--box-shadow-focus-outline);
   }
 }
 

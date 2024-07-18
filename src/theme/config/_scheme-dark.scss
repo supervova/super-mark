@@ -9,6 +9,27 @@
   Shadows
   Icons
 
+  // Backgrounds / Surfaces
+  --color-background-base: var(--color-palette-neutral10);
+  --color-2ry: var(--color-palette-2ry80);
+  --color-background-3ry: var(--color-palette-3ry80);
+
+  // Inks
+  --color-ink-base: var(--color-palette-neutral90);
+  --color-ink-on-2ry: var(--color-palette-2ry20);
+  --color-ink-on-3ry: var(--color-palette-3ry20);
+  --color-ink-border: var(--color-palette-neutral-variant60);
+
+  // Semantic
+  --color-error-background: var(--color-palette-error80);
+  --color-ink-error: var(--color-palette-error20);
+
+  // Shadow
+  --color-shadow: var(--color-palette-neutral0);
+
+  etc
+
+
   Or set the minimal dark mode */
   * {
     background-color: inherit;
