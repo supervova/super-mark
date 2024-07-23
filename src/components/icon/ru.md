@@ -4,7 +4,7 @@
 
 ```pug
 svg.icon(aria-hidden='true' focusable='false')
-  use(href='/images/theme/base/graphics/sprite.svg#icon-name')
+  use(href='/assets/img/components/icon/sprite.svg#icon-name')
 ```
 
 ## Adapt SVG Favicon for dark mode

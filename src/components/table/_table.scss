@@ -1,6 +1,6 @@
 // stylelint-disable selector-no-qualifying-type
 // Use .text-end and .text-center utilities to change default alignment
-@use '../../theme/config' as *;
+@use '../../styles/config' as *;
 
 table {
   --table-border-color: var(--color-ink-border);
