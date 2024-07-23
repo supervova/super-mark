@@ -73,9 +73,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ site.fonts }}&display=swap">
 {% endif %}
-  <link rel="stylesheet" href="{{ site.assets }}/css/style.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
+  <link rel="stylesheet" href="{{ site.assets }}/css/main.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
 {% if page.layout == 'post' %}
   <link rel="stylesheet" href="{{ site.assets }}/css/blog.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
+{% endif %}
+{% if page.layout == 'guestbook' %}
+  <link rel="stylesheet" href="{{ site.assets }}/css/guestbook.css{% if jekyll.environment == 'production' %}?{{ 'now' | date: '%Y%m%d-%H%M' }}{% endif %}">
 {% endif %}
 {% if page.styles-addons %}
   {% for style in page.styles-addons %}

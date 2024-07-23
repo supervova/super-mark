@@ -1,6 +1,6 @@
 @use 'sass:meta';
-@use '../../theme/config' as *;
-@use '../../theme/config/custom';
+@use '../../styles/config' as *;
+@use '../../styles/config/custom';
 
 @import '../../components/carousel/carousel';
 @import '../../components/chart/chart';

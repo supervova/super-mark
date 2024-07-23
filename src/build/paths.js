@@ -17,12 +17,13 @@ const destAssets = root.dest.assets;
 const paths = {
   css: {
     src: {
-      main: `${srcBase}/style.scss`,
+      main: `${srcBase}/main.scss`,
       front: `${srcBase}/pages/home/home.scss`,
       blog: `${srcBase}/pages/blog/blog.scss`,
+      guestbook: `${srcBase}/pages/guestbook/guestbook.scss`,
     },
     watch: `${srcBase}/**/*.scss`,
-    tmp: `${srcBase}/theme/css`,
+    tmp: `${srcBase}/styles/css`,
     dest: `${destAssets}/css`,
   },
 
@@ -51,7 +52,7 @@ const paths = {
     },
     watch: [
       `${srcBase}/**/*.+(jpg|jpeg|png|svg|gif|webp)`,
-      `!${srcBase}/theme/base/graphics/sprite/**/*`,
+      `!${srcBase}/components/icon/sprite/**/*`,
     ],
     dest: `${destAssets}/img`,
   },
@@ -59,7 +60,7 @@ const paths = {
   js: {
     src: {
       main: `${srcBase}/main.js`,
-      standAlone: [`${srcBase}/theme/helpers/animation.js`],
+      standAlone: [`${srcBase}/styles/helpers/animation.js`],
     },
     watch: `${srcBase}/**/*.js`,
     dest: `${destAssets}/js`,

@@ -116,12 +116,22 @@ export function cssFront(done) {
 }
 
 /**
- * Task for processing front-end Sass stylesheets.
+ * Task for processing blog Sass stylesheets.
  * @param {function} done - Callback function to signal task completion.
  */
 export function cssBlog(done) {
   return processStyles(paths.css.src.blog, 'blog', paths.css.dest, [
     `${root.src}/pages/uncss/blog.html`,
+  ]).on('end', done);
+}
+
+/**
+ * Task for processing guestbook Sass stylesheets.
+ * @param {function} done - Callback function to signal task completion.
+ */
+export function cssGuestbook(done) {
+  return processStyles(paths.css.src.guestbook, 'guestbook', paths.css.dest, [
+    `${root.src}/pages/uncss/guestbook.html`,
   ]).on('end', done);
 }
 
@@ -136,5 +146,5 @@ export function cssBlog(done) {
 //   done();
 // }
 
-const css = parallel(cssFront, cssBlog, cssMain);
+const css = parallel(cssFront, cssGuestbook, cssBlog, cssMain);
 export default css;

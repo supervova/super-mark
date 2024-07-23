@@ -5,23 +5,23 @@
 // to the very beginning of styles
 
 @use 'sass:meta';
-@use 'theme/config' as *;
-@use 'theme/config/custom';
-@use 'theme/config/root';
-@use 'theme/config/scheme-light';
+@use 'styles/config' as *;
+@use 'styles/config/custom';
+@use 'styles/config/root';
+@use 'styles/config/scheme-light';
 
 // Uncomment if it's needed
-// @use 'theme/config/scheme-dark';
+// @use 'styles/config/scheme-dark';
 
 @layer base, components, pages, helpers, print;
 
 @layer base {
-  @include meta.load-css('theme/reset');
-  @include meta.load-css('theme/doc');
-  @include meta.load-css('theme/content/headings');
-  @include meta.load-css('theme/content/copy');
-  @include meta.load-css('theme/content/media');
-  @include meta.load-css('theme/layout/containers');
+  @include meta.load-css('styles/reset');
+  @include meta.load-css('styles/doc');
+  @include meta.load-css('styles/content/headings');
+  @include meta.load-css('styles/content/copy');
+  @include meta.load-css('styles/content/media');
+  @include meta.load-css('styles/layout/containers');
 }
 
 // Uncomment if it's needed
@@ -41,7 +41,7 @@
   @include meta.load-css('components/form/checkbox-radio');
   @include meta.load-css('components/form/select');
   @include meta.load-css('components/button/button');
-  @include meta.load-css('theme/layout/grid');
+  @include meta.load-css('styles/layout/grid');
 }
 
 @layer components {
@@ -58,7 +58,9 @@
   @include meta.load-css('components/section/section');
 
   // Content
+  @include meta.load-css('components/avatar');
   @include meta.load-css('components/list/ol-nested');
+  @include meta.load-css('components/message');
   @include meta.load-css('components/meta');
   @include meta.load-css('components/table/table');
   @include meta.load-css('components/tag/tag');
@@ -83,16 +85,16 @@
 }
 
 @layer helpers {
-  @include meta.load-css('theme/helpers/accessibility');
-  @include meta.load-css('theme/helpers/animation');
-  @include meta.load-css('theme/helpers/content');
-  @include meta.load-css('theme/helpers/display');
-  @include meta.load-css('theme/helpers/flex');
-  @include meta.load-css('theme/helpers/reduce-motion');
-  @include meta.load-css('theme/helpers/spacing');
-  @include meta.load-css('theme/helpers/width');
+  @include meta.load-css('styles/helpers/accessibility');
+  @include meta.load-css('styles/helpers/animation');
+  @include meta.load-css('styles/helpers/content');
+  @include meta.load-css('styles/helpers/display');
+  @include meta.load-css('styles/helpers/flex');
+  @include meta.load-css('styles/helpers/reduce-motion');
+  @include meta.load-css('styles/helpers/spacing');
+  @include meta.load-css('styles/helpers/width');
 }
 
 @layer print {
-  @include meta.load-css('theme/print');
+  @include meta.load-css('styles/print');
 }
