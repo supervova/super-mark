@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../config' as *;
+@use '../abstracts' as *;
 
 // The semi-transparent border in the inner shadow style.
 .border {
@@ -45,7 +45,6 @@ video {
   max-width: 100%;
   height: auto;
 }
-
 
 :where(.main, .content, .col-1\/1) img:not([class]):not(figure img) {
   margin-bottom: $size-line;

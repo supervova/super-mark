@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * BASE
@@ -48,7 +48,7 @@
 
   &:disabled {
     filter: none;
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 }
@@ -115,7 +115,6 @@ label:has(> [type='checkbox'], > [type='radio']) {
   padding-bottom: $size-2p5;
 }
 // #endregion
-
 
 /* -----------------------------------------------------------------------------
  * INVALID

@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 .section.is-services .grid {
   --gap: #{$size-line};
@@ -67,7 +67,7 @@
     font-family: $font-family-title;
     font-size: var(--font-size-title);
     font-weight: 500;
-    letter-spacing: -.03em;
+    letter-spacing: -0.03em;
   }
 
   > small {
@@ -100,7 +100,6 @@
 }
 
 .is-hourly-wage h4 {
-
   &::before {
     background-image: url('#{$site-assets}/img/pages/home/prices-violet.svg');
     background-position: right $size-line bottom;
@@ -131,13 +130,10 @@
 
   @media (--tablet) {
     &::before {
-      background-image:
-        url('#{$site-assets}/img/pages/home/prices-elastigirl.svg'),
+      background-image: url('#{$site-assets}/img/pages/home/prices-elastigirl.svg'),
         url('#{$site-assets}/img/pages/home/prices-mr-incredible.svg'),
         url('#{$site-assets}/img/pages/home/prices-ovals.svg');
-      background-position:
-        center bottom,
-        right -220px bottom,
+      background-position: center bottom, right -220px bottom,
         right -220px bottom;
     }
   }
@@ -145,12 +141,9 @@
 
 .is-full-time h4 {
   &::before {
-    background-image:
-      url('#{$site-assets}/img/pages/home/prices-mr-incredible.svg'),
+    background-image: url('#{$site-assets}/img/pages/home/prices-mr-incredible.svg'),
       url('#{$site-assets}/img/pages/home/prices-ovals.svg');
-    background-position:
-      right -10px bottom,
-      right bottom;
+    background-position: right -10px bottom, right bottom;
   }
 }
 

@@ -1,12 +1,10 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .list.is-nested-ol {
   counter-reset: item;
   list-style-type: none;
-  padding-top:var(--padding-top-base);
-  padding-bottom:var(--padding-bottom-base);
-
-
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
 
   ol {
     margin-bottom: 0;

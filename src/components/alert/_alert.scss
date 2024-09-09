@@ -1,11 +1,9 @@
 @use 'sass:math';
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .alert {
   border-radius: $border-radius-xs;
-  box-shadow:
-    inset 0 0 0 1px var(--color-ink-border),
-    var(--box-shadow-z1);
+  box-shadow: inset 0 0 0 1px var(--color-ink-border), var(--box-shadow-z1);
   color: var(--color-ink-neutral-2ry);
   margin-bottom: $size-line;
   padding: var(--padding-x-box);

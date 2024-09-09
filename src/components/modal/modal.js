@@ -93,13 +93,6 @@ const initModals = () => {
     }
   });
 
-  // Close with Esc key
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && visibleModal) {
-      closeModal(visibleModal);
-    }
-  });
-
   // Close with 'Cancel' and 'X' buttons
   document.querySelectorAll('[data-role="close-modal"]').forEach((btn) => {
     btn.addEventListener('click', (event) => {

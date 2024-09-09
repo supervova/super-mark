@@ -1,10 +1,12 @@
 // 🖼 COPY FILES WITHOUT OPTIMIZATION
 
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
 import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import { paths } from './paths';
+import { paths } from './paths.js';
+
+const { src, dest } = gulp;
 
 /**
  * Copies video files to the destination directory without optimization.

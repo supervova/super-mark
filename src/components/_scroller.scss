@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 // Wrapper to make tables and any other content responsive across all viewports
 
@@ -12,41 +12,38 @@
   */
 
   --scroller-display: block;
-  --scroller-shadow:
-    hsl(var(--color-ink-shadow) / .15),
-    hsl(var(--color-ink-shadow) / .13) 3%,
-    hsl(var(--color-ink-shadow) / .11) 11%,
-    hsl(var(--color-ink-shadow) / .09) 23%,
-    hsl(var(--color-ink-shadow) / .05) 38%,
-    hsl(var(--color-ink-shadow) / .03) 57%,
-    hsl(var(--color-ink-shadow) / .01) 78%,
-    hsl(var(--color-ink-shadow) / 0);
+  --scroller-shadow: hsl(var(--color-ink-shadow) / 0.15),
+    hsl(var(--color-ink-shadow) / 0.13) 3%,
+    hsl(var(--color-ink-shadow) / 0.11) 11%,
+    hsl(var(--color-ink-shadow) / 0.09) 23%,
+    hsl(var(--color-ink-shadow) / 0.05) 38%,
+    hsl(var(--color-ink-shadow) / 0.03) 57%,
+    hsl(var(--color-ink-shadow) / 0.01) 78%, hsl(var(--color-ink-shadow) / 0);
   --scroller-content-bg: var(--color-background-base);
-  --scroller-content-bg-transparent: hsl(var(--h) var(--s-neutral) var(--l-bg-base) / 0);
+  --scroller-content-bg-transparent: hsl(
+    var(--h) var(--s-neutral) var(--l-bg-base) / 0
+  );
   // Use this w/ shadows and sticky row headers
   --table-col-header-width: 0;
 
   background:
     // The covers hide shadows at the end points
     linear-gradient(
-      90deg,
-      var(--scroller-content-bg) 50%,
-      var(--scroller-content-bg-transparent)
-    ) var(--table-col-header-width) 0,
+        90deg,
+        var(--scroller-content-bg) 50%,
+        var(--scroller-content-bg-transparent)
+      )
+      var(--table-col-header-width) 0,
     linear-gradient(
-      90deg,
-      var(--scroller-content-bg-transparent),
-      var(--scroller-content-bg) 50%
-    ) 100% 0,
+        90deg,
+        var(--scroller-content-bg-transparent),
+        var(--scroller-content-bg) 50%
+      )
+      100% 0,
     // Shadows. We can't using PostCSS shadow easing within multiple backgrounds
-    linear-gradient(
-      90deg,
-      var(--scroller-shadow)
-    ) var(--table-col-header-width) 0,
-    linear-gradient(
-      270deg,
-      var(--scroller-shadow)
-    ) 100% 0,
+    linear-gradient(90deg, var(--scroller-shadow)) var(--table-col-header-width)
+      0,
+    linear-gradient(270deg, var(--scroller-shadow)) 100% 0,
     var(--scroller-content-bg);
   // ⚠️ background-attachment property is not supported on iOS Safari
   background-attachment: local, local, scroll, scroll;

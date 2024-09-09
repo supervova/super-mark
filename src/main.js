@@ -1,10 +1,10 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
-import copyLink from './components/menu/copyLink';
-import initHeaderObserver from './components/header/header';
-import initModals from './components/modal/modal';
-import initPopovers from './components/popover/popover'; // Close popovers on Esc
-import initTabs from './components/tabs/tabs';
+import copyLink from './components/menu/copyLink.js';
+import initHeaderObserver from './components/header/header.js';
+import initModals from './components/modal/modal.js';
+import initPopovers from './components/popover/popover.js'; // Close popovers on Esc
+import initTabs from './components/tabs/tabs.js';
 
 // Toggle search form on mobiles
 // import './components/js/header';

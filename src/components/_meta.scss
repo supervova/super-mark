@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 .meta {
   display: flex;
@@ -17,13 +17,8 @@
   translate: 0 -1px;
 }
 
-
 .meta__comments {
   display: none;
-
-
-
-
 
   @media (--phone-l) {
     border-radius: $border-radius-sm;

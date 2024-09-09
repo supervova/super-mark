@@ -1,6 +1,6 @@
 @use 'sass:meta';
-@use '../../styles/config' as *;
-@use '../../styles/config/custom';
+@use '../../styles/abstracts' as *;
+@use '../../styles/abstracts/custom';
 
 @import '../../components/carousel/carousel';
 @import '../../components/chart/chart';
@@ -13,7 +13,6 @@
 // -----------------------------------------------------------------------------
 // #region
 :where(.section.is-services) {
-
   @media (--tablet) {
     .plan {
       translate: 0 rem(120);
@@ -48,7 +47,6 @@
   }
 }
 
-
 // :where(.section.is-about) {
 //   .card.is-kpi {
 //     transition: translate $duration-lg $easing-appearance;
@@ -67,7 +65,6 @@
 //   }
 // }
 // #endregion
-
 
 // #region: Skills
 

@@ -1,6 +1,6 @@
 @use 'sass:meta';
-@use '../../styles/config' as *;
-@use '../../styles/config/custom';
+@use '../../styles/abstracts' as *;
+@use '../../styles/abstracts/custom';
 
 :where(.page.is-guestbook) .main {
   flex-grow: 1;
@@ -31,4 +31,3 @@
     display: none;
   }
 }
-

@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .modal[id='modal-search'] {
   &::before,
@@ -24,7 +24,6 @@
       translate: 0 -100%;
     }
   }
-
 }
 
 .modal:not([open]) > .form.is-search,
@@ -33,4 +32,3 @@
     translate: 0 -100%;
   }
 }
-

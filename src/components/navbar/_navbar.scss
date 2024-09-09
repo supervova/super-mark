@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 // -----------------------------------------------------------------------------
 // BASE - MENU
@@ -104,7 +104,7 @@
     background: var(--color-ink-min);
   }
 
-  @media(any-hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       background: var(--color-ink-min);
       text-decoration: none;
@@ -134,9 +134,8 @@
 // -----------------------------------------------------------------------------
 // #region
 .navbar .is-more summary {
-  @include menu-item;
-
   cursor: pointer;
+  @include menu-item;
 
   @media (--tablet-only) {
     border-radius: 0;
@@ -216,7 +215,7 @@
     background: var(--color-ink-min);
   }
 
-  @media(any-hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       background: var(--color-ink-min);
     }

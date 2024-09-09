@@ -1,7 +1,7 @@
 // stylelint-disable selector-no-qualifying-type
 
 @use 'sass:math';
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * CONTAINERS
@@ -131,8 +131,7 @@ input:not([type='checkbox']):not([type='radio']):not([type='submit']):not([type=
   display: block;
   padding-block: var(--padding-y-input);
   overflow: visible;
-  transition:
-    box-shadow $easing-base $duration-xxs,
+  transition: box-shadow $easing-base $duration-xxs,
     color $easing-base $duration-xxs;
   width: 100%;
   max-width: var(--width-readable);

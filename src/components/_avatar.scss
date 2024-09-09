@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 .avatar {
   background-color: var(--color-brand-background-dark);
@@ -33,4 +33,3 @@
 .avatar.is-she::before {
   content: '👩‍🦰';
 }
-

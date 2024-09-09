@@ -1,7 +1,8 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 // Container
-/* details */.popover {
+/* details */
+.popover {
   --popover-body-background: var(--color-background-2ry);
   --popover-body-border-radius: #{$border-radius-base};
   --popover-body-border: 0;
@@ -62,7 +63,6 @@
 // Share
 
 .popover.is-share {
-
   &[open] summary {
     background-color: var(--color-ink-min);
   }

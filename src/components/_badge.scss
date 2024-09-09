@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 .badge {
   background-color: var(--color-brand-primary);
@@ -13,17 +13,15 @@
   // Minimum width should be equal the height to prevent thin badges
   min-width: calc(var(--font-size-small) + $size-half);
 
-
   [role='menuitem'] & {
     margin-left: auto;
     margin-inline-start: auto;
   }
 
-  /* sup */&.badge.is-sup {
+  /* sup */
+  &.badge.is-sup {
     margin-left: 0;
     margin-inline-start: 0;
     top: -2px;
   }
 }
-
-

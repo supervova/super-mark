@@ -1,4 +1,4 @@
-@use 'config' as *;
+@use 'abstracts' as *;
 
 html {
   -moz-osx-font-smoothing: grayscale;
@@ -7,6 +7,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   color-scheme: light dark;
   font-family: $font-family-base;
+  font-size: var(--font-size-doc);
   font-synthesis: none;
   font-weight: 400;
   // https://caniuse.com/?search=hanging-punctuation
@@ -14,15 +15,13 @@ html {
   text-rendering: optimizeLegibility;
   // Prevent adjustments of font size after orientation changes in iOS
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-
-  &:focus-within {
-    scroll-behavior: smooth;
-  }
 }
 
 body {
+  accent-color: var(--color-brand-primary);
   background: var(--color-background-base)
     url('#{$site-assets}/img/pages/background.svg') 50% rem(160) no-repeat;
   color: var(--color-ink-base);

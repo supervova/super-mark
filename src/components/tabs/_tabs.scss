@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .tabs {
   --panel-height: auto;
@@ -58,12 +58,12 @@
   display: grid;
   place-content: center;
 
+  // logical height: 100%
+  block-size: 100%;
+
   > * {
     grid-area: 1 / 1;
   }
-
-  // logical height: 100%
-  block-size: 100%;
 
   // Carousel-like behavior related
   // grid-auto-flow: column;

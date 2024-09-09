@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .icon {
   --icon-fill: #{$color-icon-fill};
@@ -10,9 +10,7 @@
   // Prevent the icon from shrinking inside a flex container.
   flex-shrink: 0;
   overflow: hidden;
-  transition:
-    fill $duration-xxs,
-    opacity $duration-xxs;
+  transition: fill $duration-xxs, opacity $duration-xxs;
   vertical-align: middle;
 
   width: $size-icon-xy;

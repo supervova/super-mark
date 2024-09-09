@@ -1,6 +1,6 @@
 // 🖼 IMAGES
 
-import { src, dest, parallel } from 'gulp';
+import gulp from 'gulp';
 import newer from 'gulp-newer';
 import size from 'gulp-size';
 import imagemin from 'gulp-imagemin';
@@ -8,24 +8,42 @@ import imageminGIF from 'imagemin-gifsicle';
 import imageminJPG from 'imagemin-mozjpeg';
 import imageminPNG from 'imagemin-pngquant';
 import imageminSVG from 'imagemin-svgo';
-import { paths } from './paths';
+import { paths } from './paths.js';
+
+const { src, dest, parallel } = gulp;
 
 /**
  * Minifies images with various optimizations.
  * @param {string} source - Source directory for images.
  * @param {string} subtitle - Subtitle used for logging purposes.
+ * @returns {NodeJS.WritableStream} The Gulp stream.
  */
 function minifyImages(source, subtitle) {
-  return src(source)
+  return src(source, { encoding: false })
     .pipe(newer(paths.img.dest))
     .pipe(
       imagemin(
         [
           imageminGIF({ interlaced: true, optimizationLevel: 3 }),
           imageminJPG({ quality: 85 }),
-          imageminPNG([0.8, 0.9]),
+          imageminPNG(),
           imageminSVG({
-            plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+            plugins: [
+              {
+                name: 'removeViewBox',
+                active: false,
+              },
+              {
+                name: 'cleanupIds',
+                params: {
+                  remove: false,
+                  minify: false,
+                  preserve: [],
+                  preservePrefixes: [],
+                  force: false,
+                },
+              },
+            ],
           }),
         ],
         { verbose: true }
@@ -37,20 +55,18 @@ function minifyImages(source, subtitle) {
 
 /**
  * Task for processing graphics images.
- * @param {function} done - Callback function to signal task completion.
+ * @returns {NodeJS.WritableStream} The Gulp stream.
  */
-
-export function imgGraphics(done) {
-  return minifyImages(paths.img.src.graphics, 'graphics').on('end', done);
+export function imgGraphics() {
+  return minifyImages(paths.img.src.graphics, 'graphics');
 }
 
 /**
  * Task for processing content images.
- * @param {function} done - Callback function to signal task completion.
+ * @returns {NodeJS.WritableStream} The Gulp stream.
  */
-
-export function imgContent(done) {
-  return minifyImages(paths.img.src.content, 'content').on('end', done);
+export function imgContent() {
+  return minifyImages(paths.img.src.content, 'content');
 }
 
 // Parallel task for image processing

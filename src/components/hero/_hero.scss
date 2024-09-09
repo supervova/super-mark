@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 .hero {
   display: flex;
@@ -13,8 +13,7 @@
 // Main image
 .hero > figure {
   aspect-ratio: 1;
-  background:
-    url('#{$site-assets}/img/pages/home/hero.png') 50% 50% no-repeat,
+  background: url('#{$site-assets}/img/pages/home/hero.png') 50% 50% no-repeat,
     url('#{$site-assets}/img/pages/home/hero-space.png') 50% 50% no-repeat;
   background-size: cover;
   position: relative;
@@ -41,22 +40,20 @@
   }
 
   // Border
-  &::after{
-    background:
-      url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px no-repeat,
-      url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px) bottom (-1px) no-repeat,
-      url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left (-1px) bottom $size-2 no-repeat;
+  &::after {
+    background: url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px
+        no-repeat,
+      url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px) bottom
+        (-1px) no-repeat,
+      url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left (-1px) bottom
+        $size-2 no-repeat;
     border: 1px solid var(--color-ink-inverse-border);
     inset: $size-2p5;
   }
 
   @media (--tablet) {
-    background-position:
-      50% rem(216),
-      50% 50%;
-    background-attachment:
-      fixed,
-      scroll;
+    background-position: 50% rem(216), 50% 50%;
+    background-attachment: fixed, scroll;
     background-size: rem(648);
     border-radius: $border-radius-lg;
 
@@ -75,20 +72,24 @@
 
     &::after {
       inset: $size-6;
-      background:
-        url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px no-repeat,
-        url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px) bottom (-1px) no-repeat,
-        url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left rem(176) bottom $size-2 no-repeat,
-        url('#{$site-assets}/img/pages/home/hero-barcode.svg') right $size-3 bottom 0 no-repeat,
-        url('#{$site-assets}/img/pages/home/hero-superpower.svg') left $size-2 top rem(70) no-repeat,
-        url('#{$site-assets}/img/pages/home/hero-icon.svg') left $size-2 top $size-2 no-repeat;
-        transition-delay: $duration-xs * 2;
+      background: url('#{$site-assets}/img/pages/home/hero-dots-tl.svg') -1px -1px
+          no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-dots-br.svg') right (-1px)
+          bottom (-1px) no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-arrow-b.svg') left rem(176)
+          bottom $size-2 no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-barcode.svg') right $size-3
+          bottom 0 no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-superpower.svg') left $size-2
+          top rem(70) no-repeat,
+        url('#{$site-assets}/img/pages/home/hero-icon.svg') left $size-2 top
+          $size-2 no-repeat;
+      transition-delay: $duration-xs * 2;
     }
   }
 
   @media #{$mq-resolution-retina} {
-    background-image:
-      url('#{$site-assets}/img/pages/home/hero@2x.png'),
+    background-image: url('#{$site-assets}/img/pages/home/hero@2x.png'),
       url('#{$site-assets}/img/pages/home/hero-space@2x.png');
   }
 }
@@ -110,7 +111,8 @@
 }
 
 .hero__overlay.is-grid {
-  background: url('#{$site-assets}/img/pages/home/hero-grid.svg') $size-2p5 $size-2p5 no-repeat;
+  background: url('#{$site-assets}/img/pages/home/hero-grid.svg') $size-2p5
+    $size-2p5 no-repeat;
   mix-blend-mode: screen;
 
   @media (--tablet) {
@@ -119,7 +121,8 @@
 }
 
 .hero__overlay.is-japanese {
-  background: url('#{$site-assets}/img/pages/home/hero-japanese.svg') right $size-4 bottom $size-2p5 no-repeat;
+  background: url('#{$site-assets}/img/pages/home/hero-japanese.svg') right
+    $size-4 bottom $size-2p5 no-repeat;
   mix-blend-mode: exclusion;
 
   @media (--tablet) {
@@ -131,7 +134,8 @@
   display: none;
 
   @media (--tablet) {
-    background: url('#{$site-assets}/img/pages/home/hero-43.svg') left rem(96) bottom rem(80) no-repeat;
+    background: url('#{$site-assets}/img/pages/home/hero-43.svg') left rem(96)
+      bottom rem(80) no-repeat;
     mix-blend-mode: overlay;
     display: block;
   }
@@ -146,7 +150,7 @@
   height: $size-line * 4;
 
   @media (--phone-l) {
-    top: 27%
+    top: 27%;
   }
 
   @media (--tablet) {
@@ -193,7 +197,8 @@
 
   @media (--tablet) {
     border-radius: $border-radius-base 0 0 $border-radius-base;
-    background: url('#{$site-assets}/img/pages/home/hero-space.png') 50% 50% no-repeat;
+    background: url('#{$site-assets}/img/pages/home/hero-space.png') 50% 50%
+      no-repeat;
     display: block;
     position: absolute;
     top: rem(144);
@@ -280,6 +285,7 @@
   box-shadow: inset 0 2px 0 0 hsl(0 0% 100% / 0.5),
     inset 0 0 0 1px hsl(0 0% 100% / 0.2), var(--box-shadow-z1);
   color: var(--color-ink-2ry);
+  line-height: var(--height-btn);
   text-shadow: 0 1px 0 var(--color-ink-inverse-max);
   overflow: visible;
   position: relative;
@@ -323,10 +329,25 @@
 // 5)
 // stylelint-disable block-opening-brace-space-before, declaration-block-single-line-max-declarations, declaration-block-semicolon-newline-after
 @keyframes rotating-label {
-  0%   { opacity: 0; }
-  1%   { opacity: 0; translate: 0; } // 1
-  4%   { opacity: 1; } // 2
-  48%  { opacity: 1; translate: 0; } //3
-  50%  { opacity: 0; translate: 0 (-$size-1); } // 4
-  100% { opacity: 0; } // 5
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+    translate: 0;
+  } // 1
+  4% {
+    opacity: 1;
+  } // 2
+  48% {
+    opacity: 1;
+    translate: 0;
+  } //3
+  50% {
+    opacity: 0;
+    translate: 0 (-$size-1);
+  } // 4
+  100% {
+    opacity: 0;
+  } // 5
 }

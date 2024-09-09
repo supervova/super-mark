@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 // -----------------------------------------------------------------------------
 // CHART BARS: TABLE
@@ -67,7 +67,7 @@
 }
 
 .table__caption {
-  background-image:  var(--color-brand-gradient-triple);
+  background-image: var(--color-brand-gradient-triple);
   border-radius: $border-radius-sm;
   color: var(--color-ink-inverse-base);
   font-size: var(--font-size-small);
