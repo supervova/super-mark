@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 // PAGINATION
 
@@ -25,11 +25,11 @@
 
 // Next and Prev Links
 .pagination__link {
-  @include button-base;
-
   border-radius: $border-radius-sm;
   padding-block: $size-1;
   padding-inline: $size-2;
+
+  @include button-base;
 
   @media (any-hover: hover) and (pointer: fine) {
     &:hover {

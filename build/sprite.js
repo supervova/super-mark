@@ -1,8 +1,10 @@
 // 💙 SVG SPRITE
 
-import { src, dest } from 'gulp';
+import gulp from 'gulp';
 import svgSprite from 'gulp-svg-sprite';
-import { paths } from './paths';
+import { paths } from './paths.js';
+
+const { src, dest } = gulp;
 
 /**
  * Generates SVG sprite from individual SVG files.

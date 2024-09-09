@@ -1,6 +1,6 @@
 @use 'sass:meta';
-@use '../../styles/config' as *;
-@use '../../styles/config/custom';
+@use '../../styles/abstracts' as *;
+@use '../../styles/abstracts/custom';
 
 @import '../../components/accordion/accordion';
 @import '../../components/eyebrow';
@@ -33,7 +33,7 @@
     }
 
     @media (--tablet) {
-      display: none
+      display: none;
     }
   }
 }
@@ -102,7 +102,6 @@
   top: 0;
   left: 0;
 }
-
 
 .is-articles-list .eyebrow {
   display: none;

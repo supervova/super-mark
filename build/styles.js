@@ -1,7 +1,7 @@
 // 🎨 STYLES
 
 /* eslint-disable no-console */
-import { src, dest, parallel } from 'gulp';
+import gulp from 'gulp';
 
 import * as sass from 'sass';
 import cssnano from 'cssnano';
@@ -17,10 +17,13 @@ import postcss from 'gulp-postcss';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
 import yargs from 'yargs';
-import bsInstance from './browsersync';
-import { root, paths } from './paths';
+import { hideBin } from 'yargs/helpers';
+import bsInstance from './browsersync.js';
+import { root, paths } from './paths.js';
 
-const PRODUCTION = yargs.argv.p;
+const { src, dest, parallel } = gulp;
+const { argv } = yargs(hideBin(process.argv));
+const PRODUCTION = argv.p;
 const sassCompiler = gulpSass(sass);
 
 // const selectorsToIgnore = ['button', /^(is-|has-)/, /^(.*?)(m|p)(t|b)-/];

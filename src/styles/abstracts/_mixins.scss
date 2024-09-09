@@ -303,9 +303,7 @@
 }
 
 @mixin focus-ring {
-  &:focus-visible {
-    outline: var(--size-half) solid var(--box-shadow-focus-outline);
-  }
+  outline: var(--size-half) solid var(--box-shadow-focus-outline);
 }
 
 @mixin scrollbar(
@@ -382,8 +380,6 @@
 /* Mixins were created in order to quickly styles the buttons of plugins, like
 woocommerce */
 @mixin button-base {
-  @include focus-ring;
-
   appearance: button;
   cursor: pointer;
   display: inline-flex;
@@ -403,6 +399,10 @@ woocommerce */
   vertical-align: middle;
   // HACK: By default, flex items won’t shrink below their minimum content size
   min-width: 0;
+
+  &:focus-visible {
+    @include focus-ring();
+  }
 }
 
 @mixin button(
@@ -414,9 +414,6 @@ woocommerce */
   $btn-box-shadow: none,
   $btn-color: var(--color-brand-text)
 ) {
-  @include label;
-  @include button-base;
-
   background: $btn-background;
   border-radius: $btn-border-radius;
   border: $btn-border;
@@ -436,6 +433,9 @@ woocommerce */
   max-width: 100%;
   height: var(--height-btn);
 
+  @include label;
+  @include button-base;
+
   // Use child span for text truncating with ellipsis
   > span {
     @include text-truncate;
@@ -451,6 +451,11 @@ woocommerce */
 }
 
 @mixin button-primary {
+  text-shadow: 0 1px 0 var(--color-ink-min);
+  transition:
+    filter $duration-xxs $easing-base,
+    box-shadow $duration-xxs $easing-base;
+
   @include button(
     $btn-background: var(--color-brand-gradient-dark),
     $btn-background-hover: var(--color-brand-gradient-dark),
@@ -461,10 +466,6 @@ woocommerce */
       inset 0 2px 0 hsl($h $s-neutral var(--l-bg-base) / 0.16),
     )
   );
-
-  text-shadow: 0 1px 0 var(--color-ink-min);
-  transition: filter $duration-xxs $easing-base,
-    box-shadow $duration-xxs $easing-base;
 
   .icon {
     --icon-fill: var(--color-brand-background-light);

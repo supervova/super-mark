@@ -1,6 +1,5 @@
-
 // stylelint-disable selector-no-qualifying-type
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * DEFAULT
@@ -51,7 +50,7 @@ a[role='button'] {
     background: var(--color-ink-min);
   }
 
-  @media(any-hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       background: var(--color-ink-min);
     }
@@ -82,7 +81,7 @@ input[type='reset'],
 a[role='button'] {
   &[disabled] {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 
@@ -115,7 +114,7 @@ a[role='button'] {
     background: var(--color-ink-min);
   }
 
-  @media(any-hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       background: var(--color-ink-min);
     }
@@ -136,7 +135,7 @@ a[role='button'] {
     background: var(--color-ink-min);
   }
 
-  @media(any-hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       background: var(--color-ink-min);
     }

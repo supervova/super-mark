@@ -118,6 +118,7 @@
 ![[remember-achievements]] <!-- Помни о достижениях -->
 ![[celebrate-small-victories]] <!-- Празднуй даже маленькие победы -->
 ![[expand-your-horizons]] <!-- Расширяй кругозор и больше общайся -->
+![[manipulation]] <!-- Не давай собой манипулировать -->
 ![[vision-board]] <!-- Заведи доску визуализации -->
 
 ![Кабинет в здании на берегу моря](https://i.imgur.com/fWOe5Rp.jpeg)

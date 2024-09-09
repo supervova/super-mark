@@ -8,6 +8,7 @@
     "url": "https://super-mark.ru/"
   },
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "concurrently --kill-others 'gulp s' 'gulp w'"
   },
@@ -122,6 +123,16 @@
     },
     "rules": {
       "import/no-extraneous-dependencies": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "always",
+          "jsx": "always",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
       "max-len": [
         "error",
         {

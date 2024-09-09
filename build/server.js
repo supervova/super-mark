@@ -1,13 +1,15 @@
-import { watch, series, parallel } from 'gulp';
-import bsInstance from './browsersync';
-import css from './styles';
-import img from './images';
-import js, { copyJs } from './scripts';
-import sprite from './sprite';
-import { cleanPages } from './clean';
-import { copyDownloads, copyVideo } from './copy';
-import { jekyllBuild, jekyllServe } from './jekyll';
-import { paths, root } from './paths';
+import gulp from 'gulp';
+import bsInstance from './browsersync.js';
+import css from './styles.js';
+import img from './images.js';
+import js, { copyJs } from './scripts.js';
+import sprite from './sprite.js';
+import { cleanPages } from './clean.js';
+import { copyDownloads, copyVideo } from './copy.js';
+import { jekyllBuild, jekyllServe } from './jekyll.js';
+import { paths, root } from './paths.js';
+
+const { watch, series, parallel } = gulp;
 
 function watchFiles() {
   watch(

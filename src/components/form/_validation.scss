@@ -1,6 +1,6 @@
 // stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors, no-descending-specificity
 
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * INVALID INPUTS
@@ -8,24 +8,24 @@
 // #region
 
 :--text-field:user-invalid {
-    background-image: var(--icon-error);
-    background-position: top rem(14) right $size-1;
-    background-repeat: no-repeat;
-    background-size: $size-icon-xy auto;
-    box-shadow: 0 0 0 2px var(--color-error-base);
-    padding-right: $size-5;
+  background-image: var(--icon-error);
+  background-position: top rem(14) right $size-1;
+  background-repeat: no-repeat;
+  background-size: $size-icon-xy auto;
+  box-shadow: 0 0 0 2px var(--color-error-base);
+  padding-right: $size-5;
 
-    // Show alert
-    + .form__error,
-    + small + .form__error {
-      opacity: 1;
-      height: auto;
-    }
+  // Show alert
+  + .form__error,
+  + small + .form__error {
+    opacity: 1;
+    height: auto;
+  }
 
-    // And hide hint
-    + small {
-      display: none;
-    }
+  // And hide hint
+  + small {
+    display: none;
+  }
 }
 // #endregion
 

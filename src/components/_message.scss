@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 .messages {
   flex: 1;
@@ -16,12 +16,12 @@
   }
 }
 
-:where(.message) .avatar  {
+:where(.message) .avatar {
   margin-top: $size-1;
   margin-right: $size-2;
 }
 
-.message__base  {
+.message__base {
   flex: 1;
 }
 
@@ -69,5 +69,3 @@
     }
   }
 }
-
-

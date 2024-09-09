@@ -2,7 +2,7 @@
 
 // #region
 @use 'sass:map';
-@use '../config' as *;
+@use '../abstracts' as *;
 
 $enable-margin-x: true;
 $enable-shorthand-space: false;

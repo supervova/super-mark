@@ -1,6 +1,6 @@
 // stylelint-disable selector-no-qualifying-type
 // Use .text-end and .text-center utilities to change default alignment
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 table {
   --table-border-color: var(--color-ink-border);
@@ -44,9 +44,7 @@ th,
 td {
   border-top: var(--table-border-color) solid var(--table-border-width);
   text-align: left;
-  padding:
-    calc(var(--cell-padding-y) - 1px)
-    var(--cell-padding-x)
+  padding: calc(var(--cell-padding-y) - 1px) var(--cell-padding-x)
     var(--cell-padding-y);
   vertical-align: top;
 }

@@ -5,13 +5,13 @@
 // to the very beginning of styles
 
 @use 'sass:meta';
-@use 'styles/config' as *;
-@use 'styles/config/custom';
-@use 'styles/config/root';
-@use 'styles/config/scheme-light';
+@use 'styles/abstracts' as *;
+@use 'styles/abstracts/custom';
+@use 'styles/abstracts/root';
+@use 'styles/abstracts/scheme-light';
 
 // Uncomment if it's needed
-// @use 'styles/config/scheme-dark';
+// @use 'styles/abstracts/scheme-dark';
 
 @layer base, components, pages, helpers, print;
 
@@ -25,7 +25,7 @@
 }
 
 // Uncomment if it's needed
-// @layer utils {
+// @layer helpers {
 //   @include meta.load-css('helpers/essentials');
 // }
 

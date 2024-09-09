@@ -1,11 +1,12 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * BASE ACCORDION
  * -------------------------------------------------------------------------- */
 // #region
 
-/* details */.accordion {
+/* details */
+.accordion {
   --summary-color: var(--color-ink-base);
   --summary-color-active: var(--color-ink-base);
   --summary-font-weight: bolder;
@@ -25,11 +26,8 @@
     // Hide the summary marker in non-Webkit
     display: list-item;
     font-weight: var(--summary-font-weight);
-    padding:
-      var(--summary-padding-top)
-      var(--summary-padding-right)
-      var(--summary-padding-bottom)
-      var(--summary-padding-left);
+    padding: var(--summary-padding-top) var(--summary-padding-right)
+      var(--summary-padding-bottom) var(--summary-padding-left);
     position: relative;
     transition: color $duration-xxs $easing-base;
     width: 100%;

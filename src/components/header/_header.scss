@@ -1,4 +1,4 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 // -----------------------------------------------------------------------------
 // BASE
@@ -157,8 +157,7 @@
     left: 0;
     right: 0;
     transform: translateY(-$size-line * 3);
-    transition:
-      opacity $duration-sm $easing-base,
+    transition: opacity $duration-sm $easing-base,
       transform $duration-sm $easing-base;
     height: $size-line * 3;
     z-index: $zindex-fixed;
@@ -189,7 +188,8 @@
 }
 
 // Submit
-/* .btn.is-ghost */.header__search-submit {
+/* .btn.is-ghost */
+.header__search-submit {
   background: transparent;
   position: absolute;
   top: 50%;
@@ -200,7 +200,8 @@
 }
 
 // Cancel button
-/* .btn.is-ghost */.header__search-cancel {
+/* .btn.is-ghost */
+.header__search-cancel {
   color: var(--color-ink-2ry);
   margin-left: $size-1;
   height: $size-6;
@@ -250,7 +251,6 @@
   height: $size-line * 2;
 
   > .btn.is-outline {
-
     margin-right: $size-1;
     max-width: $size-1 * 10;
 
@@ -282,7 +282,6 @@
 }
 // #endregion
 
-
 // -----------------------------------------------------------------------------
 // RIGHT CLICK POPOVER
 // -----------------------------------------------------------------------------
@@ -298,8 +297,7 @@
   position: absolute;
   top: $size-2;
   left: rem(144);
-  transition:
-    display $duration-sm $easing-base,
+  transition: display $duration-sm $easing-base,
     opacity $duration-sm $easing-base;
   transition-behavior: allow-discrete;
   width: $width-md;
@@ -321,7 +319,7 @@
   padding-bottom: var(--padding-bottom-big);
 
   + p {
-    color: var(--color-ink-2ry)
+    color: var(--color-ink-2ry);
   }
 }
 

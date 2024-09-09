@@ -207,6 +207,7 @@ exclude:
   - .jekyll-cache
   - .obsidian
   - .sass-cache
+  - build
   - Gemfile
   - Gemfile.lock
   - deploy.sh

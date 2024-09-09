@@ -1,7 +1,8 @@
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* stylelint-disable-next-line selector-list-comma-newline-after */
-/* ul */.menu {
+/* ul */
+.menu {
   --menu-color: var(--color-ink-2ry);
   --menu-item-padding: #{$size-1p5} #{$size-2};
   --menu-padding: 0;
@@ -30,7 +31,8 @@
   }
 }
 
-/* a */.menu__item {
+/* a */
+.menu__item {
   @include menu-item;
 
   &[aria-current] {
@@ -105,4 +107,3 @@
     }
   }
 }
-

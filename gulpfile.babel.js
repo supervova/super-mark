@@ -1,12 +1,12 @@
 import { series, parallel } from 'gulp';
-import cssTasks, { cssMain, cssFront } from './src/build/styles';
-import imgTasks from './src/build/images';
-import jsTasks, { copyJs } from './src/build/scripts';
-import spriteTask from './src/build/sprite';
-import { cleanAssets, cleanSrc, cleanPages } from './src/build/clean';
-import { copyDownloads, copyVideo } from './src/build/copy';
-import { jekyllBuild, jekyllServe } from './src/build/jekyll';
-import { serve, serveBs, watchFiles } from './src/build/server';
+import cssTasks, { cssMain, cssFront } from './build/styles.js';
+import imgTasks from './build/images.js';
+import jsTasks, { copyJs } from './build/scripts.js';
+import spriteTask from './build/sprite.js';
+import { cleanAssets, cleanSrc, cleanPages } from './build/clean.js';
+import { copyDownloads, copyVideo } from './build/copy.js';
+import { jekyllBuild, jekyllServe } from './build/jekyll.js';
+import { serve, serveBs, watchFiles } from './build/server.js';
 
 const buildAll = series(
   cleanPages,
@@ -32,26 +32,26 @@ const buildAssets = series(
 const dev = series(buildAll, serveBs, watchFiles);
 
 export {
-  // Tasks for building assets and pages
-  buildAll as build,
-  // Tasks for building only assets
-  buildAssets,
-  // Individual tasks
   copyDownloads,
   copyVideo,
   cleanAssets,
   cleanSrc,
-  cleanPages,
+  cssTasks as css,
   cssMain as cssm,
   cssFront as cssf,
-  dev,
   jsTasks as js,
   spriteTask as sprite,
   jekyllBuild,
   jekyllServe,
   imgTasks as img,
+  // Tasks for building assets and pages
+  buildAll as build,
+  // Tasks for building only assets
+  buildAssets,
+  cleanPages,
   serve as s,
   watchFiles as w,
+  dev,
 };
 
 // export default build;

@@ -1,4 +1,4 @@
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 code,
 kbd,
@@ -38,9 +38,7 @@ pre {
   white-space: pre;
   margin-top: 0;
   margin-bottom: $size-2;
-  padding:
-    calc(var(--padding-top-base) + #{$size-2})
-    var(--padding-x-box)
+  padding: calc(var(--padding-top-base) + #{$size-2}) var(--padding-x-box)
     calc(var(--padding-bottom-base) + #{$size-line});
   overflow-x: auto;
   max-width: 100%;

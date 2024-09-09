@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 /* -----------------------------------------------------------------------------
  * BASE
@@ -24,8 +24,7 @@
   opacity: 1;
   position: fixed;
   inset: 0;
-  transition:
-    display $duration-md $easing-base,
+  transition: display $duration-md $easing-base,
     opacity $duration-md $easing-base;
   transition-behavior: allow-discrete;
   width: inherit;
@@ -45,6 +44,7 @@
   }
 }
 
+.modal__base,
 .modal article {
   background: var(--modal-background);
 
@@ -63,8 +63,7 @@
   overscroll-behavior-y: contain;
   position: fixed;
   inset: 0;
-  transition:
-    translate $duration-md $easing-base,
+  transition: translate $duration-md $easing-base,
     opacity $duration-md $easing-base;
   translate: 0;
   width: min(100%, #{$width-lg});
@@ -195,7 +194,7 @@
     padding: $size-1 0 0;
     z-index: 2;
 
-    @supports not selector(section:has( > footer)) {
+    @supports not selector(section:has(> footer)) {
       padding-right: $size-1 * 11;
       padding-left: $size-1 * 11;
       padding-inline: $size-1 * 11;

@@ -1,16 +1,19 @@
 // 🤖 SCRIPTS
 
+import gulp from 'gulp';
 import Terser from 'terser-webpack-plugin';
 import newer from 'gulp-newer';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import webpack from 'webpack-stream';
 import yargs from 'yargs';
-import { src, dest } from 'gulp';
-import { paths } from './paths';
-import bsInstance from './browsersync';
+import { hideBin } from 'yargs/helpers';
+import { paths } from './paths.js';
+import bsInstance from './browsersync.js';
 
-const PRODUCTION = yargs.argv.p;
+const { src, dest } = gulp;
+const { argv } = yargs(hideBin(process.argv));
+const PRODUCTION = argv.p;
 
 /**
  * Compiles and bundles JavaScript files using Webpack.

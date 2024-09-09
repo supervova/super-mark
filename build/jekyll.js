@@ -3,8 +3,10 @@
 /* eslint-disable no-console */
 
 import shell from 'shelljs';
-import { argv } from 'yargs';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
+const { argv } = yargs(hideBin(process.argv));
 const PRODUCTION = argv.p;
 
 /**

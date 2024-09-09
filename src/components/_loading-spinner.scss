@@ -1,5 +1,5 @@
 // stylelint-disable selector-no-qualifying-type
-@use '../styles/config' as *;
+@use '../styles/abstracts' as *;
 
 // Cursor
 [aria-busy='true'] {
@@ -19,7 +19,7 @@ input[type='reset'] {
 }
 
 // Spinning Bagel
-[aria-busy="true"]:not(input):not(select):not(textarea)::after {
+[aria-busy='true']:not(input):not(select):not(textarea)::after {
   animation: spinner ($duration-xl * 1.5) cubic-bezier(0, 0, 0.38, 0.9) infinite;
   border: $size-half solid var(--color-brand-primary);
   border-right-color: var(--color-ink-border-translucent);

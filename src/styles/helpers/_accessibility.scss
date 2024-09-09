@@ -1,4 +1,4 @@
-@use '../config/mixins' as *;
+@use '../abstracts/mixins' as *;
 
 .visually-hidden {
   @include visually-hidden;

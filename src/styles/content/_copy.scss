@@ -1,4 +1,4 @@
-@use '../config' as *;
+@use '../abstracts' as *;
 
 :focus-visible {
   scroll-padding-block-end: 8vh;
@@ -184,13 +184,13 @@ a:not([class]) {
 
 a,
 [role='link'] {
-  @include focus-ring;
-
   color: var(--color-ink-link);
   // Reapply the pointer cursor for anchor tags
   cursor: pointer;
   text-decoration: none;
   transition: color $duration-xxs;
+
+  @include focus-ring;
 
   &:is(:active, :focus-visible) {
     @include a-hover;

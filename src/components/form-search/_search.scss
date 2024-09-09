@@ -1,9 +1,10 @@
 // stylelint-disable selector-no-qualifying-type
 
-@use '../../styles/config' as *;
+@use '../../styles/abstracts' as *;
 
 // Container
-/* form */ [role='search'] {
+/* form */
+[role='search'] {
   position: relative;
 
   @media (--phone), (--phone-l-height) {
@@ -76,7 +77,7 @@
 // Disable search button when input is empty
 :where([role='search']) [type='submit'] {
   border-radius: $border-radius-sm;
-  opacity: .5;
+  opacity: 0.5;
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -115,4 +116,3 @@
     display: none;
   }
 }
-
