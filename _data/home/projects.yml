@@ -23,10 +23,10 @@
   link: 23599762-Qwerty-Foundation
 
 - title:
-    en: 'Business Power website design'
-    ru: 'Социальная сеть «Бизнес-сила»'
-  img: business-power
-  link: 23599083-Business-Power
+    en: 'WhiteCrows website design'
+    ru: 'Сайт социальной сети WhiteCrows'
+  img: crows
+  link: 23592791-WhiteCrows
 
 - title:
     en: 'Qwerty Messenger UI design'
@@ -107,7 +107,13 @@
   link: 23584157-Oldie-but-a-goldie
 
 - title:
-    en: 'WhiteCrows website design'
-    ru: 'Сайт социальной сети WhiteCrows'
-  img: crows
-  link: 23592791-WhiteCrows
+    en: 'Business Power website design'
+    ru: 'Социальная сеть «Бизнес-сила»'
+  img: business-power
+  link: 23599083-Business-Power
+
+- title:
+    en: "Service to search for politicians' quotes in videos"
+    ru: 'Сервис поиска цитат политиков в видео'
+  img: wps
+  link: 24853571-What-Politics-Say
