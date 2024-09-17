@@ -374,6 +374,12 @@
   &:focus-visible {
     box-shadow: var(--box-shadow-focus-outline);
   }
+
+  @media (any-hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-ink-min);
+    }
+  }
 }
 
 // BUTTONS
