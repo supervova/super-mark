@@ -347,6 +347,7 @@
 // #region
 
 @mixin menu-item {
+  --height-btn: auto;
   border-radius: $border-radius-sm;
   background-color: transparent;
   color: var(--menu-color, var(--color-ink-2ry));
