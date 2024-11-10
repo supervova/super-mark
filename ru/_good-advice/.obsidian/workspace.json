@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "call-people-close-to-you.md",
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f22ebbbe3b15d3c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_book.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "manipulation.md",
+                "file": "_book.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "manipulation.md",
+                "file": "_book.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "manipulation.md"
+                "file": "_book.md"
               }
             }
           },
@@ -195,15 +207,18 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "201d7b13014d07d8",
+  "active": "f22ebbbe3b15d3c4",
   "lastOpenFiles": [
     "index.md",
+    "ikigai.md",
+    "_book.md",
+    "live-in-the-moment.md",
     "manipulation.md",
-    "art-of-conversation.md",
+    "call-people-close-to-you.md",
     "10-commandments.md",
+    "art-of-conversation.md",
     "dont-criticize-blame.md",
     "dont-complain-and-dont-moan.md",
-    "call-people-close-to-you.md",
     "all-you-need-is-love.md",
     "self-respect.md",
     "source/Игры Блотто — выигрышная стратегия.md",
@@ -220,9 +235,6 @@
     "visualize-resentment-and-throw-it-away.md",
     "improve-your-character.md",
     "self-esteem.md",
-    "do-good.md",
-    "chew-gum.md",
-    "celebrate-small-victories.md",
     "_assets/15_Ways_to_Beat_Procrastination.resources",
     "_assets",
     "source",
