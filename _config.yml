@@ -105,15 +105,15 @@ ru_good_advice:
   path: ru/_good-advice
 
 # Pagination Settings
-pagination:
-  enabled: true
-  debug: false
-  per_page: 10
-  permalink: '/:num'
-  title: ':title — :num / :max'
-  sort_field: 'date'
-  sort_reverse: true
-  # paginate_path: '/ru/blog/:num'
+# pagination:
+#   enabled: true
+#   debug: false
+#   per_page: 10
+#   permalink: '/:num'
+#   title: ':title — :num / :max'
+#   sort_field: 'date'
+#   sort_reverse: true
+#   # paginate_path: '/ru/blog/:num'
 
 # Default front matter values
 defaults:
@@ -168,16 +168,16 @@ compress_html:
 
 
 # jekyll-paginate-v2
-# pagination:
-#   enabled: true
-#   # Set to 'true' to enable pagination debugging
-#   debug: false
-#   per_page: 20
-#   permalink: '/:num'
-#   sort_field: 'date'
-#   # sort_reverse: true
-#   # Optional the title format for the paginated pages
-#   title: ':title - :num'
+pagination:
+  enabled: true
+  # Set to 'true' to enable pagination debugging
+  debug: false
+  per_page: 10
+  permalink: '/:num/'
+  sort_field: 'date'
+  sort_reverse: true
+  # Optional the title format for the paginated pages
+  title: ':title - :num'
 
 plugins:
   # GitHub Pages uses the following dependencies and versions

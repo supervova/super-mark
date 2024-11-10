@@ -58,10 +58,10 @@
   @media (--tablet-l) {
     // Typography
 
-    @if (map-has-key($typeset, tablet)) {
+    @if (map.has-key($typeset, tablet)) {
       @each $item, $set in map.get($typeset, tablet-l) {
         @each $prop, $value in $set {
-          @if $value != null {
+          @if $value {
             --#{$prop}-#{$item}: #{$value};
           }
         }

@@ -1,11 +1,11 @@
 @use 'sass:meta';
 @use '../../styles/abstracts' as *;
-@use '../../styles/abstracts/custom';
+@use '../../styles/abstracts/custom' as *;
 
-@import '../../components/accordion/accordion';
-@import '../../components/eyebrow';
-@import '../../components/pagination';
-@import '../../components/snippet/snippet';
+@use '../../components/accordion/accordion' as *;
+@use '../../components/eyebrow' as *;
+@use '../../components/pagination' as *;
+@use '../../components/snippet/snippet' as *;
 
 :where(.page.is-post) {
   .header__logo.is-full {

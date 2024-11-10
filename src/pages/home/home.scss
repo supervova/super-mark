@@ -1,12 +1,12 @@
 @use 'sass:meta';
 @use '../../styles/abstracts' as *;
-@use '../../styles/abstracts/custom';
+@use '../../styles/abstracts/custom' as *;
 
-@import '../../components/carousel/carousel';
-@import '../../components/chart/chart';
-@import '../../components/pricing-table';
-@import '../../components/hero/hero';
-@import '../../components/tabs/tabs';
+@use '../../components/carousel/carousel' as *;
+@use '../../components/chart/chart' as *;
+@use '../../components/pricing-table' as *;
+@use '../../components/hero/hero' as *;
+@use '../../components/tabs/tabs' as *;
 
 // -----------------------------------------------------------------------------
 // Plans
