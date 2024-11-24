@@ -7,34 +7,37 @@
  * LAYOUT
  * -------------------------------------------------------------------------- */
 // #region
-@mixin grid-base() {
-  --columns: 1fr;
-  --rows: repeat(auto-fill, auto);
-  --gap: #{$size-2};
 
+@mixin grid-base($gap: var(--size-2)) {
   display: grid;
-  gap: var(--gap);
-  grid-template-columns: var(--columns);
-  grid-template-rows: var(--rows);
+  gap: var(--grid-gap, $gap);
+  grid-template-columns: var(--grid-columns, 1fr);
+  grid-template-rows: var(--grid-rows, auto);
 
+  // HACK for grid and flex direct children in overflow
+  // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
   & > * {
-    // HACK for grid and flex direct children in overflow
-    // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
     min-width: 0;
+    min-height: 0;
   }
 }
 
-@mixin grid-12() {
-  --columns: repeat(var(--columns, 12), minmax(0, 1fr));
-  --rows: 1fr;
-  --gap: #{$gutter-lg};
+// 12-column grid settings
+@mixin grid-12($columns: 12, $gap: var(--gap-large)) {
+  --grid-columns: repeat(#{$columns}, minmax(0, 1fr));
+  --grid-gap: #{$gap};
 }
 
-@mixin grid() {
-  @include grid-base;
+// Adaptive grid with automatic switching to 12 columns
+@mixin grid($mobile-columns: 1fr, $desktop-columns: 12, $mobile-gap: var(--size-2), $desktop-gap: var(--gap-large)) {
+  @include grid-base($mobile-gap);
 
+  // Phone
+  --grid-columns: #{$mobile-columns};
+
+  // Tablet and up
   @media (--tablet) {
-    @include grid-12;
+    @include grid-12($desktop-columns, $desktop-gap);
   }
 }
 
