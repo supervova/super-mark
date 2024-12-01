@@ -59,6 +59,7 @@
 
   // Content
   @include meta.load-css('components/avatar');
+  @include meta.load-css('components/code');
   @include meta.load-css('components/list/ol-nested');
   @include meta.load-css('components/message');
   @include meta.load-css('components/meta');
