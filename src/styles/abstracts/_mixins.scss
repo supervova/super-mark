@@ -8,7 +8,7 @@
  * -------------------------------------------------------------------------- */
 // #region
 
-@mixin grid-base($gap: var(--size-2)) {
+@mixin grid-base($gap: $size-2) {
   display: grid;
   gap: var(--grid-gap, $gap);
   grid-template-columns: var(--grid-columns, 1fr);
@@ -23,13 +23,13 @@
 }
 
 // 12-column grid settings
-@mixin grid-12($columns: 12, $gap: var(--gap-large)) {
+@mixin grid-12($columns: 12, $gap: $size-3) {
   --grid-columns: repeat(#{$columns}, minmax(0, 1fr));
   --grid-gap: #{$gap};
 }
 
 // Adaptive grid with automatic switching to 12 columns
-@mixin grid($mobile-columns: 1fr, $desktop-columns: 12, $mobile-gap: var(--size-2), $desktop-gap: var(--gap-large)) {
+@mixin grid($mobile-columns: 1fr, $desktop-columns: 12, $mobile-gap: $size-2, $desktop-gap: $size-3) {
   @include grid-base($mobile-gap);
 
   // Phone

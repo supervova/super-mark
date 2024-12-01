@@ -296,7 +296,7 @@
 
   .grid {
     @media (--tablet) {
-      --columns: 1;
+      --grid-columns: 1;
     }
   }
 }

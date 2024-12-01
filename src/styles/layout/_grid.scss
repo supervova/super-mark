@@ -9,7 +9,7 @@
   --layout-grid-min: #{$size-line * 7};
 
   @media (--tablet) {
-    --columns: repeat(auto-fit, minmax(min(100%, var(--layout-grid-min)), 1fr));
+    --grid-columns: repeat(auto-fit, minmax(min(100%, var(--layout-grid-min)), 1fr));
   }
 }
 
