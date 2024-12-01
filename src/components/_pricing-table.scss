@@ -2,7 +2,7 @@
 @use '../styles/abstracts' as *;
 
 .section.is-services .grid {
-  --gap: #{$size-line};
+  --grid-gap: #{$size-line};
 }
 
 .plan {
