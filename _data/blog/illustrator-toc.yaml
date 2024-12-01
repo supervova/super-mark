@@ -58,6 +58,7 @@ items:
       - label: "☀️ Распределение объектов по кругу"
         url: "/ru/blog/2024/illustrator-circular-distribution"
   - label: "🦊 Советы и хитрости"
+    url: "/ru/blog/2021/illustrator-tips-and-tricks"
   - label: "🛠 Инструменты+"
   - label: "⌨️ Горячие клавиши"
   - label: "🖨 Печать"
