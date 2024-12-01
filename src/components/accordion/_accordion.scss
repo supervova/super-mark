@@ -63,6 +63,9 @@
   // Body
   > div {
     padding: $size-2;
+    transition: height $duration-md $easing-base;
+    transition-behavior: allow-discrete;
+    height: 0;
   }
 
   // Open
@@ -76,6 +79,10 @@
       &::after {
         transform: rotate(180deg);
       }
+    }
+
+    > div {
+      height: auto;
     }
   }
 }
