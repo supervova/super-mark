@@ -16,13 +16,13 @@
 // Grids for phones
 @media (--phone) {
   .phone\:grid-3 {
-    --columns: repeat(3, 1fr);
+    --grid-columns: repeat(3, 1fr);
   }
 }
 
 @media (--phone) {
   .phone\:grid-4 {
-    --columns: repeat(4, 1fr);
+    --grid-columns: repeat(4, 1fr);
   }
 }
 
