@@ -21,8 +21,6 @@
 .card > header,
 .card__copy,
 .card > footer {
-  padding-right: var(--padding-x-box);
-  padding-left: var(--padding-x-box);
   padding-inline: var(--padding-x-box);
 }
 
@@ -87,12 +85,20 @@
 // #endregion
 
 // -----------------------------------------------------------------------------
-// FROSTED GLASS
+// VARIANTS
 // -----------------------------------------------------------------------------
 // #region
 
+// Frosted glass
 .card.is-frosted-glass {
   background-color: var(--color-background-frosted-glass);
   backdrop-filter: var(--color-background-frosted-glass-backdrop);
+}
+
+// Pullquote
+.card.is-pullquote {
+  background-color: var(--color-background-2ry);
+  margin-block: $size-line;
+  padding: var(--padding-x-box);
 }
 // #endregion

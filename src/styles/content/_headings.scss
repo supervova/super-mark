@@ -7,16 +7,11 @@
  * -------------------------------------------------------------------------- */
 // #region
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-h6 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, h6 {
   text-rendering: optimizeLegibility;
   text-wrap: balance;
   margin-top: 0;
@@ -30,16 +25,13 @@ h6 {
   display: block;
 }
 
-h1,
-.h1,
-h2,
-.h2 {
+h1, .h1,
+h2, .h2 {
   @include heading-base;
 }
 
 // H1
-h1,
-.h1 {
+h1, .h1 {
   @include text-format(title);
 
   font-weight: var(--font-weight-title);
@@ -52,8 +44,7 @@ h1,
 }
 
 // Heading 2
-h2,
-.h2 {
+h2, .h2 {
   @include text-format(h2);
 
   font-weight: var(--font-weight-h2);
@@ -81,12 +72,11 @@ h3,
   font-weight: var(--font-weight-big);
 }
 
-h4,
-.h4,
-h5,
-h6 {
+h4, .h4,
+h5, h6 {
   @include text-format(base);
 
-  font-weight: bolder;
+  font-weight: 600;
+  letter-spacing: 0.1px;
 }
 // #endregion
