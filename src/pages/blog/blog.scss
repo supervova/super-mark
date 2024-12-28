@@ -17,7 +17,7 @@
 
   .btn.is-back {
     @media (--phone), (--phone-l-height) {
-      --height-btn: #{$size-5};
+      --btn-height: #{$size-5};
 
       padding-right: $size-2p5;
       position: absolute;

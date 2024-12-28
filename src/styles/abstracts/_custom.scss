@@ -13,4 +13,4 @@
 @custom-media --laptop only screen and (width >= #{$laptop}) and (min-height: #{$phone-l-height});
 @custom-media --desktop only screen and (width >= #{$desktop}) and (min-height: #{$phone-l-height});
 
-@custom-selector :--text-field :where(input:not([type='checkbox']):not([type='radio']), select, textarea):not(:focus);
+@custom-selector :--text-field-blur :where(input:not([type='checkbox']):not([type='radio']), select, textarea):not(:focus);
