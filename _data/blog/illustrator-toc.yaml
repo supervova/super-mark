@@ -60,5 +60,8 @@ items:
   - label: "🦊 Советы и хитрости"
     url: "/ru/blog/2021/illustrator-tips-and-tricks"
   - label: "🛠 Инструменты+"
+    url: "/ru/blog/2024/illustrator-tools"
   - label: "⌨️ Горячие клавиши"
+    url: "/ru/blog/2024/illustrator-hotkeys"
   - label: "🖨 Печать"
+    url: "/ru/blog/2024/illustrator-printing"

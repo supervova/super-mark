@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------- */
 // #region
 
-:--text-field:user-invalid {
+:--text-field-blur:user-invalid {
   background-image: var(--icon-error);
   background-position: top rem(14) right $size-1;
   background-repeat: no-repeat;
@@ -46,9 +46,10 @@
   height: 0;
 }
 
-/* To hide message using height: 0 we should wrap it in another div and delegate
-paddings to it */
-.form__error > span {
+// To hide message using height: 0 we should wrap it in another block
+// and delegate paddings to it
+.form__error > span,
+.form__error > small {
   display: block;
   padding-top: calc(var(--padding-top-small) + #{$size-half});
   padding-bottom: var(--padding-bottom-small);

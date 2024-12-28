@@ -82,37 +82,36 @@ ul:where(:not(nav *):not(.list.is-unstyled):not(.list.is-inline)) {
   }
 }
 
-// Ordered list
-ol:not([class], nav ol) /*, ol.foo */ {
-  --start-counter: 1;
-
-  display: grid;
-  gap: $size-1;
-
-  // first column is the marker pseudo element
-  grid-template-columns: minmax(#{$size-5}, max-content) 1fr;
-
-  // don't need the default arbitrary padding
+ol {
+  list-style: none;
   padding-inline: 0;
+
+  > li {
+    position: relative;
+    padding-left: 2em;
+
+    &::before {
+      color: var(--color-ink-2ry);
+      content: counter(list-item) '.';
+      font-variant-numeric: lining-nums tabular-nums;
+      font-weight: 400;
+      position: absolute;
+      top: var(--padding-top-base);
+      left: 0;
+    }
+  }
 }
 
-:where(ol:not([class], nav ol)) li {
-  counter-increment: list-item var(--start-counter);
-  display: grid;
+li {
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
 
-  // the whole list item covers both columns. then *its* children (the marker
-  // and regular <li> content) are subgrid-ed into the parent's grid
-  grid-column: 1 / -1;
+  > p:first-child {
+    padding-top: 0;
+  }
 
-  // use the parent grid's columns
-  grid-template-columns: subgrid;
-
-  // ::marker isn't available because the <li>s are set to `display: grid`,
-  // so we have to do it ourselves with ::before and counters
-  &::before {
-    color: var(--color-ink-2ry);
-    content: counter(list-item) '.';
-    text-align: right;
+  > p:last-child {
+    padding-bottom: 0;
   }
 }
 
