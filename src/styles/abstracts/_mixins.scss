@@ -350,7 +350,7 @@
 // #region
 
 @mixin menu-item {
-  --btn-height: auto;
+  --height-btn: auto;
   border-radius: $border-radius-sm;
   background-color: transparent;
   color: var(--menu-color, var(--color-ink-2ry));
@@ -431,7 +431,7 @@ woocommerce */
   color: $btn-color;
   font-weight: bolder;
   // Hanging characters are cropping by `overflow: hidden` and `line-height: 1`
-  line-height: var(--btn-height);
+  line-height: var(--height-btn);
   white-space: nowrap;
   // Show the overflow in Edge
   overflow: visible;
@@ -441,7 +441,7 @@ woocommerce */
   transition: background $duration-xxs $easing-base,
     box-shadow $duration-xxs $easing-base;
   max-width: 100%;
-  height: var(--btn-height);
+  height: var(--height-btn);
 
   @include label;
   @include button-base;
