@@ -16,7 +16,9 @@
                 "file": "index.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           },
           {
@@ -25,10 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_book.md",
+                "file": "words-of-support.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "words-of-support"
+            }
+          },
+          {
+            "id": "f3fe33ba97f21b41",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "smart-breakup.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "smart-breakup"
             }
           },
           {
@@ -37,10 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-commandments.md",
+                "file": "be-happy-when-meet-important-person.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "be-happy-when-meet-important-person"
             }
           },
           {
@@ -52,7 +72,9 @@
                 "file": "manipulation.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "manipulation"
             }
           },
           {
@@ -64,11 +86,13 @@
                 "file": "clean-up-the-mess-around-you.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "clean-up-the-mess-around-you"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -87,8 +111,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
             }
           },
           {
@@ -97,13 +124,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "не критику",
+                "query": "📖",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
             }
           },
           {
@@ -111,14 +140,17 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 383.5
+    "width": 320.5
   },
   "right": {
     "id": "cae8b17001a72378",
@@ -134,7 +166,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_book.md",
+                "file": "words-of-support.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +174,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для words-of-support"
             }
           },
           {
@@ -151,10 +185,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_book.md",
+                "file": "words-of-support.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из words-of-support"
             }
           },
           {
@@ -165,7 +201,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
             }
           },
           {
@@ -174,8 +212,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_book.md"
-              }
+                "file": "words-of-support.md"
+              },
+              "icon": "lucide-list",
+              "title": "Структура words-of-support"
             }
           },
           {
@@ -187,7 +227,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
             }
           }
         ]
@@ -207,15 +249,24 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "f22ebbbe3b15d3c4",
+  "active": "18217336894d1ceb",
   "lastOpenFiles": [
     "index.md",
-    "ikigai.md",
+    "smart-breakup.md",
+    "remember-achievements.md",
+    "be-happy-when-meet-important-person.md",
+    "words-of-support.md",
+    "be-humble.md",
+    "10-commandments.md",
+    "win-win.md",
+    "what-you-do-on-bad-days.md",
+    "visualize-resentment-and-throw-it-away.md",
+    "summary.md",
     "_book.md",
+    "ikigai.md",
     "live-in-the-moment.md",
     "manipulation.md",
     "call-people-close-to-you.md",
-    "10-commandments.md",
     "art-of-conversation.md",
     "dont-criticize-blame.md",
     "dont-complain-and-dont-moan.md",
@@ -226,15 +277,6 @@
     "source/Женщина - источник успеха мужчины.md",
     "source/_tmp.md",
     "source/Выберите свою мандалу, всмотритесь в нее - и все изменится!.md",
-    "fight-procrastination.md",
-    "source/15 Ways to Beat Procrastination.md",
-    "action-power.md",
-    "10-years-old.md",
-    "positive-thinking.md",
-    "to-do-gtd.md",
-    "visualize-resentment-and-throw-it-away.md",
-    "improve-your-character.md",
-    "self-esteem.md",
     "_assets/15_Ways_to_Beat_Procrastination.resources",
     "_assets",
     "source",

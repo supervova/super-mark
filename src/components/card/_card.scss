@@ -96,9 +96,18 @@
 }
 
 // Pullquote
+blockquote,
 .card.is-pullquote {
   background-color: var(--color-background-2ry);
   margin-block: $size-line;
   padding: var(--padding-x-box);
+}
+
+blockquote {
+  border-radius: $border-radius-base;
+  box-shadow: var(--box-shadow-z2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 // #endregion
