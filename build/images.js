@@ -19,8 +19,9 @@ const { src, dest, parallel } = gulp;
  * @returns {NodeJS.WritableStream} The Gulp stream.
  */
 function minifyImages(source, subtitle) {
+  const destination = paths.img.dest;
   return src(source, { encoding: false })
-    .pipe(newer(paths.img.dest))
+    .pipe(newer(destination))
     .pipe(
       imagemin(
         [
@@ -49,7 +50,7 @@ function minifyImages(source, subtitle) {
         { verbose: true }
       )
     )
-    .pipe(dest(paths.img.dest))
+    .pipe(dest(destination))
     .pipe(size({ title: `images: ${subtitle}` }));
 }
 
