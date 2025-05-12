@@ -14,7 +14,13 @@ layout: default
       </div>
       <div class="hero__overlay is-43" aria-hidden="true"></div>
       <a class="hero__latest" href="#" onclick="openInNewTab('https://dribbble.com/shots/{{ site.data.home.base.hero.latest-work.link }}', 'supermark-portfolio')">
-        <img src="{{ site.assets }}/img/pages/home/latest-work.png?02" srcset="/assets/img/pages/home/latest-work.png?02 1x, /assets/img/pages/home/latest-work@2x.png?02 2x" width="194" height="96" alt="{{ site.data.home.base.hero.latest-work.alt[page.lang] }}">
+        {% assign cache_bust = site.time | date: '%s' %}
+        <img
+          src="{{ site.assets }}/img/pages/home/latest-work.png?{{ cache_bust }}"
+          srcset="/assets/img/pages/home/latest-work.png?{{ cache_bust }} 1x, /assets/img/pages/home/latest-work@2x.png?{{ cache_bust }} 2x"
+          width="194" height="96"
+          alt="{{ site.data.home.base.hero.latest-work.alt[page.lang] }}"
+        >
       </a>
       <div class="hero__overlay is-red-patch" aria-hidden="true"></div>
       <div class="hero__space" aria-hidden="true"></div>
