@@ -25,6 +25,7 @@
   // Tooltip's body
   &::after {
     background-color: var(--tooltip-background);
+    backdrop-filter: blur(8px);
     border-radius: $border-radius-sm;
     color: var(--color-ink-inverse-base);
     content: attr(aria-label);
