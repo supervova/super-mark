@@ -97,7 +97,9 @@
 
 .is-articles-list time {
   color: var(--color-ink-2ry);
-  font-feature-settings: 'tnum' on, 'lnum' on;
+  font-feature-settings:
+    'tnum' on,
+    'lnum' on;
   position: absolute;
   top: var(--padding-top-base);
   left: 0;
