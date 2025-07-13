@@ -30,16 +30,16 @@ ul(role='menu' aria-label='Lorem Ipsum')
 
 ## Управление фокусом
 
-Для нескрываемых элементов, нуждающихся в фокусе, но не фокусируемых по умолчанию — например, кликабельных li — устанавливается tabindex: '0'.
+Для нескрываемых элементов, нуждающихся в фокусе, но не фокусируемых по умолчанию – например, кликабельных li – устанавливается tabindex: '0'.
 
-Для скрытых интерактивных элементов устанавливается tabindex: '-1'. Причем атрибут назначается не только элементам без «врожденной» фокусировки но и фокусируемым, вроде `<a>` — см. [Building a Keyboard Accessible Custom Menu using Roving Tabindex](https://blog.srij.dev/roving-tabindex-from-scratch).
+Для скрытых интерактивных элементов устанавливается tabindex: '-1'. Причем атрибут назначается не только элементам без «врожденной» фокусировки но и фокусируемым, вроде `<a>` – см. [Building a Keyboard Accessible Custom Menu using Roving Tabindex](https://blog.srij.dev/roving-tabindex-from-scratch).
 
 ```pug
 li: a(href='#' tabindex="-1")
   span.label Menu Item
 ```
 
-При открытии виджета, в котором такие элементы содержатся — модальное окно, выпадающее или контекстное меню — первый из таких элементов, который должен попасть в фокус, меняет значение атрибута tabindex на '0'.
+При открытии виджета, в котором такие элементы содержатся – модальное окно, выпадающее или контекстное меню – первый из таких элементов, который должен попасть в фокус, меняет значение атрибута tabindex на '0'.
 
 Затем значения меняются по нажатию клавиш-стрелок:
 
@@ -76,7 +76,7 @@ function openDialog() {
 
 ## Первая реализация в MNB
 
-Основана на минималистичном решение: кликабельными элементами в роли menuitem сделаны элементы `li`. Но, возможно, ради естественного порядка фокусирования лучше добавить кнопки: `li(role='none')>button(role='menuitem')`. Впрочем, тем, кто выбрал такую технологию — Spotify, MS To-do — всё равно назначают кнопкам `tabindex='-1'`
+Основана на минималистичном решение: кликабельными элементами в роли menuitem сделаны элементы `li`. Но, возможно, ради естественного порядка фокусирования лучше добавить кнопки: `li(role='none')>button(role='menuitem')`. Впрочем, тем, кто выбрал такую технологию – Spotify, MS To-do – всё равно назначают кнопкам `tabindex='-1'`
 
 ```pug
 .menu
@@ -240,44 +240,44 @@ ul.tree
 .toolbar(role='toolbar' aria-label='Форматирование текста' aria-controls='main-editor')
   button.toolbar__btn(type='button' aria-pressed='false' data-action='h1')
     svg.icon
-    span Заголовок (H1) — ⇧⌘1
+    span Заголовок (H1) – ⇧⌘1
   button.toolbar__btn(type='button' aria-pressed='false' data-action='h2')
     svg.icon
-    span Подзаголовок (H2) — ⇧⌘2
+    span Подзаголовок (H2) – ⇧⌘2
   button.toolbar__btn(type='button' aria-pressed='false' data-action='h3')
     svg.icon
-    span Подзаголовок подраздела (H3) — ⇧⌘3
+    span Подзаголовок подраздела (H3) – ⇧⌘3
 
   span.toolbar__separator(role='separator')
 
   button.toolbar__btn(type='button' aria-pressed='false' data-action='bold')
     svg.icon
-    span Полужирный — ⌘B
+    span Полужирный – ⌘B
   button.toolbar__btn(type='button' aria-pressed='false' data-action='italic')
     svg.icon
-    span Курсив — ⌘I
+    span Курсив – ⌘I
   button.toolbar__btn(type='button' aria-pressed='false' data-action='ul')
     svg.icon
-    span Маркированный список — ⌘L
+    span Маркированный список – ⌘L
   button.toolbar__btn(type='button' aria-pressed='false' data-action='ol')
     svg.icon
-    span Нумерованный список — ⇧⌘L
+    span Нумерованный список – ⇧⌘L
   button.toolbar__btn(type='button' data-action='indent')
     svg.icon
-    span Отступ — ⌘]
+    span Отступ – ⌘]
   button.toolbar__btn(type='button' data-action='outdent')
     svg.icon
-    span Уменьшить отступ — ⌘[
+    span Уменьшить отступ – ⌘[
   button.toolbar__btn(type='button' data-action='img')
     svg.icon
-    span Вставить изображение — ⇧⌘I
+    span Вставить изображение – ⇧⌘I
 
   .toolbar__select(tabindex='0')
     button.toolbar__select-toggle(aria-haspopup='true' aria-expanded='false' aria-controls='toolbar-menu-more' tabindex='-1' aria-label='Дополнительные команды вставки и форматирования')
       span Ещё
     ul#toolbar-menu-more.menu(role='menu' aria-label='Дополнительные команды вставки и форматирования')
       li.menu__item(role='menuitem' data-action='link')
-        span Ссылка — ⌘K
+        span Ссылка – ⌘K
       li.menu__item(role='menuitem' data-action='hr')
         span Горизонтальная линия
 
@@ -294,7 +294,7 @@ ul.tree
 iframe#main-doc.main__doc(aria-label='Редактор заметки' tabindex='-1' src='https://www.magic-nb.com/doc?1606165931029')
 ```
 
-В кнопке More, помимо прочего — зачеркнутый, выделение, ссылка, таблица, чек-лист, HR, теги(см. Evernote), выравнивание текста и «Сбросить форматирование»
+В кнопке More, помимо прочего – зачеркнутый, выделение, ссылка, таблица, чек-лист, HR, теги(см. Evernote), выравнивание текста и «Сбросить форматирование»
 
 ## Панель форматирования W3C
 
@@ -424,8 +424,8 @@ iframe#main-editor-w3c.main__editor(aria-label='Редактор заметки'
       span Вставка
 ```
 
-Выпадающие меню динамические — создаются JS'ом — `document.body.appendChild(menuInsert);` —
-и позиционируются строковыми стилями (лучше, конечно, — CSS-переменными).
+Выпадающие меню динамические – создаются JS'ом – `document.body.appendChild(menuInsert);` —
+и позиционируются строковыми стилями (лучше, конечно, – CSS-переменными).
 
 ```pug
     ul.menu__list(aria-label='Выпадающий список' role='menu')
@@ -583,7 +583,7 @@ iframe#main-editor-w3c.main__editor(aria-label='Редактор заметки'
 
 ## «Дерево» MS To-do
 
-Разметка упрощена — удалены многочисленные «обёртки»
+Разметка упрощена – удалены многочисленные «обёртки»
 
 ```pug
 ul.tree(role='tree')
@@ -617,17 +617,17 @@ ul.tree(role='tree')
         svg.icon
 
         ul.tree__child(role='group')
-          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN — На очереди, 4 tasks')
+          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN – На очереди, 4 tasks')
             svg.icon
-            span.tree__label MN — На очереди
+            span.tree__label MN – На очереди
             span.tree__count(aria-hidden='true') 4
-          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN — Бизнес-план и маркетинг, 4 tasks')
+          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN – Бизнес-план и маркетинг, 4 tasks')
             svg.icon
-            span.tree__label MN — Бизнес-план и маркетинг
+            span.tree__label MN – Бизнес-план и маркетинг
             span.tree__count(aria-hidden='true') 4
-          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN — Архив, 3 tasks')
+          li.tree__item(role='treeitem' tabindex='-1' aria-label='MN – Архив, 3 tasks')
             svg.icon
-            span.tree__label MN — Архив
+            span.tree__label MN – Архив
             span.tree__count(aria-hidden='true') 3
 
       .tree__item.has-branches(aria-label='Group Полилог' aria-expanded='true' tabindex='-1' role='treeitem')
@@ -636,9 +636,9 @@ ul.tree(role='tree')
         svg.icon
 
         ul.tree__child(role='group')
-          li.tree__item(role='treeitem' tabindex='-1' aria-label='Plg — После запуска, 27 tasks')
+          li.tree__item(role='treeitem' tabindex='-1' aria-label='Plg – После запуска, 27 tasks')
             svg.icon
-            span.tree__label Plg — После запуска
+            span.tree__label Plg – После запуска
             span.tree__count(aria-hidden='true') 27
 ```
 

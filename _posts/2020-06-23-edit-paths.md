@@ -26,8 +26,8 @@ categories: Illustrator
 <p>Опорные точки можно выравнивать также как и&nbsp;объекты. Тип выравнивания&nbsp;— Align to&nbsp;Selection.</p>
 <figure><img src="{{ site.assets }}/img/blog/2020/06-23/04-align.png" alt="Выравнивание опорных точек"></figure>
 <p>Также можно выбрать команду Object ➜ Path ➜ Average (⇧⌥J) и&nbsp;выровнять по&nbsp;вертикали, горизонтали или по&nbsp;обеим осям.</p>
-<figure><img src="{{ site.assets }}/img/blog/2020/06-23/05-average.png" alt="Выравнивание опорных точек — Average"></figure>
-<figure><img src="{{ site.assets }}/img/blog/2020/06-23/06-average.png" alt="Выравнивание опорных точек — Average"></figure>
+<figure><img src="{{ site.assets }}/img/blog/2020/06-23/05-average.png" alt="Выравнивание опорных точек – Average"></figure>
+<figure><img src="{{ site.assets }}/img/blog/2020/06-23/06-average.png" alt="Выравнивание опорных точек – Average"></figure>
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Ножницы (C)&nbsp;и&nbsp;инструмент «Стирание контура» (Path Eraser Tool)</h2>
 <figure><img src="{{ site.assets }}/img/blog/2020/06-23/07-eraser-tool.png" alt="Стирание контура"></figure>
 <p>Кликнув ножницами на&nbsp;контур, добавляешь разрыв&nbsp;— две опорных точки, одну под другой.</p>

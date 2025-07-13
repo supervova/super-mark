@@ -2,7 +2,7 @@
   <ul class="pagination">
     <li class="pagination__control is-prev">
       {% if paginator.previous_page %}
-        <a class="pagination__link" href="{{ paginator.previous_page_path }}" aria-label="Назад — более свежие записи">
+        <a class="pagination__link" href="{{ paginator.previous_page_path }}" aria-label="Назад – более свежие записи">
           {% include icon.html name="chevron-left" %}
         </a>
       {% endif %}
@@ -12,7 +12,7 @@
 
     <li class="pagination__control is-next">
       {% if paginator.next_page %}
-        <a class="pagination__link" href="{{ paginator.next_page_path }}" aria-label="Вперёд — более ранние записи">
+        <a class="pagination__link" href="{{ paginator.next_page_path }}" aria-label="Вперёд – более ранние записи">
           {% include icon.html name="chevron-right" %}
         </a>
       {% endif %}

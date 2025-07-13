@@ -110,7 +110,7 @@ ru_good_advice:
 #   debug: false
 #   per_page: 10
 #   permalink: '/:num'
-#   title: ':title — :num / :max'
+#   title: ':title – :num / :max'
 #   sort_field: 'date'
 #   sort_reverse: true
 #   # paginate_path: '/ru/blog/:num'

@@ -1,6 +1,6 @@
 ---
 title: Оставьте меня! Я&nbsp;тоскую, как Блок
-description: Умрёшь — начнёшь опять сначала.
+description: Умрёшь – начнёшь опять сначала.
 image: /img/blog/2020/12-06/i-am.jpg
 categories: Facebook
 date: 2020-12-06

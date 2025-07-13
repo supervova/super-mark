@@ -21,7 +21,7 @@ header.header
   nav.navbar(aria-label='Global'): ul
       //-
         Подпись переводится в i18n.yml, ссылки собираются
-        в миксине из поля name: якорным добавляется #, блогу — /
+        в миксине из поля name: якорным добавляется #, блогу – /
       +navbarItem('portfolio', 'case')
       +navbarItem('services', 'case')
       +navbarItem('about', 'hi')
@@ -37,9 +37,9 @@ main.main(itemscope itemtype='https://schema.org/Article')
     figure
       //-
         Графические накладки будем делать множественным background'ом
-        псевдоэлемента :after. Блок размытия — псевдоэлементом :before
+        псевдоэлемента :after. Блок размытия – псевдоэлементом :before
         Но если потребуется добавить какой-то дополнительный элемент
-        для накладки, тогда — .hero__something(aria-hidden="true")
+        для накладки, тогда – .hero__something(aria-hidden="true")
       img.hero__base(alt="Тут я еще молод и красив, сейчас просто красив")
       .border
     .hero__copy

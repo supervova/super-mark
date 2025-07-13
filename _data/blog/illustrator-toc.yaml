@@ -33,11 +33,11 @@ items:
   - label: "🏰 Векторная графика: техники рисунка"
     url: "/ru/blog/2021/illustrator-graphics"
     children:
-      - label: "💪 Shape Builder Tool (Создание фигур) — ⇧M"
+      - label: "💪 Shape Builder Tool (Создание фигур) – ⇧M"
         url: "/ru/blog/2021/illustrator-shape-builder"
       - label: "✏️ Рисование фигур линиями и инструментом быстрой заливки"
         url: "/ru/blog/2021/illustrator-live-paint"
-      - label: "❤️ «Оформление» (Appearance) — палитра и раздел палитры «Свойства»"
+      - label: "❤️ «Оформление» (Appearance) – палитра и раздел палитры «Свойства»"
         url: "/ru/blog/2021/illustrator-appearance"
       - label: "📐 Направляющие и линейки"
         url: "/ru/blog/2021/illustrator-guides-and-rulers"

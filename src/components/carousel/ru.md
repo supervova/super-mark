@@ -82,7 +82,7 @@ const swiper = new Swiper('.carousel', {
 });
 ```
 
-Для работы `swiper`, достаточно сохранить экземпляр карусели в переменную, хотя Eslint будет недоволен — `no-unused-vars`. Впрочем, переменную можно использовать для управления каруселью из JS.
+Для работы `swiper`, достаточно сохранить экземпляр карусели в переменную, хотя Eslint будет недоволен – `no-unused-vars`. Впрочем, переменную можно использовать для управления каруселью из JS.
 
 ```js
 // Например, переключать слайды
@@ -161,14 +161,14 @@ swiper.on('slideChange', () => {
 
 - **effect**.	Устанавливает эффект перехода вместо стандартного прокручивания влево-вправо:
 
-  - [fade](https://swiperjs.com/demos#effect-fade) — стандартный фейдинг
-  - [cards](https://swiperjs.com/demos#effect-cards) — стопка карточек
-  - [creative](https://swiperjs.com/demos#effect-creative) — пользовательский эффект на основе стандартных трансформаций: `rotate`, `translate`, `scale`
-  - [coverflow](https://swiperjs.com/demos#effect-coverflow) — старая карусель Finder/iTunes
-  - [cube](https://swiperjs.com/demos#effect-cube) — куб
-  - [flip](https://swiperjs.com/demos#effect-flip) — переворот
+  - [fade](https://swiperjs.com/demos#effect-fade) – стандартный фейдинг
+  - [cards](https://swiperjs.com/demos#effect-cards) – стопка карточек
+  - [creative](https://swiperjs.com/demos#effect-creative) – пользовательский эффект на основе стандартных трансформаций: `rotate`, `translate`, `scale`
+  - [coverflow](https://swiperjs.com/demos#effect-coverflow) – старая карусель Finder/iTunes
+  - [cube](https://swiperjs.com/demos#effect-cube) – куб
+  - [flip](https://swiperjs.com/demos#effect-flip) – переворот
 
-  Каждый эффект должен быть подключен как модуль — см. ниже раздел «Модули» — и каждый имеет именной параметр настройки. Например, `fadeEffect`.
+  Каждый эффект должен быть подключен как модуль – см. ниже раздел «Модули» – и каждый имеет именной параметр настройки. Например, `fadeEffect`.
 
 - **grid.** Включает [многострочный режим](https://swiperjs.com/demos#grid).
 
@@ -227,7 +227,7 @@ swiper.on('slideChange', () => {
 
 ## Методы и свойства
 
-Переменная в которую сохраняется экземпляр карусели может называться по-разному. Здесь мы ее называется так же, как в [официальной документации](https://swiperjs.com/swiper-api#methods--properties) — `swiper`.
+Переменная в которую сохраняется экземпляр карусели может называться по-разному. Здесь мы ее называется так же, как в [официальной документации](https://swiperjs.com/swiper-api#methods--properties) – `swiper`.
 
 Некоторые свойства повторяют параметрам экземпляра (см. выше). Здесь мы их опустим.
 
@@ -254,8 +254,8 @@ swiper.on('slideChange', () => {
 - `click`. Клик на элементе карусели.
 - `reachEnd`. Карусель прокручена до конца.
 - `slideChange`. Изменился активный слайд.
-- `slideChangeTransition`, `slideChangeTransitionEnd`, `slideChangeTransitionStart`, `slideNextTransitionEnd`, `slideNextTransitionStart`, `slidePrevTransitionEnd`, `slidePrevTransitionStart`, `slideResetTransitionEnd` — события переходов.
-- `toEdge` — карусель прокручена к концу или началу.
+- `slideChangeTransition`, `slideChangeTransitionEnd`, `slideChangeTransitionStart`, `slideNextTransitionEnd`, `slideNextTransitionStart`, `slidePrevTransitionEnd`, `slidePrevTransitionStart`, `slideResetTransitionEnd` – события переходов.
+- `toEdge` – карусель прокручена к концу или началу.
 
 [Другие события](https://swiperjs.com/swiper-api#events)
 
@@ -284,8 +284,8 @@ modules: [Navigation],
 - [Cube Effect](https://swiperjs.com/swiper-api#cube-effect)
 - [Cards Effect](https://swiperjs.com/swiper-api#cards-effect)
 - [Creative Effect](https://swiperjs.com/swiper-api#creative-effect)
-- [Thumbs](https://swiperjs.com/swiper-api#thumbs) — навигация с помощью миниатюр
-- [Zoom](https://swiperjs.com/swiper-api#zoom) — функциональность «светового короба» — открытие увеличенного изображения из слайда
+- [Thumbs](https://swiperjs.com/swiper-api#thumbs) – навигация с помощью миниатюр
+- [Zoom](https://swiperjs.com/swiper-api#zoom) – функциональность «светового короба» – открытие увеличенного изображения из слайда
 - [Keyboard Control](https://swiperjs.com/swiper-api#keyboard-control)
 - [Mousewheel Control](https://swiperjs.com/swiper-api#mousewheel-control)
 - [Virtual Slides](https://swiperjs.com/swiper-api#virtual-slides). Позволяет хранить в DOM только необходимое количество слайдов. Это очень полезно с точки зрения производительности, если в карусели много слайдов, особенно сос ложным макетом или изображениями.
