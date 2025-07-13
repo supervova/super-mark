@@ -156,4 +156,4 @@ date: 2021-01-30
 <figure><img src="{{ site.assets }}/img/blog/2021/01-30/35-type-tool.png" alt="Масштабирование, вращение и смещение букв по одной"></figure>
 
 <h2 class="main-subhead is-smaller">🔵&nbsp;&nbsp;Горячие клавиши</h2>
-<p>⇧⌘.&nbsp;/ ⇧⌘, — Увеличить&nbsp;/ уменьшить кегль</p>
+<p>⇧⌘.&nbsp;/ ⇧⌘, – Увеличить&nbsp;/ уменьшить кегль</p>

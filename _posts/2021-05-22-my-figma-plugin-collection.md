@@ -67,7 +67,7 @@ date: 2021-05-22
 - [Move Layers](https://www.figma.com/community/plugin/767379204511357902/Move-Layers)&nbsp;— перемещение нескольких объектов с&nbsp;помощью цифрового ввода.
 - **[Organize Layers](https://www.figma.com/community/plugin/786286754606650597/Organize-Layers)**&nbsp;— делает тоже, что [Symbol Organizer](https://github.com/sonburn/symbol-organizer), только для любой страницы.
 - **[Rename It](https://www.figma.com/community/plugin/731271836271143349/Rename-It)**&nbsp;— усложненные пакетные переименования (см. также их&nbsp;выражения)
-- [Responsify](https://www.figma.com/community/plugin/743654854885744527/Responsify-%E2%9A%A1%EF%B8%8F)&nbsp;— создает из&nbsp;одного фрейма несколько]() — под разные экраны
+- [Responsify](https://www.figma.com/community/plugin/743654854885744527/Responsify-%E2%9A%A1%EF%B8%8F)&nbsp;— создает из&nbsp;одного фрейма несколько]() – под разные экраны
 - **[Reverse Layer Order](https://www.figma.com/community/plugin/738853407874474111/Reverse-Layer-Order)**.
 - **[Safely Delete Components](https://www.figma.com/community/plugin/746849770992339499/Safely-Delete-Components)**&nbsp;— удаление неиспользуемых компонентов.
 - **[Sort It](https://www.figma.com/community/plugin/731324768889901500/Sort-It)**.
@@ -91,5 +91,5 @@ date: 2021-05-22
 ## Разное
 
 - [Figma Tips](https://www.figma.com/community/plugin/973621811122426089/Figma-Tips).
-- [Pitchdeck Presentation Studio](https://www.figma.com/community/plugin/838925615018625519/Pitchdeck-Presentation-Studio) — экспорт фреймов в презентацию PowerPoint.
+- [Pitchdeck Presentation Studio](https://www.figma.com/community/plugin/838925615018625519/Pitchdeck-Presentation-Studio) – экспорт фреймов в презентацию PowerPoint.
 - [Todo](https://www.figma.com/community/plugin/747822968977461925/Todo).

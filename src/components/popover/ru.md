@@ -42,15 +42,15 @@ details.popover(data-role='popover')
 У большинства семантических HTML-тегов есть встроенные роли по умолчанию. В том числе у пары, используемой для «раскрывашек».
 
 - `deatils` выполняет роль `group`.
-- `summary` — `button`.
+- `summary` – `button`.
 
-Дополнительные `aria`-атрибуты — включая `aria-hidden` — не нужны. Хотя Github использует в своих выпадающих меню `summary(aria-haspopup='menu')`.
+Дополнительные `aria`-атрибуты – включая `aria-hidden` – не нужны. Хотя Github использует в своих выпадающих меню `summary(aria-haspopup='menu')`.
 
 ## Под вопросом
 
 Не помню, почему мне захотелось так сделать. Но сейчас меня вариант с `details` вполне устраивает.
 
-TODO: Сделать вариант `.popover>(button+.popover_body)`. Потому что details невозможно превратить в трансформера — развернуть выпадашку в tab bar на мобилках. За основу взять [вариант из Diet Framework](https://codepen.io/sebdd/pen/ExjvzJP?editors=1010). Сделать разметку ролями menu и menuitem — для не обернутых в `nav` меню. На кнопку повесить [`aria-haspopup` и `aria-expanded`](https://codepen.io/pen).
+TODO: Сделать вариант `.popover>(button+.popover_body)`. Потому что details невозможно превратить в трансформера – развернуть выпадашку в tab bar на мобилках. За основу взять [вариант из Diet Framework](https://codepen.io/sebdd/pen/ExjvzJP?editors=1010). Сделать разметку ролями menu и menuitem – для не обернутых в `nav` меню. На кнопку повесить [`aria-haspopup` и `aria-expanded`](https://codepen.io/pen).
 
 Скрытые и показываемые по клику пользователя немодальные панели. Которые могут содержать поля ввода, кнопки, короткий текст или меню.
 

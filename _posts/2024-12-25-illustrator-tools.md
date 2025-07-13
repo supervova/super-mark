@@ -1,6 +1,6 @@
 ---
 title: <span class="eyebrow">Adobe Illustrator для веб-дизайнера</span> 11) Инструменты+
-description: 'Здесь у нас — инструменты трансформации, выделения, деформации и визуализации данных. &laquo;Волшебная палочка&raquo;, &laquo;Нож&raquo;, инструменты наклона и изменения формы, а также инструменты графиков.'
+description: 'Здесь у нас – инструменты трансформации, выделения, деформации и визуализации данных. &laquo;Волшебная палочка&raquo;, &laquo;Нож&raquo;, инструменты наклона и изменения формы, а также инструменты графиков.'
 date: 2024-12-25
 categories: Illustrator
 ---
@@ -13,12 +13,12 @@ categories: Illustrator
 
 ![Вращение. Отражение. Масштабирование](https://i.imgur.com/QfYGqCi.png)
 
-- **Вращение** (Rotate) — поворот объекта вокруг точки.
-- **Отражение** (Reflect) — создание зеркального отображения объекта.
-- **Масштабирование** (Scale) — изменение размера объекта.
-- **Свободная трансформация** (Free Transform) — одновременное изменение размеров, поворота и других параметров.
-- **Искажение в перспективе** (Perspective Distort) — трансформация объекта с учетом перспективы.
-- **Свободное искажение** (Free Distort) — свободное изменение формы объекта.
+- **Вращение** (Rotate) – поворот объекта вокруг точки.
+- **Отражение** (Reflect) – создание зеркального отображения объекта.
+- **Масштабирование** (Scale) – изменение размера объекта.
+- **Свободная трансформация** (Free Transform) – одновременное изменение размеров, поворота и других параметров.
+- **Искажение в перспективе** (Perspective Distort) – трансформация объекта с учетом перспективы.
+- **Свободное искажение** (Free Distort) – свободное изменение формы объекта.
 
 ## Волшебная палочка (Magic Wand)
 
@@ -34,7 +34,7 @@ categories: Illustrator
 
 Инструмент для выделения опорных точек у одного или нескольких объектов.
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/lasso.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/lasso.png)
 
 Полезен при точной работе с кривыми и угловыми элементами.
 
@@ -42,21 +42,21 @@ categories: Illustrator
 
 Позволяет выделять отдельные объекты внутри групп без необходимости разгруппировки.
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/group-selection.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/group-selection.png)
 
 ## Нож (Knife)
 
 Используется для разрезания объектов по свободно проведенной линии.
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/knife.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/knife.png)
 
-Результат — несколько отдельных частей.
+Результат – несколько отдельных частей.
 
 ## Shear (Наклон)
 
 Инструмент для наклона объекта:
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/rs_10.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/rs_10.png)
 
 - Для вертикального или горизонтального наклона удерживайте `Shift`.
 - Точка наклона может быть изменена через перемещение контрольной точки.
@@ -65,13 +65,13 @@ categories: Illustrator
 
 Позволяет выгибать сегменты контуров или трансформировать линии. Белая стрелка (Direct Selection) и инструмент «Кривизна» часто являются более интуитивными для этих задач.
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/reshape.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/reshape.png)
 
 ## Линейка (Ruler)
 
 Используется для измерения расстояний и углов. Часто применяется при построении макетов и схем.
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/ruler.png)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/ruler.png)
 
 ## Группа инструментов деформации
 
@@ -79,13 +79,13 @@ categories: Illustrator
 
 ![Группы инструментов](https://i.imgur.com/dmS4nER.png)
 
-- **Warp Tool (Деформация)** — для пластической трансформации.
-- **Twirl Tool (Воронка)** — для создания закручивания.
-- **Pucker Tool (Втягивание)** — втягивание формы к курсору.
-- **Bloat Tool (Раздувание)** — раздувание формы от центра курсора.
-- **Scallop Tool (Зубцы)** — добавление зубцов к контуру.
-- **Crystallize Tool (Кристаллизация)** — добавление шипов.
-- **Wrinkle Tool (Морщины)** — добавление мелких искажений.
+- **Warp Tool (Деформация)** – для пластической трансформации.
+- **Twirl Tool (Воронка)** – для создания закручивания.
+- **Pucker Tool (Втягивание)** – втягивание формы к курсору.
+- **Bloat Tool (Раздувание)** – раздувание формы от центра курсора.
+- **Scallop Tool (Зубцы)** – добавление зубцов к контуру.
+- **Crystallize Tool (Кристаллизация)** – добавление шипов.
+- **Wrinkle Tool (Морщины)** – добавление мелких искажений.
 
 Настройки каждого инструмента доступны через двойной щелчок по значку.
 
@@ -99,7 +99,7 @@ categories: Illustrator
 
 Предназначены для [визуализации табличной информации](https://helpx.adobe.com/ru/illustrator/using/graphs.html).
 
-![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/1_Create-Graphs_Click.gif)
+![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/1_Create-Graphs_Click.gif)
 
 - **Column Graph** (Столбчатый график)
 
@@ -107,32 +107,32 @@ categories: Illustrator
 
 - **Stacked column graphs** (Вертикальный стек)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Stacked-Column-Graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Stacked-Column-Graph.png)
 
 - **Bar graphs** (Горизонтальные полосы)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Bar-graphs_pos-neg-value.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Bar-graphs_pos-neg-value.png)
 
 - **Stacked bar graphs** (Горизонтальный стек)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Stacked-Bar-Graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Stacked-Bar-Graph.png)
 
 - **Line graphs** (Линейная диаграмма)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Line-Graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Line-Graph.png)
 
 - **Area graphs** (Диаграмма областей)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Area-Graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Area-Graph.png)
 
 - **Scatter graphs** (Точечные диаграммы)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Scatter-Graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Scatter-Graph.png)
 
 - **Pie graphs** («Пироги»)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/pie-graph-single.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/pie-graph-single.png)
 
 - **Radar graphs** (Радар)
 
-    ![Adobe Illustrator — инструменты](/assets/img/blog/2024/12-28/Radar-graph.png)
+    ![Adobe Illustrator – инструменты](/assets/img/blog/2024/12-28/Radar-graph.png)

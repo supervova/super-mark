@@ -12,7 +12,7 @@ section.tabs
   //- .tabs__nav: role='tablist' + aria-labelledby / или  aria-label, если заголовок всей группы неуместен
   .tabs__nav(role='tablist' aria-labelledby='section-services-title')
 
-    //- Вкладка: role='tab', aria-selected, aria-controls, id — для именования панели
+    //- Вкладка: role='tab', aria-selected, aria-controls, id – для именования панели
     button#tab-1(type='button' role='tab' aria-selected='true' aria-controls='tabpanel-1')
       span.focus Maria Ahlefeldt
     button#tab-2(type='button' role='tab' aria-selected='false' aria-controls='tabpanel-2' tabindex='-1')

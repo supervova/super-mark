@@ -27,7 +27,7 @@ date: 2021-05-22
   </li>
   <li>
     Создать группу быстрой заливки быстрой заливки и&nbsp;выбрать соответствующий инструмент: Live Paint Backet&nbsp;— K.
-    <figure><img src="{{ site.assets }}/img/blog/2021/05-22/03-live-paint-bucket.png" alt="Live Paint Backet — K" /></figure>
+    <figure><img src="{{ site.assets }}/img/blog/2021/05-22/03-live-paint-bucket.png" alt="Live Paint Backet – K" /></figure>
   </li>
   <li>
     Подвести курсор к&nbsp;нужному контуру&nbsp;— если, он&nbsp;закрыт, он&nbsp;выделиться.

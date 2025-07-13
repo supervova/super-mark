@@ -32,13 +32,13 @@
   content:
     en:
       - "<strong>Websites and promotional materials</strong> in academic traditions of visual arts."
-      - "<strong>UX Design</strong>: Proprietary heuristics based on Gestalt principles and other psychological approaches. Complete production cycle — from requirement gathering and customer development (CustDev) to hallway testing as part of iterative improvements."
+      - "<strong>UX Design</strong>: Proprietary heuristics based on Gestalt principles and other psychological approaches. Complete production cycle – from requirement gathering and customer development (CustDev) to hallway testing as part of iterative improvements."
       - "<strong>UI and Communication Design</strong>: Key visuals, prototypes, and hi-fi design mockups. Expert in Material Design and Apple&rsquo;s Human Interface Guidelines (HIG)."
       - "<strong>Design Systems</strong>, Illustrations, Animation."
     ru:
       - "<strong>Веб-сайты и промоматериалы</strong> в академических традициях визуальных искусств."
-      - "<strong>UX</strong>: авторские эвристики на основе гештальт-подходов и др. направлений в психологии; полный производственный цикл — от сбора требований и CustDev до коридорных тестов в рамках итеративных улучшений."
-      - "<strong>UI и коммуникационный дизайн</strong>: key visuals, прототипы, hi-fi дизайн-макеты. Material Design и HIG — в совершенстве."
+      - "<strong>UX</strong>: авторские эвристики на основе гештальт-подходов и др. направлений в психологии; полный производственный цикл – от сбора требований и CustDev до коридорных тестов в рамках итеративных улучшений."
+      - "<strong>UI и коммуникационный дизайн</strong>: key visuals, прототипы, hi-fi дизайн-макеты. Material Design и HIG – в совершенстве."
       - "<strong>Дизайн-системы</strong>, иллюстрации, анимация."
 
 - id: "subsection-marketing"
@@ -59,7 +59,7 @@
     ru:
       - "<strong>Настройка кампаний</strong> в Google Ads и Директе, «медийка»."
       - "<strong>SEО и ASO</strong>: техническая оптимизация и наращивание ссылочной массы."
-      - "<strong>Контент-маркетинг</strong>, блоггинг. В том числе — мультимедийные лонгриды."
+      - "<strong>Контент-маркетинг</strong>, блоггинг. В том числе – мультимедийные лонгриды."
       - "<strong>Аналитика</strong>, гроус-хакинг, CRO."
       - "<strong>Email-маркетинг</strong>: запуск кампаний в MailChimp и альтернативах. Трансакционные, триггерные, акционные и новостные рассылки."
       - "<strong>SMM</strong>: создание и поддержка корпоративных аккаунтов, наращивание и вовлечение подписчиков."
