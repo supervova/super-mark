@@ -1,18 +1,3 @@
-# A leading slash matches the beginning of the pathname.
-# For example, /*.html matches cat.html but not folder/dog.html
-
-# Trailing slash. foo/ will match a directory foo and paths underneath it,
-# but will not match a regular file or a symbolic link foo
-
-# Nested Folders.
-# products/*.html matches products/soap.html
-# but not products/cars/audi.html or branch/products/soap.html
-# *products*.html matches second and third paths:
-# products/cars/audi.html and branch/products/soap.html
-# the equivalent solution to using /folder/**/*.abc pattern would be
-# placing another .gitignore file into /folder/ and having pattern *.abc
-# there.
-
 # ------------------------------------------------------------------------------
 # JEKYLL
 # ------------------------------------------------------------------------------
@@ -20,62 +5,97 @@
 .jekyll-cache
 .jekyll-metadata
 _site
-deploy.sh
 
+# Ruby
+.bundle/
+vendor/
 
 # ------------------------------------------------------------------------------
-# LOCAL DEVELOPMENT
+# WORKING STUFF
 # ------------------------------------------------------------------------------
 
-# Working stuff
 *~.*
-
-# Editors
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/settings.json
-!.vscode/tasks.json
-*.code-workspace
-*_notes
-.vscode/*
-
-#Build generated
-*.sass-cache*
-.tmp
-src/**/*.css
-sprite.symbol.html
-
-# Big media files
-/src/projects
-
-# Logs, backups
-*.bak
-*.log
-*.swp
-
-# Package managers
-.npm
-.yarn-integrity
-.yarn/
-jspm_packages
-node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-# All yarn.lock files should be checked into source control
-
-# Optional eslint cache
-.eslintcache
-
-# dotenv environment variables file(s)
 .env
 .env.*
 !.env.example
+deploy.sh
+notes.md
+tmp/
+temp/
 
-# Serverless generated files
-.serverless/
+# ------------------------------------------------------------------------------
+# EDITORS
+# ------------------------------------------------------------------------------
 
+.obsidian
+.vscode/*
+!.vscode/settings.json
+*.code-workspace
+/GEMINI.md
+
+# ------------------------------------------------------------------------------
+# PACKAGE MANAGERS
+# ------------------------------------------------------------------------------
+
+*.tgz
+.npm
+.pnpm-store/
+.yarn-integrity
+node_modules
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# All *.lock files should be checked into source control
+
+# ------------------------------------------------------------------------------
+# BUILD ARTIFACTS
+# ------------------------------------------------------------------------------
+
+*.sass-cache*
+.cache
+.eslintcache
+.tmp
+dist/
+sprite.symbol.html
+src/**/*.css
+
+# ------------------------------------------------------------------------------
+# LOGS, BACKUPS
+# ------------------------------------------------------------------------------
+
+*.bak
+*.log
+*.swp
+backup
+logs
+
+# ------------------------------------------------------------------------------
+# MEDIA FILES
+# ------------------------------------------------------------------------------
+/src/projects
+*.avi
+*.doc
+*.docx
+# *.gif
+# *.jpeg
+# *.jpg
+# *.mov
+*.mp3
+# *.mp4
+*.mpeg
+# *.pdf
+# *.png
+# *.svg
+# *.webm
+# *.webp
+*.wmv
+
+# ------------------------------------------------------------------------------
 # SYSTEM FILES
+# ------------------------------------------------------------------------------
+
 *.DS_Store
 *.app
 
@@ -101,4 +121,3 @@ $RECYCLE.BIN/
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-

@@ -3,11 +3,7 @@
 import gulp from 'gulp';
 import newer from 'gulp-newer';
 import size from 'gulp-size';
-import imagemin from 'gulp-imagemin';
-import imageminGIF from 'imagemin-gifsicle';
-import imageminJPG from 'imagemin-mozjpeg';
-import imageminPNG from 'imagemin-pngquant';
-import imageminSVG from 'imagemin-svgo';
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import { paths } from './paths.js';
 
 const { src, dest, parallel } = gulp;
@@ -23,32 +19,20 @@ function minifyImages(source, subtitle) {
   return src(source, { encoding: false })
     .pipe(newer(destination))
     .pipe(
-      imagemin(
-        [
-          imageminGIF({ interlaced: true, optimizationLevel: 3 }),
-          imageminJPG({ quality: 85 }),
-          imageminPNG(),
-          imageminSVG({
-            plugins: [
-              {
-                name: 'removeViewBox',
-                active: false,
-              },
-              {
-                name: 'cleanupIds',
-                params: {
-                  remove: false,
-                  minify: false,
-                  preserve: [],
-                  preservePrefixes: [],
-                  force: false,
-                },
-              },
-            ],
-          }),
-        ],
-        { verbose: true }
-      )
+      imagemin([
+        gifsicle({ interlaced: true }),
+        mozjpeg({ quality: 85, progressive: true }),
+        optipng({ optimizationLevel: 1 }),
+        svgo({
+          plugins: [
+            { name: 'removeViewBox', active: false },
+            {
+              name: 'cleanupIDs',
+              params: { remove: false, minify: false, preserve: [] },
+            },
+          ],
+        }),
+      ])
     )
     .pipe(dest(destination))
     .pipe(size({ title: `images: ${subtitle}` }));
