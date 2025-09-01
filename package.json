@@ -244,6 +244,19 @@
       }
     }
   },
+  "packageManager": "pnpm@10.13.1",
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "es5-ext",
+      "gifsicle",
+      "mozjpeg",
+      "optipng-bin"
+    ]
+  },
+  "dependencies": {
+    "swiper": "^11.2.10"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
     "browser-sync": "^3.0.4",
@@ -277,9 +290,5 @@
     "terser-webpack-plugin": "^5.3.14",
     "webpack-stream": "^7.0.0",
     "yargs": "^18.0.0"
-  },
-  "packageManager": "pnpm@10.13.1",
-  "dependencies": {
-    "swiper": "^11.2.10"
   }
 }
