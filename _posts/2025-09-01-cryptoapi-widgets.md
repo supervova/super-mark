@@ -90,8 +90,8 @@ date: 2025-09-01
 })();
 </script>
 
-<!-- TRIndex -->
-<iframe src="https://cryptoapi.ai/ru/widgets/trindex?theme=light&PageSpeed=Off&widget_bypass=PROD_STUB" title="Crypto trindex widget" loading="lazy"
+<!-- TRANDEX -->
+<iframe src="https://cryptoapi.ai/ru/widgets/trandx?theme=dark&PageSpeed=Off&aff=2266320&widget_bypass=PROD_STUB" title="Crypto trandx widget" loading="lazy"
   referrerpolicy="no-referrer-when-downgrade"
   sandbox="allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin"
   style="border:0;border-radius:12px;overflow:hidden;width:100%" width="100%"></iframe>
