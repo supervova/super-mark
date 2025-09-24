@@ -1,20 +1,20 @@
 - title:
+    en: 'Crypto Trading System — AI-Enhanced SaaS Platform Design'
+    ru: 'Торговая платформа с ИИ для криптотрейдеров'
+  img: cryptoapi
+  link: 26571797-AI-Powered-Crypto-Trading-System
+
+- title:
+    en: "Echo Immortal: Cultivating Digital Doubles"
+    ru: 'Echo Immortal: выращивание цифровых двойников'
+  img: immortal
+  link: 26012874-Echo-Immortal-Designing-the-UI-for-a-Digital-Afterlife
+
+- title:
     en: '2024 Design Roundup'
     ru: 'Рутина 2024-го'
   img: 2024
   link: 26011924-2024-Design-Roundup
-
-- title:
-    en: 'Portuguese Golden Visa website design'
-    ru: 'Португальская «золотая виза»'
-  img: portugal
-  link: 23592585-Portuguese-Golden-Visa
-
-- title:
-    en: 'The NDA social network website design'
-    ru: 'Социальная сеть под NDA'
-  img: nda
-  link: 23599842-The-NDA-social-network
 
 - title:
     en: 'Circle of Friends website design'
@@ -131,7 +131,15 @@
   link: 26525620--Sports-Clubs-Classes-Aggregator-Mobile-App-Promo-Website
 
 - title:
-    en: "Echo Immortal: Cultivating Digital Doubles"
-    ru: 'Echo Immortal: выращивание цифровых двойников'
-  img: immortal
-  link: 26012874-Echo-Immortal-Designing-the-UI-for-a-Digital-Afterlife
+    en: 'The NDA social network website design'
+    ru: 'Социальная сеть под NDA'
+  img: nda
+  link: 23599842-The-NDA-social-network
+
+- title:
+    en: 'Portuguese Golden Visa website design'
+    ru: 'Португальская «золотая виза»'
+  img: portugal
+  link: 23592585-Portuguese-Golden-Visa
+
+
