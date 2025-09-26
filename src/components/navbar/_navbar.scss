@@ -47,7 +47,7 @@
   backdrop-filter: var(--color-background-frosted-glass-backdrop);
   display: flex;
   justify-content: center;
-  padding: $size-1;
+  padding: $size-1 $size-1 calc(env(safe-area-inset-bottom) + #{$size-1});
   position: fixed;
   top: auto;
   right: 0;
@@ -60,6 +60,7 @@
     background-color: transparent;
     backdrop-filter: none;
     padding-inline: 0;
+    padding-bottom: $size-1;
     position: relative;
   }
 }
