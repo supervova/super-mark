@@ -61,12 +61,14 @@
   display: flex;
   align-items: center;
   gap: rem(10);
+  padding-top: rem(5);
 
   @media (--tablet) {
     flex-direction: column;
     gap: 0;
     pointer-events: all;
     margin-bottom: $size-line;
+    padding-top: 0;
   }
 }
 
