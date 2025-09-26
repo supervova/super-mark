@@ -22,7 +22,8 @@ html {
 
 body {
   accent-color: var(--color-brand-primary);
-  background: var(--color-background-base)
+  background:
+    var(--color-background-base)
     url('#{$site-assets}/img/pages/background.svg') 50% rem(160) no-repeat;
   color: var(--color-ink-base);
   display: flex;
@@ -32,8 +33,11 @@ body {
   line-height: var(--line-height-base);
   text-align: left;
   // Create safe areas for iPhone X+
-  padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
 
   min-width: 320px;
   min-height: 100vh;
