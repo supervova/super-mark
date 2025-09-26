@@ -55,6 +55,8 @@
   left: 0;
   height: $size-5 * 2;
   z-index: $zindex-fixed;
+  transform: translateY(0);
+  transition: transform $duration-sm $easing-base;
 
   @media (--tablet) {
     background-color: transparent;
@@ -62,6 +64,14 @@
     padding-inline: 0;
     padding-bottom: $size-1;
     position: relative;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (--phone-p) {
+  .navbar__base.is-hidden {
+    transform: translateY(100%);
   }
 }
 
