@@ -69,7 +69,7 @@ ul {
 }
 
 // Unordered list
-ul {
+ul:not(ul ul):not(ol ul) {
   @media (--tablet) {
     padding-left: 0;
   }
