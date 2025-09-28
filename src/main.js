@@ -5,7 +5,7 @@ import initHeaderObserver from './components/header/header.js';
 import initModals from './components/modal/modal.js';
 import initPopovers from './components/popover/popover.js'; // Close popovers on Esc
 import initTabs from './components/tabs/tabs.js';
-import initNavbarHideOnScroll from './components/navbar/hideOnScroll.js';
+// import initNavbarHideOnScroll from './components/navbar/hideOnScroll.js';
 
 // Toggle search form on mobiles
 // import './components/js/header';
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderObserver();
   initTabs();
   initPopovers();
-  initNavbarHideOnScroll();
+  // initNavbarHideOnScroll();
   // eslint-disable-next-line no-unused-vars
   const swiper = new Swiper('.carousel', {
     modules: [Navigation],
