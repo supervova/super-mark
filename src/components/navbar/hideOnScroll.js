@@ -88,7 +88,9 @@ const isSafari = () => {
   const { userAgent, vendor } = navigator;
   const isAppleVendor = vendor === 'Apple Computer, Inc.';
   const isSafariEngine = /Safari\//.test(userAgent);
-  const isExcluded = /(CriOS|FxiOS|EdgiOS|OPiOS|Chrome|Android)/.test(userAgent);
+  const isExcluded = /(CriOS|FxiOS|EdgiOS|OPiOS|Chrome|Android)/.test(
+    userAgent
+  );
 
   return isAppleVendor && isSafariEngine && !isExcluded;
 };

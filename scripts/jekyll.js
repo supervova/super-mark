@@ -1,7 +1,5 @@
 // 🧪 JEKYLL
 
-/* eslint-disable no-console */
-
 import shell from 'shelljs';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';

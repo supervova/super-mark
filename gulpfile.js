@@ -1,12 +1,12 @@
 import { series, parallel } from 'gulp';
-import cssTasks, { cssMain, cssFront } from './build/styles.js';
-import imgTasks from './build/images.js';
-import jsTasks, { copyJs } from './build/scripts.js';
-import spriteTask from './build/sprite.js';
-import { cleanAssets, cleanSrc, cleanPages } from './build/clean.js';
-import { copyDownloads, copyVideo } from './build/copy.js';
-import { jekyllBuild, jekyllServe } from './build/jekyll.js';
-import { serve, serveBs, watchFiles } from './build/server.js';
+import cssTasks, { cssMain, cssFront } from './scripts/styles.js';
+import imgTasks from './scripts/images.js';
+import jsTasks, { copyJs } from './scripts/scripts.js';
+import spriteTask from './scripts/sprite.js';
+import { cleanAssets, cleanSrc, cleanPages } from './scripts/clean.js';
+import { copyDownloads, copyVideo } from './scripts/copy.js';
+import { jekyllBuild, jekyllServe } from './scripts/jekyll.js';
+import { serve, serveBs, watchFiles } from './scripts/server.js';
 
 const buildAll = series(
   cleanPages,

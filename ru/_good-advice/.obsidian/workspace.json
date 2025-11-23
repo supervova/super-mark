@@ -11,10 +11,14 @@
             "id": "9335ce6f5d9b3f44",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "index"
             }
           }
         ]
@@ -165,6 +169,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Создать новую базу": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "daily-notes:Сегодняшняя заметка": false,
@@ -173,8 +178,9 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "3dffc17654ee2915",
+  "active": "9335ce6f5d9b3f44",
   "lastOpenFiles": [
+    "_book.md",
     "you-could-be-wrong.md",
     "write-down-idea.md",
     "worth-it.md",
@@ -200,7 +206,6 @@
     "speak-up-about-issues.md",
     "smart-breakup.md",
     "small-things-to-cheer-you-up.md",
-    "small-things-serena-wolf-needle-list.md",
     "how-to",
     "_assets/15_Ways_to_Beat_Procrastination.resources",
     "_assets",

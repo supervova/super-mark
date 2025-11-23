@@ -1,6 +1,5 @@
 // 🧹 CLEAN UP
 
-/* eslint-disable no-console */
 import { deleteAsync } from 'del';
 import { root } from './paths.js';
 

@@ -1,6 +1,5 @@
 // 🎨 STYLES
 
-/* eslint-disable no-console */
 import gulp from 'gulp';
 
 import * as sass from 'sass';
