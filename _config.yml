@@ -207,15 +207,19 @@ exclude:
   - .jekyll-cache
   - .obsidian
   - .sass-cache
+  - AGENTS.md
   - build
   - Gemfile
   - Gemfile.lock
   - deploy.sh
+  - docs
+  - eslint.config.js
   - gemfiles
   - gulpfile*
   - gulpfile.js
   - node_modules
   - package.json
+  - pnpm-lock.yaml
   - readme.md
   - readme~.md
   - ru/_good-advice/assets
