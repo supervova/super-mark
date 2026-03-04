@@ -1,6 +1,7 @@
 @use '../../styles/abstracts' as *;
 
 .list.is-nested-ol {
+  --ol-num: 4.4ch;
   counter-reset: item;
   list-style-type: none;
   padding-top: var(--padding-top-base);
@@ -11,6 +12,7 @@
   }
 
   li {
+    padding-inline: var(--ol-num);
     padding-bottom: var(--padding-bottom-li);
   }
 
@@ -24,8 +26,12 @@
 
     &::before {
       content: counter(item) '. ';
+      font-variant-numeric: tabular-nums lining-nums;
+      text-align: end;
+      white-space: nowrap;
+      padding-inline-end: 0.4ch;
       position: absolute;
-      left: -1.5em;
+      width: var(--ol-num);
     }
   }
 }
@@ -39,7 +45,7 @@
 
     &::before {
       content: counter(item) '.' counter(subitem) '. ';
-      left: -2.5em;
+      // left: -2.5em;
     }
   }
 }
