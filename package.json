@@ -10,7 +10,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --kill-others 'gulp s' 'gulp w'",
+    "dev": "gulp dev",
     "lint:js": "eslint src scripts gulpfile*.js --max-warnings=0"
   },
   "stylelint": {

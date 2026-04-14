@@ -1,10 +1,10 @@
 hero:
   title:
-    en: '<b>Full Stack</b> Webmaster'
-    ru: '<b>Веб-мастер</b> на все руки'
+    en: '<b>Product Designer</b> <span>with Superpowers</span>'
+    ru: '<b>Product-дизайнер</b> <span>со сверхспособностями</span>'
   desc:
-    en: 'Hiring a full-time team of developers, marketers, and designers isn&rsquo;t always practical. But you still need marketing support, website maintenance, and landing pages – done professionally, not half-baked, and at a reasonable cost. Replace the whole department with one contract designer / vibe coder – and enjoy the results.'
-    ru: 'Вам невыгодна постоянная команда программистов, маркетологов и дизайнеров? Но нужны продвижение, поддержка сайта, лендинг-страницы? Причём на уровне, а не из сельпо. И за разумные деньги. Замените отдел одним дизайнером / вайб-кодером на подряде – будет вам счастье…'
+    en: 'You don’t just need design — you need growth in conversion, retention, and revenue. I’m a product designer specializing in complex interfaces and UI systems. I work at the intersection of design and development (Figma → Storybook → CI) and help bring products to market faster.'
+    ru: 'Вам ведь нужен не просто дизайн, а рост конверсии, удержания и выручки? А я — продуктовый дизайнер с экспертизой в сложных интерфейсах и UI-системах. Работаю на стыке дизайна и разработки (Figma → Storybook → CI) и помогаю быстрее выводить продукт на рынок.'
   alt:
     en: "My portrait. Here I am still young and handsome, now I'm just handsome"
     ru: 'Мой портрет. Здесь я еще молод и красив, сейчас просто красив'
@@ -17,18 +17,15 @@ hero:
 
 about:
   kpi:
-    n25:
-      en: 'years in web design, development, and marketing'
-      ru: 'лет в веб-разработке и диджитал-маркетинге'
-    n8:
-      en: 'years in leadership positions in the newspapers'
-      ru: 'лет на руководящей работе в СМИ'
+    first:
+      en: 'conversion'
+      ru: 'конверсии'
 
   desc:
-    en: '<strong>SuperMark is a trademark of Vladimir Nikishin.</strong> A journalist by education. I started on the editorial boards of the largest newspapers in Vladivostok, Russia. 25 years in the digital industry. Over the years in the IT industry, I have gained skills in all areas of production and promotion of internet projects: design, front-end development, online marketing.'
-    ru: '<strong>SuperMark – это торговая марка Владимира Никишина.</strong> Журналист по образованию. Начинал в редколлегиях крупнейших газет Владивостока. Сменил профессию, и за долгие годы в диджитал-индустрии стал универсалом: дизайн, фронт-энд разработка, онлайн-маркетинг. И швец, и жнец, и на дуде маркетолог.'
+    en: '<strong>My name is Vladimir Nikishin</strong>, and SuperMark is my personal brand. I have a background in journalism but built my career in the digital industry. The numbers above highlight results from one of my previous projects. I could also add: NPS growth from 27 to 56, 61% faster order placement, 72% faster instrument search, and more. The point behind all these metrics is simple — with the right person, you can achieve real results too.'
+    ru: '<strong>Меня зовут Владимир Никишин</strong>, а SuperMark — это моя торговая марка. Журналист по образованию, но карьеру сделал в диджитал-индустрии. На карточках выше — красивые цифры результатов, которых достиг в одном из своих предыдущих проектов. Там можно ещё добавить NPS: 27 → 56, ускорение размещение ордера на 61 %, поиск инструмента на 72 % и т.д. и т.п. А суть этой арифметики в том, что и вы сможете чего-то добиться с правильным человеком.'
 
   ai-note:
-    en: 'And with the help of ChatGPT, Gemini, and Claude, all of these skills reach 95%. I’m convinced that 100-percent mastery of any craft is unattainable, even for AI.'
-    ru: 'А с помощью ChatGPT, Gemini и Claude все эти навыки достигают 95%. 100-процентное владение любым ремеслом, уверен, недостижимо даже для ИИ.'
+    en: 'And with the help of ChatGPT, Codex, and Claude, all of these skills reach 95%. I’m convinced that 100-percent mastery of any craft is unattainable, even for AI.'
+    ru: 'А с помощью ChatGPT, Codex и Claude все эти навыки достигают 95%. 100-процентное владение любым ремеслом, уверен, недостижимо даже для ИИ.'
 

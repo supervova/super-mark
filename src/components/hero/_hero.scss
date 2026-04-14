@@ -243,14 +243,22 @@
 }
 
 .hero__copy h1 {
-  @include text-format(hero-title);
-
   font-family: $font-family-title;
   font-weight: var(--font-weight-hero-title);
-  letter-spacing: -1 * rem(1.44);
+  padding-top: var(--padding-top-hero-title);
+  padding-bottom: var(--padding-bottom-hero-title);
 
   b {
+    font-size: var(--font-size-hero-title);
     font-weight: 600;
+    letter-spacing: -0.09rem;
+    line-height: var(--line-height-hero-title);
+  }
+
+  span {
+    font-size: var(--font-size-h2);
+    letter-spacing: -0.04rem;
+    line-height: var(--line-height-h2);
   }
 
   @media (--tablet) {

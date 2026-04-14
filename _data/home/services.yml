@@ -2,44 +2,48 @@
   active: false
   button:
     phone:
-      en: "Des."
+      en: "Dev."
       ru: "Раз"
     base:
       en: "Development"
       ru: "Разработка"
   content:
     en:
-      - "<strong>Websites</strong> on traditional and headless CMS or static site generators: WordPress, Strapi, Jekyll."
-      - "<strong>Complex cross-browser responsive layouts</strong> built on HTML that meets W3C standards, including WCAG. Elegant, semantic markup extended with schema.org microdata. Templating engines: Nunjucks, Pug, Twig."
-      - "<strong>Properly structured CSS</strong> using best practices and modules. CSS grid, Flexbox, custom properties, SVG sprites, custom Sass functions, etc."
-      - "<strong>Vanilla JavaScript</strong> <code>(\"es2023\": true)</code>."
-      - "<strong>Site speed optimization</strong> according to Lighthouse recommendations."
+      - "<strong>AI-first</strong> workflow."
+      - "<strong>Building development-ready UI</strong>: from structure to final implementation."
+      - "<strong>Integrating design systems</strong> into frontend (Storybook, CI/CD)."
+      - "<strong>React, TypeScript, and modern CSS</strong>. Understanding frontend architecture and constraints."
+      - "<strong>Optimizing interfaces</strong> for performance and UX."
+
     ru:
-      - "<strong>Сайты на генераторах</strong> или традиционных и headless CMS: WordPress, Strapi, Jekyll."
-      - "<strong>Сложные кроссбраузерные адаптивные макеты</strong>, собранные на HTML, соответствующем стандартам W3C, включая WCAG. Элегантная, семантическая разметка, расширенная микроданными в формате schema.org. Шаблонизаторы: Nunjucks, Pug, Twig."
-      - "<strong>Правильно структурированные CSS</strong> с применением передовых практик и модулей. CSS grid, Flexbox, custom properties, SVG-спрайты, пользовательские Sass-функции и т. д."
-      - "<strong>«Ванильный» JavaScript</strong> <code>(\"es2023\": true)</code>."
-      - "<strong>Оптимизация скорости загрузки</strong> сайта по рекомендациям Lighthouse."
+      - "<strong>AI-first</strong> процессы."
+      - "<strong>Построение UI</strong>, готового к разработке: от структуры до финальной реализации."
+      - "<strong>Интеграция дизайн-систем</strong> во frontend (Storybook, CI/CD)."
+      - "<strong>React, TypeScript и современный CSS</strong>. Понимание архитектуры и ограничений frontend."
+      - "<strong>Оптимизация интерфейсов</strong> с точки зрения производительности и UX."
 - id: "subsection-design"
   active: true
   button:
     phone:
-      en: "Dev."
+      en: "Des."
       ru: "Два"
     base:
       en: "Design"
       ru: "Дизайн"
   content:
     en:
-      - "<strong>Websites and promotional materials</strong> in academic traditions of visual arts."
-      - "<strong>UX Design</strong>: Proprietary heuristics based on Gestalt principles and other psychological approaches. Complete production cycle – from requirement gathering and customer development (CustDev) to hallway testing as part of iterative improvements."
-      - "<strong>UI and Communication Design</strong>: Key visuals, prototypes, and hi-fi design mockups. Expert in Material Design and Apple&rsquo;s Human Interface Guidelines (HIG)."
-      - "<strong>Design Systems</strong>, Illustrations, Animation."
+      - "<strong>AI-first</strong> workflow."
+      - "<strong>Designing complex B2C and SaaS</strong> interfaces."
+      - "<strong>UX research</strong>, user flows, hypotheses, and iterative improvements."
+      - "<strong>UI design</strong>: from prototypes to production-ready layouts."
+      - "<strong>Creating and evolving design systems</strong> (UI kits, documentation, components)."
     ru:
-      - "<strong>Веб-сайты и промоматериалы</strong> в академических традициях визуальных искусств."
-      - "<strong>UX</strong>: авторские эвристики на основе гештальт-подходов и др. направлений в психологии; полный производственный цикл – от сбора требований и CustDev до коридорных тестов в рамках итеративных улучшений."
-      - "<strong>UI и коммуникационный дизайн</strong>: key visuals, прототипы, hi-fi дизайн-макеты. Material Design и HIG – в совершенстве."
-      - "<strong>Дизайн-системы</strong>, иллюстрации, анимация."
+      - "<strong>AI-first</strong> процессы."
+      - "<strong>Проектирование сложных B2C</strong> и SaaS-интерфейсов."
+      - "<strong>UX-исследования</strong>, сценарии, гипотезы и итеративные улучшения."
+      - "<strong>UI-дизайн:</strong> от прототипов до production-ready макетов."
+      - "<strong>Разработка и развитие дизайн-систем</strong> (UI-kit, документация, компоненты)."
+      - "<strong>Анимация и микроинтеракции</strong> (включая Lottie)."
 
 - id: "subsection-marketing"
   active: false
@@ -52,14 +56,14 @@
       ru: "Маркетинг"
   content:
     en:
-      - "<strong>Setting up campaigns</strong> in Google Ads."
-      - "<strong>SEO and ASO</strong>: on-page optimization."
-      - "<strong>Analytics</strong>, growth hacking, CRO."
-      - "<strong>Email marketing</strong>: launch transactional, promotional and newsletter campaigns in MailChimp."
+      - "<strong>AI-first</strong> workflow."
+      - "<strong>User flow and conversion</strong> optimization (CRO)."
+      - "<strong>User behavior analytics</strong> and bottleneck identification."
+      - "<strong>Supporting product hypotheses</strong> through UX solutions."
+      - "<strong>Working with KPIs</strong>: conversion, retention, ARPU."
     ru:
-      - "<strong>Настройка кампаний</strong> в Google Ads и Директе, «медийка»."
-      - "<strong>SEО и ASO</strong>: техническая оптимизация и наращивание ссылочной массы."
-      - "<strong>Контент-маркетинг</strong>, блоггинг. В том числе – мультимедийные лонгриды."
-      - "<strong>Аналитика</strong>, гроус-хакинг, CRO."
-      - "<strong>Email-маркетинг</strong>: запуск кампаний в MailChimp и альтернативах. Трансакционные, триггерные, акционные и новостные рассылки."
-      - "<strong>SMM</strong>: создание и поддержка корпоративных аккаунтов, наращивание и вовлечение подписчиков."
+      - "<strong>AI-first</strong> процессы."
+      - "<strong>Оптимизация пользовательских сценариев</strong> и конверсии (CRO)."
+      - "<strong>Аналитика поведения</strong> пользователей и выявление узких мест."
+      - "<strong>Поддержка продуктовых гипотез</strong> через UX-решения."
+      - "<strong>Работа с метриками</strong>: конверсия, retention, ARPU."

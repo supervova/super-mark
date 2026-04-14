@@ -31,7 +31,7 @@ const paths = {
     docs: [
       `${root.base}/*.html`,
       `${root.base}/_config.yml`,
-      `${root.base}/_data/*.yml`,
+      `${root.base}/_data/**/*.{yml,yaml,json,csv,tsv}`,
       `${root.base}/_includes/*.html`,
       `${root.base}/_layouts/*.html`,
       `${root.base}/_posts/*.*`,
