@@ -1,4 +1,14 @@
 - primary:
+    name:
+      en: "Product Design (UX/UI)"
+      ru: "Продуктовый дизайн (UX/UI)"
+    percentage: 95
+  secondary:
+    name:
+      en: "Design systems"
+      ru: "Дизайн-системы"
+    percentage: 95
+- primary:
     name: "Figma"
     percentage: 95
   secondary:
@@ -9,9 +19,9 @@
     percentage: 95
   secondary:
     name:
-      en: "Design systems"
-      ru: "Дизайн-системы"
-    percentage: 95
+      en: "UX Research and Optimization"
+      ru: "UX-исследования и оптимизация"
+    percentage: 85
 - primary:
     name: "React, TypeScript"
     percentage: 80
