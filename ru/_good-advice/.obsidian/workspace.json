@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-commandments.md",
+                "file": "_book.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-commandments"
+              "title": "_book"
             }
           }
         ]
@@ -180,6 +180,8 @@
   },
   "active": "9335ce6f5d9b3f44",
   "lastOpenFiles": [
+    "_book~.md",
+    "10-commandments.md",
     "index.md",
     "_book.md",
     "you-could-be-wrong.md",
@@ -204,8 +206,6 @@
     "stay-calm-in-conflict.md",
     "spend-third-of-your-time-on-exploring.md",
     "spend-more-time-with-your-children.md",
-    "speak-up-about-issues.md",
-    "smart-breakup.md",
     "how-to",
     "_assets/15_Ways_to_Beat_Procrastination.resources",
     "_assets",

@@ -3,8 +3,8 @@
     en: “Pay As You Go”
     ru: «Мастер на час»
   price:
-    en: $28
-    ru: '2,5'
+    en: $14
+    ru: '1,2'
   small_text:
     en: / hour
     ru: тыс. <span class="nobr">руб./час</span>
@@ -20,8 +20,8 @@
     en: “100 hours” Package
     ru: «Пакет „100 часов“»
   price:
-    en: $2500
-    ru: 225
+    en: $1050
+    ru: 90
   small_text:
     ru: тыс. руб.
   description:
@@ -36,8 +36,8 @@
     en: “Full-time”
     ru: «Постоянка»
   price:
-    en: $3500
-    ru: 336
+    en: $1500
+    ru: 120
   small_text:
     en: / mon
     ru: тыс. <span class="nobr">руб./мес.</span>
