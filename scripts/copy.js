@@ -17,7 +17,7 @@ const { src, dest } = gulp;
  * @returns {Stream} The Gulp stream.
  */
 export function copyVideo(done) {
-  return src(paths.video.src)
+  return src(paths.video.src, { allowEmpty: true, encoding: false })
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )

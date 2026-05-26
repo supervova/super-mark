@@ -71,14 +71,12 @@
   border-radius: $border-radius-sm;
   color: var(--color-ink-inverse-base);
   font-size: var(--font-size-small);
-  line-height: 1;
+  line-height: $size-5;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgb(0 0 0 / 0.12);
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-top: ($size-2);
-  padding-right: ($size-2);
-  padding-left: ($size-2);
+  padding-inline: $size-2;
   overflow: hidden;
-  height: ($size-5);
+  height: $size-5;
 }
