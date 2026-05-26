@@ -15,6 +15,11 @@ hero:
     img: '2025-05-12'
     link: '26012874-Echo-Immortal-Designing-the-UI-for-a-Digital-Afterlife'
 
+services:
+  desc:
+    en: 'My skill set addresses two types of client needs. <b>First,</b> a product designer within a development team: UX/UI plus building and maintaining a design system. <b>Second,</b> a technical partner for small businesses: fixing and configuring things that couldn’t be handled by whoever built your site on Framer, WordPress, or Aura.'
+    ru: 'Набор моих навыков закрывает два типа потребностей клиентов.<br><b class="nobr">Во-первых,</b> продуктовый дизайнер в команду разработки: UX/UI + создание и поддержка дизайн-системы. <b class="nobr">Во-вторых,</b> технический партнёр малого бизнеса: чинить и настраивать то, что не может человек, который делал вам сайт на Tild’e, WordPress’е, Framer’е или Aur’е.'
+
 about:
   kpi:
     first:

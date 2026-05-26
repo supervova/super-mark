@@ -51,6 +51,10 @@ layout: default
         {{ site.data.home.headings.services[page.lang] }}
       </h2>
 
+      <p class="text-center mb-2">
+        {{ site.data.home.base.services.desc[page.lang] }}
+      </p>
+
       {% include home/services.html data=site.data.home.services %}
 
       <h3 class="visually-hidden">

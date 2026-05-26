@@ -57,13 +57,13 @@
   content:
     en:
       - "<strong>AI-first</strong> workflow."
+      - "<strong>Customer behavior analytics</strong> and identifying bottlenecks and pain points."
       - "<strong>User flow and conversion</strong> optimization (CRO)."
-      - "<strong>User behavior analytics</strong> and bottleneck identification."
       - "<strong>Supporting product hypotheses</strong> through UX solutions."
       - "<strong>Working with KPIs</strong>: conversion, retention, ARPU."
     ru:
       - "<strong>AI-first</strong> процессы."
+      - "<strong>Аналитика поведения</strong> пользователей, выявление болей и узких мест."
       - "<strong>Оптимизация пользовательских сценариев</strong> и конверсии (CRO)."
-      - "<strong>Аналитика поведения</strong> пользователей и выявление узких мест."
       - "<strong>Поддержка продуктовых гипотез</strong> через UX-решения."
       - "<strong>Работа с метриками</strong>: конверсия, retention, ARPU."
