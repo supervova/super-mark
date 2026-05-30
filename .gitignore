@@ -15,6 +15,7 @@ deploy.sh
 # Source
 /_data
 /_includes
+/docs/notes.md
 /src
 
 # Working stuff
@@ -87,3 +88,4 @@ $RECYCLE.BIN/
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
