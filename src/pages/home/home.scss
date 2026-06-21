@@ -95,6 +95,134 @@ $skills-increment: 0.04;
 // #endregion
 // #endregion
 
+/* -------------------------------------------------------------------------- */
+/* #region: SPECIALS                                                          */
+/* -------------------------------------------------------------------------- */
+
+@layer components {
+
+  @scope (.section.is-specials) {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: var(--size-3);
+      row-gap: var(--size-2);
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 0;
+      min-width: 0;
+      max-width: 100%;
+
+      &::marker {
+        content: '';
+      }
+    }
+  }
+
+  /* CARD ------------------------------------------------------------------- */
+
+  .card-special {
+    --card-bg:         var(--color-background-2ry);
+    --card-price-text: var(--color-ink-2ry);
+
+    background: var(--card-bg);
+    border-radius: var(--size-3);
+    box-shadow: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    padding-block: var(--size-1);
+    padding-inline: var(--size-1) var(--size-2h);
+    text-decoration: none;
+    transition:
+      box-shadow var(--duration-sm) var(--easing-base),
+      transform  var(--duration-sm) var(--easing-base);
+    min-width: var(--width-sm);
+
+    &:focus-visible {
+      box-shadow: var(--box-shadow-focus-outline);
+      outline: none;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: var(--box-shadow-z2);
+        transform: translateY(-1px);
+      }
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+  }
+
+  /* CARD CHILDREN -------------------------------------------------- */
+
+  @scope (.card-special) {
+    .thumbnail {
+      border-radius: var(--size-2);
+      display: block;
+      flex-shrink: 0;
+      object-fit: cover;
+      width: var(--size-8);
+      height: var(--size-8);
+    }
+
+    .info {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .title,
+    .desc {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .title {
+      color: var(--color-ink-base);
+      font-size: var(--font-size-base);
+      font-weight: 500;
+      letter-spacing: -0.1px;
+      line-height: var(--line-height-base);
+      margin-bottom: -4.5px;
+    }
+
+    .desc {
+      color: var(--color-ink-2ry);
+      font-size: var(--font-size-small);
+      font-weight: 400;
+      line-height: var(--line-height-small);
+    }
+
+    .badge {
+      background: var(--color-brand-100);
+      border-radius: var(--radius-pill);
+      color: var(--card-price-text);
+      flex-shrink: 0;
+      font-size: var(--font-size-small);
+      line-height: 1;
+      padding: var(--size-half) var(--size-1);
+    }
+  }
+
+}
+
+/* #endregion */
+
 // -----------------------------------------------------------------------------
 // Contacts
 // -----------------------------------------------------------------------------

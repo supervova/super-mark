@@ -10,6 +10,9 @@ prices:
 about:
   en: 'About'
   ru: 'Обо мне'
+specials:
+  en: 'Special Projects'
+  ru: 'Спец. проекты'
 contacts:
   en: "Got ideas? Let's discuss"
   ru: 'Есть проект? Пишите'

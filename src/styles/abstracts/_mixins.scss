@@ -91,6 +91,7 @@
 }
 
 @mixin container($width: $width-container) {
+  padding-inline: var(--padding-x-container);
   margin-inline: auto;
   position: relative;
   width: min(

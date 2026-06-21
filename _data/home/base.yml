@@ -34,3 +34,31 @@ about:
     en: 'And with the help of ChatGPT, Codex, and Claude, all of these skills reach 95%. I’m convinced that 100-percent mastery of any craft is unattainable, even for AI.'
     ru: 'А с помощью ChatGPT, Codex и Claude все эти навыки достигают 95%. 100-процентное владение любым ремеслом, уверен, недостижимо даже для ИИ.'
 
+specials:
+  magic-notebook:
+    link:
+      en: 'https://www.magic-notebook.com/'
+      ru: 'https://www.magic-notebook.com/ru'
+    title: 'Magic Notebook'
+    desc:
+      en: 'Calm writing app'
+      ru: 'Текстовый редактор'
+    badge:
+      en: 'Free'
+      ru: 'Беспл.'
+
+  sms:
+    link: 'https://www.litres.ru/book/vladimir-nikishin-18565332/roman-v-sms-42648996/'
+    title:
+      en: 'A Novel in SMS :*'
+      ru: 'Роман в SMS :*'
+    desc:
+      en: 'A Love Story (RU)'
+      ru: 'История любви'
+    badge:
+      en: 'Free'
+      ru: '199 ₽'
+
+
+
+

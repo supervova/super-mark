@@ -242,6 +242,21 @@
         "autoprefixer": {
           "cascade": false
         }
+      },
+      "postcss-pxtorem": {
+        "rootValue": 16,
+        "propList": [
+          "*",
+          "!border*",
+          "!outline*",
+          "!box-shadow",
+          "!text-shadow",
+          "!filter",
+          "!backdrop-filter",
+          "!stroke*"
+        ],
+        "mediaQuery": false,
+        "minPixelValue": 0
       }
     }
   },
@@ -287,11 +302,13 @@
     "postcss-easing-gradients": "^3.0.1",
     "postcss-inline-svg": "^6.0.0",
     "postcss-preset-env": "^10.2.4",
+    "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.6.2",
     "sass": "^1.89.2",
     "shelljs": "^0.10.0",
-    "stylelint": "^16.22.0",
+    "stylelint": "^16.26.1",
     "stylelint-config-recommended-scss": "^16.0.2",
+    "stylelint-scss": "^7.2.0",
     "terser-webpack-plugin": "^5.3.14",
     "webpack-stream": "^7.0.0",
     "yargs": "^18.0.0"

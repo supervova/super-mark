@@ -106,6 +106,58 @@ layout: default
     </div>
   </section>
 
+  <!-- Specials -->
+  <section class="section is-specials col-1/1">
+    <div class="container">
+      <h2 class="text-center">
+        {{ site.data.home.headings.specials[page.lang] }}
+      </h2>
+
+      <ul>
+        <li>
+          <a class="card-special" href="{{ site.data.home.base.specials.magic-notebook.link[page.lang] }}" target="_blank" rel="noopener">
+            <img
+              class="thumbnail"
+              src="{{ site.assets }}/img/pages/home/icon-xl-magic-notebook.png"
+              srcset="{{ site.assets }}/img/pages/home/icon-xl-magic-notebook@2x.png 2x"
+              decoding="async"
+              loading="lazy"
+              width="64"
+              height="64"
+              alt="Magic Notebook"
+            >
+            <div class="info">
+              <span class="title">Magic Notebook</span>
+              <span class="desc">{{ site.data.home.base.specials.magic-notebook.desc[page.lang] }}</span>
+            </div>
+            <span class="badge">{{ site.data.home.base.specials.magic-notebook.badge[page.lang] }}</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="card-special" href="{{ site.data.home.base.specials.sms.link }}" target="_blank" rel="noopener">
+            <img
+              class="thumbnail"
+              src="{{ site.assets }}/img/pages/home/icon-xl-sms.png"
+              srcset="{{ site.assets }}/img/pages/home/icon-xl-sms@2x.png 2x"
+              decoding="async"
+              loading="lazy"
+              width="64"
+              height="64"
+              alt="{{ site.data.home.base.specials.sms.title[page.lang] }}"
+            >
+            <div class="info">
+              <span class="title">{{ site.data.home.base.specials.sms.title[page.lang] }}</span>
+              <span class="desc">{{ site.data.home.base.specials.sms.desc[page.lang] }}</span>
+            </div>
+            <span class="badge">{{ site.data.home.base.specials.sms.badge[page.lang] }}</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
   <!-- Contacts -->
   <form class="section form" id="section-contacts" itemscope itemtype="https://schema.org/ContactPoint" action="https://formspree.io/f/xvozadqg" method="post" novalidate>
     <div class="col-1/1">
