@@ -18,8 +18,8 @@ encoding: 'utf-8'
 lang: ru
 lang_2nd: en
 
-title: SuperMark
-short_name: SuperMark
+title: SuperSenior
+short_name: SuperSenior
 
 description: >-
   Торговая марка Владимира Никишина. Веб-дизайн, разработка, digital-маркетинг.
@@ -37,7 +37,7 @@ image: /img/supermark.png
 icon: /img/components/icon/icon-192.png
 
 fonts: Inter:wght@300;400;600
-rss_title: Блог SuperMark'а
+rss_title: Блог SuperSenior'а
 
 gtm: GTM-WXTNS9W
 apple_app_id: ''

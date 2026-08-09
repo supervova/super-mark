@@ -6,7 +6,7 @@
 
 ## MVP и полная версия
 
-Сначала сделать, как статичное приложение к SuperMark'у. На Jekyll, но сверстав виджет голосования, страницы регистрации и авторизации для WP-версии.
+Сначала сделать, как статичное приложение к SuperSenior'у. На Jekyll, но сверстав виджет голосования, страницы регистрации и авторизации для WP-версии.
 
 Опубликовать книгу в Литрес.
 
@@ -36,7 +36,7 @@
   - Если другой вариант составляет целое слово, его тоже пишут в скобках. Например, _супруг(а), (друг, подруга)_.
   - Если в женском роде окончание слова меняется, то женский вариант окончания пишут в скобках и с дефисом. Например, _зарегистрировался(-лась)_. То есть даже количество букв в скобках бывает разным.
 - **CMS**: headless WP + Astro.
-- Дизайн – под Supermark-2024 – «шапка» и логотип – по тому же шаблону,  но в другой гамме и более минималистичный. См. #{Style:Insp - Minimalism} , [Manuel Moreale](https://manuelmoreale.com/about).
+- Дизайн – под SuperSenior-2024 – «шапка» и логотип – по тому же шаблону,  но в другой гамме и более минималистичный. См. #{Style:Insp - Minimalism} , [Manuel Moreale](https://manuelmoreale.com/about).
 
 ## Манифест
 
@@ -59,4 +59,4 @@
 - MagicMan (SuperStoic / UltraMan / HyperMan) – в зависимости от того, какой домен будет свободен: magic-man.com / magic-rules.com / superstoic.com / ultraman.com / hyperman.com
 - Апокриф – life.super-mark.ru и, если все пойдет по плану: apocr.com / lifestoic.com / appocr.com / apocry.com / apocryp.com / apocrypha.com
 - Правильная жизнь – all-right-life
-- SuperMarkus – super-mark.us
+- SuperSeniorus – super-mark.us

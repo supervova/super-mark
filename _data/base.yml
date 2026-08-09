@@ -1,8 +1,8 @@
 company:
-  title: SuperMark
+  title: SuperSenior
   tagline:
-    en: UX/UI, development and marketing
-    ru: UX/UI, разработка и маркетинг
+    en: UX/UI, Product Design
+    ru: UX/UI, продуктовый дизайн
   street: ''
   city:
     en: Herceg Novi
@@ -42,8 +42,8 @@ descriptions:
 
 labels:
   logo:
-    en: 'SuperMark Logo'
-    ru: Фирменный знак SuperMark'а
+    en: 'SuperSenior Logo'
+    ru: Фирменный знак SuperSenior'а
   search:
     en: 'Search'
     ru: 'Поиск'

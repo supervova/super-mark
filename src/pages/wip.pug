@@ -19,18 +19,18 @@ header.header
     .logo_type
   //- TODO: посмотреть еще ~/notes/👨🏻‍💻 development/frontend/markup/solutions/nav-apple-like.md
   nav.navbar(aria-label='Global'): ul
-      //-
-        Подпись переводится в i18n.yml, ссылки собираются
-        в миксине из поля name: якорным добавляется #, блогу – /
-      +navbarItem('portfolio', 'case')
-      +navbarItem('services', 'case')
-      +navbarItem('about', 'hi')
-      +navbarItem('contacts', 'mail')
-      +navbarItem('blog', 'doc')
-      li.navbar__search-button
-        button: svg
-      li.navbar__language-button
-        button: svg
+    //-
+      Подпись переводится в i18n.yml, ссылки собираются
+      в миксине из поля name: якорным добавляется #, блогу – /
+    +navbarItem('portfolio', 'case')
+    +navbarItem('services', 'case')
+    +navbarItem('about', 'hi')
+    +navbarItem('contacts', 'mail')
+    +navbarItem('blog', 'doc')
+    li.navbar__search-button
+      button: svg
+    li.navbar__language-button
+      button: svg
 
 main.main(itemscope itemtype='https://schema.org/Article')
   header.hero
@@ -140,7 +140,7 @@ main.main(itemscope itemtype='https://schema.org/Article')
         .card.card-stat
           h3.card-header 8
           .card-block years in leadership positions in the newspapers
-    p SuperMark is a trademark of Vladimir Nikishin. A journalist by education. I started on the editorial boards of the largest newspapers in Vladivostok, Russia. 20 years in the digital industry. Over the years in the IT industry, I have gained skills in all areas of production and promotion of internet projects: design, front-end development, online marketing.
+    p SuperSenior is a trademark of Vladimir Nikishin. A journalist by education. I started on the editorial boards of the largest newspapers in Vladivostok, Russia. 20 years in the digital industry. Over the years in the IT industry, I have gained skills in all areas of production and promotion of internet projects: design, front-end development, online marketing.
     .border.mt-1
       iframe(width='560' height='315' src='https://www.youtube.com/embed/9mmB1qglODA' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)
 
@@ -230,7 +230,7 @@ main.main(itemscope itemtype='https://schema.org/Article')
       button.btn.is-primary.is-lg#form-contact-button Get in Touch
 
 footer.footer
-  | © 2024 SuperMark
+  | © 2024 SuperSenior
   //- use popover API
   button.btn.btn-share#btn-share(type='button' data-toggle='dropdown' data-display='static' aria-expanded='false' aria-label='Interested in web design and marketing? Share link')
     svg.icon.is-share(focusable='false' aria-hidden='true')
