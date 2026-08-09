@@ -46,7 +46,7 @@ dialog.modal#my-dialog
         <use xlink:href="/assets/img/base/icons/sprite.svg#icon-search"></use>
       </svg>
     </button>
-    <input type="hidden" name="sitesearch" value="https://super-mark.ru">
+    <input type="hidden" name="sitesearch" value="https://design.magic-notebook.com">
   </form>
 </dialog>
 
