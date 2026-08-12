@@ -1,7 +1,7 @@
 // 🖼 IMAGES
 
 import gulp from 'gulp';
-import newer from 'gulp-newer';
+// import newer from 'gulp-newer';
 import size from 'gulp-size';
 import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import { paths } from './paths.js';
@@ -16,26 +16,28 @@ const { src, dest, parallel } = gulp;
  */
 function minifyImages(source, subtitle) {
   const destination = paths.img.dest;
-  return src(source, { encoding: false })
-    .pipe(newer(destination))
-    .pipe(
-      imagemin([
-        gifsicle({ interlaced: true }),
-        mozjpeg({ quality: 85, progressive: true }),
-        optipng({ optimizationLevel: 1 }),
-        svgo({
-          plugins: [
-            { name: 'removeViewBox', active: false },
-            {
-              name: 'cleanupIDs',
-              params: { remove: false, minify: false, preserve: [] },
-            },
-          ],
-        }),
-      ])
-    )
-    .pipe(dest(destination))
-    .pipe(size({ title: `images: ${subtitle}` }));
+  return (
+    src(source, { encoding: false })
+      // .pipe(newer(destination))
+      .pipe(
+        imagemin([
+          gifsicle({ interlaced: true }),
+          mozjpeg({ quality: 85, progressive: true }),
+          optipng({ optimizationLevel: 1 }),
+          svgo({
+            plugins: [
+              { name: 'removeViewBox', active: false },
+              {
+                name: 'cleanupIDs',
+                params: { remove: false, minify: false, preserve: [] },
+              },
+            ],
+          }),
+        ])
+      )
+      .pipe(dest(destination))
+      .pipe(size({ title: `images: ${subtitle}` }))
+  );
 }
 
 /**
