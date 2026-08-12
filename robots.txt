@@ -18,5 +18,5 @@ Disallow: /ru/blog/2023/illustrator-meshes
 
 # Don't block webmaster tools verification files
 
-Host: super-mark.ru
+Host: design.magic-notebook.com
 Sitemap: https://design.magic-notebook.com/sitemap.xml

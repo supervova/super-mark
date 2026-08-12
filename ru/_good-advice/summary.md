@@ -57,6 +57,5 @@
 
 - **SuperLife** – sprlf.com / sprlife.com
 - MagicMan (SuperStoic / UltraMan / HyperMan) – в зависимости от того, какой домен будет свободен: magic-man.com / magic-rules.com / superstoic.com / ultraman.com / hyperman.com
-- Апокриф – life.super-mark.ru и, если все пойдет по плану: apocr.com / lifestoic.com / appocr.com / apocry.com / apocryp.com / apocrypha.com
+- Апокриф – life.magic-notebook.com и, если все пойдет по плану: apocr.com / lifestoic.com / appocr.com / apocry.com / apocryp.com / apocrypha.com
 - Правильная жизнь – all-right-life
-- SuperSeniorus – super-mark.us
